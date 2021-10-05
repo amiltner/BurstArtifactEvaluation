@@ -1,0 +1,68 @@
+type nat =
+  | O 
+  | S of nat
+
+type list =
+  | Nil
+  | Cons of nat * list
+
+synth list -> nat -> nat satisfying
+
+type bool =
+  | True
+  | False
+
+type opt =
+  | None 
+  | Some of nat
+
+let size =
+  fix (size : list -> nat) =
+    fun (x:list) ->
+      match x with
+        | Nil -> O
+        | Cons (_, t) -> S (size t)
+;;
+
+let gte =
+  fix (gte : nat -> nat -> bool) =
+    fun (x1:nat) ->
+    fun (x2:nat) ->
+      match (x1,x2) with
+        | (O,O) -> True
+        | (O,S _) -> False
+        | (S _,O) -> True
+        | (S y1,S y2) -> gte y1 y2
+;;
+
+let hd =
+  fun (x:list) ->
+    match x with
+    | Nil -> O
+    | Cons (n, _) -> n
+;;
+
+let hd2 =
+  fun (x:list) ->
+    match x with
+    | Cons (_, Cons (x, _)) -> x
+    | _ -> O
+;;
+
+let last =
+  fix (last : list -> opt) =
+    fun (l:list) ->
+      match l with
+      | Nil -> None
+      | Cons (x, Nil) -> Some x
+      | Cons (_, t) -> last t
+;;
+
+fun (in1in2:list*nat) -> (fun (out : nat) ->
+    match size in1in2.0 with | len ->
+    match (gte in1in2.1 len) with
+    | True -> out == O
+    | False ->
+      match len == (S (in1in2.1)) with
+      | True -> (Some out) == (last in1in2.0)
+      | False -> True)

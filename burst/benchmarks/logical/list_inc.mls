@@ -1,0 +1,54 @@
+type nat =
+  | O
+  | S of nat
+
+type list =
+  | Nil
+  | Cons of nat * list
+
+let map =
+  fix (map : list -> (nat -> nat) -> list) =
+    fun (l1 : list) ->
+      fun (f : nat -> nat) ->
+        match l1 with
+        | Nil -> Nil
+        | Cons (h,t) -> Cons (f h, map t f)
+;;
+
+synth list -> list satisfying
+
+type bool =
+  | True
+  | False
+
+let size =
+  fix (size : list -> nat) =
+    fun (x:list) ->
+      match x with
+        | Nil -> O
+        | Cons (_,t) -> S (size t)
+;;
+
+let plus =
+  fix (plus : nat -> nat -> nat) =
+    fun (x1:nat) ->
+      fun (x2:nat) ->
+        match x1 with
+        | O -> x2
+        | S x1p -> S (plus x1p x2)
+;;
+
+let sum =
+  fix (sum : list -> nat) =
+    fun (x:list) ->
+      match x with
+        | Nil -> O
+        | Cons (y,t) -> plus y (sum t)
+;;
+
+let inc =
+  fun (x:nat) -> S x
+;;
+
+fun (in:list) -> (fun (out : list) ->
+    (plus (size in) (sum in)) == (sum out))

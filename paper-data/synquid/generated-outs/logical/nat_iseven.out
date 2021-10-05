@@ -1,0 +1,8 @@
+nat_iseven :: in1:Nat -> {Boolean|((((in1 == (Z) ==> _v == (T)) && (in1 == (S (Z)) ==> _v == (F))) && (in1 == (S ((S (Z)))) ==> _v == (T))) && (in1 == (S ((S ((S (Z)))))) ==> _v == (F))) && (in1 == (S ((S ((S ((S (Z)))))))) ==> _v == (T))}
+nat_iseven = \in1 . 
+  match in1 with
+    Z -> T
+    S x2 -> 
+      match x2 with
+        Z -> F
+        S x4 -> nat_iseven x4

@@ -1,0 +1,25 @@
+data Nat where
+  Z :: Nat
+  S :: Nat -> Nat
+
+data NatList where
+  Nil :: NatList
+  Cons :: Nat -> NatList -> NatList
+
+termination measure len :: NatList -> {Int | _v >= 0} where
+  Nil -> 0
+  Cons x xs -> 1 + len xs
+
+measure tl :: NatList -> NatList where
+  Nil -> Nil
+  Cons h t -> t
+
+measure hd :: NatList -> Nat where
+  Nil -> Z
+  Cons h t -> h
+    
+list_length :: ns: NatList -> {Nat |
+    if (ns != Nil && tl ns != Nil && tl (tl ns) == Nil) then _v == S (S Z)
+    else if (ns != Nil && tl ns != Nil && tl (tl ns) != Nil && tl (tl (tl ns)) == Nil) then _v == S (S (S Z))
+    else True}
+list_length = ??

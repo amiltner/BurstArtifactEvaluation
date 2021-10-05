@@ -1,0 +1,121 @@
+[[33mWarning [0m] Refusing to inline recursive function 'listWebElementToWebTree'!
+[[33mWarning [0m] The Z3 native interface is not available, falling back to smt-cvc4.
+[[34m  Info  [0m] ============================ Synthesizing 'list_hd' ============================
+[[34m  Info  [0m] [Symbolic Term Expl. (1->7)] ⟦ α xs
+[[34m  Info  [0m]                                Π ↓list_hd(xs) && true
+[[34m  Info  [0m]                                φ xs match {
+[[34m  Info  [0m]                                    case Nil =>
+[[34m  Info  [0m]                                      out == Z
+[[34m  Info  [0m]                                    case Cons(h, t) =>
+[[34m  Info  [0m]                                      out == h
+[[34m  Info  [0m]                                  }
+[[34m  Info  [0m]                                x out
+[[34m  Info  [0m]                              ⟧ /24,0/
+[[34m  Info  [0m] [Symbolic Term Expl. (1->7)] Failed
+[[34m  Info  [0m] [Optimistic Ground   ] ⟦ α xs
+[[34m  Info  [0m]                          Π ↓list_hd(xs) && true
+[[34m  Info  [0m]                          φ xs match {
+[[34m  Info  [0m]                              case Nil =>
+[[34m  Info  [0m]                                out == Z
+[[34m  Info  [0m]                              case Cons(h, t) =>
+[[34m  Info  [0m]                                out == h
+[[34m  Info  [0m]                            }
+[[34m  Info  [0m]                          x out
+[[34m  Info  [0m]                        ⟧ /24,0/
+[[34m  Info  [0m] [Optimistic Ground   ] Failed
+[[34m  Info  [0m] [ADT Split on 'xs'   ] ⟦ α xs
+[[34m  Info  [0m]                          Π ↓list_hd(xs) && true
+[[34m  Info  [0m]                          φ xs match {
+[[34m  Info  [0m]                              case Nil =>
+[[34m  Info  [0m]                                out == Z
+[[34m  Info  [0m]                              case Cons(h, t) =>
+[[34m  Info  [0m]                                out == h
+[[34m  Info  [0m]                            }
+[[34m  Info  [0m]                          x out
+[[34m  Info  [0m]                        ⟧ /24,0/
+[[34m  Info  [0m] [ADT Split on 'xs'   ] Decomposed into:
+[[34m  Info  [0m] [ADT Split on 'xs'   ] - ⟦ α ()
+[[34m  Info  [0m]                            Π (↓list_hd(Nil) && 谶Nil) && true
+[[34m  Info  [0m]                            φ Nil match {
+[[34m  Info  [0m]                                case Nil =>
+[[34m  Info  [0m]                                  out == Z
+[[34m  Info  [0m]                                case Cons(h, t) =>
+[[34m  Info  [0m]                                  out == h
+[[34m  Info  [0m]                              }
+[[34m  Info  [0m]                            x out
+[[34m  Info  [0m]                          ⟧ /1,0/
+[[34m  Info  [0m] [ADT Split on 'xs'   ] - ⟦ α head$12, tail$17
+[[34m  Info  [0m]                            Π (↓list_hd(Cons(head$12, tail$17)) && 谶Cons(head$12, tail$17)) && true
+[[34m  Info  [0m]                            φ Cons(head$12, tail$17) match {
+[[34m  Info  [0m]                                case Nil =>
+[[34m  Info  [0m]                                  out == Z
+[[34m  Info  [0m]                                case Cons(h, t) =>
+[[34m  Info  [0m]                                  out == h
+[[34m  Info  [0m]                              }
+[[34m  Info  [0m]                            x out
+[[34m  Info  [0m]                          ⟧ /23,0/
+[[34m  Info  [0m] [Ground              ] ⟦ α ()
+[[34m  Info  [0m]                          Π (↓list_hd(Nil) && 谶Nil) && true
+[[34m  Info  [0m]                          φ Nil match {
+[[34m  Info  [0m]                              case Nil =>
+[[34m  Info  [0m]                                out == Z
+[[34m  Info  [0m]                              case Cons(h, t) =>
+[[34m  Info  [0m]                                out == h
+[[34m  Info  [0m]                            }
+[[34m  Info  [0m]                          x out
+[[34m  Info  [0m]                        ⟧ /1,0/
+[[34m  Info  [0m] [Ground              ] Solved  with:  ⟨ true |  Z ⟩
+[[34m  Info  [0m] 
+[[34m  Info  [0m] [Introduce calls list_hd$0(tail$17)] ⟦ α head$12, tail$17
+[[34m  Info  [0m]                                        Π (↓list_hd(Cons(head$12, tail$17)) && 谶Cons(head$12, tail$17)) && true
+[[34m  Info  [0m]                                        φ Cons(head$12, tail$17) match {
+[[34m  Info  [0m]                                            case Nil =>
+[[34m  Info  [0m]                                              out == Z
+[[34m  Info  [0m]                                            case Cons(h, t) =>
+[[34m  Info  [0m]                                              out == h
+[[34m  Info  [0m]                                          }
+[[34m  Info  [0m]                                        x out
+[[34m  Info  [0m]                                      ⟧ /23,0/
+[[34m  Info  [0m] [Introduce calls list_hd$0(tail$17)] Decomposed into:
+[[34m  Info  [0m] [Introduce calls list_hd$0(tail$17)] - ⟦ α head$12, tail$17
+[[34m  Info  [0m]                                          Π val rec$7: Nat = list_hd(tail$17)
+[[34m  Info  [0m]                                            (↓list_hd(Cons(head$12, tail$17)) && 谶Cons(head$12, tail$17) && ↓list_hd(tail$17)) && true
+[[34m  Info  [0m]                                          φ Cons(head$12, tail$17) match {
+[[34m  Info  [0m]                                              case Nil =>
+[[34m  Info  [0m]                                                out == Z
+[[34m  Info  [0m]                                              case Cons(h, t) =>
+[[34m  Info  [0m]                                                out == h
+[[34m  Info  [0m]                                            }
+[[34m  Info  [0m]                                          x out
+[[34m  Info  [0m]                                        ⟧ /23,0/
+[[34m  Info  [0m] [Symbolic Term Expl. (1->7)] ⟦ α head$12, tail$17
+[[34m  Info  [0m]                                Π val rec$7: Nat = list_hd(tail$17)
+[[34m  Info  [0m]                                  (↓list_hd(Cons(head$12, tail$17)) && 谶Cons(head$12, tail$17) && ↓list_hd(tail$17)) && true
+[[34m  Info  [0m]                                φ Cons(head$12, tail$17) match {
+[[34m  Info  [0m]                                    case Nil =>
+[[34m  Info  [0m]                                      out == Z
+[[34m  Info  [0m]                                    case Cons(h, t) =>
+[[34m  Info  [0m]                                      out == h
+[[34m  Info  [0m]                                  }
+[[34m  Info  [0m]                                x out
+[[34m  Info  [0m]                              ⟧ /23,0/
+[[34m  Info  [0m] [Symbolic Term Expl. (1->7)] Solved  with:  ⟨ true |  head$12 ⟩
+[[34m  Info  [0m] 
+[[34m  Info  [0m] Finished in 5777ms
+[[34m  Info  [0m] =================================== list_hd ===================================
+[[34m  Info  [0m] def list_hd(xs : NatList): Nat =  {
+[[34m  Info  [0m]   xs match {
+[[34m  Info  [0m]     case Nil =>
+[[34m  Info  [0m]       Z
+[[34m  Info  [0m]     case Cons(head, tail) =>
+[[34m  Info  [0m]       head
+[[34m  Info  [0m]   }
+[[34m  Info  [0m] } ensuring {
+[[34m  Info  [0m]   (out : Nat) => xs match {
+[[34m  Info  [0m]     case Nil =>
+[[34m  Info  [0m]       out == Z
+[[34m  Info  [0m]     case Cons(h, t) =>
+[[34m  Info  [0m]       out == h
+[[34m  Info  [0m]   }
+[[34m  Info  [0m] }
+[[34m  Info  [0m] 

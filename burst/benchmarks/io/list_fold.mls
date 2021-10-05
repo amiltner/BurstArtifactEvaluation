@@ -1,0 +1,45 @@
+type nat =
+  | O
+  | S of nat
+
+type list =
+  | Nil
+  | Cons of nat * list
+
+type bool =
+  | True
+  | False
+
+let sum =
+  fix (sum : nat -> nat -> nat) =
+    fun (n1 : nat) ->
+      fun (n2 : nat) ->
+        match n1 with
+        | O -> n2
+        | S n1p -> S (sum n1p n2)
+;;
+
+let is_odd =
+  fix (is_odd : nat -> bool) =
+    fun (x1 : nat) ->
+      match x1 with
+      | O -> False
+      | S x1p ->
+        (match x1p with
+         | O -> True
+         | S x1pp -> is_odd x1pp)
+;;
+
+let count_odd =
+  fun (n1:nat) ->
+    fun (n2:nat) ->
+      match is_odd n2 with
+      | True -> S n1
+      | False -> n1
+;;
+
+synth (nat -> nat -> nat) -> nat -> list -> nat satisfying
+
+[sum,0,Nil] -> 0,
+[sum,0,Cons(2,Cons(1,Nil))] -> 3,
+[sum,0,Cons(3,Cons(2,Cons(1,Nil)))] -> 6,

@@ -1,0 +1,5 @@
+list_hd :: xs:NatList -> {Nat|if xs == (Nil) then _v == (Z) else _v == hd xs}
+list_hd = \xs . 
+  match xs with
+    Nil -> Z
+    Cons x2 x3 -> x2

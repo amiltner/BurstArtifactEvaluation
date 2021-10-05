@@ -1,0 +1,10 @@
+list_fold :: arg2:(arg1:Nat -> arg0:Nat -> Nat) -> arg1:Nat -> arg0:NatList -> Nat
+benchmarks/postconditional/list_rev_fold.sq:18: Error:
+  Cannot find sufficiently strong refinements
+  when checking acc ::
+  {Nat|dec _v >= 0 && dec _v < dec acc}
+  in
+  \f . \acc . \xs . 
+        match xs with
+          Cons head tail -> f (list_fold f
+                                 acc ??) ??

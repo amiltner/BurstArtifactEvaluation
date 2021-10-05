@@ -1,0 +1,19 @@
+data Nat where
+  Z :: Nat
+  S :: Nat -> Nat
+
+  
+data NatList where
+  Nil :: NatList
+  Cons :: Nat -> NatList -> NatList
+
+measure tl :: NatList -> NatList where
+  Nil -> Nil
+  Cons h t -> t
+  
+list_tl :: xs:NatList -> { NatList | 
+
+    _v == tl xs
+
+}
+list_tl = ??

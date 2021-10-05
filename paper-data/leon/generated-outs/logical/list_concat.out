@@ -1,0 +1,82 @@
+[[33mWarning [0m] Refusing to inline recursive function 'listWebElementToWebTree'!
+[[33mWarning [0m] The Z3 native interface is not available, falling back to smt-cvc4.
+[[34m  Info  [0m] ========================== Synthesizing 'list_concat' ==========================
+[[34m  Info  [0m] [Symbolic Term Expl. (1->7)] ⟦ α xss
+[[34m  Info  [0m]                                Π ↓list_concat(xss) && true
+[[34m  Info  [0m]                                φ all_full_contained(xss, out)
+[[34m  Info  [0m]                                x out
+[[34m  Info  [0m]                              ⟧ /25,0/
+[[34m  Info  [0m] [Symbolic Term Expl. (1->7)] Failed
+[[34m  Info  [0m] [Optimistic Ground   ] ⟦ α xss
+[[34m  Info  [0m]                          Π ↓list_concat(xss) && true
+[[34m  Info  [0m]                          φ all_full_contained(xss, out)
+[[34m  Info  [0m]                          x out
+[[34m  Info  [0m]                        ⟧ /25,0/
+[[34m  Info  [0m] [Optimistic Ground   ] Failed
+[[34m  Info  [0m] [ADT Split on 'xss'  ] ⟦ α xss
+[[34m  Info  [0m]                          Π ↓list_concat(xss) && true
+[[34m  Info  [0m]                          φ all_full_contained(xss, out)
+[[34m  Info  [0m]                          x out
+[[34m  Info  [0m]                        ⟧ /25,0/
+[[34m  Info  [0m] [ADT Split on 'xss'  ] Decomposed into:
+[[34m  Info  [0m] [ADT Split on 'xss'  ] - ⟦ α ()
+[[34m  Info  [0m]                            Π (↓list_concat(LNil) && 谶LNil) && true
+[[34m  Info  [0m]                            φ all_full_contained(LNil, out)
+[[34m  Info  [0m]                            x out
+[[34m  Info  [0m]                          ⟧ /1,0/
+[[34m  Info  [0m] [ADT Split on 'xss'  ] - ⟦ α head$15, tail$20
+[[34m  Info  [0m]                            Π (↓list_concat(LCons(head$15, tail$20)) && 谶LCons(head$15, tail$20)) && true
+[[34m  Info  [0m]                            φ all_full_contained(LCons(head$15, tail$20), out)
+[[34m  Info  [0m]                            x out
+[[34m  Info  [0m]                          ⟧ /24,0/
+[[34m  Info  [0m] [Ground              ] ⟦ α ()
+[[34m  Info  [0m]                          Π (↓list_concat(LNil) && 谶LNil) && true
+[[34m  Info  [0m]                          φ all_full_contained(LNil, out)
+[[34m  Info  [0m]                          x out
+[[34m  Info  [0m]                        ⟧ /1,0/
+[[34m  Info  [0m] [Ground              ] Solved  with:  ⟨ true |  Nil ⟩
+[[34m  Info  [0m] 
+[[34m  Info  [0m] [Introduce calls list_concat$0(tail$20)] ⟦ α head$15, tail$20
+[[34m  Info  [0m]                                            Π (↓list_concat(LCons(head$15, tail$20)) && 谶LCons(head$15, tail$20)) && true
+[[34m  Info  [0m]                                            φ all_full_contained(LCons(head$15, tail$20), out)
+[[34m  Info  [0m]                                            x out
+[[34m  Info  [0m]                                          ⟧ /24,0/
+[[34m  Info  [0m] [Introduce calls list_concat$0(tail$20)] Decomposed into:
+[[34m  Info  [0m] [Introduce calls list_concat$0(tail$20)] - ⟦ α head$15, tail$20
+[[34m  Info  [0m]                                              Π val rec$7: NatList = list_concat(tail$20)
+[[34m  Info  [0m]                                                (↓list_concat(LCons(head$15, tail$20)) && 谶LCons(head$15, tail$20) && ↓list_concat(tail$20)) && true
+[[34m  Info  [0m]                                              φ all_full_contained(LCons(head$15, tail$20), out)
+[[34m  Info  [0m]                                              x out
+[[34m  Info  [0m]                                            ⟧ /24,0/
+[[34m  Info  [0m] [Symbolic Term Expl. (1->7)] ⟦ α head$15, tail$20
+[[34m  Info  [0m]                                Π val rec$7: NatList = list_concat(tail$20)
+[[34m  Info  [0m]                                  (↓list_concat(LCons(head$15, tail$20)) && 谶LCons(head$15, tail$20) && ↓list_concat(tail$20)) && true
+[[34m  Info  [0m]                                φ all_full_contained(LCons(head$15, tail$20), out)
+[[34m  Info  [0m]                                x out
+[[34m  Info  [0m]                              ⟧ /24,0/
+[[34m  Info  [0m] STE could not prove the validity of the resulting expression
+[[34m  Info  [0m] STE could not prove the validity of the resulting expression
+[[34m  Info  [0m] STE could not prove the validity of the resulting 2 expression(s)
+[[34m  Info  [0m] [Symbolic Term Expl. (1->7)] Solved (untrusted) with:  ⟨ true |  list_append(rec$7, head$15) ⟩
+[[34m  Info  [0m] 
+[[34m  Info  [0m] Finished in 11110ms
+[[34m  Info  [0m] Solution requires validation
+[[34m  Info  [0m]  - Now considering 'postcondition' VC for list_concat @25:57...
+[[33mWarning [0m]  => TIMEOUT
+[[34m  Info  [0m]  - Now considering 'precond. (call all_full_contained(xss, out))' VC for list_concat @60:5...
+[[34m  Info  [0m]  => VALID
+[[34m  Info  [0m]  - Now considering 'match exhaustiveness' VC for list_concat @?:?...
+[[34m  Info  [0m]  => VALID
+[[33mWarning [0m] Solution may be invalid:
+[[34m  Info  [0m] ================================= list_concat =================================
+[[34m  Info  [0m] def list_concat(xss : NatListList): NatList =  {
+[[34m  Info  [0m]   xss match {
+[[34m  Info  [0m]     case LNil =>
+[[34m  Info  [0m]       Nil
+[[34m  Info  [0m]     case LCons(head, tail) =>
+[[34m  Info  [0m]       list_append(list_concat(tail), head)
+[[34m  Info  [0m]   }
+[[34m  Info  [0m] } ensuring {
+[[34m  Info  [0m]   (out : NatList) => all_full_contained(xss, out)
+[[34m  Info  [0m] }
+[[34m  Info  [0m] 

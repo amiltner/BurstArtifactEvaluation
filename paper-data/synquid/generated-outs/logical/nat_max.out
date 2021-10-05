@@ -1,0 +1,8 @@
+nat_max :: in1:Nat -> in2:Nat -> {Nat|dec _v >= dec in1 && dec _v >= dec in2}
+nat_max = \in1 . \in2 . 
+    match in2 with
+      Z -> in1
+      S x2 -> 
+        match in1 with
+          Z -> in2
+          S x4 -> S (nat_max x4 x2)

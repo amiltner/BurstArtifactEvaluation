@@ -1,0 +1,19 @@
+list_fold :: arg2:(arg1:Nat -> arg0:Nat -> Nat) -> arg1:NatList -> arg0:Nat -> Nat
+list_fold = \f . \xs . \acc . 
+      match xs with
+        Nil -> acc
+        Cons head tail -> f (list_fold f
+                               tail acc) head
+
+nat_add :: n1:Nat -> n2:Nat -> {Nat|dec n1 + dec n2 == dec _v}
+nat_add = \n1 . \n2 . 
+    match n1 with
+      Z -> n2
+      S m -> S (nat_add m n2)
+
+list_sum :: xs:NatList -> {Nat|((xs == (Nil) ==> dec _v == 0) && (xs != (Nil) && tl xs == (Nil) ==> dec _v == dec (hd xs))) && ((xs != (Nil) && tl xs != (Nil)) && tl (tl xs) == (Nil) ==> dec _v == dec (hd xs) + dec (hd (tl xs)))}
+list_sum = \xs . 
+  match xs with
+    Nil -> Z
+    Cons x3 x4 -> nat_add x3
+                    (list_sum x4)

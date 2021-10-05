@@ -1,0 +1,7 @@
+list_last :: xs:NatList -> {NatOpt|((xs == (Nil) ==> _v == (None)) && ((!is_empty xs && !is_empty (tail xs)) && is_empty (tail (tail xs)) ==> _v == (Some (head (tail xs))))) && (((!is_empty xs && !is_empty (tail xs)) && !is_empty (tail (tail xs))) && is_empty (tail (tail (tail xs))) ==> _v == (Some (head (tail (tail xs)))))}
+benchmarks/postconditional/list_last.sq:40: Error:
+  Cannot match shape 'Nat'
+  with shape 'NatList'
+  when checking Z :: NatList in
+  \xs . 
+    match Cons Z Z with

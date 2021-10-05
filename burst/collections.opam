@@ -1,0 +1,14 @@
+opam-version: "2.0"
+synopsis: "Enhanced immutable collections."
+description:
+  "Collections with functional interface, and more functions for the standard collections."
+maintainer: ["Timothée Haudebourg <timothee.haudebourg@irisa.fr>"]
+authors: ["Timothée Haudebourg <timothee.haudebourg@irisa.fr>"]
+homepage: "https://github.com/timothee-haudebourg/ocaml-collections"
+dev-repo: "https://github.com/timothee-haudebourg/ocaml-collections"
+bug-reports: "https://github.com/timothee-haudebourg/ocaml-collections/issues"
+depends: []
+build: [
+  [ make "-j" jobs ]
+]
+install: [ make "install" ]

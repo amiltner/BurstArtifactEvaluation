@@ -1,0 +1,72 @@
+type nat =
+  | O
+  | S of nat
+
+type list =
+  | Nil
+  | Cons of nat * list
+
+synth nat -> list -> list satisfying
+
+type bool =
+  | True
+  | False
+
+type opt =
+  | None
+  | Some of nat
+
+let hd =
+  fun (x:list) ->
+    match x with
+    | Nil -> None
+    | Cons (n, _) -> Some n
+;;
+
+let size =
+  fix (size : list -> nat) =
+    fun (x:list) ->
+      match x with
+      | Nil -> O
+      | Cons (_, t) -> S (size t)
+;;
+
+let min =
+  fix (min : nat -> nat -> nat) =
+    fun (x:nat) ->
+    fun (y:nat) ->
+      match x with
+      | O -> O
+      | S z ->
+        match y with
+        | O -> O
+        | S w -> S (min z w)
+;;
+
+let and =
+  fun (b1:bool) ->
+    fun (b2:bool) ->
+      match b1 with
+      | True -> b2
+      | False -> False
+;;
+
+fun (in1in2:nat*list) -> (fun (out : list) ->
+    (size out) == (min (in1in2.0) (size in1in2.1)))
+(*
+    (and
+    ((hd in1in2.1) == (hd out))))
+    (for_all in1in2.0 in1in2.1 out))
+[0,Nil] -> Nil,
+[0,Cons(1,Nil)] -> Nil,
+[0,Cons(0,Cons(1,Nil))] -> Nil,
+[0,Cons(1,Cons(0,Cons(1,Nil)))] -> Nil,
+[1,Nil] -> Nil,
+[1,Cons(1,Nil)] -> Cons(1,Nil),
+[1,Cons(0,Cons(1,Nil))] -> Cons(0,Nil),
+[1,Cons(1,Cons(0,Cons(1,Nil)))] -> Cons(1,Nil),
+[2,Nil] -> Nil,
+[2,Cons(1,Nil)] -> Cons(1,Nil),
+[2,Cons(0,Cons(1,Nil))] -> Cons(0,Cons(1,Nil)),
+[2,Cons(1,Cons(0,Cons(1,Nil)))] -> Cons(1,Cons(0,Nil)),
+*)

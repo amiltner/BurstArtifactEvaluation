@@ -1,0 +1,58 @@
+[[33mWarning [0m] Refusing to inline recursive function 'listWebElementToWebTree'!
+[[33mWarning [0m] The Z3 native interface is not available, falling back to smt-cvc4.
+[[34m  Info  [0m] =========================== Synthesizing 'bool_neg' ===========================
+[[34m  Info  [0m] [Symbolic Term Expl. (1->7)] ⟦ α p
+[[34m  Info  [0m]                                Π ↓bool_neg(p) && true
+[[34m  Info  [0m]                                φ p != out
+[[34m  Info  [0m]                                x out
+[[34m  Info  [0m]                              ⟧ /2,0/
+[[34m  Info  [0m] [Symbolic Term Expl. (1->7)] Failed
+[[34m  Info  [0m] [Optimistic Ground   ] ⟦ α p
+[[34m  Info  [0m]                          Π ↓bool_neg(p) && true
+[[34m  Info  [0m]                          φ p != out
+[[34m  Info  [0m]                          x out
+[[34m  Info  [0m]                        ⟧ /2,0/
+[[34m  Info  [0m] [Optimistic Ground   ] Failed
+[[34m  Info  [0m] [ADT Split on 'p'    ] ⟦ α p
+[[34m  Info  [0m]                          Π ↓bool_neg(p) && true
+[[34m  Info  [0m]                          φ p != out
+[[34m  Info  [0m]                          x out
+[[34m  Info  [0m]                        ⟧ /2,0/
+[[34m  Info  [0m] [ADT Split on 'p'    ] Decomposed into:
+[[34m  Info  [0m] [ADT Split on 'p'    ] - ⟦ α ()
+[[34m  Info  [0m]                            Π (↓bool_neg(F) && 谶F) && true
+[[34m  Info  [0m]                            φ F != out
+[[34m  Info  [0m]                            x out
+[[34m  Info  [0m]                          ⟧ /1,0/
+[[34m  Info  [0m] [ADT Split on 'p'    ] - ⟦ α ()
+[[34m  Info  [0m]                            Π (↓bool_neg(T) && 谶T) && true
+[[34m  Info  [0m]                            φ T != out
+[[34m  Info  [0m]                            x out
+[[34m  Info  [0m]                          ⟧ /1,0/
+[[34m  Info  [0m] [Ground              ] ⟦ α ()
+[[34m  Info  [0m]                          Π (↓bool_neg(F) && 谶F) && true
+[[34m  Info  [0m]                          φ F != out
+[[34m  Info  [0m]                          x out
+[[34m  Info  [0m]                        ⟧ /1,0/
+[[34m  Info  [0m] [Ground              ] Solved  with:  ⟨ true |  T ⟩
+[[34m  Info  [0m] 
+[[34m  Info  [0m] [Ground              ] ⟦ α ()
+[[34m  Info  [0m]                          Π (↓bool_neg(T) && 谶T) && true
+[[34m  Info  [0m]                          φ T != out
+[[34m  Info  [0m]                          x out
+[[34m  Info  [0m]                        ⟧ /1,0/
+[[34m  Info  [0m] [Ground              ] Solved  with:  ⟨ true |  F ⟩
+[[34m  Info  [0m] 
+[[34m  Info  [0m] Finished in 1566ms
+[[34m  Info  [0m] =================================== bool_neg ===================================
+[[34m  Info  [0m] def bool_neg(p : Boolean): Boolean =  {
+[[34m  Info  [0m]   p match {
+[[34m  Info  [0m]     case F =>
+[[34m  Info  [0m]       T
+[[34m  Info  [0m]     case T =>
+[[34m  Info  [0m]       F
+[[34m  Info  [0m]   }
+[[34m  Info  [0m] } ensuring {
+[[34m  Info  [0m]   (out : Boolean) => p != out
+[[34m  Info  [0m] }
+[[34m  Info  [0m] 

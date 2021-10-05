@@ -1,0 +1,44 @@
+data Nat where
+  Z :: Nat
+  S :: Nat -> Nat
+
+termination measure dec :: Nat -> {Int | _v >= 0} where
+  Z -> 0
+  S m -> 1 + dec m
+  
+data NatList where
+  Nil :: NatList
+  Cons :: Nat -> NatList -> NatList
+
+termination measure len :: NatList -> {Int | _v >= 0} where
+  Nil -> 0
+  Cons x xs -> 1 + len xs
+  
+list_fold :: (Nat -> Nat -> Nat) -> NatList -> Nat -> Nat
+list_fold = \f . \xs . \acc .
+  match xs with
+    Nil            -> acc
+    Cons head tail -> f (list_fold f tail acc) head
+  
+list_snoc :: NatList -> Nat -> NatList
+list_snoc = \xs . \n .
+  match xs with
+    Nil            -> Cons n Nil
+    Cons head tail -> Cons head (list_snoc tail n)
+
+measure hd :: NatList -> Nat where
+  Nil -> Z
+  Cons h t -> h
+
+measure last :: NatList -> Nat where
+  Nil -> Z
+  Cons h t -> if t == Nil then h else last t
+  
+list_rev_fold :: xs:NatList -> { NatList | 
+
+   (len xs == len _v) &&
+   (hd xs == last _v) &&
+   (last xs == hd _v)
+
+}
+list_rev_fold = ??

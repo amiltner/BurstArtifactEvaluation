@@ -1,0 +1,9 @@
+list_append :: xs:NatList -> ys:NatList -> {NatList|len xs + len ys == len _v}
+list_append = \xs . \ys . 
+    match ys with
+      Nil -> xs
+      Cons x3 x4 -> 
+        match xs with
+          Nil -> ys
+          Cons x7 x8 -> Cons x3
+                          (list_append x8 ys)

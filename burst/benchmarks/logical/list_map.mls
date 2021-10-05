@@ -1,0 +1,85 @@
+type nat =
+  | O
+  | S of nat
+
+type list =
+  | Nil
+  | Cons of nat * list
+
+let zero =
+  fun (n:nat) -> O
+;;
+
+let inc =
+  fun (n:nat) -> S (n)
+;;
+
+synth (nat -> nat) -> list -> list satisfying
+
+type bool =
+  | True
+  | False
+
+let and =
+  fun (b1:bool) ->
+    fun (b2:bool) ->
+      match b1 with
+      | True -> b2
+      | False -> False
+;;
+
+let for_all =
+  fix (for_all : (nat -> nat) -> list -> list -> bool) =
+    fun (f : nat -> nat) ->
+    fun (l1 : list) ->
+    fun (l2 : list) ->
+      match l1 with
+      | Nil -> l2 == Nil
+      | Cons (h1,t1) ->
+        match l2 with
+         | Nil -> False
+         | Cons (h2,t2) -> and ((f h1) == h2) (for_all f t1 t2)
+;;
+
+let plus =
+  fix (plus : nat -> nat -> nat) =
+    fun (x1:nat) ->
+      fun (x2:nat) ->
+        match x1 with
+        | O -> x2
+        | S x1p -> S (plus x1p x2)
+;;
+
+let sum =
+  fix (sum : list -> nat) =
+    fun (l:list) ->
+      match l with
+      | Nil -> O
+      | Cons (x, t) -> plus x (sum t)
+;;
+
+let size =
+  fix (size : list -> nat) =
+    fun (x:list) ->
+      match x with
+      | Nil -> O
+      | Cons (_, t) -> S (size t)
+;;
+
+let is_zero =
+  fix (is_zero : list -> bool) =
+    fun (l:list) ->
+      match l with
+      | Nil -> True
+      | Cons (z, t) -> and (z == O) (is_zero t)
+;;
+
+fun (in1in2:(nat->nat)*list) -> (fun (out : list) ->
+    match size in1in2.1 with | sin ->
+    (and
+      ((size out) == sin) (
+      match (in1in2.0 == zero) with
+      | True -> is_zero out
+      | False -> (match (in1in2.0 == inc) with
+                         | True -> (sum out) == (plus sin (sum in1in2.1))
+                         | False -> True))))

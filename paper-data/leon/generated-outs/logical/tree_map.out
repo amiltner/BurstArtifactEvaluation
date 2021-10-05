@@ -1,0 +1,30 @@
+[[33mWarning [0m] Refusing to inline recursive function 'listWebElementToWebTree'!
+[[33mWarning [0m] The Z3 native interface is not available, falling back to smt-cvc4.
+[[34m  Info  [0m] =========================== Synthesizing 'tree_map' ===========================
+[[34m  Info  [0m] [Symbolic Term Expl. (1->7)] ⟦ α f, t
+[[34m  Info  [0m]                                Π ↓tree_map(f, t) && true
+[[34m  Info  [0m]                                φ size(inorder(t)) == size(inorder(out)) && (if (f == zero) {
+[[34m  Info  [0m]                                    is_zero(inorder(out))
+[[34m  Info  [0m]                                  } else if (f == inc) {
+[[34m  Info  [0m]                                    sum(inorder(out)) == plus(sum(inorder(t)), size(inorder(t)))
+[[34m  Info  [0m]                                  } else {
+[[34m  Info  [0m]                                    true
+[[34m  Info  [0m]                                  })
+[[34m  Info  [0m]                                x out
+[[34m  Info  [0m]                              ⟧ /24,0/
+[[34m  Info  [0m] [Symbolic Term Expl. (1->7)] Solved  with:  ⟨ true |  t ⟩
+[[34m  Info  [0m] 
+[[34m  Info  [0m] Finished in 3149ms
+[[34m  Info  [0m] =================================== tree_map ===================================
+[[34m  Info  [0m] def tree_map(f : (Nat) => Nat, t : NatTree): NatTree =  {
+[[34m  Info  [0m]   t
+[[34m  Info  [0m] } ensuring {
+[[34m  Info  [0m]   (out : NatTree) => size(inorder(t)) == size(inorder(out)) && (if (f == zero) {
+[[34m  Info  [0m]     is_zero(inorder(out))
+[[34m  Info  [0m]   } else if (f == inc) {
+[[34m  Info  [0m]     sum(inorder(out)) == plus(sum(inorder(t)), size(inorder(t)))
+[[34m  Info  [0m]   } else {
+[[34m  Info  [0m]     true
+[[34m  Info  [0m]   })
+[[34m  Info  [0m] }
+[[34m  Info  [0m] 

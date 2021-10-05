@@ -1,0 +1,40 @@
+type nat =
+  | O
+  | S of nat
+
+type list =
+  | Nil
+  | Cons of nat * list
+
+type tree =
+  | Leaf
+  | Node of tree * nat * tree
+
+let div2 =
+  fix (div2 : nat -> nat) =
+    fun (n : nat) ->
+      match n with
+      | O -> O
+      | S np ->
+        (match np with
+         | O -> O
+         | S npp -> S (div2 npp))
+;;
+
+let inc =
+  fun (n : nat) ->
+    S n
+;;
+
+synth (nat -> nat) -> tree -> tree satisfying
+
+equiv
+
+fix (f : (nat -> nat) -> tree -> tree) =
+  fun (m:(nat -> nat)) ->
+    fun (t:tree) ->
+      match t with
+        | Leaf -> Leaf
+        | Node (l,x,r) -> Node (f m l,
+                           m x,
+                           f m r)

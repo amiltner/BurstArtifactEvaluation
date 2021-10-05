@@ -1,0 +1,13 @@
+list_map :: arg1:NatList -> arg0:(arg0:Nat -> Nat) -> NatList
+list_map = \xs . \f . 
+    match xs with
+      Nil -> Nil
+      Cons head tail -> Cons (f head)
+                          (list_map tail f)
+
+list_inc :: xs:NatList -> {NatList|sum _v == sum xs + len xs}
+list_inc = \xs . 
+  match xs with
+    Nil -> xs
+    Cons x3 x4 -> Cons (S x3)
+                    (list_inc x4)

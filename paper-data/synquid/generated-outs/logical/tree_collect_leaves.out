@@ -1,0 +1,10 @@
+tree_collect_leaves :: t:BooleanTree -> {BooleanList|((t == (Leaf) ==> _v == (Nil)) && ((isNode t && leftSubTree t == (Leaf)) && rightSubTree t == (Leaf) ==> _v == (Cons (node t) (Nil)))) && ((((((isNode t && isNode (leftSubTree t)) && isNode (rightSubTree t)) && leftSubTree (leftSubTree t) == (Leaf)) && rightSubTree (leftSubTree t) == (Leaf)) && leftSubTree (rightSubTree t) == (Leaf)) && rightSubTree (rightSubTree t) == (Leaf) ==> _v == (Cons (node (leftSubTree t)) ((Cons (node t) ((Cons (node (rightSubTree t)) (Nil)))))))}
+tree_collect_leaves = \t . 
+  match t with
+    Leaf -> Nil
+    Node x4 x5 x6 -> 
+      match x4 with
+        Leaf -> Cons x5 Nil
+        Node x12 x13 x14 -> Cons x13
+                              (Cons x5 (tree_collect_leaves
+                                          x6))

@@ -1,0 +1,91 @@
+type nat =
+  | O
+  | S of nat
+
+type list =
+  | Nil
+  | Cons of nat * list
+
+type cmp =
+  | LT
+  | EQ
+  | GT
+
+let compare =
+  fix (compare : nat -> nat -> cmp) =
+    fun (x1 : nat) ->
+      fun (x2 : nat) ->
+        match (x1,x2) with
+        | (O,O) -> EQ
+        | (O,S _) -> LT
+        | (S _,O) -> GT
+        | (S x1,S x2) -> compare x1 x2
+;;
+
+let insert =
+  fix (insert : list -> nat -> list) =
+    fun (l1 : list) ->
+      fun (n : nat) ->
+        match l1 with
+        | Nil -> Cons (n, Nil)
+        | Cons (h,t) ->
+          match compare n h with
+          | LT -> Cons (n, l1)
+          | EQ -> l1
+          | GT -> Cons (h, insert t n)
+;;
+
+synth list -> list satisfying
+
+type bool =
+  | True
+  | False
+
+let and =
+  fun (b1:bool) ->
+    fun (b2:bool) ->
+      match b1 with
+      | True -> b2
+      | False -> False
+;;
+
+let contains =
+  fix (contains : list -> nat -> bool) =
+    fun (l:list) ->
+    fun (n:nat) ->
+      match l with
+      | Nil -> False
+      | Cons (h,t) ->
+        match h == n with
+        | True -> True
+        | False -> contains t n
+;;
+
+let for_all =
+  fix (for_all : (nat -> bool) -> list -> bool) =
+    fun (f:nat -> bool) ->
+    fun (l:list) ->
+      match l with
+      | Nil -> True
+      | Cons (h,t) ->
+        match f h with
+        | False -> False
+        | True -> for_all f t
+;;
+
+let is_sorted_unique =
+  fix (is_sorted : list -> bool) =
+  fun (l : list) ->
+    match l with
+    | Nil -> True
+    | Cons (_, Nil) -> True
+    | Cons (x, Cons(y, t)) ->
+      match (compare x y) == LT with
+      | True -> is_sorted (Cons (y, t))
+      | False -> False
+;;
+
+fun (input:list) -> (fun (out:list) ->
+    (and
+      (is_sorted_unique out)
+      (for_all (contains out) input)))

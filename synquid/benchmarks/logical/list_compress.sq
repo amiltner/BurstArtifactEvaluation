@@ -1,0 +1,50 @@
+data Nat where
+  Z :: Nat
+  S :: Nat -> Nat
+
+termination measure dec :: Nat -> {Int | _v >= 0} where
+  Z -> 0
+  S m -> 1 + dec m
+  
+data NatList where
+  Nil :: NatList
+  Cons :: Nat -> NatList -> NatList
+
+termination measure len :: NatList -> {Int | _v >= 0} where
+  Nil -> 0
+  Cons x xs -> 1 + len xs
+  
+data Cmp where
+  LT :: Cmp
+  EQ :: Cmp
+  GT :: Cmp
+  
+measure hd :: NatList -> Nat where
+    Nil -> Z
+    Cons h t -> h
+ 
+measure elems :: NatList -> Set Nat where
+  Nil -> []
+  Cons x xs -> [x] + elems xs
+  
+nat_compare :: n1:Nat -> n2:Nat -> { Cmp | if n1 == n2 then _v == EQ else _v != EQ }
+nat_compare = \n1 . \n2 .
+  match n1 with
+    Z ->
+      match n2 with
+        Z   -> EQ
+        S _ -> LT
+    S m1 ->
+      match n2 with
+        Z    -> GT
+        S m2 -> nat_compare m1 m2
+
+measure no_adjacent_pairs :: NatList -> Bool where
+  Nil -> True
+  Cons x xs -> if xs == Nil then True else hd xs != x && no_adjacent_pairs xs
+
+list_compress :: xs:NatList -> { NatList | 
+   (no_adjacent_pairs _v)
+   && (elems xs <= elems _v)
+}
+list_compress = ??

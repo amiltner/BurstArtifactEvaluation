@@ -1,0 +1,94 @@
+[[33mWarning [0m] Refusing to inline recursive function 'listWebElementToWebTree'!
+[[33mWarning [0m] The Z3 native interface is not available, falling back to smt-cvc4.
+[[34m  Info  [0m] ========================== Synthesizing 'list_append' ==========================
+[[34m  Info  [0m] [Symbolic Term Expl. (1->7)] ⟦ α xs, ys
+[[34m  Info  [0m]                                Π ↓list_append(xs, ys) && true
+[[34m  Info  [0m]                                φ len(xs) + len(ys) == len(out)
+[[34m  Info  [0m]                                x out
+[[34m  Info  [0m]                              ⟧ /26,0/
+[[34m  Info  [0m] [Symbolic Term Expl. (1->7)] Failed
+[[34m  Info  [0m] [Optimistic Ground   ] ⟦ α xs, ys
+[[34m  Info  [0m]                          Π ↓list_append(xs, ys) && true
+[[34m  Info  [0m]                          φ len(xs) + len(ys) == len(out)
+[[34m  Info  [0m]                          x out
+[[34m  Info  [0m]                        ⟧ /26,0/
+[[34m  Info  [0m] [Optimistic Ground   ] Failed
+[[34m  Info  [0m] [ADT Split on 'xs'   ] ⟦ α xs, ys
+[[34m  Info  [0m]                          Π ↓list_append(xs, ys) && true
+[[34m  Info  [0m]                          φ len(xs) + len(ys) == len(out)
+[[34m  Info  [0m]                          x out
+[[34m  Info  [0m]                        ⟧ /26,0/
+[[34m  Info  [0m] [ADT Split on 'xs'   ] Decomposed into:
+[[34m  Info  [0m] [ADT Split on 'xs'   ] - ⟦ α ys
+[[34m  Info  [0m]                            Π (↓list_append(Nil, ys) && 谶Nil) && true
+[[34m  Info  [0m]                            φ len(Nil) + len(ys) == len(out)
+[[34m  Info  [0m]                            x out
+[[34m  Info  [0m]                          ⟧ /8,0/
+[[34m  Info  [0m] [ADT Split on 'xs'   ] - ⟦ α head$13, tail$18, ys
+[[34m  Info  [0m]                            Π (↓list_append(Cons(head$13, tail$18), ys) && 谶Cons(head$13, tail$18)) && true
+[[34m  Info  [0m]                            φ len(Cons(head$13, tail$18)) + len(ys) == len(out)
+[[34m  Info  [0m]                            x out
+[[34m  Info  [0m]                          ⟧ /18,0/
+[[34m  Info  [0m] [Symbolic Term Expl. (1->7)] ⟦ α ys
+[[34m  Info  [0m]                                Π (↓list_append(Nil, ys) && 谶Nil) && true
+[[34m  Info  [0m]                                φ len(Nil) + len(ys) == len(out)
+[[34m  Info  [0m]                                x out
+[[34m  Info  [0m]                              ⟧ /8,0/
+[[34m  Info  [0m] [Symbolic Term Expl. (1->7)] Solved  with:  ⟨ true |  ys ⟩
+[[34m  Info  [0m] 
+[[34m  Info  [0m] [ADT Split on 'ys'   ] ⟦ α xs, ys
+[[34m  Info  [0m]                          Π ↓list_append(xs, ys) && true
+[[34m  Info  [0m]                          φ len(xs) + len(ys) == len(out)
+[[34m  Info  [0m]                          x out
+[[34m  Info  [0m]                        ⟧ /26,0/
+[[34m  Info  [0m] [ADT Split on 'ys'   ] Decomposed into:
+[[34m  Info  [0m] [ADT Split on 'ys'   ] - ⟦ α xs
+[[34m  Info  [0m]                            Π (↓list_append(xs, Nil) && 谶Nil) && true
+[[34m  Info  [0m]                            φ len(xs) + len(Nil) == len(out)
+[[34m  Info  [0m]                            x out
+[[34m  Info  [0m]                          ⟧ /8,0/
+[[34m  Info  [0m] [ADT Split on 'ys'   ] - ⟦ α head$14, tail$19, xs
+[[34m  Info  [0m]                            Π (↓list_append(xs, Cons(head$14, tail$19)) && 谶Cons(head$14, tail$19)) && true
+[[34m  Info  [0m]                            φ len(xs) + len(Cons(head$14, tail$19)) == len(out)
+[[34m  Info  [0m]                            x out
+[[34m  Info  [0m]                          ⟧ /18,0/
+[[34m  Info  [0m] [Symbolic Term Expl. (1->7)] ⟦ α xs
+[[34m  Info  [0m]                                Π (↓list_append(xs, Nil) && 谶Nil) && true
+[[34m  Info  [0m]                                φ len(xs) + len(Nil) == len(out)
+[[34m  Info  [0m]                                x out
+[[34m  Info  [0m]                              ⟧ /8,0/
+[[34m  Info  [0m] [Symbolic Term Expl. (1->7)] Solved  with:  ⟨ true |  xs ⟩
+[[34m  Info  [0m] 
+[[34m  Info  [0m] [Introduce calls list_append$0(tail$18, ys$0)] ⟦ α head$13, tail$18, ys
+[[34m  Info  [0m]                                                  Π (↓list_append(Cons(head$13, tail$18), ys) && 谶Cons(head$13, tail$18)) && true
+[[34m  Info  [0m]                                                  φ len(Cons(head$13, tail$18)) + len(ys) == len(out)
+[[34m  Info  [0m]                                                  x out
+[[34m  Info  [0m]                                                ⟧ /18,0/
+[[34m  Info  [0m] [Introduce calls list_append$0(tail$18, ys$0)] Decomposed into:
+[[34m  Info  [0m] [Introduce calls list_append$0(tail$18, ys$0)] - ⟦ α head$13, tail$18, ys
+[[34m  Info  [0m]                                                    Π val rec$9: NatList = list_append(tail$18, ys)
+[[34m  Info  [0m]                                                      (↓list_append(Cons(head$13, tail$18), ys) && 谶Cons(head$13, tail$18) && ↓list_append(tail$18, ys)) && true
+[[34m  Info  [0m]                                                    φ len(Cons(head$13, tail$18)) + len(ys) == len(out)
+[[34m  Info  [0m]                                                    x out
+[[34m  Info  [0m]                                                  ⟧ /18,0/
+[[34m  Info  [0m] [Symbolic Term Expl. (1->7)] ⟦ α head$13, tail$18, ys
+[[34m  Info  [0m]                                Π val rec$9: NatList = list_append(tail$18, ys)
+[[34m  Info  [0m]                                  (↓list_append(Cons(head$13, tail$18), ys) && 谶Cons(head$13, tail$18) && ↓list_append(tail$18, ys)) && true
+[[34m  Info  [0m]                                φ len(Cons(head$13, tail$18)) + len(ys) == len(out)
+[[34m  Info  [0m]                                x out
+[[34m  Info  [0m]                              ⟧ /18,0/
+[[34m  Info  [0m] [Symbolic Term Expl. (1->7)] Solved  with:  ⟨ true |  Cons(head$13, rec$9) ⟩
+[[34m  Info  [0m] 
+[[34m  Info  [0m] Finished in 10377ms
+[[34m  Info  [0m] ================================= list_append =================================
+[[34m  Info  [0m] def list_append(xs : NatList, ys : NatList): NatList =  {
+[[34m  Info  [0m]   xs match {
+[[34m  Info  [0m]     case Nil =>
+[[34m  Info  [0m]       ys
+[[34m  Info  [0m]     case Cons(head, tail) =>
+[[34m  Info  [0m]       Cons(head, list_append(tail, ys))
+[[34m  Info  [0m]   }
+[[34m  Info  [0m] } ensuring {
+[[34m  Info  [0m]   (out : NatList) => len(xs) + len(ys) == len(out)
+[[34m  Info  [0m] }
+[[34m  Info  [0m] 

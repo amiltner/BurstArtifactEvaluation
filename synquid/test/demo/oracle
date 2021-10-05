@@ -1,0 +1,80 @@
+
+
+insert :: x:a -> t:BST a -> {BST a|keys _v == keys t + [x]}
+insert = \x . \t . 
+    match t with
+      Empty -> Node x Empty Empty
+      Node x7 x8 x9 -> 
+        if (x <= x7) && (x7 <= x)
+          then t
+          else 
+            if x7 <= x
+              then Node x7 x8 (insert x x9)
+              else Node x7 (insert x x8) x9
+
+absolutes :: arg0:List Int -> List Nat
+absolutes = \xs . map (\x . 
+                      if 0 <= x
+                        then x
+                        else neg x) xs
+
+
+replicate :: n:Nat -> x:a -> {List a|len _v == n}
+replicate = \n . \x . 
+    if n <= 0
+      then Nil
+      else Cons x (replicate (dec n)
+                     x)
+
+
+snoc :: <r :: a -> a -> Bool> . x:a -> xs:List {a|r _v x} <r> -> {List a <r>|len _v == len xs + 1}
+snoc = \x . \xs . 
+    match xs with
+      Nil -> Cons x Nil
+      Cons x5 x6 -> Cons x5 (snoc x
+                               x6)
+
+reverse :: <r :: a -> a -> Bool> . xs:List a <r> -> {List a <r _1 _0>|len _v == len xs}
+reverse = \xs . 
+  match xs with
+    Nil -> Nil
+    Cons x3 x4 -> snoc x3 (reverse
+                             x4)
+
+
+
+
+toNNF :: e:Expr -> {NExpr|neval _v == eval e}
+toNNF = \e . 
+  match e with
+    Var x2 -> NAtom x2 false
+    Not x6 -> 
+      match x6 with
+        Var x8 -> NAtom x8 true
+        Not x12 -> toNNF x12
+        And x16 x17 -> NOr (toNNF (Not
+                                     x16)) (toNNF (Not x17))
+        Or x26 x27 -> NAnd (toNNF (Not
+                                     x26)) (toNNF (Not x27))
+        Implies x36 x37 -> NAnd (toNNF
+                                   x36) (toNNF (Not x37))
+    And x45 x46 -> NAnd (toNNF x45)
+                     (toNNF x46)
+    Or x53 x54 -> NOr (toNNF x53)
+                    (toNNF x54)
+    Implies x61 x62 -> NOr (toNNF
+                              x62) (toNNF (Not x61))
+
+
+
+sort :: xs:List a -> {IncList a|elems _v == elems xs && len _v == len xs}
+sort = \xs . 
+  let f0 = \x2 . \x3 . \x4 . 
+          match x4 with
+            Nil -> Cons x3 Nil
+            Cons x12 x13 -> 
+              if x3 <= x12
+                then Cons x3 (Cons x12 x13)
+                else Cons x12 (f0 x13 x3 x13) in
+  foldr f0 Nil xs
+

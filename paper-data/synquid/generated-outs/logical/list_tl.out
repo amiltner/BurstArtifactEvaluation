@@ -1,0 +1,5 @@
+list_tl :: xs:NatList -> {NatList|_v == tl xs}
+list_tl = \xs . 
+  match xs with
+    Nil -> xs
+    Cons x2 x3 -> x3

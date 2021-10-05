@@ -1,0 +1,40 @@
+data Nat where
+  Z :: Nat
+  S :: Nat -> Nat
+
+termination measure dec :: Nat -> {Int | _v >= 0} where
+  Z -> 0
+  S m -> 1 + dec m
+  
+data NatList where
+  Nil :: NatList
+  Cons :: Nat -> NatList -> NatList
+
+termination measure len :: NatList -> {Int | _v >= 0} where
+  Nil -> 0
+  Cons x xs -> 1 + len xs
+  
+measure head :: NatList -> Nat where
+    Nil -> Z
+    Cons h t -> h
+    
+measure tail :: NatList -> NatList where
+    Nil -> Nil
+    Cons h t -> t
+    
+measure is_empty :: NatList -> Bool where
+    Nil -> True
+    Cons h t -> False
+  
+data NatOpt where
+  None :: NatOpt
+  Some :: Nat -> NatOpt
+  
+list_last :: xs:NatList -> { NatOpt | 
+
+    (xs == Nil ==> _v == None) &&
+    ((!(is_empty xs) && !(is_empty (tail xs)) && is_empty (tail (tail xs))) ==> _v == Some (head (tail xs))) &&
+    ((!(is_empty xs) && !(is_empty (tail xs)) && !(is_empty (tail (tail xs))) && is_empty (tail (tail (tail xs)))) ==> _v == Some (head (tail (tail xs))))
+
+}
+list_last = ??

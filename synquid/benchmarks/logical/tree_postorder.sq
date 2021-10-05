@@ -1,0 +1,133 @@
+data Nat where
+    Z :: Nat
+    S :: Nat -> Nat
+
+data NatOption where
+    None :: NatOption
+    Some :: Nat -> NatOption
+
+measure get_val :: NatOption -> Nat where
+    None -> Z
+    Some n -> n
+
+termination measure dec :: Nat -> {Int | _v >= 0} where
+    Z -> 0
+    S m -> 1 + dec m
+
+data NatList where
+    Nil :: NatList
+    Cons :: Nat -> NatList -> NatList
+ 
+measure elems_list :: NatList -> Set Nat where
+  Nil -> []
+  Cons x xs -> [x] + elems_list xs
+
+measure hd :: NatList -> Nat where
+    Nil -> Z
+    Cons h t -> h
+
+measure tl :: NatList -> NatList where
+    Nil -> Nil
+    Cons h t -> t
+
+termination measure len :: NatList -> {Int | _v >= 0} where
+    Nil -> 0
+    Cons x xs -> 1 + len xs
+
+data NatTree where
+    Leaf :: NatTree
+    Node :: NatTree -> Nat -> NatTree -> NatTree
+
+measure tree_val :: NatTree -> Nat where
+  Leaf -> Z
+  Node l x r -> x
+
+measure left_tree :: NatTree -> NatTree where
+  Leaf -> Leaf
+  Node l x r -> l
+
+measure right_tree :: NatTree -> NatTree where
+  Leaf -> Leaf
+  Node l x r -> r
+
+measure elems_tree :: NatTree -> Set Nat where
+  Leaf -> []
+  Node l x r -> [x] + elems_tree l + elems_tree r
+
+termination measure sizeTree :: NatTree -> {Int | _v >= 0} where
+    Leaf -> 0
+    Node left x right -> 1 + sizeTree left + sizeTree right
+
+data Triple a b c where
+    T :: a -> b -> c -> Triple a b c
+
+measure fstT :: Triple a b c -> a where
+    T x y z -> x
+
+measure sndT :: Triple a b c -> b where
+    T x y z -> y
+
+measure trdT :: Triple a b c -> c where
+    T x y z -> z
+
+list_append :: NatList -> NatList -> NatList
+list_append =
+  \l1 . \l2 .
+    match l1 with
+      Nil -> l2
+      Cons head tail -> Cons head (list_append tail l2)
+
+data NatOPair where
+    P :: Nat -> NatOption -> NatOPair
+
+measure fstP :: NatOPair -> Nat where
+    P x y -> x
+
+measure sndP :: NatOPair -> NatOption where
+    P x y -> y
+
+measure is_above :: NatOPair -> Bool where
+    P x y ->
+      if y == None then True else
+      (dec x) >= (dec (get_val y))
+
+measure is_below :: NatOPair -> Bool where
+    P x y ->
+      if y == None then True else
+      (dec x) <= (dec (get_val y))
+
+measure extract_if_nonempty :: NatOPair -> Nat where
+    P x y ->
+      if y == None then x else get_val y
+
+data AncestorPair where
+  AP :: Nat -> Nat -> AncestorPair
+
+data NNLPair where
+  NNLPair :: Nat -> NatList -> NNLPair
+
+measure to_ap_set :: NNLPair -> Set AncestorPair where
+  NNLPair n nl ->
+    if nl == Nil then
+      []
+    else
+      [AP n (hd nl)] + to_ap_set (NNLPair n (tl nl))
+
+data ApsAcc where
+  AA :: NatTree -> NatList -> ApsAcc
+
+measure get_aps :: ApsAcc -> Set AncestorPair where
+  AA nt nl ->
+    if nt == Leaf then
+      []
+    else
+      to_ap_set (NNLPair (tree_val nt) nl) +
+      get_aps (AA (left_tree nt) (Cons (tree_val nt) nl)) +
+      get_aps (AA (right_tree nt) (Cons (tree_val nt) nl))
+
+measure get_afters :: NatList -> Set AncestorPair where
+  Nil -> []
+  Cons h t -> to_ap_set (NNLPair h t) + get_afters t
+
+tree_postorder :: t:NatTree -> { NatList | get_aps (AA t Nil) == get_afters _v && elems_tree t == elems_list _v }
+tree_postorder = ??

@@ -1,0 +1,5 @@
+- [ ] Support @traceInduct for proving timebounds. For this we need to handle templates in body.
+- [ ] port compisitional verification to higher-order resource bounds
+- [ ] support @finite annotation
+- [ ] Support type instances in closure conversion
+- [ ] benchmarks: iterative DP, lazy pairing heaps, implicit queues, amortized bounds.

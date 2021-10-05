@@ -1,0 +1,20 @@
+opam-version: "1.2"
+
+name: "Myth"
+version: "0.6b"
+
+bug-reports: "https://github.com/SaswatPadhi/DSInvGen/issues"
+license: "MIT"
+dev-repo: "git+https://github.com:SaswatPadhi/DSInvGen.git"
+
+available: [ ocaml-version >= "4.04.2" ]
+
+build: [
+  [ "dune" "build" "-p" name "-j" jobs ]
+]
+
+depends: [
+  "dune"          {build & >= "1.1.1"}
+  "alcotest"      {test & >= "0.7"}
+  "core"          {>= "0.11"}
+]

@@ -1,0 +1,17 @@
+type bool =
+  | True
+  | False
+
+type list =
+  | Nil
+  | Cons of bool * list
+
+synth list -> bool satisfying
+
+[Nil] -> True,
+[Cons(False,Nil)] -> True,
+[Cons(True,Nil)] -> False,
+[Cons(False,Cons(False,Nil))] -> True,
+[Cons(False,Cons(True,Nil))] -> False,
+[Cons(True,Cons(False,Nil))] -> False,
+[Cons(True,Cons(True,Nil))] -> True,

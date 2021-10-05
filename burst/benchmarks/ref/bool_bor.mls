@@ -1,0 +1,12 @@
+include "bool.decls"
+
+synth bool -> bool -> bool satisfying
+
+equiv
+
+fix (f : bool -> bool -> bool) =
+  fun (b1:bool) ->
+    fun (b2:bool) ->
+    match b1 with
+      | False -> b2
+      | True -> True

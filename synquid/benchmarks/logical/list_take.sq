@@ -1,0 +1,23 @@
+data Nat where
+  Z :: Nat
+  S :: Nat -> Nat
+
+termination measure dec :: Nat -> {Int | _v >= 0} where
+  Z -> 0
+  S m -> 1 + dec m
+  
+data NatList where
+  Nil :: NatList
+  Cons :: Nat -> NatList -> NatList
+
+termination measure len :: NatList -> {Int | _v >= 0} where
+  Nil -> 0
+  Cons x xs -> 1 + len xs
+  
+list_take :: n:Nat -> xs:NatList -> { NatList | 
+
+   (len xs < dec n ==> len _v == len xs) &&
+   (len xs >= dec n ==> len _v == dec n)
+
+}
+list_take = ??

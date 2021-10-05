@@ -1,0 +1,48 @@
+data Nat where
+  Z :: Nat
+  S :: Nat -> Nat
+termination measure dec :: Nat -> {Int | _v >= 0} where
+  Z -> 0
+  S m -> 1 + dec m
+    
+data NatList where
+  Nil :: NatList
+  Cons :: Nat -> NatList -> NatList
+  
+measure head :: NatList -> Nat where
+    Nil -> Z
+    Cons h t -> h
+    
+measure tail :: NatList -> NatList where
+    Nil -> Nil
+    Cons h t -> t
+  
+termination measure len :: NatList -> {Int | _v >= 0} where
+  Nil -> 0
+  Cons x xs -> 1 + len xs
+
+data Boolean where
+  T :: Boolean
+  F :: Boolean
+  
+zero :: Nat -> Nat
+zero = \n . Z
+  
+inc :: Nat -> Nat
+inc = \n . S n
+
+measure length :: NatList -> {Int | _v >= 0} where
+  Nil -> 0
+  Cons h t -> 1 + length t
+
+measure sum :: NatList -> {Int | _v >= 0} where
+  Nil -> 0
+  Cons h t -> dec h + sum t
+    
+data PNatList where
+  P :: (Nat -> Boolean) -> NatList -> PNatList
+
+list_map :: f:(Nat -> Nat) -> l:NatList -> {NatList |
+         (f == inc) ==> (sum l + length l == sum _v) &&
+         (f == zero) ==> (sum _v == 0) }
+list_map = ??

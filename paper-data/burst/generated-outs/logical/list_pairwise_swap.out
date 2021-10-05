@@ -1,0 +1,42 @@
+fix (f : list -> list) =
+  fun (x:list) ->
+    match x with
+      | Nil _ -> x
+      | Cons _ -> (match Un_Cons x . 1 with
+                     | Nil _ -> Un_Cons x . 1
+                     | Cons _ -> (match f (Un_Cons x . 1) with
+                                    | Nil _ -> Cons (Un_Cons (Un_Cons x . 1)
+                                                       . 0,
+                                                      Cons (Un_Cons x . 0,
+                                                             f
+                                                               (Un_Cons (
+                                                                  Un_Cons x .
+                                                                    1)
+                                                                  . 1)))
+                                    | Cons _ -> Nil))
+;
+0.02159399999999995
+;
+0.006757000000000013
+;
+0.012912000000000066
+;
+0.0019930000000000225
+;
+0.019144000000000043
+;
+0.0038529999999999953
+;
+0.26467899999999989
+;
+0.042511999999999939
+;
+0.
+;
+0.
+;
+0
+;
+0.
+;
+0.

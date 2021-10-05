@@ -1,0 +1,30 @@
+[[33mWarning [0m] Refusing to inline recursive function 'listWebElementToWebTree'!
+[[33mWarning [0m] The Z3 native interface is not available, falling back to smt-cvc4.
+[[34m  Info  [0m] =========================== Synthesizing 'list_inc' ===========================
+[[34m  Info  [0m] [Symbolic Term Expl. (1->7)] ⟦ α xs
+[[34m  Info  [0m]                                Π ↓list_inc(xs) && true
+[[34m  Info  [0m]                                φ len(xs) + sum(xs) == sum(out)
+[[34m  Info  [0m]                                x out
+[[34m  Info  [0m]                              ⟧ /24,0/
+[[34m  Info  [0m] STE could not prove the validity of the resulting expression
+[[34m  Info  [0m] STE could not prove the validity of the resulting 1 expression(s)
+[[34m  Info  [0m] [Symbolic Term Expl. (1->7)] Solved (untrusted) with:  ⟨ true |  list_map(xs, (a0 : Nat) => S(a0)) ⟩
+[[34m  Info  [0m] 
+[[34m  Info  [0m] Finished in 5460ms
+[[34m  Info  [0m] Solution requires validation
+[[34m  Info  [0m]  - Now considering 'postcondition' VC for list_inc @21:49...
+[[33mWarning [0m]  => TIMEOUT
+[[34m  Info  [0m]  - Now considering 'precond. (call len(xs))' VC for list_inc @41:5...
+[[34m  Info  [0m]  => VALID
+[[34m  Info  [0m]  - Now considering 'precond. (call sum(xs))' VC for list_inc @41:13...
+[[34m  Info  [0m]  => VALID
+[[34m  Info  [0m]  - Now considering 'precond. (call sum(out))' VC for list_inc @41:22...
+[[34m  Info  [0m]  => VALID
+[[33mWarning [0m] Solution may be invalid:
+[[34m  Info  [0m] =================================== list_inc ===================================
+[[34m  Info  [0m] def list_inc(xs : NatList): NatList =  {
+[[34m  Info  [0m]   list_map(xs, (a0 : Nat) => S(a0))
+[[34m  Info  [0m] } ensuring {
+[[34m  Info  [0m]   (out : NatList) => len(xs) + sum(xs) == sum(out)
+[[34m  Info  [0m] }
+[[34m  Info  [0m] 

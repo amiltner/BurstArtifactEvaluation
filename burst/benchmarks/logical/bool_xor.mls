@@ -1,0 +1,14 @@
+include "bool.decls"
+
+synth bool -> bool -> bool satisfying
+
+let xor =
+  fun (b1:bool) ->
+    fun (b2:bool) ->
+      b1 != b2
+;;
+
+fun (in1in2:bool*bool) -> (fun (out : bool) ->
+    match (in1in2.0 == in1in2.1) with
+    | False -> out == True
+    | True -> out == False)

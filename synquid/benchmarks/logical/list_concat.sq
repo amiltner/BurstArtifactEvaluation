@@ -1,0 +1,38 @@
+data Nat where
+  Z :: Nat
+  S :: Nat -> Nat
+
+termination measure dec :: Nat -> {Int | _v >= 0} where
+  Z -> 0
+  S m -> 1 + dec m
+  
+data NatList where
+  Nil :: NatList
+  Cons :: Nat -> NatList -> NatList
+
+termination measure len :: NatList -> {Int | _v >= 0} where
+  Nil -> 0
+  Cons x xs -> 1 + len xs
+  
+data NatListList where
+  LNil :: NatListList
+  LCons :: NatList -> NatListList -> NatListList
+
+termination measure llen :: NatListList -> {Int | _v >= 0} where
+  LNil -> 0
+  LCons x xs -> 1 + llen xs
+  
+list_append :: l1:NatList -> l2:NatList -> { NatList | len l1 + len l2 == len _v }
+list_append = \l1 . \l2 .
+  match l1 with
+    Nil            -> l2
+    Cons head tail -> Cons head (list_append tail l2)
+
+measure lelems :: NatListList -> {Int | _v >= 0} where
+  LNil -> 0
+  LCons x xs -> len x + lelems xs
+
+list_concat :: xss:NatListList -> { NatList | 
+   (len _v == lelems xss)
+}
+list_concat = ??

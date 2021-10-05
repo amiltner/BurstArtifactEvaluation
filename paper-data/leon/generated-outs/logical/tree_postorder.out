@@ -1,0 +1,163 @@
+[[33mWarning [0m] Refusing to inline recursive function 'listWebElementToWebTree'!
+[[33mWarning [0m] The Z3 native interface is not available, falling back to smt-cvc4.
+[[34m  Info  [0m] ======================== Synthesizing 'tree_postorder' ========================
+[[34m  Info  [0m] [Symbolic Term Expl. (1->7)] ⟦ α t
+[[34m  Info  [0m]                                Π ↓tree_postorder(t) && true
+[[34m  Info  [0m]                                φ t match {
+[[34m  Info  [0m]                                    case Leaf =>
+[[34m  Info  [0m]                                      out == Nil
+[[34m  Info  [0m]                                    case Node(Node(Leaf, a, Leaf), b, Leaf) =>
+[[34m  Info  [0m]                                      out == Cons(a, Cons(b, Nil))
+[[34m  Info  [0m]                                    case Node(Leaf, a, Node(Leaf, b, Leaf)) =>
+[[34m  Info  [0m]                                      out == Cons(b, Cons(a, Nil))
+[[34m  Info  [0m]                                    case _ =>
+[[34m  Info  [0m]                                      true
+[[34m  Info  [0m]                                  }
+[[34m  Info  [0m]                                x out
+[[34m  Info  [0m]                              ⟧ /27,0/
+[[34m  Info  [0m] [Symbolic Term Expl. (1->7)] Failed
+[[34m  Info  [0m] [Optimistic Ground   ] ⟦ α t
+[[34m  Info  [0m]                          Π ↓tree_postorder(t) && true
+[[34m  Info  [0m]                          φ t match {
+[[34m  Info  [0m]                              case Leaf =>
+[[34m  Info  [0m]                                out == Nil
+[[34m  Info  [0m]                              case Node(Node(Leaf, a, Leaf), b, Leaf) =>
+[[34m  Info  [0m]                                out == Cons(a, Cons(b, Nil))
+[[34m  Info  [0m]                              case Node(Leaf, a, Node(Leaf, b, Leaf)) =>
+[[34m  Info  [0m]                                out == Cons(b, Cons(a, Nil))
+[[34m  Info  [0m]                              case _ =>
+[[34m  Info  [0m]                                true
+[[34m  Info  [0m]                            }
+[[34m  Info  [0m]                          x out
+[[34m  Info  [0m]                        ⟧ /27,0/
+[[34m  Info  [0m] [Optimistic Ground   ] Failed
+[[34m  Info  [0m] [ADT Split on 't'    ] ⟦ α t
+[[34m  Info  [0m]                          Π ↓tree_postorder(t) && true
+[[34m  Info  [0m]                          φ t match {
+[[34m  Info  [0m]                              case Leaf =>
+[[34m  Info  [0m]                                out == Nil
+[[34m  Info  [0m]                              case Node(Node(Leaf, a, Leaf), b, Leaf) =>
+[[34m  Info  [0m]                                out == Cons(a, Cons(b, Nil))
+[[34m  Info  [0m]                              case Node(Leaf, a, Node(Leaf, b, Leaf)) =>
+[[34m  Info  [0m]                                out == Cons(b, Cons(a, Nil))
+[[34m  Info  [0m]                              case _ =>
+[[34m  Info  [0m]                                true
+[[34m  Info  [0m]                            }
+[[34m  Info  [0m]                          x out
+[[34m  Info  [0m]                        ⟧ /27,0/
+[[34m  Info  [0m] [ADT Split on 't'    ] Decomposed into:
+[[34m  Info  [0m] [ADT Split on 't'    ] - ⟦ α ()
+[[34m  Info  [0m]                            Π (↓tree_postorder(Leaf) && 谶Leaf) && true
+[[34m  Info  [0m]                            φ Leaf match {
+[[34m  Info  [0m]                                case Leaf =>
+[[34m  Info  [0m]                                  out == Nil
+[[34m  Info  [0m]                                case Node(Node(Leaf, a, Leaf), b, Leaf) =>
+[[34m  Info  [0m]                                  out == Cons(a, Cons(b, Nil))
+[[34m  Info  [0m]                                case Node(Leaf, a, Node(Leaf, b, Leaf)) =>
+[[34m  Info  [0m]                                  out == Cons(b, Cons(a, Nil))
+[[34m  Info  [0m]                                case _ =>
+[[34m  Info  [0m]                                  true
+[[34m  Info  [0m]                              }
+[[34m  Info  [0m]                            x out
+[[34m  Info  [0m]                          ⟧ /1,0/
+[[34m  Info  [0m] [ADT Split on 't'    ] - ⟦ α left$19, n$7, right$19
+[[34m  Info  [0m]                            Π (↓tree_postorder(Node(left$19, n$7, right$19)) && 谶Node(left$19, n$7, right$19)) && true
+[[34m  Info  [0m]                            φ Node(left$19, n$7, right$19) match {
+[[34m  Info  [0m]                                case Leaf =>
+[[34m  Info  [0m]                                  out == Nil
+[[34m  Info  [0m]                                case Node(Node(Leaf, a, Leaf), b, Leaf) =>
+[[34m  Info  [0m]                                  out == Cons(a, Cons(b, Nil))
+[[34m  Info  [0m]                                case Node(Leaf, a, Node(Leaf, b, Leaf)) =>
+[[34m  Info  [0m]                                  out == Cons(b, Cons(a, Nil))
+[[34m  Info  [0m]                                case _ =>
+[[34m  Info  [0m]                                  true
+[[34m  Info  [0m]                              }
+[[34m  Info  [0m]                            x out
+[[34m  Info  [0m]                          ⟧ /26,0/
+[[34m  Info  [0m] [Ground              ] ⟦ α ()
+[[34m  Info  [0m]                          Π (↓tree_postorder(Leaf) && 谶Leaf) && true
+[[34m  Info  [0m]                          φ Leaf match {
+[[34m  Info  [0m]                              case Leaf =>
+[[34m  Info  [0m]                                out == Nil
+[[34m  Info  [0m]                              case Node(Node(Leaf, a, Leaf), b, Leaf) =>
+[[34m  Info  [0m]                                out == Cons(a, Cons(b, Nil))
+[[34m  Info  [0m]                              case Node(Leaf, a, Node(Leaf, b, Leaf)) =>
+[[34m  Info  [0m]                                out == Cons(b, Cons(a, Nil))
+[[34m  Info  [0m]                              case _ =>
+[[34m  Info  [0m]                                true
+[[34m  Info  [0m]                            }
+[[34m  Info  [0m]                          x out
+[[34m  Info  [0m]                        ⟧ /1,0/
+[[34m  Info  [0m] [Ground              ] Solved  with:  ⟨ true |  Nil ⟩
+[[34m  Info  [0m] 
+[[34m  Info  [0m] [Introduce calls tree_postorder$0(left$19), tree_postorder$0(right$19)] ⟦ α left$19, n$7, right$19
+[[34m  Info  [0m]                                                                           Π (↓tree_postorder(Node(left$19, n$7, right$19)) && 谶Node(left$19, n$7, right$19)) && true
+[[34m  Info  [0m]                                                                           φ Node(left$19, n$7, right$19) match {
+[[34m  Info  [0m]                                                                               case Leaf =>
+[[34m  Info  [0m]                                                                                 out == Nil
+[[34m  Info  [0m]                                                                               case Node(Node(Leaf, a, Leaf), b, Leaf) =>
+[[34m  Info  [0m]                                                                                 out == Cons(a, Cons(b, Nil))
+[[34m  Info  [0m]                                                                               case Node(Leaf, a, Node(Leaf, b, Leaf)) =>
+[[34m  Info  [0m]                                                                                 out == Cons(b, Cons(a, Nil))
+[[34m  Info  [0m]                                                                               case _ =>
+[[34m  Info  [0m]                                                                                 true
+[[34m  Info  [0m]                                                                             }
+[[34m  Info  [0m]                                                                           x out
+[[34m  Info  [0m]                                                                         ⟧ /26,0/
+[[34m  Info  [0m] [Introduce calls tree_postorder$0(left$19), tree_postorder$0(right$19)] Decomposed into:
+[[34m  Info  [0m] [Introduce calls tree_postorder$0(left$19), tree_postorder$0(right$19)] - ⟦ α left$19, n$7, right$19
+[[34m  Info  [0m]                                                                             Π val rec$7: NatList = tree_postorder(left$19)
+[[34m  Info  [0m]                                                                               val rec$8: NatList = tree_postorder(right$19)
+[[34m  Info  [0m]                                                                               (↓tree_postorder(Node(left$19, n$7, right$19)) && 谶Node(left$19, n$7, right$19) && ↓tree_postorder(left$19) && ↓tree_postorder(right$19)) && true
+[[34m  Info  [0m]                                                                             φ Node(left$19, n$7, right$19) match {
+[[34m  Info  [0m]                                                                                 case Leaf =>
+[[34m  Info  [0m]                                                                                   out == Nil
+[[34m  Info  [0m]                                                                                 case Node(Node(Leaf, a, Leaf), b, Leaf) =>
+[[34m  Info  [0m]                                                                                   out == Cons(a, Cons(b, Nil))
+[[34m  Info  [0m]                                                                                 case Node(Leaf, a, Node(Leaf, b, Leaf)) =>
+[[34m  Info  [0m]                                                                                   out == Cons(b, Cons(a, Nil))
+[[34m  Info  [0m]                                                                                 case _ =>
+[[34m  Info  [0m]                                                                                   true
+[[34m  Info  [0m]                                                                               }
+[[34m  Info  [0m]                                                                             x out
+[[34m  Info  [0m]                                                                           ⟧ /26,0/
+[[34m  Info  [0m] [Symbolic Term Expl. (1->7)] ⟦ α left$19, n$7, right$19
+[[34m  Info  [0m]                                Π val rec$7: NatList = tree_postorder(left$19)
+[[34m  Info  [0m]                                  val rec$8: NatList = tree_postorder(right$19)
+[[34m  Info  [0m]                                  (↓tree_postorder(Node(left$19, n$7, right$19)) && 谶Node(left$19, n$7, right$19) && ↓tree_postorder(left$19) && ↓tree_postorder(right$19)) && true
+[[34m  Info  [0m]                                φ Node(left$19, n$7, right$19) match {
+[[34m  Info  [0m]                                    case Leaf =>
+[[34m  Info  [0m]                                      out == Nil
+[[34m  Info  [0m]                                    case Node(Node(Leaf, a, Leaf), b, Leaf) =>
+[[34m  Info  [0m]                                      out == Cons(a, Cons(b, Nil))
+[[34m  Info  [0m]                                    case Node(Leaf, a, Node(Leaf, b, Leaf)) =>
+[[34m  Info  [0m]                                      out == Cons(b, Cons(a, Nil))
+[[34m  Info  [0m]                                    case _ =>
+[[34m  Info  [0m]                                      true
+[[34m  Info  [0m]                                  }
+[[34m  Info  [0m]                                x out
+[[34m  Info  [0m]                              ⟧ /26,0/
+[[34m  Info  [0m] [Symbolic Term Expl. (1->7)] Solved  with:  ⟨ true |  list_append(list_append(rec$7, rec$8), Cons(n$7, Nil)) ⟩
+[[34m  Info  [0m] 
+[[34m  Info  [0m] Finished in 7605ms
+[[34m  Info  [0m] ================================ tree_postorder ================================
+[[34m  Info  [0m] def tree_postorder(t : NatTree): NatList =  {
+[[34m  Info  [0m]   t match {
+[[34m  Info  [0m]     case Leaf =>
+[[34m  Info  [0m]       Nil
+[[34m  Info  [0m]     case Node(left, n, right) =>
+[[34m  Info  [0m]       list_append(list_append(tree_postorder(left), tree_postorder(right)), Cons(n, Nil))
+[[34m  Info  [0m]   }
+[[34m  Info  [0m] } ensuring {
+[[34m  Info  [0m]   (out : NatList) => t match {
+[[34m  Info  [0m]     case Leaf =>
+[[34m  Info  [0m]       out == Nil
+[[34m  Info  [0m]     case Node(Node(Leaf, a, Leaf), b, Leaf) =>
+[[34m  Info  [0m]       out == Cons(a, Cons(b, Nil))
+[[34m  Info  [0m]     case Node(Leaf, a, Node(Leaf, b, Leaf)) =>
+[[34m  Info  [0m]       out == Cons(b, Cons(a, Nil))
+[[34m  Info  [0m]     case _ =>
+[[34m  Info  [0m]       true
+[[34m  Info  [0m]   }
+[[34m  Info  [0m] }
+[[34m  Info  [0m] 

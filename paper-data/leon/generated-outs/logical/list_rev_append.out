@@ -1,0 +1,138 @@
+[[33mWarning [0m] Refusing to inline recursive function 'listWebElementToWebTree'!
+[[33mWarning [0m] The Z3 native interface is not available, falling back to smt-cvc4.
+[[34m  Info  [0m] ======================== Synthesizing 'list_rev_append' ========================
+[[34m  Info  [0m] [Symbolic Term Expl. (1->7)] ⟦ α l1
+[[34m  Info  [0m]                                Π ↓list_rev_append(l1) && true
+[[34m  Info  [0m]                                φ l1 match {
+[[34m  Info  [0m]                                    case Nil =>
+[[34m  Info  [0m]                                      out == Nil
+[[34m  Info  [0m]                                    case Cons(h, t) =>
+[[34m  Info  [0m]                                      len(l1) == len(out) && h == list_last(out)
+[[34m  Info  [0m]                                  }
+[[34m  Info  [0m]                                x out
+[[34m  Info  [0m]                              ⟧ /24,0/
+[[34m  Info  [0m] [Symbolic Term Expl. (1->7)] Failed
+[[34m  Info  [0m] [Optimistic Ground   ] ⟦ α l1
+[[34m  Info  [0m]                          Π ↓list_rev_append(l1) && true
+[[34m  Info  [0m]                          φ l1 match {
+[[34m  Info  [0m]                              case Nil =>
+[[34m  Info  [0m]                                out == Nil
+[[34m  Info  [0m]                              case Cons(h, t) =>
+[[34m  Info  [0m]                                len(l1) == len(out) && h == list_last(out)
+[[34m  Info  [0m]                            }
+[[34m  Info  [0m]                          x out
+[[34m  Info  [0m]                        ⟧ /24,0/
+[[34m  Info  [0m] [Optimistic Ground   ] Failed
+[[34m  Info  [0m] [ADT Split on 'l1'   ] ⟦ α l1
+[[34m  Info  [0m]                          Π ↓list_rev_append(l1) && true
+[[34m  Info  [0m]                          φ l1 match {
+[[34m  Info  [0m]                              case Nil =>
+[[34m  Info  [0m]                                out == Nil
+[[34m  Info  [0m]                              case Cons(h, t) =>
+[[34m  Info  [0m]                                len(l1) == len(out) && h == list_last(out)
+[[34m  Info  [0m]                            }
+[[34m  Info  [0m]                          x out
+[[34m  Info  [0m]                        ⟧ /24,0/
+[[34m  Info  [0m] [ADT Split on 'l1'   ] Decomposed into:
+[[34m  Info  [0m] [ADT Split on 'l1'   ] - ⟦ α ()
+[[34m  Info  [0m]                            Π (↓list_rev_append(Nil) && 谶Nil) && true
+[[34m  Info  [0m]                            φ Nil match {
+[[34m  Info  [0m]                                case Nil =>
+[[34m  Info  [0m]                                  out == Nil
+[[34m  Info  [0m]                                case Cons(h, t) =>
+[[34m  Info  [0m]                                  len(Nil) == len(out) && h == list_last(out)
+[[34m  Info  [0m]                              }
+[[34m  Info  [0m]                            x out
+[[34m  Info  [0m]                          ⟧ /1,0/
+[[34m  Info  [0m] [ADT Split on 'l1'   ] - ⟦ α head$14, tail$19
+[[34m  Info  [0m]                            Π (↓list_rev_append(Cons(head$14, tail$19)) && 谶Cons(head$14, tail$19)) && true
+[[34m  Info  [0m]                            φ Cons(head$14, tail$19) match {
+[[34m  Info  [0m]                                case Nil =>
+[[34m  Info  [0m]                                  out == Nil
+[[34m  Info  [0m]                                case Cons(h, t) =>
+[[34m  Info  [0m]                                  len(Cons(head$14, tail$19)) == len(out) && h == list_last(out)
+[[34m  Info  [0m]                              }
+[[34m  Info  [0m]                            x out
+[[34m  Info  [0m]                          ⟧ /23,0/
+[[34m  Info  [0m] [Ground              ] ⟦ α ()
+[[34m  Info  [0m]                          Π (↓list_rev_append(Nil) && 谶Nil) && true
+[[34m  Info  [0m]                          φ Nil match {
+[[34m  Info  [0m]                              case Nil =>
+[[34m  Info  [0m]                                out == Nil
+[[34m  Info  [0m]                              case Cons(h, t) =>
+[[34m  Info  [0m]                                len(Nil) == len(out) && h == list_last(out)
+[[34m  Info  [0m]                            }
+[[34m  Info  [0m]                          x out
+[[34m  Info  [0m]                        ⟧ /1,0/
+[[34m  Info  [0m] [Ground              ] Solved  with:  ⟨ true |  Nil ⟩
+[[34m  Info  [0m] 
+[[34m  Info  [0m] [Introduce calls list_rev_append$0(tail$19)] ⟦ α head$14, tail$19
+[[34m  Info  [0m]                                                Π (↓list_rev_append(Cons(head$14, tail$19)) && 谶Cons(head$14, tail$19)) && true
+[[34m  Info  [0m]                                                φ Cons(head$14, tail$19) match {
+[[34m  Info  [0m]                                                    case Nil =>
+[[34m  Info  [0m]                                                      out == Nil
+[[34m  Info  [0m]                                                    case Cons(h, t) =>
+[[34m  Info  [0m]                                                      len(Cons(head$14, tail$19)) == len(out) && h == list_last(out)
+[[34m  Info  [0m]                                                  }
+[[34m  Info  [0m]                                                x out
+[[34m  Info  [0m]                                              ⟧ /23,0/
+[[34m  Info  [0m] [Introduce calls list_rev_append$0(tail$19)] Decomposed into:
+[[34m  Info  [0m] [Introduce calls list_rev_append$0(tail$19)] - ⟦ α head$14, tail$19
+[[34m  Info  [0m]                                                  Π val rec$7: NatList = list_rev_append(tail$19)
+[[34m  Info  [0m]                                                    (↓list_rev_append(Cons(head$14, tail$19)) && 谶Cons(head$14, tail$19) && ↓list_rev_append(tail$19)) && true
+[[34m  Info  [0m]                                                  φ Cons(head$14, tail$19) match {
+[[34m  Info  [0m]                                                      case Nil =>
+[[34m  Info  [0m]                                                        out == Nil
+[[34m  Info  [0m]                                                      case Cons(h, t) =>
+[[34m  Info  [0m]                                                        len(Cons(head$14, tail$19)) == len(out) && h == list_last(out)
+[[34m  Info  [0m]                                                    }
+[[34m  Info  [0m]                                                  x out
+[[34m  Info  [0m]                                                ⟧ /23,0/
+[[34m  Info  [0m] [Symbolic Term Expl. (1->7)] ⟦ α head$14, tail$19
+[[34m  Info  [0m]                                Π val rec$7: NatList = list_rev_append(tail$19)
+[[34m  Info  [0m]                                  (↓list_rev_append(Cons(head$14, tail$19)) && 谶Cons(head$14, tail$19) && ↓list_rev_append(tail$19)) && true
+[[34m  Info  [0m]                                φ Cons(head$14, tail$19) match {
+[[34m  Info  [0m]                                    case Nil =>
+[[34m  Info  [0m]                                      out == Nil
+[[34m  Info  [0m]                                    case Cons(h, t) =>
+[[34m  Info  [0m]                                      len(Cons(head$14, tail$19)) == len(out) && h == list_last(out)
+[[34m  Info  [0m]                                  }
+[[34m  Info  [0m]                                x out
+[[34m  Info  [0m]                              ⟧ /23,0/
+[[34m  Info  [0m] STE could not prove the validity of the resulting expression
+[[34m  Info  [0m] STE could not prove the validity of the resulting expression
+[[34m  Info  [0m] STE could not prove the validity of the resulting 2 expression(s)
+[[34m  Info  [0m] [Symbolic Term Expl. (1->7)] Solved (untrusted) with:  ⟨ true |  list_append(tail$19, Cons(head$14, Nil)) ⟩
+[[34m  Info  [0m] 
+[[34m  Info  [0m] Finished in 13593ms
+[[34m  Info  [0m] Solution requires validation
+[[34m  Info  [0m]  - Now considering 'postcondition' VC for list_rev_append @21:56...
+[[33mWarning [0m]  => TIMEOUT
+[[34m  Info  [0m]  - Now considering 'precond. (call len(l1))' VC for list_rev_append @44:7...
+[[34m  Info  [0m]  => VALID
+[[34m  Info  [0m]  - Now considering 'precond. (call len(out))' VC for list_rev_append @44:16...
+[[34m  Info  [0m]  => VALID
+[[34m  Info  [0m]  - Now considering 'precond. (call list_last(out))' VC for list_rev_append @44:34...
+[[34m  Info  [0m]  => VALID
+[[34m  Info  [0m]  - Now considering 'match exhaustiveness' VC for list_rev_append @?:?...
+[[34m  Info  [0m]  => VALID
+[[34m  Info  [0m]  - Now considering 'match exhaustiveness' VC for list_rev_append @41:3...
+[[34m  Info  [0m]  => VALID
+[[33mWarning [0m] Solution may be invalid:
+[[34m  Info  [0m] =============================== list_rev_append ===============================
+[[34m  Info  [0m] def list_rev_append(l1 : NatList): NatList =  {
+[[34m  Info  [0m]   l1 match {
+[[34m  Info  [0m]     case Nil =>
+[[34m  Info  [0m]       Nil
+[[34m  Info  [0m]     case Cons(head, tail) =>
+[[34m  Info  [0m]       list_append(tail, Cons(head, Nil))
+[[34m  Info  [0m]   }
+[[34m  Info  [0m] } ensuring {
+[[34m  Info  [0m]   (out : NatList) => l1 match {
+[[34m  Info  [0m]     case Nil =>
+[[34m  Info  [0m]       out == Nil
+[[34m  Info  [0m]     case Cons(h, t) =>
+[[34m  Info  [0m]       len(l1) == len(out) && h == list_last(out)
+[[34m  Info  [0m]   }
+[[34m  Info  [0m] }
+[[34m  Info  [0m] 

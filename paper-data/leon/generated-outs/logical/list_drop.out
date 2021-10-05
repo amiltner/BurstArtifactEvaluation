@@ -1,0 +1,320 @@
+[[33mWarning [0m] Refusing to inline recursive function 'listWebElementToWebTree'!
+[[33mWarning [0m] The Z3 native interface is not available, falling back to smt-cvc4.
+[[34m  Info  [0m] =========================== Synthesizing 'list_drop' ===========================
+[[34m  Info  [0m] [Symbolic Term Expl. (1->7)] ⟦ α xs, n
+[[34m  Info  [0m]                                Π ↓list_drop(xs, n) && true
+[[34m  Info  [0m]                                φ len(out) == size(xs, n)
+[[34m  Info  [0m]                                x out
+[[34m  Info  [0m]                              ⟧ /24,0/
+[[34m  Info  [0m] [Symbolic Term Expl. (1->7)] Failed
+[[34m  Info  [0m] [Optimistic Ground   ] ⟦ α xs, n
+[[34m  Info  [0m]                          Π ↓list_drop(xs, n) && true
+[[34m  Info  [0m]                          φ len(out) == size(xs, n)
+[[34m  Info  [0m]                          x out
+[[34m  Info  [0m]                        ⟧ /24,0/
+[[34m  Info  [0m] [Optimistic Ground   ] Failed
+[[34m  Info  [0m] [ADT Split on 'n'    ] ⟦ α xs, n
+[[34m  Info  [0m]                          Π ↓list_drop(xs, n) && true
+[[34m  Info  [0m]                          φ len(out) == size(xs, n)
+[[34m  Info  [0m]                          x out
+[[34m  Info  [0m]                        ⟧ /24,0/
+[[34m  Info  [0m] [ADT Split on 'n'    ] Decomposed into:
+[[34m  Info  [0m] [ADT Split on 'n'    ] - ⟦ α xs
+[[34m  Info  [0m]                            Π (↓list_drop(xs, Z) && 谶Z) && true
+[[34m  Info  [0m]                            φ len(out) == size(xs, Z)
+[[34m  Info  [0m]                            x out
+[[34m  Info  [0m]                          ⟧ /10,0/
+[[34m  Info  [0m] [ADT Split on 'n'    ] - ⟦ α nat$2, xs
+[[34m  Info  [0m]                            Π (↓list_drop(xs, S(nat$2)) && 谶S(nat$2)) && true
+[[34m  Info  [0m]                            φ len(out) == size(xs, S(nat$2))
+[[34m  Info  [0m]                            x out
+[[34m  Info  [0m]                          ⟧ /14,0/
+[[34m  Info  [0m] [Symbolic Term Expl. (1->7)] ⟦ α xs
+[[34m  Info  [0m]                                Π (↓list_drop(xs, Z) && 谶Z) && true
+[[34m  Info  [0m]                                φ len(out) == size(xs, Z)
+[[34m  Info  [0m]                                x out
+[[34m  Info  [0m]                              ⟧ /10,0/
+[[34m  Info  [0m] STE could not prove the validity of the resulting expression
+[[34m  Info  [0m] STE could not prove the validity of the resulting 1 expression(s)
+[[34m  Info  [0m] [Symbolic Term Expl. (1->7)] Solved (untrusted) with:  ⟨ true |  xs ⟩
+[[34m  Info  [0m] 
+[[34m  Info  [0m] [ADT Split on 'xs'   ] ⟦ α xs, n
+[[34m  Info  [0m]                          Π ↓list_drop(xs, n) && true
+[[34m  Info  [0m]                          φ len(out) == size(xs, n)
+[[34m  Info  [0m]                          x out
+[[34m  Info  [0m]                        ⟧ /24,0/
+[[34m  Info  [0m] [ADT Split on 'xs'   ] Decomposed into:
+[[34m  Info  [0m] [ADT Split on 'xs'   ] - ⟦ α n
+[[34m  Info  [0m]                            Π (↓list_drop(Nil, n) && 谶Nil) && true
+[[34m  Info  [0m]                            φ len(out) == size(Nil, n)
+[[34m  Info  [0m]                            x out
+[[34m  Info  [0m]                          ⟧ /5,0/
+[[34m  Info  [0m] [ADT Split on 'xs'   ] - ⟦ α head$12, tail$17, n
+[[34m  Info  [0m]                            Π (↓list_drop(Cons(head$12, tail$17), n) && 谶Cons(head$12, tail$17)) && true
+[[34m  Info  [0m]                            φ len(out) == size(Cons(head$12, tail$17), n)
+[[34m  Info  [0m]                            x out
+[[34m  Info  [0m]                          ⟧ /19,0/
+[[34m  Info  [0m] [Symbolic Term Expl. (1->7)] ⟦ α n
+[[34m  Info  [0m]                                Π (↓list_drop(Nil, n) && 谶Nil) && true
+[[34m  Info  [0m]                                φ len(out) == size(Nil, n)
+[[34m  Info  [0m]                                x out
+[[34m  Info  [0m]                              ⟧ /5,0/
+[[34m  Info  [0m] STE could not prove the validity of the resulting expression
+[[34m  Info  [0m] STE could not prove the validity of the resulting 1 expression(s)
+[[34m  Info  [0m] [Symbolic Term Expl. (1->7)] Solved (untrusted) with:  ⟨ true |  Nil ⟩
+[[34m  Info  [0m] 
+[[34m  Info  [0m] [Introduce calls list_drop$0(xs$1, nat$2)] ⟦ α nat$2, xs
+[[34m  Info  [0m]                                              Π (↓list_drop(xs, S(nat$2)) && 谶S(nat$2)) && true
+[[34m  Info  [0m]                                              φ len(out) == size(xs, S(nat$2))
+[[34m  Info  [0m]                                              x out
+[[34m  Info  [0m]                                            ⟧ /14,0/
+[[34m  Info  [0m] [Introduce calls list_drop$0(xs$1, nat$2)] Decomposed into:
+[[34m  Info  [0m] [Introduce calls list_drop$0(xs$1, nat$2)] - ⟦ α nat$2, xs
+[[34m  Info  [0m]                                                Π val rec$9: NatList = list_drop(xs, nat$2)
+[[34m  Info  [0m]                                                  (↓list_drop(xs, S(nat$2)) && 谶S(nat$2) && ↓list_drop(xs, nat$2)) && true
+[[34m  Info  [0m]                                                φ len(out) == size(xs, S(nat$2))
+[[34m  Info  [0m]                                                x out
+[[34m  Info  [0m]                                              ⟧ /14,0/
+[[34m  Info  [0m] [Symbolic Term Expl. (1->7)] ⟦ α nat$2, xs
+[[34m  Info  [0m]                                Π val rec$9: NatList = list_drop(xs, nat$2)
+[[34m  Info  [0m]                                  (↓list_drop(xs, S(nat$2)) && 谶S(nat$2) && ↓list_drop(xs, nat$2)) && true
+[[34m  Info  [0m]                                φ len(out) == size(xs, S(nat$2))
+[[34m  Info  [0m]                                x out
+[[34m  Info  [0m]                              ⟧ /14,0/
+[[34m  Info  [0m] [Symbolic Term Expl. (1->7)] Failed
+[[34m  Info  [0m] [Optimistic Ground   ] ⟦ α nat$2, xs
+[[34m  Info  [0m]                          Π val rec$9: NatList = list_drop(xs, nat$2)
+[[34m  Info  [0m]                            (↓list_drop(xs, S(nat$2)) && 谶S(nat$2) && ↓list_drop(xs, nat$2)) && true
+[[34m  Info  [0m]                          φ len(out) == size(xs, S(nat$2))
+[[34m  Info  [0m]                          x out
+[[34m  Info  [0m]                        ⟧ /14,0/
+[[34m  Info  [0m] [Optimistic Ground   ] Failed
+[[34m  Info  [0m] [Introduce calls list_drop$0(tail$17, n$0)] ⟦ α head$12, tail$17, n
+[[34m  Info  [0m]                                               Π (↓list_drop(Cons(head$12, tail$17), n) && 谶Cons(head$12, tail$17)) && true
+[[34m  Info  [0m]                                               φ len(out) == size(Cons(head$12, tail$17), n)
+[[34m  Info  [0m]                                               x out
+[[34m  Info  [0m]                                             ⟧ /19,0/
+[[34m  Info  [0m] [Introduce calls list_drop$0(tail$17, n$0)] Decomposed into:
+[[34m  Info  [0m] [Introduce calls list_drop$0(tail$17, n$0)] - ⟦ α head$12, tail$17, n
+[[34m  Info  [0m]                                                 Π val rec$12: NatList = list_drop(tail$17, n)
+[[34m  Info  [0m]                                                   (↓list_drop(Cons(head$12, tail$17), n) && 谶Cons(head$12, tail$17) && ↓list_drop(tail$17, n)) && true
+[[34m  Info  [0m]                                                 φ len(out) == size(Cons(head$12, tail$17), n)
+[[34m  Info  [0m]                                                 x out
+[[34m  Info  [0m]                                               ⟧ /19,0/
+[[34m  Info  [0m] [Symbolic Term Expl. (1->7)] ⟦ α head$12, tail$17, n
+[[34m  Info  [0m]                                Π val rec$12: NatList = list_drop(tail$17, n)
+[[34m  Info  [0m]                                  (↓list_drop(Cons(head$12, tail$17), n) && 谶Cons(head$12, tail$17) && ↓list_drop(tail$17, n)) && true
+[[34m  Info  [0m]                                φ len(out) == size(Cons(head$12, tail$17), n)
+[[34m  Info  [0m]                                x out
+[[34m  Info  [0m]                              ⟧ /19,0/
+[[34m  Info  [0m] [Symbolic Term Expl. (1->7)] Failed
+[[34m  Info  [0m] [Optimistic Ground   ] ⟦ α head$12, tail$17, n
+[[34m  Info  [0m]                          Π val rec$12: NatList = list_drop(tail$17, n)
+[[34m  Info  [0m]                            (↓list_drop(Cons(head$12, tail$17), n) && 谶Cons(head$12, tail$17) && ↓list_drop(tail$17, n)) && true
+[[34m  Info  [0m]                          φ len(out) == size(Cons(head$12, tail$17), n)
+[[34m  Info  [0m]                          x out
+[[34m  Info  [0m]                        ⟧ /19,0/
+[[34m  Info  [0m] [Optimistic Ground   ] Failed
+[[34m  Info  [0m] [ADT Split on 'nat$2'] ⟦ α nat$2, xs
+[[34m  Info  [0m]                          Π val rec$9: NatList = list_drop(xs, nat$2)
+[[34m  Info  [0m]                            (↓list_drop(xs, S(nat$2)) && 谶S(nat$2) && ↓list_drop(xs, nat$2)) && true
+[[34m  Info  [0m]                          φ len(out) == size(xs, S(nat$2))
+[[34m  Info  [0m]                          x out
+[[34m  Info  [0m]                        ⟧ /14,0/
+[[34m  Info  [0m] [ADT Split on 'nat$2'] Decomposed into:
+[[34m  Info  [0m] [ADT Split on 'nat$2'] - ⟦ α xs
+[[34m  Info  [0m]                            Π val rec$9: NatList = list_drop(xs, Z)
+[[34m  Info  [0m]                              (↓list_drop(xs, S(Z)) && 谶S(Z) && ↓list_drop(xs, Z) && 谶Z) && true
+[[34m  Info  [0m]                            φ len(out) == size(xs, S(Z))
+[[34m  Info  [0m]                            x out
+[[34m  Info  [0m]                          ⟧ /6,0/
+[[34m  Info  [0m] [ADT Split on 'nat$2'] - ⟦ α nat$7, xs
+[[34m  Info  [0m]                            Π val rec$9: NatList = list_drop(xs, S(nat$7))
+[[34m  Info  [0m]                              (↓list_drop(xs, S(S(nat$7))) && 谶S(S(nat$7)) && ↓list_drop(xs, S(nat$7)) && 谶S(nat$7)) && true
+[[34m  Info  [0m]                            φ len(out) == size(xs, S(S(nat$7)))
+[[34m  Info  [0m]                            x out
+[[34m  Info  [0m]                          ⟧ /8,0/
+[[34m  Info  [0m] [Symbolic Term Expl. (1->7)] ⟦ α xs
+[[34m  Info  [0m]                                Π val rec$9: NatList = list_drop(xs, Z)
+[[34m  Info  [0m]                                  (↓list_drop(xs, S(Z)) && 谶S(Z) && ↓list_drop(xs, Z) && 谶Z) && true
+[[34m  Info  [0m]                                φ len(out) == size(xs, S(Z))
+[[34m  Info  [0m]                                x out
+[[34m  Info  [0m]                              ⟧ /6,0/
+[[34m  Info  [0m] [Symbolic Term Expl. (1->7)] Failed
+[[34m  Info  [0m] [Optimistic Ground   ] ⟦ α xs
+[[34m  Info  [0m]                          Π val rec$9: NatList = list_drop(xs, Z)
+[[34m  Info  [0m]                            (↓list_drop(xs, S(Z)) && 谶S(Z) && ↓list_drop(xs, Z) && 谶Z) && true
+[[34m  Info  [0m]                          φ len(out) == size(xs, S(Z))
+[[34m  Info  [0m]                          x out
+[[34m  Info  [0m]                        ⟧ /6,0/
+[[34m  Info  [0m] [Optimistic Ground   ] Failed
+[[34m  Info  [0m] [ADT Split on 'head$12'] ⟦ α head$12, tail$17, n
+[[34m  Info  [0m]                            Π val rec$12: NatList = list_drop(tail$17, n)
+[[34m  Info  [0m]                              (↓list_drop(Cons(head$12, tail$17), n) && 谶Cons(head$12, tail$17) && ↓list_drop(tail$17, n)) && true
+[[34m  Info  [0m]                            φ len(out) == size(Cons(head$12, tail$17), n)
+[[34m  Info  [0m]                            x out
+[[34m  Info  [0m]                          ⟧ /19,0/
+[[34m  Info  [0m] [ADT Split on 'head$12'] Decomposed into:
+[[34m  Info  [0m] [ADT Split on 'head$12'] - ⟦ α tail$17, n
+[[34m  Info  [0m]                              Π val rec$12: NatList = list_drop(tail$17, n)
+[[34m  Info  [0m]                                (↓list_drop(Cons(Z, tail$17), n) && 谶Cons(Z, tail$17) && ↓list_drop(tail$17, n) && 谶Z) && true
+[[34m  Info  [0m]                              φ len(out) == size(Cons(Z, tail$17), n)
+[[34m  Info  [0m]                              x out
+[[34m  Info  [0m]                            ⟧ /12,0/
+[[34m  Info  [0m] [ADT Split on 'head$12'] - ⟦ α nat$88, tail$17, n
+[[34m  Info  [0m]                              Π val rec$12: NatList = list_drop(tail$17, n)
+[[34m  Info  [0m]                                (↓list_drop(Cons(S(nat$88), tail$17), n) && 谶Cons(S(nat$88), tail$17) && ↓list_drop(tail$17, n) && 谶S(nat$88)) && true
+[[34m  Info  [0m]                              φ len(out) == size(Cons(S(nat$88), tail$17), n)
+[[34m  Info  [0m]                              x out
+[[34m  Info  [0m]                            ⟧ /7,0/
+[[34m  Info  [0m] [Symbolic Term Expl. (1->7)] ⟦ α tail$17, n
+[[34m  Info  [0m]                                Π val rec$12: NatList = list_drop(tail$17, n)
+[[34m  Info  [0m]                                  (↓list_drop(Cons(Z, tail$17), n) && 谶Cons(Z, tail$17) && ↓list_drop(tail$17, n) && 谶Z) && true
+[[34m  Info  [0m]                                φ len(out) == size(Cons(Z, tail$17), n)
+[[34m  Info  [0m]                                x out
+[[34m  Info  [0m]                              ⟧ /12,0/
+[[34m  Info  [0m] [Symbolic Term Expl. (1->7)] Failed
+[[34m  Info  [0m] [Optimistic Ground   ] ⟦ α tail$17, n
+[[34m  Info  [0m]                          Π val rec$12: NatList = list_drop(tail$17, n)
+[[34m  Info  [0m]                            (↓list_drop(Cons(Z, tail$17), n) && 谶Cons(Z, tail$17) && ↓list_drop(tail$17, n) && 谶Z) && true
+[[34m  Info  [0m]                          φ len(out) == size(Cons(Z, tail$17), n)
+[[34m  Info  [0m]                          x out
+[[34m  Info  [0m]                        ⟧ /12,0/
+[[34m  Info  [0m] [Optimistic Ground   ] Failed
+[[34m  Info  [0m] [ADT Split on 'n'    ] ⟦ α head$12, tail$17, n
+[[34m  Info  [0m]                          Π val rec$12: NatList = list_drop(tail$17, n)
+[[34m  Info  [0m]                            (↓list_drop(Cons(head$12, tail$17), n) && 谶Cons(head$12, tail$17) && ↓list_drop(tail$17, n)) && true
+[[34m  Info  [0m]                          φ len(out) == size(Cons(head$12, tail$17), n)
+[[34m  Info  [0m]                          x out
+[[34m  Info  [0m]                        ⟧ /19,0/
+[[34m  Info  [0m] [ADT Split on 'n'    ] Decomposed into:
+[[34m  Info  [0m] [ADT Split on 'n'    ] - ⟦ α head$12, tail$17
+[[34m  Info  [0m]                            Π val rec$12: NatList = list_drop(tail$17, Z)
+[[34m  Info  [0m]                              (↓list_drop(Cons(head$12, tail$17), Z) && 谶Cons(head$12, tail$17) && ↓list_drop(tail$17, Z) && 谶Z) && true
+[[34m  Info  [0m]                            φ len(out) == size(Cons(head$12, tail$17), Z)
+[[34m  Info  [0m]                            x out
+[[34m  Info  [0m]                          ⟧ /9,0/
+[[34m  Info  [0m] [ADT Split on 'n'    ] - ⟦ α nat$89, head$12, tail$17
+[[34m  Info  [0m]                            Π val rec$12: NatList = list_drop(tail$17, S(nat$89))
+[[34m  Info  [0m]                              (↓list_drop(Cons(head$12, tail$17), S(nat$89)) && 谶Cons(head$12, tail$17) && ↓list_drop(tail$17, S(nat$89)) && 谶S(nat$89)) && true
+[[34m  Info  [0m]                            φ len(out) == size(Cons(head$12, tail$17), S(nat$89))
+[[34m  Info  [0m]                            x out
+[[34m  Info  [0m]                          ⟧ /10,0/
+[[34m  Info  [0m] [Symbolic Term Expl. (1->7)] ⟦ α head$12, tail$17
+[[34m  Info  [0m]                                Π val rec$12: NatList = list_drop(tail$17, Z)
+[[34m  Info  [0m]                                  (↓list_drop(Cons(head$12, tail$17), Z) && 谶Cons(head$12, tail$17) && ↓list_drop(tail$17, Z) && 谶Z) && true
+[[34m  Info  [0m]                                φ len(out) == size(Cons(head$12, tail$17), Z)
+[[34m  Info  [0m]                                x out
+[[34m  Info  [0m]                              ⟧ /9,0/
+[[34m  Info  [0m] STE could not prove the validity of the resulting expression
+[[34m  Info  [0m] STE could not prove the validity of the resulting expression
+[[34m  Info  [0m] STE could not prove the validity of the resulting expression
+[[34m  Info  [0m] STE could not prove the validity of the resulting expression
+[[34m  Info  [0m] STE could not prove the validity of the resulting 4 expression(s)
+[[34m  Info  [0m] [Symbolic Term Expl. (1->7)] Solved (untrusted) with:  ⟨ true |  Cons(Z, rec$12) ⟩
+[[34m  Info  [0m] 
+[[34m  Info  [0m] [ADT Split on 'xs'   ] ⟦ α nat$2, xs
+[[34m  Info  [0m]                          Π val rec$9: NatList = list_drop(xs, nat$2)
+[[34m  Info  [0m]                            (↓list_drop(xs, S(nat$2)) && 谶S(nat$2) && ↓list_drop(xs, nat$2)) && true
+[[34m  Info  [0m]                          φ len(out) == size(xs, S(nat$2))
+[[34m  Info  [0m]                          x out
+[[34m  Info  [0m]                        ⟧ /14,0/
+[[34m  Info  [0m] [ADT Split on 'xs'   ] Decomposed into:
+[[34m  Info  [0m] [ADT Split on 'xs'   ] - ⟦ α nat$2
+[[34m  Info  [0m]                            Π val rec$9: NatList = list_drop(Nil, nat$2)
+[[34m  Info  [0m]                              (↓list_drop(Nil, S(nat$2)) && 谶S(nat$2) && ↓list_drop(Nil, nat$2) && 谶Nil) && true
+[[34m  Info  [0m]                            φ len(out) == size(Nil, S(nat$2))
+[[34m  Info  [0m]                            x out
+[[34m  Info  [0m]                          ⟧ /4,0/
+[[34m  Info  [0m] [ADT Split on 'xs'   ] - ⟦ α head$23, tail$25, nat$2
+[[34m  Info  [0m]                            Π val rec$9: NatList = list_drop(Cons(head$23, tail$25), nat$2)
+[[34m  Info  [0m]                              (↓list_drop(Cons(head$23, tail$25), S(nat$2)) && 谶S(nat$2) && ↓list_drop(Cons(head$23, tail$25), nat$2) && 谶Cons(head$23, tail$25)) && true
+[[34m  Info  [0m]                            φ len(out) == size(Cons(head$23, tail$25), S(nat$2))
+[[34m  Info  [0m]                            x out
+[[34m  Info  [0m]                          ⟧ /10,0/
+[[34m  Info  [0m] [Symbolic Term Expl. (1->7)] ⟦ α nat$2
+[[34m  Info  [0m]                                Π val rec$9: NatList = list_drop(Nil, nat$2)
+[[34m  Info  [0m]                                  (↓list_drop(Nil, S(nat$2)) && 谶S(nat$2) && ↓list_drop(Nil, nat$2) && 谶Nil) && true
+[[34m  Info  [0m]                                φ len(out) == size(Nil, S(nat$2))
+[[34m  Info  [0m]                                x out
+[[34m  Info  [0m]                              ⟧ /4,0/
+[[34m  Info  [0m] STE could not prove the validity of the resulting expression
+[[34m  Info  [0m] STE could not prove the validity of the resulting expression
+[[34m  Info  [0m] STE could not prove the validity of the resulting 2 expression(s)
+[[34m  Info  [0m] [Symbolic Term Expl. (1->7)] Solved (untrusted) with:  ⟨ true |  rec$9 ⟩
+[[34m  Info  [0m] 
+[[34m  Info  [0m] [ADT Split on 'rec$9'] ⟦ α nat$2, xs
+[[34m  Info  [0m]                          Π val rec$9: NatList = list_drop(xs, nat$2)
+[[34m  Info  [0m]                            (↓list_drop(xs, S(nat$2)) && 谶S(nat$2) && ↓list_drop(xs, nat$2)) && true
+[[34m  Info  [0m]                          φ len(out) == size(xs, S(nat$2))
+[[34m  Info  [0m]                          x out
+[[34m  Info  [0m]                        ⟧ /14,0/
+[[34m  Info  [0m] [ADT Split on 'rec$9'] Decomposed into:
+[[34m  Info  [0m] [ADT Split on 'rec$9'] - ⟦ α nat$2, xs
+[[34m  Info  [0m]                            Π val rec$9: NatList = list_drop(xs, nat$2)
+[[34m  Info  [0m]                              (rec$9 == Nil) && ((↓list_drop(xs, S(nat$2)) && 谶S(nat$2) && ↓list_drop(xs, nat$2) && 谶Nil && inactive(rec$9)) && true)
+[[34m  Info  [0m]                            φ len(out) == size(xs, S(nat$2))
+[[34m  Info  [0m]                            x out
+[[34m  Info  [0m]                          ⟧ /14,0/
+[[34m  Info  [0m] [ADT Split on 'rec$9'] - ⟦ α nat$2, xs
+[[34m  Info  [0m]                            Π val rec$9: NatList = list_drop(xs, nat$2)
+[[34m  Info  [0m]                              rec$9.isInstanceOf[Cons] && {
+[[34m  Info  [0m]                                val head$24: Nat = rec$9.head
+[[34m  Info  [0m]                                val tail$26: NatList = rec$9.tail
+[[34m  Info  [0m]                                (↓list_drop(xs, S(nat$2)) && 谶S(nat$2) && ↓list_drop(xs, nat$2) && 谶Cons(head$24, tail$26) && inactive(rec$9)) && true
+[[34m  Info  [0m]                              }
+[[34m  Info  [0m]                            φ len(out) == size(xs, S(nat$2))
+[[34m  Info  [0m]                            x out
+[[34m  Info  [0m]                          ⟧ /14,0/
+[[34m  Info  [0m] [Symbolic Term Expl. (1->7)] ⟦ α nat$2, xs
+[[34m  Info  [0m]                                Π val rec$9: NatList = list_drop(xs, nat$2)
+[[34m  Info  [0m]                                  (rec$9 == Nil) && ((↓list_drop(xs, S(nat$2)) && 谶S(nat$2) && ↓list_drop(xs, nat$2) && 谶Nil && inactive(rec$9)) && true)
+[[34m  Info  [0m]                                φ len(out) == size(xs, S(nat$2))
+[[34m  Info  [0m]                                x out
+[[34m  Info  [0m]                              ⟧ /14,0/
+[[34m  Info  [0m] STE could not prove the validity of the resulting expression
+[[34m  Info  [0m] STE could not prove the validity of the resulting 1 expression(s)
+[[34m  Info  [0m] [Symbolic Term Expl. (1->7)] Solved (untrusted) with:  ⟨ true |  Nil ⟩
+[[34m  Info  [0m] 
+[[34m  Info  [0m] [Symbolic Term Expl. (1->7)] ⟦ α nat$2, xs
+[[34m  Info  [0m]                                Π val rec$9: NatList = list_drop(xs, nat$2)
+[[34m  Info  [0m]                                  rec$9.isInstanceOf[Cons] && {
+[[34m  Info  [0m]                                    val head$24: Nat = rec$9.head
+[[34m  Info  [0m]                                    val tail$26: NatList = rec$9.tail
+[[34m  Info  [0m]                                    (↓list_drop(xs, S(nat$2)) && 谶S(nat$2) && ↓list_drop(xs, nat$2) && 谶Cons(head$24, tail$26) && inactive(rec$9)) && true
+[[34m  Info  [0m]                                  }
+[[34m  Info  [0m]                                φ len(out) == size(xs, S(nat$2))
+[[34m  Info  [0m]                                x out
+[[34m  Info  [0m]                              ⟧ /14,0/
+[[34m  Info  [0m] STE could not prove the validity of the resulting expression
+[[34m  Info  [0m] STE could not prove the validity of the resulting 1 expression(s)
+[[34m  Info  [0m] [Symbolic Term Expl. (1->7)] Solved (untrusted) with:  ⟨ true |  tail$26 ⟩
+[[34m  Info  [0m] 
+[[34m  Info  [0m] Finished in 52261ms
+[[34m  Info  [0m] Solution requires validation
+[[34m  Info  [0m]  - Now considering 'postcondition' VC for list_drop @27:58...
+[[33mWarning [0m]  => TIMEOUT
+[[34m  Info  [0m]  - Now considering 'precond. (call size(xs, n))' VC for list_drop @31:17...
+[[34m  Info  [0m]  => VALID
+[[34m  Info  [0m]  - Now considering 'match exhaustiveness' VC for list_drop @?:?...
+[[34m  Info  [0m]  => VALID
+[[34m  Info  [0m]  - Now considering 'match exhaustiveness' VC for list_drop @?:?...
+[[34m  Info  [0m]  => VALID
+[[33mWarning [0m] Solution may be invalid:
+[[34m  Info  [0m] ================================== list_drop ==================================
+[[34m  Info  [0m] def list_drop(xs : NatList, n : Nat): NatList =  {
+[[34m  Info  [0m]   n match {
+[[34m  Info  [0m]     case Z =>
+[[34m  Info  [0m]       xs
+[[34m  Info  [0m]     case S(nat) =>
+[[34m  Info  [0m]       list_drop(xs, nat) match {
+[[34m  Info  [0m]         case Nil =>
+[[34m  Info  [0m]           Nil
+[[34m  Info  [0m]         case Cons(head, tail) =>
+[[34m  Info  [0m]           tail
+[[34m  Info  [0m]       }
+[[34m  Info  [0m]   }
+[[34m  Info  [0m] } ensuring {
+[[34m  Info  [0m]   (out : NatList) => len(out) == size(xs, n)
+[[34m  Info  [0m] }
+[[34m  Info  [0m] 

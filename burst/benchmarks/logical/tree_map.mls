@@ -1,0 +1,119 @@
+type nat =
+  | O
+  | S of nat
+
+type list =
+  | Nil
+  | Cons of nat * list
+
+type tree =
+  | Leaf
+  | Node of tree * nat * tree
+
+let div2 =
+  fix (div2 : nat -> nat) =
+    fun (n : nat) ->
+      match n with
+      | O -> O
+      | S O -> O
+      | S S np -> S (div2 np)
+;;
+
+let inc =
+  fun (n : nat) ->
+    S n
+;;
+
+synth (nat -> nat) -> tree -> tree satisfying
+
+type bool =
+  | True
+  | False
+
+let and =
+  fun (b1:bool) ->
+    fun (b2:bool) ->
+      match b1 with
+      | True -> b2
+      | False -> False
+;;
+
+let for_all =
+  fix (for_all : (nat -> nat) -> list -> list -> bool) =
+    fun (f : nat -> nat) ->
+    fun (l1 : list) ->
+    fun (l2 : list) ->
+      match l1 with
+      | Nil -> l2 == Nil
+      | Cons (h1,t1) ->
+        match l2 with
+         | Nil -> False
+         | Cons (h2,t2) -> and ((f h1) == h2) (for_all f t1 t2)
+;;
+
+let plus =
+  fix (plus : nat -> nat -> nat) =
+    fun (x1:nat) ->
+      fun (x2:nat) ->
+        match x1 with
+        | O -> x2
+        | S x1p -> S (plus x1p x2)
+;;
+
+let sum =
+  fix (sum : list -> nat) =
+    fun (l:list) ->
+      match l with
+      | Nil -> O
+      | Cons (x, t) -> plus x (sum t)
+;;
+
+let size =
+  fix (size : list -> nat) =
+    fun (x:list) ->
+      match x with
+      | Nil -> O
+      | Cons (_, t) -> S (size t)
+;;
+
+let is_zero =
+  fix (is_zero : list -> bool) =
+    fun (l:list) ->
+      match l with
+      | Nil -> True
+      | Cons (z, t) -> and (z == O) (is_zero t)
+;;
+
+let append =
+  fix (append : list -> list -> list) =
+    fun (l1 : list) ->
+      fun (l2 : list) ->
+        match l1 with
+        | Nil -> l2
+        | Cons (h,t) -> Cons(h,append t l2)
+;;
+
+let inorder =
+  fix (inorder : tree -> list) =
+  fun (t : tree) ->
+    match t with
+    | Leaf -> Nil
+    | Node (l, n, r) -> append (inorder l) (Cons (n, inorder r))
+;;
+
+let zero =
+  fun (n:nat) -> O
+;;
+
+fun (in1in2:(nat->nat)*tree) -> (fun (out : tree) ->
+    match inorder in1in2.1 with | lin ->
+    match inorder out with | lout ->
+    match size lin with | sin ->
+    (and
+      ((size lout) == sin) (
+      match (in1in2.0 == zero) with
+      | True -> is_zero lout
+      | False ->
+        (match (in1in2.0 == inc) with
+         | True -> (sum lout) == (plus sin (sum lin))
+         | False -> True))))

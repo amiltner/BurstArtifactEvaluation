@@ -1,0 +1,90 @@
+[[33mWarning [0m] Refusing to inline recursive function 'listWebElementToWebTree'!
+[[33mWarning [0m] The Z3 native interface is not available, falling back to smt-cvc4.
+[[34m  Info  [0m] =========================== Synthesizing 'nat_pred' ===========================
+[[34m  Info  [0m] [Symbolic Term Expl. (1->7)] ⟦ α n
+[[34m  Info  [0m]                                Π ↓nat_pred(n) && true
+[[34m  Info  [0m]                                φ n == Z && out == Z || n == S(out)
+[[34m  Info  [0m]                                x out
+[[34m  Info  [0m]                              ⟧ /20,0/
+[[34m  Info  [0m] [Symbolic Term Expl. (1->7)] Failed
+[[34m  Info  [0m] [Optimistic Ground   ] ⟦ α n
+[[34m  Info  [0m]                          Π ↓nat_pred(n) && true
+[[34m  Info  [0m]                          φ n == Z && out == Z || n == S(out)
+[[34m  Info  [0m]                          x out
+[[34m  Info  [0m]                        ⟧ /20,0/
+[[34m  Info  [0m] [Optimistic Ground   ] Failed
+[[34m  Info  [0m] [Split top-level Or  ] ⟦ α n
+[[34m  Info  [0m]                          Π ↓nat_pred(n) && true
+[[34m  Info  [0m]                          φ n == Z && out == Z || n == S(out)
+[[34m  Info  [0m]                          x out
+[[34m  Info  [0m]                        ⟧ /20,0/
+[[34m  Info  [0m] [Split top-level Or  ] Decomposed into:
+[[34m  Info  [0m] [Split top-level Or  ] - ⟦ α n
+[[34m  Info  [0m]                            Π ↓nat_pred(n) && true
+[[34m  Info  [0m]                            φ n == Z && out == Z
+[[34m  Info  [0m]                            x out
+[[34m  Info  [0m]                          ⟧ /20,0/
+[[34m  Info  [0m] [Split top-level Or  ] - ⟦ α n
+[[34m  Info  [0m]                            Π ↓nat_pred(n) && true
+[[34m  Info  [0m]                            φ n == S(out)
+[[34m  Info  [0m]                            x out
+[[34m  Info  [0m]                          ⟧ /20,0/
+[[34m  Info  [0m] [One-point on out = Z$0] ⟦ α n
+[[34m  Info  [0m]                            Π ↓nat_pred(n) && true
+[[34m  Info  [0m]                            φ n == Z && out == Z
+[[34m  Info  [0m]                            x out
+[[34m  Info  [0m]                          ⟧ /20,0/
+[[34m  Info  [0m] [One-point on out = Z$0] Decomposed into:
+[[34m  Info  [0m] [One-point on out = Z$0] - ⟦ α n
+[[34m  Info  [0m]                              Π ↓nat_pred(n) && true
+[[34m  Info  [0m]                              φ n == Z
+[[34m  Info  [0m]                              x ()
+[[34m  Info  [0m]                            ⟧ /20,0/
+[[34m  Info  [0m] [Solve: ⟨ n == Z |  () ⟩] ⟦ α n
+[[34m  Info  [0m]                             Π ↓nat_pred(n) && true
+[[34m  Info  [0m]                             φ n == Z
+[[34m  Info  [0m]                             x ()
+[[34m  Info  [0m]                           ⟧ /20,0/
+[[34m  Info  [0m] [Solve: ⟨ n == Z |  () ⟩] Solved  with:  ⟨ n == Z |  () ⟩
+[[34m  Info  [0m] 
+[[34m  Info  [0m] [ADTDual             ] ⟦ α n
+[[34m  Info  [0m]                          Π ↓nat_pred(n) && true
+[[34m  Info  [0m]                          φ n == S(out)
+[[34m  Info  [0m]                          x out
+[[34m  Info  [0m]                        ⟧ /20,0/
+[[34m  Info  [0m] [ADTDual             ] Decomposed into:
+[[34m  Info  [0m] [ADTDual             ] - ⟦ α n
+[[34m  Info  [0m]                            Π ↓nat_pred(n) && true
+[[34m  Info  [0m]                            φ n.isInstanceOf[S] && out == n.nat
+[[34m  Info  [0m]                            x out
+[[34m  Info  [0m]                          ⟧ /0,0/
+[[34m  Info  [0m] [One-point on out = n$0.nat$0] ⟦ α n
+[[34m  Info  [0m]                                  Π ↓nat_pred(n) && true
+[[34m  Info  [0m]                                  φ n.isInstanceOf[S] && out == n.nat
+[[34m  Info  [0m]                                  x out
+[[34m  Info  [0m]                                ⟧ /0,0/
+[[34m  Info  [0m] [One-point on out = n$0.nat$0] Decomposed into:
+[[34m  Info  [0m] [One-point on out = n$0.nat$0] - ⟦ α n
+[[34m  Info  [0m]                                    Π ↓nat_pred(n) && true
+[[34m  Info  [0m]                                    φ n.isInstanceOf[S]
+[[34m  Info  [0m]                                    x ()
+[[34m  Info  [0m]                                  ⟧ /0,0/
+[[34m  Info  [0m] [Solve: ⟨ n.isInstanceOf[S] |  () ⟩] ⟦ α n
+[[34m  Info  [0m]                                        Π ↓nat_pred(n) && true
+[[34m  Info  [0m]                                        φ n.isInstanceOf[S]
+[[34m  Info  [0m]                                        x ()
+[[34m  Info  [0m]                                      ⟧ /0,0/
+[[34m  Info  [0m] [Solve: ⟨ n.isInstanceOf[S] |  () ⟩] Solved  with:  ⟨ n.isInstanceOf[S] |  () ⟩
+[[34m  Info  [0m] 
+[[34m  Info  [0m] Finished in 2221ms
+[[34m  Info  [0m] =================================== nat_pred ===================================
+[[34m  Info  [0m] def nat_pred(n : Nat): Nat =  {
+[[34m  Info  [0m]   if (n == Z) {
+[[34m  Info  [0m]     Z
+[[34m  Info  [0m]   } else {
+[[34m  Info  [0m]     n.nat
+[[34m  Info  [0m]   }
+[[34m  Info  [0m] } ensuring {
+[[34m  Info  [0m]   (out : Nat) => n == Z && out == Z || n == S(out)
+[[34m  Info  [0m] }
+[[34m  Info  [0m] 

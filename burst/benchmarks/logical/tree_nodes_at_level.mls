@@ -1,0 +1,148 @@
+type bool =
+  | True
+  | False
+
+type tree =
+  | Leaf
+  | Node of tree * bool * tree
+
+type nat =
+  | O
+  | S of nat
+
+let sum =
+  fix (sum : nat -> nat -> nat) =
+    fun (n1 : nat) ->
+      fun (n2 : nat) ->
+        match n1 with
+        | O -> n2
+        | S n1p -> S (sum n1p n2)
+;;
+
+synth tree -> nat -> nat satisfying
+
+type list =
+  | Nil
+  | Cons of nat * list
+
+fun (in1in2:tree*nat) -> (fun (out:nat) ->
+    match in1in2.0 with
+    | Leaf -> out == O
+    | Node (Leaf, _, Leaf) -> (
+      match in1in2.1 with
+      | O -> out == (S O)
+      | _ -> out == O)
+    | Node (Node (Leaf, _, Leaf), _, Leaf) -> (
+      match in1in2.1 with
+      | O -> out == (S O)
+      | S O -> out == (S O)
+      | _ -> out == O)
+    | Node (Leaf, _, Node (Leaf, _, Leaf)) -> (
+      match in1in2.1 with
+      | O -> out == (S O)
+      | S O -> out == (S O)
+      | _ -> out == O)
+    | _ -> True)
+(*
+    | Node (Node (Node (Leaf, _, Leaf), _, Leaf), _, Leaf) -> (
+      match in1in2.1 with
+      | O -> out == (S O)
+      | S O -> out == (S O)
+      | S S O -> out == (S O)
+      | _ -> out == O)
+
+let match_value =
+  fix (match_value : nat -> nat -> list -> bool) =
+    fun (x:nat) ->
+    fun (y:nat) ->
+    fun (l:list) ->
+      match l with
+      | Nil -> x == O
+      | Cons (z, t) ->
+        match y with
+        | O -> x == z
+        | S a -> match_value x a t
+;;
+
+    | Node (Leaf, _, Leaf) ->
+      match_value out in1in2.1 (Cons (S O, Nil))
+    | Node (Node (Leaf, _, Leaf), _, Leaf) -> (
+      match_value out in1in2.1 (Cons (S O, Cons (S O, Nil)))
+    | Node (Leaf, _, Node (Leaf, _, Leaf)) -> (
+      match_value out in1in2.1 (Cons (S O, Cons (S O, Nil)))
+
+type cmp =
+  | LT
+  | EQ
+  | GT
+
+let compare =
+  fix (compare : nat -> nat -> cmp) =
+    fun (x1 : nat) ->
+      fun (x2 : nat) ->
+        match (x1,x2) with
+        | (O,O) -> EQ
+        | (O,S _) -> LT
+        | (S _,O) -> GT
+        | (S x1,S x2) -> compare x1 x2
+;;
+
+let max =
+  fun (x1:nat) ->
+    fun (x2:nat) ->
+      match compare x1 x2 with
+      | GT -> x2
+      | _ -> x1
+;;
+
+let height =
+  fix (height : tree -> nat) =
+    fun (t : tree) ->
+      match t with
+      | Leaf -> O
+      | Node (l, _, r) -> S (max (height l) (height r))
+;;
+
+    match height in1in2.0 with | hin ->
+    match (compare out hin) != LT with
+    | True -> out == O
+    | False -> out == (S O))
+    match in1in2.0 with
+    | Leaf -> out == O
+    | Node (Leaf, _, Leaf) -> out == (S O)
+    | _ -> True)
+    match inorder in1in2.0 with
+    | Nil -> out == Node (Leaf, in1in2.1, Leaf)
+    | lin ->
+      match (is_sorted_unique lin) with
+      | False -> True
+      | True ->
+        match inorder out with
+        | Nil -> False
+        | lout -> and (is_sorted_unique lout) (for_all (contains lout) (Cons (in1in2.1, lin))))
+
+[Leaf,0] -> 0,
+[Leaf,1] -> 0,
+[Leaf,2] -> 0,
+[Leaf,3] -> 0,
+[Node (Leaf, True, Leaf),0] -> 1,
+[Node (Leaf, True, Leaf),1] -> 0,
+[Node (Leaf, True, Leaf),2] -> 0,
+[Node (Leaf, True, Leaf),3] -> 0,
+[Node (Node (Leaf, True, Leaf), True, Leaf),0] -> 1,
+[Node (Node (Leaf, True, Leaf), True, Leaf),1] -> 1,
+[Node (Node (Leaf, True, Leaf), True, Leaf),2] -> 0,
+[Node (Node (Leaf, True, Leaf), True, Leaf),3] -> 0,
+[Node (Leaf, True, Node (Leaf, True, Leaf)),0] -> 1,
+[Node (Leaf, True, Node (Leaf, True, Leaf)),1] -> 1,
+[Node (Leaf, True, Node (Leaf, True, Leaf)),2] -> 0,
+[Node (Leaf, True, Node (Leaf, True, Leaf)),3] -> 0,
+[Node (Node (Leaf, True, Leaf), True, Node (Leaf, True, Leaf)),0] -> 1,
+[Node (Node (Leaf, True, Leaf), True, Node (Leaf, True, Leaf)),1] -> 2,
+[Node (Node (Leaf, True, Leaf), True, Node (Leaf, True, Leaf)),2] -> 0,
+[Node (Node (Leaf, True, Leaf), True, Node (Leaf, True, Leaf)),3] -> 0,
+[Node (Node (Node (Leaf, True, Leaf), True, Node (Leaf, True, Leaf)), True, Leaf),0] -> 1,
+[Node (Node (Node (Leaf, True, Leaf), True, Node (Leaf, True, Leaf)), True, Leaf),1] -> 1,
+[Node (Node (Node (Leaf, True, Leaf), True, Node (Leaf, True, Leaf)), True, Leaf),2] -> 2,
+[Node (Node (Node (Leaf, True, Leaf), True, Node (Leaf, True, Leaf)), True, Leaf),3] -> 0,
+*)

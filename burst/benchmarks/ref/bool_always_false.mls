@@ -1,0 +1,6 @@
+include "bool.decls"
+
+synth bool -> bool satisfying
+
+equiv
+fun (x:bool) -> False

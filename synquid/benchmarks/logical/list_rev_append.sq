@@ -1,0 +1,39 @@
+data Nat where
+  Z :: Nat
+  S :: Nat -> Nat
+
+termination measure dec :: Nat -> {Int | _v >= 0} where
+  Z -> 0
+  S m -> 1 + dec m
+  
+data NatList where
+  Nil :: NatList
+  Cons :: Nat -> NatList -> NatList
+
+termination measure len :: NatList -> {Int | _v >= 0} where
+  Nil -> 0
+  Cons x xs -> 1 + len xs
+
+measure hd :: NatList -> Nat where
+  Nil -> Z
+  Cons h t -> h
+
+measure last :: NatList -> Nat where
+  Nil -> Z
+  Cons h t -> if t == Nil then h else last t
+  
+list_append :: l1:NatList -> l2:NatList -> { NatList | (if (l1 == Nil) then (hd _v) == (hd l2) else (hd _v) == (hd l1)) {-&& (if (l2 == Nil) then (last _v) == (last l1) else (last _v) == (last l2))-} }
+list_append = \l1 . \l2 .
+  match l1 with
+    Nil            -> l2
+    Cons head tail -> Cons head (list_append tail l2)
+  
+list_rev_append :: l1:NatList -> { NatList |
+
+   (len l1 == len _v) &&
+   (hd l1 == last _v) &&
+   (last l1 == hd _v)
+
+}
+
+list_rev_append = ??

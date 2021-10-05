@@ -1,0 +1,24 @@
+In this we describe the layout of the code.
+
+The smyth directory is used for comparisons to Smyth.
+
+The app directory contains the code for the Command line interface. It also
+contains the code that calls Smyth.
+
+The src directory contains the Burst tool. The remainder of this description is
+about code in that directory.
+
+The Synthesizers.ml file describes provides module signatures for synthesis
+engines. PredicateSynth describes the type of synthesizers on ground formulas.
+VerifiedPredicate is a functor that performs a CEGIS loop to synthesize from
+arbitrary logical predicates. The ``Verifier'' we use in this loop is an
+enumerative verifier (in EnumerativeVerfier.ml).
+
+The majority of our synthesis engine is in the files CrazyFTASynthesizer.ml and
+FTAConstructor.ml. The CrazyFTASynthesizer encodes the full synthesis loop. The
+core loop is in the function: synthesize. The function: construct_full performs
+the core BuildAngelicFTA function. FTAConstructor is used to actually build up
+the concrete FTA, and keeps track of what states are in the automaton.
+Essentially, it helps build up the FTA according to the inference rules in
+Figure 9.
+

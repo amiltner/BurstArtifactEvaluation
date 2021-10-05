@@ -1,0 +1,21 @@
+type nat =
+  | O
+  | S of nat
+
+type list =
+  | Nil
+  | Cons of nat * list
+
+type natopt =
+  | None
+  | Some of nat
+
+synth list -> natopt satisfying
+
+equiv
+fix (f : list -> natopt) =
+  fun (x:list) ->
+    match x with
+      | Nil -> None
+      | Cons (h,Nil) -> Some h
+      | Cons (h,t) -> f t

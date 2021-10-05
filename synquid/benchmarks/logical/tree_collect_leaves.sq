@@ -1,0 +1,47 @@
+-- Tree structure taken from the github: https://github.com/UChicago-PL/smyth/blob/main/experiments/exp-4-logic/results/2a/
+data Boolean where
+  T :: Boolean
+  F :: Boolean
+  
+data BooleanTree where
+  Leaf :: BooleanTree
+  Node :: BooleanTree -> Boolean -> BooleanTree -> BooleanTree
+
+termination measure sizeTree :: BooleanTree -> {Int | _v >= 0} where
+  Leaf -> 0
+  Node left x right -> 1 + sizeTree left + sizeTree right
+  
+measure isNode :: BooleanTree -> Bool where
+    Leaf -> False
+    Node l x r -> True
+  
+measure node :: BooleanTree -> Boolean where
+    Leaf -> F
+    Node l x r -> x
+  
+measure leftSubTree :: BooleanTree -> BooleanTree where
+    Leaf -> Leaf
+    Node l x r -> l
+  
+measure rightSubTree :: BooleanTree -> BooleanTree where
+    Leaf -> Leaf
+    Node l x r -> r
+
+data BooleanList where
+  Nil :: BooleanList
+  Cons :: Boolean -> BooleanList -> BooleanList
+
+termination measure len :: BooleanList -> {Int | _v >= 0} where
+  Nil -> 0
+  Cons x xs -> 1 + len xs
+  
+tree_collect_leaves :: t:BooleanTree -> { BooleanList | 
+   ((t == Leaf) ==> (_v == Nil)) &&
+   ((isNode t && leftSubTree t == Leaf && rightSubTree t == Leaf) ==> (_v == Cons (node t) Nil)) &&
+   ((isNode t && isNode (leftSubTree t) && isNode (rightSubTree t) 
+        && leftSubTree (leftSubTree t) == Leaf && rightSubTree (leftSubTree t) == Leaf
+        && leftSubTree (rightSubTree t) == Leaf && rightSubTree (rightSubTree t) == Leaf)
+    ==> (_v == Cons (node (leftSubTree t)) (Cons (node t) (Cons (node (rightSubTree t)) Nil))))
+
+}
+tree_collect_leaves = ??

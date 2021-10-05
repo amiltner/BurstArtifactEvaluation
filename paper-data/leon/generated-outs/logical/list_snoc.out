@@ -1,0 +1,99 @@
+[[33mWarning [0m] Refusing to inline recursive function 'listWebElementToWebTree'!
+[[33mWarning [0m] The Z3 native interface is not available, falling back to smt-cvc4.
+[[34m  Info  [0m] =========================== Synthesizing 'list_snoc' ===========================
+[[34m  Info  [0m] [Symbolic Term Expl. (1->7)] ⟦ α xs, n
+[[34m  Info  [0m]                                Π ↓list_snoc(xs, n) && true
+[[34m  Info  [0m]                                φ len(out) == S(len(xs)) && tl(out) == n
+[[34m  Info  [0m]                                x out
+[[34m  Info  [0m]                              ⟧ /24,0/
+[[34m  Info  [0m] [Symbolic Term Expl. (1->7)] Failed
+[[34m  Info  [0m] [Optimistic Ground   ] ⟦ α xs, n
+[[34m  Info  [0m]                          Π ↓list_snoc(xs, n) && true
+[[34m  Info  [0m]                          φ len(out) == S(len(xs)) && tl(out) == n
+[[34m  Info  [0m]                          x out
+[[34m  Info  [0m]                        ⟧ /24,0/
+[[34m  Info  [0m] [Optimistic Ground   ] Failed
+[[34m  Info  [0m] [ADT Split on 'n'    ] ⟦ α xs, n
+[[34m  Info  [0m]                          Π ↓list_snoc(xs, n) && true
+[[34m  Info  [0m]                          φ len(out) == S(len(xs)) && tl(out) == n
+[[34m  Info  [0m]                          x out
+[[34m  Info  [0m]                        ⟧ /24,0/
+[[34m  Info  [0m] [ADT Split on 'n'    ] Decomposed into:
+[[34m  Info  [0m] [ADT Split on 'n'    ] - ⟦ α xs
+[[34m  Info  [0m]                            Π (↓list_snoc(xs, Z) && 谶Z) && true
+[[34m  Info  [0m]                            φ len(out) == S(len(xs)) && tl(out) == Z
+[[34m  Info  [0m]                            x out
+[[34m  Info  [0m]                          ⟧ /10,0/
+[[34m  Info  [0m] [ADT Split on 'n'    ] - ⟦ α nat$2, xs
+[[34m  Info  [0m]                            Π (↓list_snoc(xs, S(nat$2)) && 谶S(nat$2)) && true
+[[34m  Info  [0m]                            φ len(out) == S(len(xs)) && tl(out) == S(nat$2)
+[[34m  Info  [0m]                            x out
+[[34m  Info  [0m]                          ⟧ /14,0/
+[[34m  Info  [0m] [Symbolic Term Expl. (1->7)] ⟦ α xs
+[[34m  Info  [0m]                                Π (↓list_snoc(xs, Z) && 谶Z) && true
+[[34m  Info  [0m]                                φ len(out) == S(len(xs)) && tl(out) == Z
+[[34m  Info  [0m]                                x out
+[[34m  Info  [0m]                              ⟧ /10,0/
+[[34m  Info  [0m] [Symbolic Term Expl. (1->7)] Failed
+[[34m  Info  [0m] [Optimistic Ground   ] ⟦ α xs
+[[34m  Info  [0m]                          Π (↓list_snoc(xs, Z) && 谶Z) && true
+[[34m  Info  [0m]                          φ len(out) == S(len(xs)) && tl(out) == Z
+[[34m  Info  [0m]                          x out
+[[34m  Info  [0m]                        ⟧ /10,0/
+[[34m  Info  [0m] [Optimistic Ground   ] Failed
+[[34m  Info  [0m] [ADT Split on 'xs'   ] ⟦ α xs, n
+[[34m  Info  [0m]                          Π ↓list_snoc(xs, n) && true
+[[34m  Info  [0m]                          φ len(out) == S(len(xs)) && tl(out) == n
+[[34m  Info  [0m]                          x out
+[[34m  Info  [0m]                        ⟧ /24,0/
+[[34m  Info  [0m] [ADT Split on 'xs'   ] Decomposed into:
+[[34m  Info  [0m] [ADT Split on 'xs'   ] - ⟦ α n
+[[34m  Info  [0m]                            Π (↓list_snoc(Nil, n) && 谶Nil) && true
+[[34m  Info  [0m]                            φ len(out) == S(len(Nil)) && tl(out) == n
+[[34m  Info  [0m]                            x out
+[[34m  Info  [0m]                          ⟧ /5,0/
+[[34m  Info  [0m] [ADT Split on 'xs'   ] - ⟦ α head$12, tail$17, n
+[[34m  Info  [0m]                            Π (↓list_snoc(Cons(head$12, tail$17), n) && 谶Cons(head$12, tail$17)) && true
+[[34m  Info  [0m]                            φ len(out) == S(len(Cons(head$12, tail$17))) && tl(out) == n
+[[34m  Info  [0m]                            x out
+[[34m  Info  [0m]                          ⟧ /19,0/
+[[34m  Info  [0m] [Symbolic Term Expl. (1->7)] ⟦ α n
+[[34m  Info  [0m]                                Π (↓list_snoc(Nil, n) && 谶Nil) && true
+[[34m  Info  [0m]                                φ len(out) == S(len(Nil)) && tl(out) == n
+[[34m  Info  [0m]                                x out
+[[34m  Info  [0m]                              ⟧ /5,0/
+[[34m  Info  [0m] [Symbolic Term Expl. (1->7)] Solved  with:  ⟨ true |  Cons(n, Nil) ⟩
+[[34m  Info  [0m] 
+[[34m  Info  [0m] [Introduce calls list_snoc$0(tail$17, n$0)] ⟦ α head$12, tail$17, n
+[[34m  Info  [0m]                                               Π (↓list_snoc(Cons(head$12, tail$17), n) && 谶Cons(head$12, tail$17)) && true
+[[34m  Info  [0m]                                               φ len(out) == S(len(Cons(head$12, tail$17))) && tl(out) == n
+[[34m  Info  [0m]                                               x out
+[[34m  Info  [0m]                                             ⟧ /19,0/
+[[34m  Info  [0m] [Introduce calls list_snoc$0(tail$17, n$0)] Decomposed into:
+[[34m  Info  [0m] [Introduce calls list_snoc$0(tail$17, n$0)] - ⟦ α head$12, tail$17, n
+[[34m  Info  [0m]                                                 Π val rec$11: NatList = list_snoc(tail$17, n)
+[[34m  Info  [0m]                                                   (↓list_snoc(Cons(head$12, tail$17), n) && 谶Cons(head$12, tail$17) && ↓list_snoc(tail$17, n)) && true
+[[34m  Info  [0m]                                                 φ len(out) == S(len(Cons(head$12, tail$17))) && tl(out) == n
+[[34m  Info  [0m]                                                 x out
+[[34m  Info  [0m]                                               ⟧ /19,0/
+[[34m  Info  [0m] [Symbolic Term Expl. (1->7)] ⟦ α head$12, tail$17, n
+[[34m  Info  [0m]                                Π val rec$11: NatList = list_snoc(tail$17, n)
+[[34m  Info  [0m]                                  (↓list_snoc(Cons(head$12, tail$17), n) && 谶Cons(head$12, tail$17) && ↓list_snoc(tail$17, n)) && true
+[[34m  Info  [0m]                                φ len(out) == S(len(Cons(head$12, tail$17))) && tl(out) == n
+[[34m  Info  [0m]                                x out
+[[34m  Info  [0m]                              ⟧ /19,0/
+[[34m  Info  [0m] [Symbolic Term Expl. (1->7)] Solved  with:  ⟨ true |  Cons(n, rec$11) ⟩
+[[34m  Info  [0m] 
+[[34m  Info  [0m] Finished in 11818ms
+[[34m  Info  [0m] ================================== list_snoc ==================================
+[[34m  Info  [0m] def list_snoc(xs : NatList, n : Nat): NatList =  {
+[[34m  Info  [0m]   xs match {
+[[34m  Info  [0m]     case Nil =>
+[[34m  Info  [0m]       Cons(n, Nil)
+[[34m  Info  [0m]     case Cons(head, tail) =>
+[[34m  Info  [0m]       Cons(n, list_snoc(tail, n))
+[[34m  Info  [0m]   }
+[[34m  Info  [0m] } ensuring {
+[[34m  Info  [0m]   (out : NatList) => len(out) == S(len(xs)) && tl(out) == n
+[[34m  Info  [0m] }
+[[34m  Info  [0m] 

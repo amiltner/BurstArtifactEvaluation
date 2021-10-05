@@ -1,0 +1,90 @@
+[[33mWarning [0m] Refusing to inline recursive function 'listWebElementToWebTree'!
+[[33mWarning [0m] The Z3 native interface is not available, falling back to smt-cvc4.
+[[34m  Info  [0m] =========================== Synthesizing 'bool_bor' ===========================
+[[34m  Info  [0m] [Symbolic Term Expl. (1->7)] ⟦ α p, q
+[[34m  Info  [0m]                                Π ↓bool_bor(p, q) && true
+[[34m  Info  [0m]                                φ if (p == F && q == F) {
+[[34m  Info  [0m]                                    out == F
+[[34m  Info  [0m]                                  } else {
+[[34m  Info  [0m]                                    out == T
+[[34m  Info  [0m]                                  }
+[[34m  Info  [0m]                                x out
+[[34m  Info  [0m]                              ⟧ /4,0/
+[[34m  Info  [0m] [Symbolic Term Expl. (1->7)] Failed
+[[34m  Info  [0m] [Optimistic Ground   ] ⟦ α p, q
+[[34m  Info  [0m]                          Π ↓bool_bor(p, q) && true
+[[34m  Info  [0m]                          φ if (p == F && q == F) {
+[[34m  Info  [0m]                              out == F
+[[34m  Info  [0m]                            } else {
+[[34m  Info  [0m]                              out == T
+[[34m  Info  [0m]                            }
+[[34m  Info  [0m]                          x out
+[[34m  Info  [0m]                        ⟧ /4,0/
+[[34m  Info  [0m] [Optimistic Ground   ] Failed
+[[34m  Info  [0m] [ADT Split on 'p'    ] ⟦ α p, q
+[[34m  Info  [0m]                          Π ↓bool_bor(p, q) && true
+[[34m  Info  [0m]                          φ if (p == F && q == F) {
+[[34m  Info  [0m]                              out == F
+[[34m  Info  [0m]                            } else {
+[[34m  Info  [0m]                              out == T
+[[34m  Info  [0m]                            }
+[[34m  Info  [0m]                          x out
+[[34m  Info  [0m]                        ⟧ /4,0/
+[[34m  Info  [0m] [ADT Split on 'p'    ] Decomposed into:
+[[34m  Info  [0m] [ADT Split on 'p'    ] - ⟦ α q
+[[34m  Info  [0m]                            Π (↓bool_bor(F, q) && 谶F) && true
+[[34m  Info  [0m]                            φ if (F == F && q == F) {
+[[34m  Info  [0m]                                out == F
+[[34m  Info  [0m]                              } else {
+[[34m  Info  [0m]                                out == T
+[[34m  Info  [0m]                              }
+[[34m  Info  [0m]                            x out
+[[34m  Info  [0m]                          ⟧ /2,0/
+[[34m  Info  [0m] [ADT Split on 'p'    ] - ⟦ α q
+[[34m  Info  [0m]                            Π (↓bool_bor(T, q) && 谶T) && true
+[[34m  Info  [0m]                            φ if (T == F && q == F) {
+[[34m  Info  [0m]                                out == F
+[[34m  Info  [0m]                              } else {
+[[34m  Info  [0m]                                out == T
+[[34m  Info  [0m]                              }
+[[34m  Info  [0m]                            x out
+[[34m  Info  [0m]                          ⟧ /2,0/
+[[34m  Info  [0m] [Symbolic Term Expl. (1->7)] ⟦ α q
+[[34m  Info  [0m]                                Π (↓bool_bor(F, q) && 谶F) && true
+[[34m  Info  [0m]                                φ if (F == F && q == F) {
+[[34m  Info  [0m]                                    out == F
+[[34m  Info  [0m]                                  } else {
+[[34m  Info  [0m]                                    out == T
+[[34m  Info  [0m]                                  }
+[[34m  Info  [0m]                                x out
+[[34m  Info  [0m]                              ⟧ /2,0/
+[[34m  Info  [0m] [Symbolic Term Expl. (1->7)] Solved  with:  ⟨ true |  q ⟩
+[[34m  Info  [0m] 
+[[34m  Info  [0m] [Symbolic Term Expl. (1->7)] ⟦ α q
+[[34m  Info  [0m]                                Π (↓bool_bor(T, q) && 谶T) && true
+[[34m  Info  [0m]                                φ if (T == F && q == F) {
+[[34m  Info  [0m]                                    out == F
+[[34m  Info  [0m]                                  } else {
+[[34m  Info  [0m]                                    out == T
+[[34m  Info  [0m]                                  }
+[[34m  Info  [0m]                                x out
+[[34m  Info  [0m]                              ⟧ /2,0/
+[[34m  Info  [0m] [Symbolic Term Expl. (1->7)] Solved  with:  ⟨ true |  T ⟩
+[[34m  Info  [0m] 
+[[34m  Info  [0m] Finished in 5558ms
+[[34m  Info  [0m] =================================== bool_bor ===================================
+[[34m  Info  [0m] def bool_bor(p : Boolean, q : Boolean): Boolean =  {
+[[34m  Info  [0m]   p match {
+[[34m  Info  [0m]     case F =>
+[[34m  Info  [0m]       q
+[[34m  Info  [0m]     case T =>
+[[34m  Info  [0m]       T
+[[34m  Info  [0m]   }
+[[34m  Info  [0m] } ensuring {
+[[34m  Info  [0m]   (out : Boolean) => if (p == F && q == F) {
+[[34m  Info  [0m]     out == F
+[[34m  Info  [0m]   } else {
+[[34m  Info  [0m]     out == T
+[[34m  Info  [0m]   }
+[[34m  Info  [0m] }
+[[34m  Info  [0m] 

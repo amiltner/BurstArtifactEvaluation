@@ -1,0 +1,2 @@
+benchmarks/postconditional/tree_map.sq:51: Resolution Error:
+  Variable inc is not in scope

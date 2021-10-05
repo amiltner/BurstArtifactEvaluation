@@ -1,0 +1,29 @@
+[[33mWarning [0m] Refusing to inline recursive function 'listWebElementToWebTree'!
+[[33mWarning [0m] The Z3 native interface is not available, falling back to smt-cvc4.
+[[34m  Info  [0m] =========================== Synthesizing 'bool_band' ===========================
+[[34m  Info  [0m] [One-point on out = F$0] ⟦ α p, q
+[[34m  Info  [0m]                            Π ↓bool_band(p, q) && true
+[[34m  Info  [0m]                            φ out == F
+[[34m  Info  [0m]                            x out
+[[34m  Info  [0m]                          ⟧ /4,0/
+[[34m  Info  [0m] [One-point on out = F$0] Decomposed into:
+[[34m  Info  [0m] [One-point on out = F$0] - ⟦ α p, q
+[[34m  Info  [0m]                              Π ↓bool_band(p, q) && true
+[[34m  Info  [0m]                              φ true
+[[34m  Info  [0m]                              x ()
+[[34m  Info  [0m]                            ⟧ /4,0/
+[[34m  Info  [0m] [Solve: ⟨ true |  () ⟩] ⟦ α p, q
+[[34m  Info  [0m]                           Π ↓bool_band(p, q) && true
+[[34m  Info  [0m]                           φ true
+[[34m  Info  [0m]                           x ()
+[[34m  Info  [0m]                         ⟧ /4,0/
+[[34m  Info  [0m] [Solve: ⟨ true |  () ⟩] Solved  with:  ⟨ true |  () ⟩
+[[34m  Info  [0m] 
+[[34m  Info  [0m] Finished in 39ms
+[[34m  Info  [0m] ================================== bool_band ==================================
+[[34m  Info  [0m] def bool_band(p : Boolean, q : Boolean): Boolean =  {
+[[34m  Info  [0m]   F
+[[34m  Info  [0m] } ensuring {
+[[34m  Info  [0m]   (out : Boolean) => out == F
+[[34m  Info  [0m] }
+[[34m  Info  [0m] 

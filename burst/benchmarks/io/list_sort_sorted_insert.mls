@@ -1,0 +1,43 @@
+type nat =
+  | O
+  | S of nat
+
+type list =
+  | Nil
+  | Cons of nat * list
+
+type cmp =
+  | LT
+  | EQ
+  | GT
+
+let compare =
+  fix (compare : nat -> nat -> cmp) =
+    fun (x1 : nat) ->
+      fun (x2 : nat) ->
+        match x1 with
+        | O -> (match x2 with
+                | O -> EQ
+                | S _ -> LT)
+        | S x1 -> (match x2 with
+                | O -> GT
+                | S x2 -> compare x1 x2)
+;;
+
+let insert =
+  fix (insert : list -> nat -> list) =
+    fun (l1 : list) ->
+      fun (n : nat) ->
+        match l1 with
+        | Nil -> Cons (n, Nil)
+        | Cons (h,t) -> (match compare n h with
+                | LT -> Cons (n, l1)
+                | EQ -> l1
+                | GT -> Cons (h, insert t n))
+;;
+
+synth list -> list satisfying
+
+[Nil] -> Nil,
+[Cons(1,Cons(1,Nil))] -> Cons(1,Nil),
+[Cons(0,Cons(1,Cons(1,Nil)))] -> Cons(0,Cons(1,Nil)),

@@ -1,0 +1,12 @@
+include "nat.decls"
+
+synth nat -> nat -> nat satisfying
+
+equiv
+
+fix (f : nat -> nat -> nat) =
+  fun (n1:nat) ->
+    fun (n2:nat) ->
+      match n1 with
+        | O -> n2
+        | S np -> S (f np n2)

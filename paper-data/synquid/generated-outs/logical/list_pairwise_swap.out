@@ -1,0 +1,7 @@
+list_pairwise_swap :: xs:NatList -> {NatList|((((xs == (Nil) ==> _v == (Nil)) && (xs != (Nil) && tl xs == (Nil) ==> _v == (Nil))) && ((xs != (Nil) && tl xs != (Nil)) && tl (tl xs) == (Nil) ==> _v == (Cons (hd (tl xs)) ((Cons (hd xs) (Nil)))))) && (((xs != (Nil) && tl xs != (Nil)) && tl (tl xs) != (Nil)) && tl (tl (tl xs)) == (Nil) ==> _v == (Nil))) && ((((xs != (Nil) && tl xs != (Nil)) && tl (tl xs) != (Nil)) && tl (tl (tl xs)) != (Nil)) && tl (tl (tl (tl xs))) == (Nil) ==> _v == (Cons (hd (tl xs)) ((Cons (hd xs) ((Cons (hd (tl (tl (tl xs)))) ((Cons (hd (tl (tl xs))) (Nil)))))))))}
+benchmarks/postconditional/list_pairwise_swap.sq:36: Error:
+  Cannot match shape 'Nat'
+  with shape 'NatList'
+  when checking Z :: NatList in
+  \xs . 
+    match Cons Z Z with

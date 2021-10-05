@@ -1,0 +1,47 @@
+type bool =
+  | True
+  | False
+
+type tree =
+  | Leaf
+  | Node of tree * bool * tree
+
+type nat =
+  | O
+  | S of nat
+
+let sum =
+  fix (sum : nat -> nat -> nat) =
+    fun (n1 : nat) ->
+      fun (n2 : nat) ->
+        match n1 with
+        | O -> n2
+        | S n1p -> S (sum n1p n2)
+;;
+
+synth tree -> nat -> nat satisfying
+
+[Leaf,0] -> 0,
+[Leaf,1] -> 0,
+[Leaf,2] -> 0,
+[Leaf,3] -> 0,
+[Node (Leaf, True, Leaf),0] -> 1,
+[Node (Leaf, True, Leaf),1] -> 0,
+[Node (Leaf, True, Leaf),2] -> 0,
+[Node (Leaf, True, Leaf),3] -> 0,
+[Node (Node (Leaf, True, Leaf), True, Leaf),0] -> 1,
+[Node (Node (Leaf, True, Leaf), True, Leaf),1] -> 1,
+[Node (Node (Leaf, True, Leaf), True, Leaf),2] -> 0,
+[Node (Node (Leaf, True, Leaf), True, Leaf),3] -> 0,
+[Node (Leaf, True, Node (Leaf, True, Leaf)),0] -> 1,
+[Node (Leaf, True, Node (Leaf, True, Leaf)),1] -> 1,
+[Node (Leaf, True, Node (Leaf, True, Leaf)),2] -> 0,
+[Node (Leaf, True, Node (Leaf, True, Leaf)),3] -> 0,
+[Node (Node (Leaf, True, Leaf), True, Node (Leaf, True, Leaf)),0] -> 1,
+[Node (Node (Leaf, True, Leaf), True, Node (Leaf, True, Leaf)),1] -> 2,
+[Node (Node (Leaf, True, Leaf), True, Node (Leaf, True, Leaf)),2] -> 0,
+[Node (Node (Leaf, True, Leaf), True, Node (Leaf, True, Leaf)),3] -> 0,
+[Node (Node (Node (Leaf, True, Leaf), True, Node (Leaf, True, Leaf)), True, Leaf),0] -> 1,
+[Node (Node (Node (Leaf, True, Leaf), True, Node (Leaf, True, Leaf)), True, Leaf),1] -> 1,
+[Node (Node (Node (Leaf, True, Leaf), True, Node (Leaf, True, Leaf)), True, Leaf),2] -> 2,
+[Node (Node (Node (Leaf, True, Leaf), True, Node (Leaf, True, Leaf)), True, Leaf),3] -> 0,

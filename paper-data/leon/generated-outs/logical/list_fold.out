@@ -1,0 +1,36 @@
+[[33mWarning [0m] Refusing to inline recursive function 'listWebElementToWebTree'!
+[[33mWarning [0m] The Z3 native interface is not available, falling back to smt-cvc4.
+[[34m  Info  [0m] =========================== Synthesizing 'list_fold' ===========================
+[[34m  Info  [0m] [Symbolic Term Expl. (1->7)] ⟦ α f, x, xs
+[[34m  Info  [0m]                                Π ↓list_fold(f, x, xs) && true
+[[34m  Info  [0m]                                φ if (f == (x1 : Nat, x2 : Nat) => zero(x1, x2)) {
+[[34m  Info  [0m]                                    x == Z ==> out == Z
+[[34m  Info  [0m]                                  } else if (f == (x1 : Nat, x2 : Nat) => count(x1, x2)) {
+[[34m  Info  [0m]                                    out == sum(size(xs), x)
+[[34m  Info  [0m]                                  } else if (f == (x1 : Nat, x2 : Nat) => sum(x1, x2)) {
+[[34m  Info  [0m]                                    val Cons(a, Cons(b, Cons(c, Nil))) = xs
+[[34m  Info  [0m]                                    out == sum(x, sum(a, sum(b, c)))
+[[34m  Info  [0m]                                  } else {
+[[34m  Info  [0m]                                    true
+[[34m  Info  [0m]                                  }
+[[34m  Info  [0m]                                x out
+[[34m  Info  [0m]                              ⟧ /24,0/
+[[34m  Info  [0m] [Symbolic Term Expl. (1->7)] Solved  with:  ⟨ true |  Z ⟩
+[[34m  Info  [0m] 
+[[34m  Info  [0m] Finished in 2641ms
+[[34m  Info  [0m] ================================== list_fold ==================================
+[[34m  Info  [0m] def list_fold(f : (Nat, Nat) => Nat, x : Nat, xs : NatList): Nat =  {
+[[34m  Info  [0m]   Z
+[[34m  Info  [0m] } ensuring {
+[[34m  Info  [0m]   (out : Nat) => if (f == (x1 : Nat, x2 : Nat) => zero(x1, x2)) {
+[[34m  Info  [0m]     x == Z ==> out == Z
+[[34m  Info  [0m]   } else if (f == (x1 : Nat, x2 : Nat) => count(x1, x2)) {
+[[34m  Info  [0m]     out == sum(size(xs), x)
+[[34m  Info  [0m]   } else if (f == (x1 : Nat, x2 : Nat) => sum(x1, x2)) {
+[[34m  Info  [0m]     val Cons(a, Cons(b, Cons(c, Nil))) = xs
+[[34m  Info  [0m]     out == sum(x, sum(a, sum(b, c)))
+[[34m  Info  [0m]   } else {
+[[34m  Info  [0m]     true
+[[34m  Info  [0m]   }
+[[34m  Info  [0m] }
+[[34m  Info  [0m] 

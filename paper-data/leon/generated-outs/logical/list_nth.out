@@ -1,0 +1,492 @@
+[[33mWarning [0m] Refusing to inline recursive function 'listWebElementToWebTree'!
+[[33mWarning [0m] The Z3 native interface is not available, falling back to smt-cvc4.
+[[34m  Info  [0m] =========================== Synthesizing 'list_nth' ===========================
+[[34m  Info  [0m] [Symbolic Term Expl. (1->7)] ⟦ α xs, n
+[[34m  Info  [0m]                                Π ↓list_nth(xs, n) && true
+[[34m  Info  [0m]                                φ if (len(xs) < nat_to_int(n)) {
+[[34m  Info  [0m]                                    out == Z
+[[34m  Info  [0m]                                  } else if (len(xs) == nat_to_int(n) + 1) {
+[[34m  Info  [0m]                                    out == list_last(xs)
+[[34m  Info  [0m]                                  } else {
+[[34m  Info  [0m]                                    true
+[[34m  Info  [0m]                                  }
+[[34m  Info  [0m]                                x out
+[[34m  Info  [0m]                              ⟧ /24,0/
+[[34m  Info  [0m] [Symbolic Term Expl. (1->7)] Failed
+[[34m  Info  [0m] [Optimistic Ground   ] ⟦ α xs, n
+[[34m  Info  [0m]                          Π ↓list_nth(xs, n) && true
+[[34m  Info  [0m]                          φ if (len(xs) < nat_to_int(n)) {
+[[34m  Info  [0m]                              out == Z
+[[34m  Info  [0m]                            } else if (len(xs) == nat_to_int(n) + 1) {
+[[34m  Info  [0m]                              out == list_last(xs)
+[[34m  Info  [0m]                            } else {
+[[34m  Info  [0m]                              true
+[[34m  Info  [0m]                            }
+[[34m  Info  [0m]                          x out
+[[34m  Info  [0m]                        ⟧ /24,0/
+[[34m  Info  [0m] [Optimistic Ground   ] Failed
+[[34m  Info  [0m] [ADT Split on 'n'    ] ⟦ α xs, n
+[[34m  Info  [0m]                          Π ↓list_nth(xs, n) && true
+[[34m  Info  [0m]                          φ if (len(xs) < nat_to_int(n)) {
+[[34m  Info  [0m]                              out == Z
+[[34m  Info  [0m]                            } else if (len(xs) == nat_to_int(n) + 1) {
+[[34m  Info  [0m]                              out == list_last(xs)
+[[34m  Info  [0m]                            } else {
+[[34m  Info  [0m]                              true
+[[34m  Info  [0m]                            }
+[[34m  Info  [0m]                          x out
+[[34m  Info  [0m]                        ⟧ /24,0/
+[[34m  Info  [0m] [ADT Split on 'n'    ] Decomposed into:
+[[34m  Info  [0m] [ADT Split on 'n'    ] - ⟦ α xs
+[[34m  Info  [0m]                            Π (↓list_nth(xs, Z) && 谶Z) && true
+[[34m  Info  [0m]                            φ if (len(xs) < nat_to_int(Z)) {
+[[34m  Info  [0m]                                out == Z
+[[34m  Info  [0m]                              } else if (len(xs) == nat_to_int(Z) + 1) {
+[[34m  Info  [0m]                                out == list_last(xs)
+[[34m  Info  [0m]                              } else {
+[[34m  Info  [0m]                                true
+[[34m  Info  [0m]                              }
+[[34m  Info  [0m]                            x out
+[[34m  Info  [0m]                          ⟧ /10,0/
+[[34m  Info  [0m] [ADT Split on 'n'    ] - ⟦ α nat$6, xs
+[[34m  Info  [0m]                            Π (↓list_nth(xs, S(nat$6)) && 谶S(nat$6)) && true
+[[34m  Info  [0m]                            φ if (len(xs) < nat_to_int(S(nat$6))) {
+[[34m  Info  [0m]                                out == Z
+[[34m  Info  [0m]                              } else if (len(xs) == nat_to_int(S(nat$6)) + 1) {
+[[34m  Info  [0m]                                out == list_last(xs)
+[[34m  Info  [0m]                              } else {
+[[34m  Info  [0m]                                true
+[[34m  Info  [0m]                              }
+[[34m  Info  [0m]                            x out
+[[34m  Info  [0m]                          ⟧ /14,0/
+[[34m  Info  [0m] [Symbolic Term Expl. (1->7)] ⟦ α xs
+[[34m  Info  [0m]                                Π (↓list_nth(xs, Z) && 谶Z) && true
+[[34m  Info  [0m]                                φ if (len(xs) < nat_to_int(Z)) {
+[[34m  Info  [0m]                                    out == Z
+[[34m  Info  [0m]                                  } else if (len(xs) == nat_to_int(Z) + 1) {
+[[34m  Info  [0m]                                    out == list_last(xs)
+[[34m  Info  [0m]                                  } else {
+[[34m  Info  [0m]                                    true
+[[34m  Info  [0m]                                  }
+[[34m  Info  [0m]                                x out
+[[34m  Info  [0m]                              ⟧ /10,0/
+[[34m  Info  [0m] [Symbolic Term Expl. (1->7)] Failed
+[[34m  Info  [0m] [Optimistic Ground   ] ⟦ α xs
+[[34m  Info  [0m]                          Π (↓list_nth(xs, Z) && 谶Z) && true
+[[34m  Info  [0m]                          φ if (len(xs) < nat_to_int(Z)) {
+[[34m  Info  [0m]                              out == Z
+[[34m  Info  [0m]                            } else if (len(xs) == nat_to_int(Z) + 1) {
+[[34m  Info  [0m]                              out == list_last(xs)
+[[34m  Info  [0m]                            } else {
+[[34m  Info  [0m]                              true
+[[34m  Info  [0m]                            }
+[[34m  Info  [0m]                          x out
+[[34m  Info  [0m]                        ⟧ /10,0/
+[[34m  Info  [0m] [Optimistic Ground   ] Failed
+[[34m  Info  [0m] [If-Split on 'len(xs) < nat_to_int(n)'] ⟦ α xs, n
+[[34m  Info  [0m]                                           Π ↓list_nth(xs, n) && true
+[[34m  Info  [0m]                                           φ if (len(xs) < nat_to_int(n)) {
+[[34m  Info  [0m]                                               out == Z
+[[34m  Info  [0m]                                             } else if (len(xs) == nat_to_int(n) + 1) {
+[[34m  Info  [0m]                                               out == list_last(xs)
+[[34m  Info  [0m]                                             } else {
+[[34m  Info  [0m]                                               true
+[[34m  Info  [0m]                                             }
+[[34m  Info  [0m]                                           x out
+[[34m  Info  [0m]                                         ⟧ /24,0/
+[[34m  Info  [0m] [If-Split on 'len(xs) < nat_to_int(n)'] Decomposed into:
+[[34m  Info  [0m] [If-Split on 'len(xs) < nat_to_int(n)'] - ⟦ α xs, n
+[[34m  Info  [0m]                                             Π len(xs) < nat_to_int(n) && (↓list_nth(xs, n) && true)
+[[34m  Info  [0m]                                             φ out == Z
+[[34m  Info  [0m]                                             x out
+[[34m  Info  [0m]                                           ⟧ /0,0/
+[[34m  Info  [0m] [If-Split on 'len(xs) < nat_to_int(n)'] - ⟦ α xs, n
+[[34m  Info  [0m]                                             Π len(xs) >= nat_to_int(n) && (↓list_nth(xs, n) && true)
+[[34m  Info  [0m]                                             φ if (len(xs) == nat_to_int(n) + 1) {
+[[34m  Info  [0m]                                                 out == list_last(xs)
+[[34m  Info  [0m]                                               } else {
+[[34m  Info  [0m]                                                 true
+[[34m  Info  [0m]                                               }
+[[34m  Info  [0m]                                             x out
+[[34m  Info  [0m]                                           ⟧ /0,0/
+[[34m  Info  [0m] [One-point on out = Z$0] ⟦ α xs, n
+[[34m  Info  [0m]                            Π len(xs) < nat_to_int(n) && (↓list_nth(xs, n) && true)
+[[34m  Info  [0m]                            φ out == Z
+[[34m  Info  [0m]                            x out
+[[34m  Info  [0m]                          ⟧ /0,0/
+[[34m  Info  [0m] [One-point on out = Z$0] Decomposed into:
+[[34m  Info  [0m] [One-point on out = Z$0] - ⟦ α xs, n
+[[34m  Info  [0m]                              Π len(xs) < nat_to_int(n) && (↓list_nth(xs, n) && true)
+[[34m  Info  [0m]                              φ true
+[[34m  Info  [0m]                              x ()
+[[34m  Info  [0m]                            ⟧ /0,0/
+[[34m  Info  [0m] [Solve: ⟨ true |  () ⟩] ⟦ α xs, n
+[[34m  Info  [0m]                           Π len(xs) < nat_to_int(n) && (↓list_nth(xs, n) && true)
+[[34m  Info  [0m]                           φ true
+[[34m  Info  [0m]                           x ()
+[[34m  Info  [0m]                         ⟧ /0,0/
+[[34m  Info  [0m] [Solve: ⟨ true |  () ⟩] Solved  with:  ⟨ true |  () ⟩
+[[34m  Info  [0m] 
+[[34m  Info  [0m] [Symbolic Term Expl. (1->7)] ⟦ α xs, n
+[[34m  Info  [0m]                                Π len(xs) >= nat_to_int(n) && (↓list_nth(xs, n) && true)
+[[34m  Info  [0m]                                φ if (len(xs) == nat_to_int(n) + 1) {
+[[34m  Info  [0m]                                    out == list_last(xs)
+[[34m  Info  [0m]                                  } else {
+[[34m  Info  [0m]                                    true
+[[34m  Info  [0m]                                  }
+[[34m  Info  [0m]                                x out
+[[34m  Info  [0m]                              ⟧ /0,0/
+[[34m  Info  [0m] [Symbolic Term Expl. (1->7)] Failed
+[[34m  Info  [0m] [Optimistic Ground   ] ⟦ α xs, n
+[[34m  Info  [0m]                          Π len(xs) >= nat_to_int(n) && (↓list_nth(xs, n) && true)
+[[34m  Info  [0m]                          φ if (len(xs) == nat_to_int(n) + 1) {
+[[34m  Info  [0m]                              out == list_last(xs)
+[[34m  Info  [0m]                            } else {
+[[34m  Info  [0m]                              true
+[[34m  Info  [0m]                            }
+[[34m  Info  [0m]                          x out
+[[34m  Info  [0m]                        ⟧ /0,0/
+[[34m  Info  [0m] [Optimistic Ground   ] Failed
+[[34m  Info  [0m] [ADT Split on 'xs'   ] ⟦ α xs, n
+[[34m  Info  [0m]                          Π ↓list_nth(xs, n) && true
+[[34m  Info  [0m]                          φ if (len(xs) < nat_to_int(n)) {
+[[34m  Info  [0m]                              out == Z
+[[34m  Info  [0m]                            } else if (len(xs) == nat_to_int(n) + 1) {
+[[34m  Info  [0m]                              out == list_last(xs)
+[[34m  Info  [0m]                            } else {
+[[34m  Info  [0m]                              true
+[[34m  Info  [0m]                            }
+[[34m  Info  [0m]                          x out
+[[34m  Info  [0m]                        ⟧ /24,0/
+[[34m  Info  [0m] [ADT Split on 'xs'   ] Decomposed into:
+[[34m  Info  [0m] [ADT Split on 'xs'   ] - ⟦ α n
+[[34m  Info  [0m]                            Π (↓list_nth(Nil, n) && 谶Nil) && true
+[[34m  Info  [0m]                            φ if (len(Nil) < nat_to_int(n)) {
+[[34m  Info  [0m]                                out == Z
+[[34m  Info  [0m]                              } else if (len(Nil) == nat_to_int(n) + 1) {
+[[34m  Info  [0m]                                out == list_last(Nil)
+[[34m  Info  [0m]                              } else {
+[[34m  Info  [0m]                                true
+[[34m  Info  [0m]                              }
+[[34m  Info  [0m]                            x out
+[[34m  Info  [0m]                          ⟧ /5,0/
+[[34m  Info  [0m] [ADT Split on 'xs'   ] - ⟦ α head$17, tail$22, n
+[[34m  Info  [0m]                            Π (↓list_nth(Cons(head$17, tail$22), n) && 谶Cons(head$17, tail$22)) && true
+[[34m  Info  [0m]                            φ if (len(Cons(head$17, tail$22)) < nat_to_int(n)) {
+[[34m  Info  [0m]                                out == Z
+[[34m  Info  [0m]                              } else if (len(Cons(head$17, tail$22)) == nat_to_int(n) + 1) {
+[[34m  Info  [0m]                                out == list_last(Cons(head$17, tail$22))
+[[34m  Info  [0m]                              } else {
+[[34m  Info  [0m]                                true
+[[34m  Info  [0m]                              }
+[[34m  Info  [0m]                            x out
+[[34m  Info  [0m]                          ⟧ /19,0/
+[[34m  Info  [0m] [Symbolic Term Expl. (1->7)] ⟦ α n
+[[34m  Info  [0m]                                Π (↓list_nth(Nil, n) && 谶Nil) && true
+[[34m  Info  [0m]                                φ if (len(Nil) < nat_to_int(n)) {
+[[34m  Info  [0m]                                    out == Z
+[[34m  Info  [0m]                                  } else if (len(Nil) == nat_to_int(n) + 1) {
+[[34m  Info  [0m]                                    out == list_last(Nil)
+[[34m  Info  [0m]                                  } else {
+[[34m  Info  [0m]                                    true
+[[34m  Info  [0m]                                  }
+[[34m  Info  [0m]                                x out
+[[34m  Info  [0m]                              ⟧ /5,0/
+[[34m  Info  [0m] [Symbolic Term Expl. (1->7)] Solved  with:  ⟨ true |  Z ⟩
+[[34m  Info  [0m] 
+[[34m  Info  [0m] [If-Split on 'len(xs) == nat_to_int(n) + 1'] ⟦ α xs, n
+[[34m  Info  [0m]                                                Π ↓list_nth(xs, n) && true
+[[34m  Info  [0m]                                                φ if (len(xs) < nat_to_int(n)) {
+[[34m  Info  [0m]                                                    out == Z
+[[34m  Info  [0m]                                                  } else if (len(xs) == nat_to_int(n) + 1) {
+[[34m  Info  [0m]                                                    out == list_last(xs)
+[[34m  Info  [0m]                                                  } else {
+[[34m  Info  [0m]                                                    true
+[[34m  Info  [0m]                                                  }
+[[34m  Info  [0m]                                                x out
+[[34m  Info  [0m]                                              ⟧ /24,0/
+[[34m  Info  [0m] [If-Split on 'len(xs) == nat_to_int(n) + 1'] Decomposed into:
+[[34m  Info  [0m] [If-Split on 'len(xs) == nat_to_int(n) + 1'] - ⟦ α xs, n
+[[34m  Info  [0m]                                                  Π len(xs) == nat_to_int(n) + 1 && (↓list_nth(xs, n) && true)
+[[34m  Info  [0m]                                                  φ if (len(xs) < nat_to_int(n)) {
+[[34m  Info  [0m]                                                      out == Z
+[[34m  Info  [0m]                                                    } else {
+[[34m  Info  [0m]                                                      out == list_last(xs)
+[[34m  Info  [0m]                                                    }
+[[34m  Info  [0m]                                                  x out
+[[34m  Info  [0m]                                                ⟧ /0,0/
+[[34m  Info  [0m] [If-Split on 'len(xs) == nat_to_int(n) + 1'] - ⟦ α xs, n
+[[34m  Info  [0m]                                                  Π len(xs) != nat_to_int(n) + 1 && (↓list_nth(xs, n) && true)
+[[34m  Info  [0m]                                                  φ if (len(xs) < nat_to_int(n)) {
+[[34m  Info  [0m]                                                      out == Z
+[[34m  Info  [0m]                                                    } else {
+[[34m  Info  [0m]                                                      true
+[[34m  Info  [0m]                                                    }
+[[34m  Info  [0m]                                                  x out
+[[34m  Info  [0m]                                                ⟧ /0,0/
+[[34m  Info  [0m] [Symbolic Term Expl. (1->7)] ⟦ α xs, n
+[[34m  Info  [0m]                                Π len(xs) == nat_to_int(n) + 1 && (↓list_nth(xs, n) && true)
+[[34m  Info  [0m]                                φ if (len(xs) < nat_to_int(n)) {
+[[34m  Info  [0m]                                    out == Z
+[[34m  Info  [0m]                                  } else {
+[[34m  Info  [0m]                                    out == list_last(xs)
+[[34m  Info  [0m]                                  }
+[[34m  Info  [0m]                                x out
+[[34m  Info  [0m]                              ⟧ /0,0/
+[[34m  Info  [0m] [Symbolic Term Expl. (1->7)] Failed
+[[34m  Info  [0m] [Optimistic Ground   ] ⟦ α xs, n
+[[34m  Info  [0m]                          Π len(xs) == nat_to_int(n) + 1 && (↓list_nth(xs, n) && true)
+[[34m  Info  [0m]                          φ if (len(xs) < nat_to_int(n)) {
+[[34m  Info  [0m]                              out == Z
+[[34m  Info  [0m]                            } else {
+[[34m  Info  [0m]                              out == list_last(xs)
+[[34m  Info  [0m]                            }
+[[34m  Info  [0m]                          x out
+[[34m  Info  [0m]                        ⟧ /0,0/
+[[34m  Info  [0m] [Optimistic Ground   ] Failed
+[[34m  Info  [0m] [Introduce calls list_nth$0(tail$22, n$0)] ⟦ α head$17, tail$22, n
+[[34m  Info  [0m]                                              Π (↓list_nth(Cons(head$17, tail$22), n) && 谶Cons(head$17, tail$22)) && true
+[[34m  Info  [0m]                                              φ if (len(Cons(head$17, tail$22)) < nat_to_int(n)) {
+[[34m  Info  [0m]                                                  out == Z
+[[34m  Info  [0m]                                                } else if (len(Cons(head$17, tail$22)) == nat_to_int(n) + 1) {
+[[34m  Info  [0m]                                                  out == list_last(Cons(head$17, tail$22))
+[[34m  Info  [0m]                                                } else {
+[[34m  Info  [0m]                                                  true
+[[34m  Info  [0m]                                                }
+[[34m  Info  [0m]                                              x out
+[[34m  Info  [0m]                                            ⟧ /19,0/
+[[34m  Info  [0m] [Introduce calls list_nth$0(tail$22, n$0)] Decomposed into:
+[[34m  Info  [0m] [Introduce calls list_nth$0(tail$22, n$0)] - ⟦ α head$17, tail$22, n
+[[34m  Info  [0m]                                                Π val rec$13: Nat = list_nth(tail$22, n)
+[[34m  Info  [0m]                                                  (↓list_nth(Cons(head$17, tail$22), n) && 谶Cons(head$17, tail$22) && ↓list_nth(tail$22, n)) && true
+[[34m  Info  [0m]                                                φ if (len(Cons(head$17, tail$22)) < nat_to_int(n)) {
+[[34m  Info  [0m]                                                    out == Z
+[[34m  Info  [0m]                                                  } else if (len(Cons(head$17, tail$22)) == nat_to_int(n) + 1) {
+[[34m  Info  [0m]                                                    out == list_last(Cons(head$17, tail$22))
+[[34m  Info  [0m]                                                  } else {
+[[34m  Info  [0m]                                                    true
+[[34m  Info  [0m]                                                  }
+[[34m  Info  [0m]                                                x out
+[[34m  Info  [0m]                                              ⟧ /19,0/
+[[34m  Info  [0m] [Symbolic Term Expl. (1->7)] ⟦ α head$17, tail$22, n
+[[34m  Info  [0m]                                Π val rec$13: Nat = list_nth(tail$22, n)
+[[34m  Info  [0m]                                  (↓list_nth(Cons(head$17, tail$22), n) && 谶Cons(head$17, tail$22) && ↓list_nth(tail$22, n)) && true
+[[34m  Info  [0m]                                φ if (len(Cons(head$17, tail$22)) < nat_to_int(n)) {
+[[34m  Info  [0m]                                    out == Z
+[[34m  Info  [0m]                                  } else if (len(Cons(head$17, tail$22)) == nat_to_int(n) + 1) {
+[[34m  Info  [0m]                                    out == list_last(Cons(head$17, tail$22))
+[[34m  Info  [0m]                                  } else {
+[[34m  Info  [0m]                                    true
+[[34m  Info  [0m]                                  }
+[[34m  Info  [0m]                                x out
+[[34m  Info  [0m]                              ⟧ /19,0/
+[[34m  Info  [0m] [Symbolic Term Expl. (1->7)] Failed
+[[34m  Info  [0m] [Optimistic Ground   ] ⟦ α head$17, tail$22, n
+[[34m  Info  [0m]                          Π val rec$13: Nat = list_nth(tail$22, n)
+[[34m  Info  [0m]                            (↓list_nth(Cons(head$17, tail$22), n) && 谶Cons(head$17, tail$22) && ↓list_nth(tail$22, n)) && true
+[[34m  Info  [0m]                          φ if (len(Cons(head$17, tail$22)) < nat_to_int(n)) {
+[[34m  Info  [0m]                              out == Z
+[[34m  Info  [0m]                            } else if (len(Cons(head$17, tail$22)) == nat_to_int(n) + 1) {
+[[34m  Info  [0m]                              out == list_last(Cons(head$17, tail$22))
+[[34m  Info  [0m]                            } else {
+[[34m  Info  [0m]                              true
+[[34m  Info  [0m]                            }
+[[34m  Info  [0m]                          x out
+[[34m  Info  [0m]                        ⟧ /19,0/
+[[34m  Info  [0m] [Optimistic Ground   ] Failed
+[[34m  Info  [0m] [ADT Split on 'n'    ] ⟦ α xs, n
+[[34m  Info  [0m]                          Π len(xs) >= nat_to_int(n) && (↓list_nth(xs, n) && true)
+[[34m  Info  [0m]                          φ if (len(xs) == nat_to_int(n) + 1) {
+[[34m  Info  [0m]                              out == list_last(xs)
+[[34m  Info  [0m]                            } else {
+[[34m  Info  [0m]                              true
+[[34m  Info  [0m]                            }
+[[34m  Info  [0m]                          x out
+[[34m  Info  [0m]                        ⟧ /0,0/
+[[34m  Info  [0m] [ADT Split on 'n'    ] Decomposed into:
+[[34m  Info  [0m] [ADT Split on 'n'    ] - ⟦ α xs
+[[34m  Info  [0m]                            Π len(xs) >= nat_to_int(Z) && ((↓list_nth(xs, Z) && 谶Z) && true)
+[[34m  Info  [0m]                            φ if (len(xs) == nat_to_int(Z) + 1) {
+[[34m  Info  [0m]                                out == list_last(xs)
+[[34m  Info  [0m]                              } else {
+[[34m  Info  [0m]                                true
+[[34m  Info  [0m]                              }
+[[34m  Info  [0m]                            x out
+[[34m  Info  [0m]                          ⟧ /0,0/
+[[34m  Info  [0m] [ADT Split on 'n'    ] - ⟦ α nat$21, xs
+[[34m  Info  [0m]                            Π len(xs) >= nat_to_int(S(nat$21)) && ((↓list_nth(xs, S(nat$21)) && 谶S(nat$21)) && true)
+[[34m  Info  [0m]                            φ if (len(xs) == nat_to_int(S(nat$21)) + 1) {
+[[34m  Info  [0m]                                out == list_last(xs)
+[[34m  Info  [0m]                              } else {
+[[34m  Info  [0m]                                true
+[[34m  Info  [0m]                              }
+[[34m  Info  [0m]                            x out
+[[34m  Info  [0m]                          ⟧ /0,0/
+[[34m  Info  [0m] [Symbolic Term Expl. (1->7)] ⟦ α xs
+[[34m  Info  [0m]                                Π len(xs) >= nat_to_int(Z) && ((↓list_nth(xs, Z) && 谶Z) && true)
+[[34m  Info  [0m]                                φ if (len(xs) == nat_to_int(Z) + 1) {
+[[34m  Info  [0m]                                    out == list_last(xs)
+[[34m  Info  [0m]                                  } else {
+[[34m  Info  [0m]                                    true
+[[34m  Info  [0m]                                  }
+[[34m  Info  [0m]                                x out
+[[34m  Info  [0m]                              ⟧ /0,0/
+[[34m  Info  [0m] [Symbolic Term Expl. (1->7)] Failed
+[[34m  Info  [0m] [Optimistic Ground   ] ⟦ α xs
+[[34m  Info  [0m]                          Π len(xs) >= nat_to_int(Z) && ((↓list_nth(xs, Z) && 谶Z) && true)
+[[34m  Info  [0m]                          φ if (len(xs) == nat_to_int(Z) + 1) {
+[[34m  Info  [0m]                              out == list_last(xs)
+[[34m  Info  [0m]                            } else {
+[[34m  Info  [0m]                              true
+[[34m  Info  [0m]                            }
+[[34m  Info  [0m]                          x out
+[[34m  Info  [0m]                        ⟧ /0,0/
+[[34m  Info  [0m] [Optimistic Ground   ] Failed
+[[34m  Info  [0m] [If-Split on 'len(xs) < nat_to_int(Z)'] ⟦ α xs
+[[34m  Info  [0m]                                           Π (↓list_nth(xs, Z) && 谶Z) && true
+[[34m  Info  [0m]                                           φ if (len(xs) < nat_to_int(Z)) {
+[[34m  Info  [0m]                                               out == Z
+[[34m  Info  [0m]                                             } else if (len(xs) == nat_to_int(Z) + 1) {
+[[34m  Info  [0m]                                               out == list_last(xs)
+[[34m  Info  [0m]                                             } else {
+[[34m  Info  [0m]                                               true
+[[34m  Info  [0m]                                             }
+[[34m  Info  [0m]                                           x out
+[[34m  Info  [0m]                                         ⟧ /10,0/
+[[34m  Info  [0m] [If-Split on 'len(xs) < nat_to_int(Z)'] Decomposed into:
+[[34m  Info  [0m] [If-Split on 'len(xs) < nat_to_int(Z)'] - ⟦ α xs
+[[34m  Info  [0m]                                             Π len(xs) < nat_to_int(Z) && ((↓list_nth(xs, Z) && 谶Z) && true)
+[[34m  Info  [0m]                                             φ out == Z
+[[34m  Info  [0m]                                             x out
+[[34m  Info  [0m]                                           ⟧ /0,0/
+[[34m  Info  [0m] [If-Split on 'len(xs) < nat_to_int(Z)'] - ⟦ α xs
+[[34m  Info  [0m]                                             Π len(xs) >= nat_to_int(Z) && ((↓list_nth(xs, Z) && 谶Z) && true)
+[[34m  Info  [0m]                                             φ if (len(xs) == nat_to_int(Z) + 1) {
+[[34m  Info  [0m]                                                 out == list_last(xs)
+[[34m  Info  [0m]                                               } else {
+[[34m  Info  [0m]                                                 true
+[[34m  Info  [0m]                                               }
+[[34m  Info  [0m]                                             x out
+[[34m  Info  [0m]                                           ⟧ /0,0/
+[[34m  Info  [0m] [One-point on out = Z$0] ⟦ α xs
+[[34m  Info  [0m]                            Π len(xs) < nat_to_int(Z) && ((↓list_nth(xs, Z) && 谶Z) && true)
+[[34m  Info  [0m]                            φ out == Z
+[[34m  Info  [0m]                            x out
+[[34m  Info  [0m]                          ⟧ /0,0/
+[[34m  Info  [0m] [One-point on out = Z$0] Decomposed into:
+[[34m  Info  [0m] [One-point on out = Z$0] - ⟦ α xs
+[[34m  Info  [0m]                              Π len(xs) < nat_to_int(Z) && ((↓list_nth(xs, Z) && 谶Z) && true)
+[[34m  Info  [0m]                              φ true
+[[34m  Info  [0m]                              x ()
+[[34m  Info  [0m]                            ⟧ /0,0/
+[[34m  Info  [0m] [Solve: ⟨ true |  () ⟩] ⟦ α xs
+[[34m  Info  [0m]                           Π len(xs) < nat_to_int(Z) && ((↓list_nth(xs, Z) && 谶Z) && true)
+[[34m  Info  [0m]                           φ true
+[[34m  Info  [0m]                           x ()
+[[34m  Info  [0m]                         ⟧ /0,0/
+[[34m  Info  [0m] [Solve: ⟨ true |  () ⟩] Solved  with:  ⟨ true |  () ⟩
+[[34m  Info  [0m] 
+[[34m  Info  [0m] [Symbolic Term Expl. (1->7)] ⟦ α xs
+[[34m  Info  [0m]                                Π len(xs) >= nat_to_int(Z) && ((↓list_nth(xs, Z) && 谶Z) && true)
+[[34m  Info  [0m]                                φ if (len(xs) == nat_to_int(Z) + 1) {
+[[34m  Info  [0m]                                    out == list_last(xs)
+[[34m  Info  [0m]                                  } else {
+[[34m  Info  [0m]                                    true
+[[34m  Info  [0m]                                  }
+[[34m  Info  [0m]                                x out
+[[34m  Info  [0m]                              ⟧ /0,0/
+[[34m  Info  [0m] [Symbolic Term Expl. (1->7)] Failed
+[[34m  Info  [0m] [Optimistic Ground   ] ⟦ α xs
+[[34m  Info  [0m]                          Π len(xs) >= nat_to_int(Z) && ((↓list_nth(xs, Z) && 谶Z) && true)
+[[34m  Info  [0m]                          φ if (len(xs) == nat_to_int(Z) + 1) {
+[[34m  Info  [0m]                              out == list_last(xs)
+[[34m  Info  [0m]                            } else {
+[[34m  Info  [0m]                              true
+[[34m  Info  [0m]                            }
+[[34m  Info  [0m]                          x out
+[[34m  Info  [0m]                        ⟧ /0,0/
+[[34m  Info  [0m] [Optimistic Ground   ] Failed
+[[34m  Info  [0m] [ADT Split on 'xs'   ] ⟦ α xs
+[[34m  Info  [0m]                          Π (↓list_nth(xs, Z) && 谶Z) && true
+[[34m  Info  [0m]                          φ if (len(xs) < nat_to_int(Z)) {
+[[34m  Info  [0m]                              out == Z
+[[34m  Info  [0m]                            } else if (len(xs) == nat_to_int(Z) + 1) {
+[[34m  Info  [0m]                              out == list_last(xs)
+[[34m  Info  [0m]                            } else {
+[[34m  Info  [0m]                              true
+[[34m  Info  [0m]                            }
+[[34m  Info  [0m]                          x out
+[[34m  Info  [0m]                        ⟧ /10,0/
+[[34m  Info  [0m] [ADT Split on 'xs'   ] Decomposed into:
+[[34m  Info  [0m] [ADT Split on 'xs'   ] - ⟦ α ()
+[[34m  Info  [0m]                            Π (↓list_nth(Nil, Z) && 谶Z && 谶Nil) && true
+[[34m  Info  [0m]                            φ if (len(Nil) < nat_to_int(Z)) {
+[[34m  Info  [0m]                                out == Z
+[[34m  Info  [0m]                              } else if (len(Nil) == nat_to_int(Z) + 1) {
+[[34m  Info  [0m]                                out == list_last(Nil)
+[[34m  Info  [0m]                              } else {
+[[34m  Info  [0m]                                true
+[[34m  Info  [0m]                              }
+[[34m  Info  [0m]                            x out
+[[34m  Info  [0m]                          ⟧ /1,0/
+[[34m  Info  [0m] [ADT Split on 'xs'   ] - ⟦ α head$35, tail$39
+[[34m  Info  [0m]                            Π (↓list_nth(Cons(head$35, tail$39), Z) && 谶Z && 谶Cons(head$35, tail$39)) && true
+[[34m  Info  [0m]                            φ if (len(Cons(head$35, tail$39)) < nat_to_int(Z)) {
+[[34m  Info  [0m]                                out == Z
+[[34m  Info  [0m]                              } else if (len(Cons(head$35, tail$39)) == nat_to_int(Z) + 1) {
+[[34m  Info  [0m]                                out == list_last(Cons(head$35, tail$39))
+[[34m  Info  [0m]                              } else {
+[[34m  Info  [0m]                                true
+[[34m  Info  [0m]                              }
+[[34m  Info  [0m]                            x out
+[[34m  Info  [0m]                          ⟧ /9,0/
+[[34m  Info  [0m] [Ground              ] ⟦ α ()
+[[34m  Info  [0m]                          Π (↓list_nth(Nil, Z) && 谶Z && 谶Nil) && true
+[[34m  Info  [0m]                          φ if (len(Nil) < nat_to_int(Z)) {
+[[34m  Info  [0m]                              out == Z
+[[34m  Info  [0m]                            } else if (len(Nil) == nat_to_int(Z) + 1) {
+[[34m  Info  [0m]                              out == list_last(Nil)
+[[34m  Info  [0m]                            } else {
+[[34m  Info  [0m]                              true
+[[34m  Info  [0m]                            }
+[[34m  Info  [0m]                          x out
+[[34m  Info  [0m]                        ⟧ /1,0/
+[[34m  Info  [0m] [Ground              ] Solved  with:  ⟨ true |  S(Z) ⟩
+[[34m  Info  [0m] 
+[[34m  Info  [0m] [ADT Split on 'xs'   ] ⟦ α xs, n
+[[34m  Info  [0m]                          Π len(xs) >= nat_to_int(n) && (↓list_nth(xs, n) && true)
+[[34m  Info  [0m]                          φ if (len(xs) == nat_to_int(n) + 1) {
+[[34m  Info  [0m]                              out == list_last(xs)
+[[34m  Info  [0m]                            } else {
+[[34m  Info  [0m]                              true
+[[34m  Info  [0m]                            }
+[[34m  Info  [0m]                          x out
+[[34m  Info  [0m]                        ⟧ /0,0/
+[[34m  Info  [0m] [ADT Split on 'xs'   ] Decomposed into:
+[[34m  Info  [0m] [ADT Split on 'xs'   ] - ⟦ α n
+[[34m  Info  [0m]                            Π len(Nil) >= nat_to_int(n) && ((↓list_nth(Nil, n) && 谶Nil) && true)
+[[34m  Info  [0m]                            φ if (len(Nil) == nat_to_int(n) + 1) {
+[[34m  Info  [0m]                                out == list_last(Nil)
+[[34m  Info  [0m]                              } else {
+[[34m  Info  [0m]                                true
+[[34m  Info  [0m]                              }
+[[34m  Info  [0m]                            x out
+[[34m  Info  [0m]                          ⟧ /0,0/
+[[34m  Info  [0m] [ADT Split on 'xs'   ] - ⟦ α head$57, tail$60, n
+[[34m  Info  [0m]                            Π len(Cons(head$57, tail$60)) >= nat_to_int(n) && ((↓list_nth(Cons(head$57, tail$60), n) && 谶Cons(head$57, tail$60)) && true)
+[[34m  Info  [0m]                            φ if (len(Cons(head$57, tail$60)) == nat_to_int(n) + 1) {
+[[34m  Info  [0m]                                out == list_last(Cons(head$57, tail$60))
+[[34m  Info  [0m]                              } else {
+[[34m  Info  [0m]                                true
+[[34m  Info  [0m]                              }
+[[34m  Info  [0m]                            x out
+[[34m  Info  [0m]                          ⟧ /0,0/
+[[34m  Info  [0m] [Symbolic Term Expl. (1->7)] ⟦ α n
+[[34m  Info  [0m]                                Π len(Nil) >= nat_to_int(n) && ((↓list_nth(Nil, n) && 谶Nil) && true)
+[[34m  Info  [0m]                                φ if (len(Nil) == nat_to_int(n) + 1) {
+[[34m  Info  [0m]                                    out == list_last(Nil)
+[[34m  Info  [0m]                                  } else {
+[[34m  Info  [0m]                                    true
+[[34m  Info  [0m]                                  }
+[[34m  Info  [0m]                                x out
+[[34m  Info  [0m]                              ⟧ /0,0/

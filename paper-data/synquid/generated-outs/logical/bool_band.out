@@ -1,0 +1,5 @@
+bool_band :: p:Boolean -> q:Boolean -> {Boolean|if p == (F) || q == (F) then _v == (F) else _v == (T)}
+bool_band = \p . \q . 
+    match p with
+      F -> p
+      T -> q

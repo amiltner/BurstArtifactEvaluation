@@ -1,0 +1,24 @@
+type nat =
+  | O
+  | S of nat
+
+type list =
+  | Nil
+  | Cons of nat * list
+
+let snoc =
+  fix (snoc : list -> nat -> list) =
+    fun (l1 : list) ->
+      fun (n : nat) ->
+        match l1 with
+        | Nil -> Cons (n, Nil)
+        | Cons (h,t) -> Cons(h,snoc t n)
+;;
+
+synth list -> list satisfying
+
+[Nil] -> Nil,
+[Cons(0,Nil)] -> Cons(0,Nil),
+[Cons(1,Nil)] -> Cons(1,Nil),
+[Cons(0,Cons(1,Nil))] -> Cons(1,Cons(0,Nil)),
+[Cons(0,Cons(1,Cons(2,Nil)))] -> Cons(2,Cons(1,Cons(0,Nil))),

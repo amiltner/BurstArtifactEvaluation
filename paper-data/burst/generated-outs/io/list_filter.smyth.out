@@ -1,0 +1,30 @@
+fun (x:(nat -> bool) * list) ->
+  (fun (x1:) ->
+     (fun (fixf:) -> fixf)
+       (fix (fixf : ) =
+          fun (x0:) -> match x1 0 with
+                         | True y1 -> x0
+                         | False y1 -> Nil))
+    (x . 0) (x . 1)
+;
+0.
+;
+0.
+;
+0.
+;
+0.
+;
+0.
+;
+0.
+;
+0.
+;
+0.
+;
+0.
+;
+0.
+;
+0

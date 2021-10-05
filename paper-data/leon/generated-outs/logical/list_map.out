@@ -1,0 +1,30 @@
+[[33mWarning [0m] Refusing to inline recursive function 'listWebElementToWebTree'!
+[[33mWarning [0m] The Z3 native interface is not available, falling back to smt-cvc4.
+[[34m  Info  [0m] =========================== Synthesizing 'list_map' ===========================
+[[34m  Info  [0m] [Symbolic Term Expl. (1->7)] ⟦ α f, xs
+[[34m  Info  [0m]                                Π ↓list_map(f, xs) && true
+[[34m  Info  [0m]                                φ size(out) == size(xs) && (if (f == zero) {
+[[34m  Info  [0m]                                    is_zero(out)
+[[34m  Info  [0m]                                  } else if (f == inc) {
+[[34m  Info  [0m]                                    sum(out) == plus(sum(xs), size(xs))
+[[34m  Info  [0m]                                  } else {
+[[34m  Info  [0m]                                    true
+[[34m  Info  [0m]                                  })
+[[34m  Info  [0m]                                x out
+[[34m  Info  [0m]                              ⟧ /24,0/
+[[34m  Info  [0m] [Symbolic Term Expl. (1->7)] Solved  with:  ⟨ true |  xs ⟩
+[[34m  Info  [0m] 
+[[34m  Info  [0m] Finished in 3064ms
+[[34m  Info  [0m] =================================== list_map ===================================
+[[34m  Info  [0m] def list_map(f : (Nat) => Nat, xs : NatList): NatList =  {
+[[34m  Info  [0m]   xs
+[[34m  Info  [0m] } ensuring {
+[[34m  Info  [0m]   (out : NatList) => size(out) == size(xs) && (if (f == zero) {
+[[34m  Info  [0m]     is_zero(out)
+[[34m  Info  [0m]   } else if (f == inc) {
+[[34m  Info  [0m]     sum(out) == plus(sum(xs), size(xs))
+[[34m  Info  [0m]   } else {
+[[34m  Info  [0m]     true
+[[34m  Info  [0m]   })
+[[34m  Info  [0m] }
+[[34m  Info  [0m] 

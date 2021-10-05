@@ -1,0 +1,50 @@
+data Nat where
+  Z :: Nat
+  S :: Nat -> Nat
+
+termination measure dec :: Nat -> {Int | _v >= 0} where
+  Z -> 0
+  S m -> 1 + dec m
+  
+data NatList where
+  Nil :: NatList
+  Cons :: Nat -> NatList -> NatList
+
+termination measure len :: NatList -> {Int | _v >= 0} where
+  Nil -> 0
+  Cons x xs -> 1 + len xs
+  
+data NatTree where
+  Leaf :: NatTree
+  Node :: NatTree -> Nat -> NatTree -> NatTree
+
+termination measure sizeTree :: NatTree -> {Int | _v >= 0} where
+  Leaf -> 0
+  Node left x right -> 1 + sizeTree left + sizeTree right
+
+measure depth :: NatTree -> {Int | _v >= 0} where
+  Leaf -> 0
+  Node l x r -> if depth l > depth r then 1 + depth l else 1 + depth r
+    
+measure leftSubTree :: NatTree -> NatTree where
+    Leaf -> Leaf
+    Node l x r -> l
+  
+measure rightSubTree :: NatTree -> NatTree where
+    Leaf -> Leaf
+    Node l x r -> r
+
+nat_add :: Nat -> Nat -> Nat
+nat_add = \n1 . \n2 .
+  match n1 with
+    Z   -> n2
+    S m -> S (nat_add m n2)
+  
+tree_nodes_at_level :: t:NatTree -> n:Nat -> { Nat | 
+
+  ((dec n >= depth t) ==> _v == Z) &&
+  ((t != Leaf && n == Z) ==> _v == S Z) &&
+  (((t != Leaf) && (leftSubTree t != Leaf) && (rightSubTree t != Leaf) && n == S Z) ==> _v == S (S Z))
+
+}
+tree_nodes_at_level = ??

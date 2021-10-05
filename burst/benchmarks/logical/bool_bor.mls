@@ -1,0 +1,8 @@
+include "bool.decls"
+
+synth bool -> bool -> bool satisfying
+
+fun (in1in2:bool*bool) -> (fun (out : bool) ->
+    match in1in2 with
+    | (False,False) -> out == False
+    | _ -> out == True)

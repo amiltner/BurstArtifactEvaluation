@@ -1,0 +1,14 @@
+list_append :: arg1:NatList -> arg0:NatList -> NatList
+list_append = \l1 . \l2 . 
+    match l1 with
+      Nil -> l2
+      Cons head tail -> Cons head
+                          (list_append tail l2)
+
+list_rev_append :: l1:NatList -> {NatList|(len l1 == len _v && hd l1 == last _v) && last l1 == hd _v}
+benchmarks/postconditional/list_rev_append.sq:39: Error:
+  Cannot match shape 'Nat'
+  with shape 'NatList'
+  when checking Z :: NatList in
+  \l1 . 
+    match list_append Z ?? with

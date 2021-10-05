@@ -1,0 +1,5 @@
+bool_bor :: p:Boolean -> q:Boolean -> {Boolean|if p == (T) || q == (T) then _v == (T) else _v == (F)}
+bool_bor = \p . \q . 
+    match p with
+      T -> p
+      F -> q

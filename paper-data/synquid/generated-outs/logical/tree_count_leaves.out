@@ -1,0 +1,15 @@
+nat_add :: arg1:Nat -> arg0:Nat -> Nat
+nat_add = \n1 . \n2 . 
+    match n1 with
+      Z -> n2
+      S m -> S (nat_add m n2)
+
+tree_count_leaves :: t:BooleanTree -> {Nat|((t == (Leaf) ==> _v == (S (Z))) && ((isNode t && leftSubTree t == (Leaf)) && rightSubTree t == (Leaf) ==> _v == (S ((S (Z)))))) && ((((((isNode t && isNode (leftSubTree t)) && isNode (rightSubTree t)) && leftSubTree (leftSubTree t) == (Leaf)) && rightSubTree (leftSubTree t) == (Leaf)) && leftSubTree (rightSubTree t) == (Leaf)) && rightSubTree (rightSubTree t) == (Leaf) ==> _v == (S ((S ((S ((S (Z)))))))))}
+tree_count_leaves = \t . 
+  match t with
+    Leaf -> S Z
+    Node x5 x6 x7 -> 
+      match x5 with
+        Leaf -> S (S Z)
+        Node x13 x14 x15 -> S (S
+                                 (tree_count_leaves x7))

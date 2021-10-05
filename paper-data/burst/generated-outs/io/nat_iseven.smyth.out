@@ -1,0 +1,29 @@
+fix (f : ) =
+  fun (x0:) ->
+    match x0 with
+      | S y1 -> (match f y1 with
+                   | True y2 -> False
+                   | False y2 -> True)
+      | O y1 -> True
+;
+0.
+;
+0.
+;
+0.
+;
+0.
+;
+0.
+;
+0.
+;
+0.
+;
+0.
+;
+0.
+;
+0.
+;
+0

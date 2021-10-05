@@ -1,0 +1,8 @@
+bool_xor :: p:Boolean -> q:Boolean -> {Boolean|p != q <==> _v == (T)}
+bool_xor = \p . \q . 
+    match q with
+      F -> p
+      T -> 
+        match p with
+          F -> q
+          T -> F

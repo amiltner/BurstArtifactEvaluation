@@ -1,0 +1,14 @@
+list_snoc :: arg1:NatList -> arg0:Nat -> NatList
+list_snoc = \xs . \n . 
+    match xs with
+      Nil -> Cons n Nil
+      Cons head tail -> Cons head
+                          (list_snoc tail n)
+
+list_rev_snoc :: xs:NatList -> {NatList|(len xs == len _v && hd xs == last _v) && last xs == hd _v}
+benchmarks/postconditional/list_rev_snoc.sq:39: Error:
+  Cannot match shape 'Nat'
+  with shape 'NatList'
+  when checking Z :: NatList in
+  \xs . 
+    match list_snoc Z ?? with

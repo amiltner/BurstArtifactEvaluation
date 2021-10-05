@@ -1,0 +1,6 @@
+list_snoc :: l:NatList -> n:Nat -> {NatList|len _v == len l + 1 && last _v == n}
+list_snoc = \l . \n . 
+    match l with
+      Nil -> Cons n l
+      Cons x5 x6 -> Cons x5 (list_snoc
+                               x6 n)

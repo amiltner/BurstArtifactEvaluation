@@ -1,0 +1,23 @@
+type nat =
+  | O
+  | S of nat
+
+type list =
+  | Nil
+  | Cons of nat * list
+
+let zero =
+  fun (n:nat) -> O
+;;
+
+let inc =
+  fun (n:nat) -> S (n)
+;;
+
+
+synth (nat -> nat) -> list -> list satisfying
+
+[inc,Nil] -> Nil,
+[inc,Cons(0,Nil)] -> Cons(1,Nil),
+[inc,Cons(0,Cons(0,Nil))] -> Cons(1,Cons(1,Nil)),
+[zero,Cons(0,Cons(0,Nil))] -> Cons(0,Cons(0,Nil)),

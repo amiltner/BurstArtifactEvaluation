@@ -1,0 +1,7 @@
+list_length :: ns:NatList -> {Nat|if (ns != (Nil) && tl ns != (Nil)) && tl (tl ns) == (Nil) then _v == (S ((S (Z)))) else if ((ns != (Nil) && tl ns != (Nil)) && tl (tl ns) != (Nil)) && tl (tl (tl ns)) == (Nil) then _v == (S ((S ((S (Z)))))) else True}
+benchmarks/postconditional/list_length.sq:25: Error:
+  Cannot match shape 'Nat'
+  with shape 'NatList'
+  when checking Z :: NatList in
+  \ns . 
+    match Cons Z Z with

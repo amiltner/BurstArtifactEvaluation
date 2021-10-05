@@ -1,0 +1,71 @@
+[[33mWarning [0m] Refusing to inline recursive function 'listWebElementToWebTree'!
+[[33mWarning [0m] The Z3 native interface is not available, falling back to smt-cvc4.
+[[34m  Info  [0m] ========================= Synthesizing 'list_stutter' =========================
+[[34m  Info  [0m] [Symbolic Term Expl. (1->7)] ⟦ α l
+[[34m  Info  [0m]                                Π ↓list_stutter(l) && true
+[[34m  Info  [0m]                                φ double(len(l)) == len(out)
+[[34m  Info  [0m]                                x out
+[[34m  Info  [0m]                              ⟧ /24,0/
+[[34m  Info  [0m] [Symbolic Term Expl. (1->7)] Failed
+[[34m  Info  [0m] [Optimistic Ground   ] ⟦ α l
+[[34m  Info  [0m]                          Π ↓list_stutter(l) && true
+[[34m  Info  [0m]                          φ double(len(l)) == len(out)
+[[34m  Info  [0m]                          x out
+[[34m  Info  [0m]                        ⟧ /24,0/
+[[34m  Info  [0m] [Optimistic Ground   ] Failed
+[[34m  Info  [0m] [ADT Split on 'l'    ] ⟦ α l
+[[34m  Info  [0m]                          Π ↓list_stutter(l) && true
+[[34m  Info  [0m]                          φ double(len(l)) == len(out)
+[[34m  Info  [0m]                          x out
+[[34m  Info  [0m]                        ⟧ /24,0/
+[[34m  Info  [0m] [ADT Split on 'l'    ] Decomposed into:
+[[34m  Info  [0m] [ADT Split on 'l'    ] - ⟦ α ()
+[[34m  Info  [0m]                            Π (↓list_stutter(Nil) && 谶Nil) && true
+[[34m  Info  [0m]                            φ double(len(Nil)) == len(out)
+[[34m  Info  [0m]                            x out
+[[34m  Info  [0m]                          ⟧ /1,0/
+[[34m  Info  [0m] [ADT Split on 'l'    ] - ⟦ α head$12, tail$17
+[[34m  Info  [0m]                            Π (↓list_stutter(Cons(head$12, tail$17)) && 谶Cons(head$12, tail$17)) && true
+[[34m  Info  [0m]                            φ double(len(Cons(head$12, tail$17))) == len(out)
+[[34m  Info  [0m]                            x out
+[[34m  Info  [0m]                          ⟧ /23,0/
+[[34m  Info  [0m] [Ground              ] ⟦ α ()
+[[34m  Info  [0m]                          Π (↓list_stutter(Nil) && 谶Nil) && true
+[[34m  Info  [0m]                          φ double(len(Nil)) == len(out)
+[[34m  Info  [0m]                          x out
+[[34m  Info  [0m]                        ⟧ /1,0/
+[[34m  Info  [0m] [Ground              ] Solved  with:  ⟨ true |  Nil ⟩
+[[34m  Info  [0m] 
+[[34m  Info  [0m] [Introduce calls list_stutter$0(tail$17)] ⟦ α head$12, tail$17
+[[34m  Info  [0m]                                             Π (↓list_stutter(Cons(head$12, tail$17)) && 谶Cons(head$12, tail$17)) && true
+[[34m  Info  [0m]                                             φ double(len(Cons(head$12, tail$17))) == len(out)
+[[34m  Info  [0m]                                             x out
+[[34m  Info  [0m]                                           ⟧ /23,0/
+[[34m  Info  [0m] [Introduce calls list_stutter$0(tail$17)] Decomposed into:
+[[34m  Info  [0m] [Introduce calls list_stutter$0(tail$17)] - ⟦ α head$12, tail$17
+[[34m  Info  [0m]                                               Π val rec$7: NatList = list_stutter(tail$17)
+[[34m  Info  [0m]                                                 (↓list_stutter(Cons(head$12, tail$17)) && 谶Cons(head$12, tail$17) && ↓list_stutter(tail$17)) && true
+[[34m  Info  [0m]                                               φ double(len(Cons(head$12, tail$17))) == len(out)
+[[34m  Info  [0m]                                               x out
+[[34m  Info  [0m]                                             ⟧ /23,0/
+[[34m  Info  [0m] [Symbolic Term Expl. (1->7)] ⟦ α head$12, tail$17
+[[34m  Info  [0m]                                Π val rec$7: NatList = list_stutter(tail$17)
+[[34m  Info  [0m]                                  (↓list_stutter(Cons(head$12, tail$17)) && 谶Cons(head$12, tail$17) && ↓list_stutter(tail$17)) && true
+[[34m  Info  [0m]                                φ double(len(Cons(head$12, tail$17))) == len(out)
+[[34m  Info  [0m]                                x out
+[[34m  Info  [0m]                              ⟧ /23,0/
+[[34m  Info  [0m] [Symbolic Term Expl. (1->7)] Solved  with:  ⟨ true |  Cons(head$12, Cons(head$12, rec$7)) ⟩
+[[34m  Info  [0m] 
+[[34m  Info  [0m] Finished in 14373ms
+[[34m  Info  [0m] ================================= list_stutter =================================
+[[34m  Info  [0m] def list_stutter(l : NatList): NatList =  {
+[[34m  Info  [0m]   l match {
+[[34m  Info  [0m]     case Nil =>
+[[34m  Info  [0m]       Nil
+[[34m  Info  [0m]     case Cons(head, tail) =>
+[[34m  Info  [0m]       Cons(head, Cons(head, list_stutter(tail)))
+[[34m  Info  [0m]   }
+[[34m  Info  [0m] } ensuring {
+[[34m  Info  [0m]   (out : NatList) => double(len(l)) == len(out)
+[[34m  Info  [0m] }
+[[34m  Info  [0m] 

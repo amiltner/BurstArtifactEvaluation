@@ -1,0 +1,73 @@
+type nat =
+  | O
+  | S of nat
+
+type list =
+  | Nil
+  | Cons of nat * list
+
+type cmp =
+  | LT
+  | EQ
+  | GT
+
+let compare =
+  fix (compare : nat -> nat -> cmp) =
+    fun (x1 : nat) ->
+      fun (x2 : nat) ->
+        match (x1,x2) with
+        | (O,O) -> EQ
+        | (O,S _) -> LT
+        | (S _,O) -> GT
+        | (S x1,S x2) -> compare x1 x2
+;;
+
+synth list -> list satisfying
+
+type bool =
+  | True
+  | False
+
+let contains =
+  fix (contains : list -> nat -> bool) =
+    fun (l:list) ->
+    fun (n:nat) ->
+      match l with
+      | Nil -> False
+      | Cons (h,t) ->
+        match h == n with
+        | True -> True
+        | False -> contains t n
+;;
+
+let for_all =
+  fix (for_all : (nat -> bool) -> list -> bool) =
+    fun (f:nat -> bool) ->
+    fun (l:list) ->
+      match l with
+      | Nil -> True
+      | Cons (h, t) ->
+        match f h with
+        | True -> for_all f t
+        | False -> False
+;;
+
+let no_dupes =
+  fix (no_dupes : list -> bool) =
+    fun (l:list) ->
+      match l with
+      | Nil -> True
+      | Cons (h1, t) ->
+        match t with
+        | Nil -> True
+        | Cons (h2, _) ->
+          match h1 != h2 with
+          | True -> no_dupes t
+          | False -> False
+;;
+
+fun (input:list) -> (fun (out:list) ->
+    match (no_dupes out) with
+    | True -> for_all (contains out) input
+    | False -> False)
+

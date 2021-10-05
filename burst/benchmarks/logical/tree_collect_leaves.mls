@@ -1,0 +1,37 @@
+type bool =
+  | True
+  | False
+
+type tree =
+  | Leaf
+  | Node of tree * bool * tree
+
+type list =
+  | Nil
+  | Cons of bool * list
+
+let append =
+  fix (append : list -> list -> list) =
+    fun (l1 : list) ->
+      fun (l2 : list) ->
+        match l1 with
+        | Nil -> l2
+        | Cons (h,t) -> Cons(h,append t l2)
+;;
+
+synth tree -> list satisfying
+
+fun (input:tree) -> (fun (out:list) ->
+    match input with
+    | Leaf -> out == Nil
+    | Node (Leaf, x, Leaf) -> out == (Cons (x, Nil))
+    | Node (Node (Leaf, x, Leaf), y, Node (Leaf, z, Leaf)) -> out == (Cons (x, Cons (y, Cons (z, Nil))))
+    | _ -> True)
+(*
+[Leaf] -> Nil,
+[Node (Leaf, True, Leaf)] -> Cons(True, Nil),
+[Node (Leaf, False, Leaf)] -> Cons(False, Nil),
+[Node (Node (Leaf, True, Leaf), False, Leaf)] -> Cons(True, Cons(False, Nil)),
+[Node (Node (Leaf, False, Leaf), True, Leaf)] -> Cons(False, Cons(True, Nil)),
+[Node (Leaf, False, Node (Leaf, True, Leaf))] -> Cons(False, Cons(True, Nil)),
+*)

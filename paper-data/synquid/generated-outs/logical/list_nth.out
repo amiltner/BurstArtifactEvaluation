@@ -1,0 +1,8 @@
+list_nth :: n:Nat -> l:NatList -> {Nat|(dec n >= len l ==> _v == (Z)) && (dec n == len l - 1 ==> _v == last l)}
+benchmarks/postconditional/list_nth.sq:25: Error:
+  Cannot find sufficiently strong refinements
+  when checking Z ::
+  {Nat|dec _v >= 0 && dec _v < dec n}
+  in
+  \n . \l . 
+      match list_nth Z ?? with

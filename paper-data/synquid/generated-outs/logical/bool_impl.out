@@ -1,0 +1,5 @@
+bool_impl :: p:Boolean -> q:Boolean -> {Boolean|p == (T) && q == (F) <==> _v == (F)}
+bool_impl = \p . \q . 
+    match p with
+      T -> q
+      F -> T

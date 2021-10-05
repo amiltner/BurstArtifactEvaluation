@@ -1,0 +1,25 @@
+type nat =
+  | O 
+  | S of nat
+
+type list =
+  | Nil
+  | Cons of nat * list
+
+type opt =
+  | None
+  | Some of nat
+
+synth list -> opt satisfying
+
+type bool =
+  | True
+  | False
+
+fun (input:list) -> (fun (out : opt) ->
+    match input with
+    | Nil -> out == None
+    | Cons (x, Nil) -> out == (Some x)
+    | Cons (_, Cons (x, Nil)) -> out == (Some x)
+    | Cons (_, Cons (_, Cons (x, Nil))) -> out == (Some x)
+    | _ -> True)

@@ -1,0 +1,13 @@
+list_append :: l1:NatList -> l2:NatList -> {NatList|len l1 + len l2 == len _v}
+list_append = \l1 . \l2 . 
+    match l1 with
+      Nil -> l2
+      Cons head tail -> Cons head
+                          (list_append tail l2)
+
+list_concat :: xss:NatListList -> {NatList|len _v == lelems xss}
+list_concat = \xss . 
+  match xss with
+    LNil -> Nil
+    LCons x3 x4 -> list_append x3
+                     (list_concat x4)

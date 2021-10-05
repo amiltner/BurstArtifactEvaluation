@@ -1,0 +1,151 @@
+[[33mWarning [0m] Refusing to inline recursive function 'listWebElementToWebTree'!
+[[33mWarning [0m] The Z3 native interface is not available, falling back to smt-cvc4.
+[[34m  Info  [0m] ========================= Synthesizing 'tree_inorder' =========================
+[[34m  Info  [0m] [Symbolic Term Expl. (1->7)] ⟦ α t
+[[34m  Info  [0m]                                Π ↓tree_inorder(t) && true
+[[34m  Info  [0m]                                φ tree_content(t) == list_content(out) && (!is_bst(t) || list_sorted(out))
+[[34m  Info  [0m]                                x out
+[[34m  Info  [0m]                              ⟧ /32,0/
+[[34m  Info  [0m] [Symbolic Term Expl. (1->7)] Failed
+[[34m  Info  [0m] [Optimistic Ground   ] ⟦ α t
+[[34m  Info  [0m]                          Π ↓tree_inorder(t) && true
+[[34m  Info  [0m]                          φ tree_content(t) == list_content(out) && (!is_bst(t) || list_sorted(out))
+[[34m  Info  [0m]                          x out
+[[34m  Info  [0m]                        ⟧ /32,0/
+[[34m  Info  [0m] [Optimistic Ground   ] Failed
+[[34m  Info  [0m] [Inner case-split    ] ⟦ α t
+[[34m  Info  [0m]                          Π ↓tree_inorder(t) && true
+[[34m  Info  [0m]                          φ tree_content(t) == list_content(out) && (!is_bst(t) || list_sorted(out))
+[[34m  Info  [0m]                          x out
+[[34m  Info  [0m]                        ⟧ /32,0/
+[[34m  Info  [0m] [Inner case-split    ] Decomposed into:
+[[34m  Info  [0m] [Inner case-split    ] - ⟦ α t
+[[34m  Info  [0m]                            Π ↓tree_inorder(t) && true
+[[34m  Info  [0m]                            φ tree_content(t) == list_content(out) && !is_bst(t)
+[[34m  Info  [0m]                            x out
+[[34m  Info  [0m]                          ⟧ /32,0/
+[[34m  Info  [0m] [Inner case-split    ] - ⟦ α t
+[[34m  Info  [0m]                            Π ↓tree_inorder(t) && true
+[[34m  Info  [0m]                            φ tree_content(t) == list_content(out) && list_sorted(out)
+[[34m  Info  [0m]                            x out
+[[34m  Info  [0m]                          ⟧ /32,0/
+[[34m  Info  [0m] [Assert !is_bst(t)   ] ⟦ α t
+[[34m  Info  [0m]                          Π ↓tree_inorder(t) && true
+[[34m  Info  [0m]                          φ tree_content(t) == list_content(out) && !is_bst(t)
+[[34m  Info  [0m]                          x out
+[[34m  Info  [0m]                        ⟧ /32,0/
+[[34m  Info  [0m] [Assert !is_bst(t)   ] Decomposed into:
+[[34m  Info  [0m] [Assert !is_bst(t)   ] - ⟦ α t
+[[34m  Info  [0m]                            Π !is_bst(t) && (↓tree_inorder(t) && true)
+[[34m  Info  [0m]                            φ tree_content(t) == list_content(out)
+[[34m  Info  [0m]                            x out
+[[34m  Info  [0m]                          ⟧ /32,0/
+[[34m  Info  [0m] [Symbolic Term Expl. (1->7)] ⟦ α t
+[[34m  Info  [0m]                                Π !is_bst(t) && (↓tree_inorder(t) && true)
+[[34m  Info  [0m]                                φ tree_content(t) == list_content(out)
+[[34m  Info  [0m]                                x out
+[[34m  Info  [0m]                              ⟧ /32,0/
+[[34m  Info  [0m] [Symbolic Term Expl. (1->7)] Failed
+[[34m  Info  [0m] [Optimistic Ground   ] ⟦ α t
+[[34m  Info  [0m]                          Π !is_bst(t) && (↓tree_inorder(t) && true)
+[[34m  Info  [0m]                          φ tree_content(t) == list_content(out)
+[[34m  Info  [0m]                          x out
+[[34m  Info  [0m]                        ⟧ /32,0/
+[[34m  Info  [0m] [Optimistic Ground   ] Failed
+[[34m  Info  [0m] [ADT Split on 't'    ] ⟦ α t
+[[34m  Info  [0m]                          Π ↓tree_inorder(t) && true
+[[34m  Info  [0m]                          φ tree_content(t) == list_content(out) && (!is_bst(t) || list_sorted(out))
+[[34m  Info  [0m]                          x out
+[[34m  Info  [0m]                        ⟧ /32,0/
+[[34m  Info  [0m] [ADT Split on 't'    ] Decomposed into:
+[[34m  Info  [0m] [ADT Split on 't'    ] - ⟦ α ()
+[[34m  Info  [0m]                            Π (↓tree_inorder(Leaf) && 谶Leaf) && true
+[[34m  Info  [0m]                            φ tree_content(Leaf) == list_content(out) && (!is_bst(Leaf) || list_sorted(out))
+[[34m  Info  [0m]                            x out
+[[34m  Info  [0m]                          ⟧ /1,0/
+[[34m  Info  [0m] [ADT Split on 't'    ] - ⟦ α left$19, n$7, right$19
+[[34m  Info  [0m]                            Π (↓tree_inorder(Node(left$19, n$7, right$19)) && 谶Node(left$19, n$7, right$19)) && true
+[[34m  Info  [0m]                            φ tree_content(Node(left$19, n$7, right$19)) == list_content(out) && (!is_bst(Node(left$19, n$7, right$19)) || list_sorted(out))
+[[34m  Info  [0m]                            x out
+[[34m  Info  [0m]                          ⟧ /31,0/
+[[34m  Info  [0m] [Ground              ] ⟦ α ()
+[[34m  Info  [0m]                          Π (↓tree_inorder(Leaf) && 谶Leaf) && true
+[[34m  Info  [0m]                          φ tree_content(Leaf) == list_content(out) && (!is_bst(Leaf) || list_sorted(out))
+[[34m  Info  [0m]                          x out
+[[34m  Info  [0m]                        ⟧ /1,0/
+[[34m  Info  [0m] [Ground              ] Solved  with:  ⟨ true |  Nil ⟩
+[[34m  Info  [0m] 
+[[34m  Info  [0m] [ADT Split on 't'    ] ⟦ α t
+[[34m  Info  [0m]                          Π !is_bst(t) && (↓tree_inorder(t) && true)
+[[34m  Info  [0m]                          φ tree_content(t) == list_content(out)
+[[34m  Info  [0m]                          x out
+[[34m  Info  [0m]                        ⟧ /32,0/
+[[34m  Info  [0m] [ADT Split on 't'    ] Decomposed into:
+[[34m  Info  [0m] [ADT Split on 't'    ] - ⟦ α ()
+[[34m  Info  [0m]                            Π !is_bst(Leaf) && ((↓tree_inorder(Leaf) && 谶Leaf) && true)
+[[34m  Info  [0m]                            φ tree_content(Leaf) == list_content(out)
+[[34m  Info  [0m]                            x out
+[[34m  Info  [0m]                          ⟧ /1,0/
+[[34m  Info  [0m] [ADT Split on 't'    ] - ⟦ α left$26, n$14, right$26
+[[34m  Info  [0m]                            Π !is_bst(Node(left$26, n$14, right$26)) && ((↓tree_inorder(Node(left$26, n$14, right$26)) && 谶Node(left$26, n$14, right$26)) && true)
+[[34m  Info  [0m]                            φ tree_content(Node(left$26, n$14, right$26)) == list_content(out)
+[[34m  Info  [0m]                            x out
+[[34m  Info  [0m]                          ⟧ /31,0/
+[[34m  Info  [0m] [Ground              ] ⟦ α ()
+[[34m  Info  [0m]                          Π !is_bst(Leaf) && ((↓tree_inorder(Leaf) && 谶Leaf) && true)
+[[34m  Info  [0m]                          φ tree_content(Leaf) == list_content(out)
+[[34m  Info  [0m]                          x out
+[[34m  Info  [0m]                        ⟧ /1,0/
+[[34m  Info  [0m] [Ground              ] Solved  with:  ⟨ true |  Nil ⟩
+[[34m  Info  [0m] 
+[[34m  Info  [0m] [Introduce calls tree_inorder$0(left$19), tree_inorder$0(right$19)] ⟦ α left$19, n$7, right$19
+[[34m  Info  [0m]                                                                       Π (↓tree_inorder(Node(left$19, n$7, right$19)) && 谶Node(left$19, n$7, right$19)) && true
+[[34m  Info  [0m]                                                                       φ tree_content(Node(left$19, n$7, right$19)) == list_content(out) && (!is_bst(Node(left$19, n$7, right$19)) || list_sorted(out))
+[[34m  Info  [0m]                                                                       x out
+[[34m  Info  [0m]                                                                     ⟧ /31,0/
+[[34m  Info  [0m] [Introduce calls tree_inorder$0(left$19), tree_inorder$0(right$19)] Decomposed into:
+[[34m  Info  [0m] [Introduce calls tree_inorder$0(left$19), tree_inorder$0(right$19)] - ⟦ α left$19, n$7, right$19
+[[34m  Info  [0m]                                                                         Π val rec$9: NatList = tree_inorder(left$19)
+[[34m  Info  [0m]                                                                           val rec$10: NatList = tree_inorder(right$19)
+[[34m  Info  [0m]                                                                           (↓tree_inorder(Node(left$19, n$7, right$19)) && 谶Node(left$19, n$7, right$19) && ↓tree_inorder(left$19) && ↓tree_inorder(right$19)) && true
+[[34m  Info  [0m]                                                                         φ tree_content(Node(left$19, n$7, right$19)) == list_content(out) && (!is_bst(Node(left$19, n$7, right$19)) || list_sorted(out))
+[[34m  Info  [0m]                                                                         x out
+[[34m  Info  [0m]                                                                       ⟧ /31,0/
+[[34m  Info  [0m] [Symbolic Term Expl. (1->7)] ⟦ α left$19, n$7, right$19
+[[34m  Info  [0m]                                Π val rec$9: NatList = tree_inorder(left$19)
+[[34m  Info  [0m]                                  val rec$10: NatList = tree_inorder(right$19)
+[[34m  Info  [0m]                                  (↓tree_inorder(Node(left$19, n$7, right$19)) && 谶Node(left$19, n$7, right$19) && ↓tree_inorder(left$19) && ↓tree_inorder(right$19)) && true
+[[34m  Info  [0m]                                φ tree_content(Node(left$19, n$7, right$19)) == list_content(out) && (!is_bst(Node(left$19, n$7, right$19)) || list_sorted(out))
+[[34m  Info  [0m]                                x out
+[[34m  Info  [0m]                              ⟧ /31,0/
+[[34m  Info  [0m] STE could not prove the validity of the resulting expression
+[[34m  Info  [0m] STE could not prove the validity of the resulting 1 expression(s)
+[[34m  Info  [0m] [Symbolic Term Expl. (1->7)] Solved (untrusted) with:  ⟨ true |  list_append(rec$9, Cons(n$7, rec$10)) ⟩
+[[34m  Info  [0m] 
+[[34m  Info  [0m] Finished in 9679ms
+[[34m  Info  [0m] Solution requires validation
+[[34m  Info  [0m]  - Now considering 'postcondition' VC for tree_inorder @25:52...
+[[33mWarning [0m]  => TIMEOUT
+[[34m  Info  [0m]  - Now considering 'precond. (call tree_content(t))' VC for tree_inorder @79:4...
+[[34m  Info  [0m]  => VALID
+[[34m  Info  [0m]  - Now considering 'precond. (call list_content(out))' VC for tree_inorder @79:23...
+[[34m  Info  [0m]  => VALID
+[[34m  Info  [0m]  - Now considering 'precond. (call is_bst(t))' VC for tree_inorder @79:48...
+[[34m  Info  [0m]  => VALID
+[[34m  Info  [0m]  - Now considering 'precond. (call list_sorted(out))' VC for tree_inorder @79:62...
+[[34m  Info  [0m]  => VALID
+[[34m  Info  [0m]  - Now considering 'match exhaustiveness' VC for tree_inorder @?:?...
+[[34m  Info  [0m]  => VALID
+[[33mWarning [0m] Solution may be invalid:
+[[34m  Info  [0m] ================================= tree_inorder =================================
+[[34m  Info  [0m] def tree_inorder(t : NatTree): NatList =  {
+[[34m  Info  [0m]   t match {
+[[34m  Info  [0m]     case Leaf =>
+[[34m  Info  [0m]       Nil
+[[34m  Info  [0m]     case Node(left, n, right) =>
+[[34m  Info  [0m]       list_append(tree_inorder(left), Cons(n, tree_inorder(right)))
+[[34m  Info  [0m]   }
+[[34m  Info  [0m] } ensuring {
+[[34m  Info  [0m]   (out : NatList) => tree_content(t) == list_content(out) && (!is_bst(t) || list_sorted(out))
+[[34m  Info  [0m] }
+[[34m  Info  [0m] 

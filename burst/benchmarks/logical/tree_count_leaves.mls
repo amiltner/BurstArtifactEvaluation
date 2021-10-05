@@ -1,0 +1,39 @@
+type bool =
+  | True
+  | False
+
+type tree =
+  | Leaf
+  | Node of tree * bool * tree
+
+type nat =
+  | O
+  | S of nat
+
+let sum =
+  fix (sum : nat -> nat -> nat) =
+    fun (n1 : nat) ->
+      fun (n2 : nat) ->
+        match n1 with
+        | O -> n2
+        | S n1p -> S (sum n1p n2)
+;;
+
+synth tree -> nat satisfying
+
+fun (input:tree) -> (fun (out:nat) ->
+    match input with
+    | Leaf -> out == (S O)
+    | Node (Leaf, _, Leaf) -> out == (S (S O))
+    | Node (Node (Leaf, _, Leaf), _, Leaf) -> out == (S (S (S O)))
+    | Node (Leaf, _, Node (Leaf, _, Leaf)) -> out == (S (S (S O)))
+    | _ -> True)
+(*
+[Leaf] -> 1,
+[Node (Leaf, True, Leaf)] -> 2,
+[Node (Node (Leaf, True, Leaf), True, Leaf)] -> 3,
+[Node (Leaf, True, Node (Leaf, True, Leaf))] -> 3,
+[Node (Node (Node (Leaf, True, Leaf), True, Leaf), True, Leaf)] -> 4,
+[Node (Node (Leaf, True, Leaf), True, Node (Leaf, True, Leaf))] -> 4,
+[Node (Node (Leaf, True, Leaf), True, Node (Node (Leaf, True, Leaf), True, Node (Leaf, True, Leaf)))] -> 6,
+*)

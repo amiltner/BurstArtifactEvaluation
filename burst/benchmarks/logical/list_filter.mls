@@ -1,0 +1,68 @@
+type nat =
+  | O
+  | S of nat
+
+type list =
+  | Nil
+  | Cons of nat * list
+
+type bool =
+  | True
+  | False
+
+let is_even =
+  fix (is_even : nat -> bool) =
+    fun (x1 : nat) ->
+      match x1 with
+      | O -> True
+      | S O -> False
+      | S S x1p -> is_even x1p
+;;
+
+let is_nonzero =
+  fun (x1 : nat) ->
+    match x1 with
+    | O -> False
+    | S _ -> True
+;;
+
+synth (nat -> bool) -> list -> list satisfying
+
+let for_all =
+  fix (for_all : (nat -> bool) -> list -> bool) =
+    fun (f : nat -> bool) ->
+    fun (l : list) ->
+      match l with
+      | Nil -> True
+      | Cons (h,t) ->
+        match f h with
+         | True -> for_all f t
+         | False -> False
+;;
+
+let any =
+  fix (any : (nat -> bool) -> list -> bool) =
+    fun (f : nat -> bool) ->
+    fun (l : list) ->
+      match l with
+      | Nil -> False
+      | Cons (h,t) ->
+        match f h with
+         | True -> True
+         | False -> any f t
+;;
+
+let and =
+  fun (b1:bool) ->
+    fun (b2:bool) ->
+      match b1 with
+      | True -> b2
+      | False -> False
+;;
+
+fun (in1in2:(nat->bool)*list) -> (fun (out : list) ->
+  (and
+    (for_all in1in2.0 out)
+    (match for_all in1in2.0 in1in2.1 with
+     | True -> in1in2.1 == out
+     | False -> True)))

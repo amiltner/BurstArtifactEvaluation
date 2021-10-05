@@ -1,0 +1,12 @@
+flags:
+  synquid:
+    synquid: true
+packages:
+  - '.'
+resolver: lts-15.3
+extra-deps:
+  - z3-408.2
+# extra-include-dirs:
+#  - <z3-home>/src/api
+# extra-lib-dirs:
+#  - <z3-home>/build  

@@ -1,0 +1,14 @@
+include "nat.decls"
+
+synth nat -> nat satisfying
+
+fun (input:nat) -> (fun (out : nat) ->
+    match input with
+    | O -> out == O
+    | S x1p -> out == x1p)
+
+(*
+[0] -> 0,
+[1] -> 0,
+[2] -> 1
+*)

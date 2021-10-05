@@ -1,0 +1,3 @@
+{0 Timbuk specification file format}
+The entry point of this library is the module:
+{!module-TimbukSpec}.

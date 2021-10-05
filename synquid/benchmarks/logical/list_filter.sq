@@ -1,0 +1,49 @@
+data Nat where
+  Z :: Nat
+  S :: Nat -> Nat
+termination measure dec :: Nat -> {Int | _v >= 0} where
+  Z -> 0
+  S m -> 1 + dec m
+    
+data NatList where
+  Nil :: NatList
+  Cons :: Nat -> NatList -> NatList
+  
+measure head :: NatList -> Nat where
+    Nil -> Z
+    Cons h t -> h
+    
+measure tail :: NatList -> NatList where
+    Nil -> Nil
+    Cons h t -> t
+  
+termination measure len :: NatList -> {Int | _v >= 0} where
+  Nil -> 0
+  Cons x xs -> 1 + len xs
+
+data Boolean where
+  T :: Boolean
+  F :: Boolean
+  
+is_even :: Nat -> Boolean
+is_even = \n .
+  match n with
+    Z -> T
+    S n' -> match n' with
+              Z -> F
+              S n'' -> is_even n''
+  
+is_nonzero :: Nat -> Boolean
+is_nonzero = \n .
+  match n with
+    Z -> T
+    S _ -> F
+    
+data PNatList where
+  P :: (Nat -> Boolean) -> NatList -> PNatList
+  
+measure valid :: PNatList -> Bool where
+    P f l -> if l == Nil then True else (f (head l) == T && valid (P f (tail l)))
+
+list_filter :: f:(Nat -> Boolean) -> l:NatList -> {NatList | valid (P f l)}
+list_filter = ??

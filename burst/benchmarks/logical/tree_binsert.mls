@@ -1,0 +1,103 @@
+type nat =
+  | O
+  | S of nat
+
+type tree =
+  | Leaf
+  | Node of tree * nat * tree
+
+type cmp =
+  | LT
+  | EQ
+  | GT
+
+let compare =
+  fix (compare : nat -> nat -> cmp) =
+    fun (x1 : nat) ->
+      fun (x2 : nat) ->
+        match (x1,x2) with
+        | (O,O) -> EQ
+        | (O,S _) -> LT
+        | (S _,O) -> GT
+        | (S x1,S x2) -> compare x1 x2
+;;
+
+synth tree -> nat -> tree satisfying
+
+type bool =
+  | True
+  | False
+
+type list =
+  | Nil
+  | Cons of nat * list
+
+let and =
+  fun (b1:bool) ->
+    fun (b2:bool) ->
+      match b1 with
+      | True -> b2
+      | False -> False
+;;
+
+let contains =
+  fix (contains : list -> nat -> bool) =
+    fun (l:list) ->
+    fun (n:nat) ->
+      match l with
+      | Nil -> False
+      | Cons (h,t) ->
+        match h == n with
+        | True -> True
+        | False -> contains t n
+;;
+
+let for_all =
+  fix (for_all : (nat -> bool) -> list -> bool) =
+    fun (f:nat -> bool) ->
+    fun (l:list) ->
+      match l with
+      | Nil -> True
+      | Cons (h,t) ->
+        match f h with
+        | False -> False
+        | True -> for_all f t
+;;
+
+let is_sorted =
+  fix (is_sorted : list -> bool) =
+  fun (l : list) ->
+    match l with
+    | Nil -> True
+    | Cons (_, Nil) -> True
+    | Cons (x, Cons(y, t)) ->
+      match (compare x y) with
+      | GT -> False
+      | _ -> is_sorted (Cons (y, t))
+;;
+
+let append =
+  fix (append : list -> list -> list) =
+    fun (l1 : list) ->
+      fun (l2 : list) ->
+        match l1 with
+        | Nil -> l2
+        | Cons (h,t) -> Cons(h,append t l2)
+;;
+
+let inorder =
+  fix (inorder : tree -> list) =
+  fun (t : tree) ->
+    match t with
+    | Leaf -> Nil
+    | Node (l, n, r) -> append (inorder l) (Cons (n, inorder r))
+;;
+
+fun (in1in2:tree*nat) -> (fun (out:tree) ->
+    match (inorder in1in2.0) with | lin ->
+    match (inorder out) with | lout ->
+    match (is_sorted lin) with
+    | True ->
+      and (is_sorted lout) (for_all (contains lout) (Cons (in1in2.1, lin)))
+    | False -> True)
+

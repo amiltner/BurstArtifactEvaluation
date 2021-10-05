@@ -1,0 +1,273 @@
+[[33mWarning [0m] Refusing to inline recursive function 'listWebElementToWebTree'!
+[[33mWarning [0m] The Z3 native interface is not available, falling back to smt-cvc4.
+[[34m  Info  [0m] ====================== Synthesizing 'tree_collect_leaves' ======================
+[[34m  Info  [0m] [Symbolic Term Expl. (1->7)] ⟦ α t
+[[34m  Info  [0m]                                Π ↓tree_collect_leaves(t) && true
+[[34m  Info  [0m]                                φ t match {
+[[34m  Info  [0m]                                    case Leaf =>
+[[34m  Info  [0m]                                      out == Nil
+[[34m  Info  [0m]                                    case Node(l, x, r) =>
+[[34m  Info  [0m]                                      l match {
+[[34m  Info  [0m]                                        case Leaf =>
+[[34m  Info  [0m]                                          r match {
+[[34m  Info  [0m]                                            case Leaf =>
+[[34m  Info  [0m]                                              out == Cons(x, Nil)
+[[34m  Info  [0m]                                            case Node(l2, x2, r2) =>
+[[34m  Info  [0m]                                              true
+[[34m  Info  [0m]                                          }
+[[34m  Info  [0m]                                        case Node(l1, x1, r1) =>
+[[34m  Info  [0m]                                          r match {
+[[34m  Info  [0m]                                            case Leaf =>
+[[34m  Info  [0m]                                              true
+[[34m  Info  [0m]                                            case Node(l2, x2, r2) =>
+[[34m  Info  [0m]                                              (l1 == Leaf && r1 == Leaf && l2 == Leaf && r2 == Leaf) ==> out == Cons(x1, Cons(x, Cons(x2, Nil)))
+[[34m  Info  [0m]                                          }
+[[34m  Info  [0m]                                      }
+[[34m  Info  [0m]                                  }
+[[34m  Info  [0m]                                x out
+[[34m  Info  [0m]                              ⟧ /29,0/
+[[34m  Info  [0m] [Symbolic Term Expl. (1->7)] Failed
+[[34m  Info  [0m] [Optimistic Ground   ] ⟦ α t
+[[34m  Info  [0m]                          Π ↓tree_collect_leaves(t) && true
+[[34m  Info  [0m]                          φ t match {
+[[34m  Info  [0m]                              case Leaf =>
+[[34m  Info  [0m]                                out == Nil
+[[34m  Info  [0m]                              case Node(l, x, r) =>
+[[34m  Info  [0m]                                l match {
+[[34m  Info  [0m]                                  case Leaf =>
+[[34m  Info  [0m]                                    r match {
+[[34m  Info  [0m]                                      case Leaf =>
+[[34m  Info  [0m]                                        out == Cons(x, Nil)
+[[34m  Info  [0m]                                      case Node(l2, x2, r2) =>
+[[34m  Info  [0m]                                        true
+[[34m  Info  [0m]                                    }
+[[34m  Info  [0m]                                  case Node(l1, x1, r1) =>
+[[34m  Info  [0m]                                    r match {
+[[34m  Info  [0m]                                      case Leaf =>
+[[34m  Info  [0m]                                        true
+[[34m  Info  [0m]                                      case Node(l2, x2, r2) =>
+[[34m  Info  [0m]                                        (l1 == Leaf && r1 == Leaf && l2 == Leaf && r2 == Leaf) ==> out == Cons(x1, Cons(x, Cons(x2, Nil)))
+[[34m  Info  [0m]                                    }
+[[34m  Info  [0m]                                }
+[[34m  Info  [0m]                            }
+[[34m  Info  [0m]                          x out
+[[34m  Info  [0m]                        ⟧ /29,0/
+[[34m  Info  [0m] [Optimistic Ground   ] Failed
+[[34m  Info  [0m] [ADT Split on 't'    ] ⟦ α t
+[[34m  Info  [0m]                          Π ↓tree_collect_leaves(t) && true
+[[34m  Info  [0m]                          φ t match {
+[[34m  Info  [0m]                              case Leaf =>
+[[34m  Info  [0m]                                out == Nil
+[[34m  Info  [0m]                              case Node(l, x, r) =>
+[[34m  Info  [0m]                                l match {
+[[34m  Info  [0m]                                  case Leaf =>
+[[34m  Info  [0m]                                    r match {
+[[34m  Info  [0m]                                      case Leaf =>
+[[34m  Info  [0m]                                        out == Cons(x, Nil)
+[[34m  Info  [0m]                                      case Node(l2, x2, r2) =>
+[[34m  Info  [0m]                                        true
+[[34m  Info  [0m]                                    }
+[[34m  Info  [0m]                                  case Node(l1, x1, r1) =>
+[[34m  Info  [0m]                                    r match {
+[[34m  Info  [0m]                                      case Leaf =>
+[[34m  Info  [0m]                                        true
+[[34m  Info  [0m]                                      case Node(l2, x2, r2) =>
+[[34m  Info  [0m]                                        (l1 == Leaf && r1 == Leaf && l2 == Leaf && r2 == Leaf) ==> out == Cons(x1, Cons(x, Cons(x2, Nil)))
+[[34m  Info  [0m]                                    }
+[[34m  Info  [0m]                                }
+[[34m  Info  [0m]                            }
+[[34m  Info  [0m]                          x out
+[[34m  Info  [0m]                        ⟧ /29,0/
+[[34m  Info  [0m] [ADT Split on 't'    ] Decomposed into:
+[[34m  Info  [0m] [ADT Split on 't'    ] - ⟦ α ()
+[[34m  Info  [0m]                            Π (↓tree_collect_leaves(Leaf) && 谶Leaf) && true
+[[34m  Info  [0m]                            φ Leaf match {
+[[34m  Info  [0m]                                case Leaf =>
+[[34m  Info  [0m]                                  out == Nil
+[[34m  Info  [0m]                                case Node(l, x, r) =>
+[[34m  Info  [0m]                                  l match {
+[[34m  Info  [0m]                                    case Leaf =>
+[[34m  Info  [0m]                                      r match {
+[[34m  Info  [0m]                                        case Leaf =>
+[[34m  Info  [0m]                                          out == Cons(x, Nil)
+[[34m  Info  [0m]                                        case Node(l2, x2, r2) =>
+[[34m  Info  [0m]                                          true
+[[34m  Info  [0m]                                      }
+[[34m  Info  [0m]                                    case Node(l1, x1, r1) =>
+[[34m  Info  [0m]                                      r match {
+[[34m  Info  [0m]                                        case Leaf =>
+[[34m  Info  [0m]                                          true
+[[34m  Info  [0m]                                        case Node(l2, x2, r2) =>
+[[34m  Info  [0m]                                          (l1 == Leaf && r1 == Leaf && l2 == Leaf && r2 == Leaf) ==> out == Cons(x1, Cons(x, Cons(x2, Nil)))
+[[34m  Info  [0m]                                      }
+[[34m  Info  [0m]                                  }
+[[34m  Info  [0m]                              }
+[[34m  Info  [0m]                            x out
+[[34m  Info  [0m]                          ⟧ /1,0/
+[[34m  Info  [0m] [ADT Split on 't'    ] - ⟦ α left$19, n$7, right$19
+[[34m  Info  [0m]                            Π (↓tree_collect_leaves(Node(left$19, n$7, right$19)) && 谶Node(left$19, n$7, right$19)) && true
+[[34m  Info  [0m]                            φ Node(left$19, n$7, right$19) match {
+[[34m  Info  [0m]                                case Leaf =>
+[[34m  Info  [0m]                                  out == Nil
+[[34m  Info  [0m]                                case Node(l, x, r) =>
+[[34m  Info  [0m]                                  l match {
+[[34m  Info  [0m]                                    case Leaf =>
+[[34m  Info  [0m]                                      r match {
+[[34m  Info  [0m]                                        case Leaf =>
+[[34m  Info  [0m]                                          out == Cons(x, Nil)
+[[34m  Info  [0m]                                        case Node(l2, x2, r2) =>
+[[34m  Info  [0m]                                          true
+[[34m  Info  [0m]                                      }
+[[34m  Info  [0m]                                    case Node(l1, x1, r1) =>
+[[34m  Info  [0m]                                      r match {
+[[34m  Info  [0m]                                        case Leaf =>
+[[34m  Info  [0m]                                          true
+[[34m  Info  [0m]                                        case Node(l2, x2, r2) =>
+[[34m  Info  [0m]                                          (l1 == Leaf && r1 == Leaf && l2 == Leaf && r2 == Leaf) ==> out == Cons(x1, Cons(x, Cons(x2, Nil)))
+[[34m  Info  [0m]                                      }
+[[34m  Info  [0m]                                  }
+[[34m  Info  [0m]                              }
+[[34m  Info  [0m]                            x out
+[[34m  Info  [0m]                          ⟧ /28,0/
+[[34m  Info  [0m] [Ground              ] ⟦ α ()
+[[34m  Info  [0m]                          Π (↓tree_collect_leaves(Leaf) && 谶Leaf) && true
+[[34m  Info  [0m]                          φ Leaf match {
+[[34m  Info  [0m]                              case Leaf =>
+[[34m  Info  [0m]                                out == Nil
+[[34m  Info  [0m]                              case Node(l, x, r) =>
+[[34m  Info  [0m]                                l match {
+[[34m  Info  [0m]                                  case Leaf =>
+[[34m  Info  [0m]                                    r match {
+[[34m  Info  [0m]                                      case Leaf =>
+[[34m  Info  [0m]                                        out == Cons(x, Nil)
+[[34m  Info  [0m]                                      case Node(l2, x2, r2) =>
+[[34m  Info  [0m]                                        true
+[[34m  Info  [0m]                                    }
+[[34m  Info  [0m]                                  case Node(l1, x1, r1) =>
+[[34m  Info  [0m]                                    r match {
+[[34m  Info  [0m]                                      case Leaf =>
+[[34m  Info  [0m]                                        true
+[[34m  Info  [0m]                                      case Node(l2, x2, r2) =>
+[[34m  Info  [0m]                                        (l1 == Leaf && r1 == Leaf && l2 == Leaf && r2 == Leaf) ==> out == Cons(x1, Cons(x, Cons(x2, Nil)))
+[[34m  Info  [0m]                                    }
+[[34m  Info  [0m]                                }
+[[34m  Info  [0m]                            }
+[[34m  Info  [0m]                          x out
+[[34m  Info  [0m]                        ⟧ /1,0/
+[[34m  Info  [0m] [Ground              ] Solved  with:  ⟨ true |  Nil ⟩
+[[34m  Info  [0m] 
+[[34m  Info  [0m] [Introduce calls tree_collect_leaves$0(left$19), tree_collect_leaves$0(right$19)] ⟦ α left$19, n$7, right$19
+[[34m  Info  [0m]                                                                                     Π (↓tree_collect_leaves(Node(left$19, n$7, right$19)) && 谶Node(left$19, n$7, right$19)) && true
+[[34m  Info  [0m]                                                                                     φ Node(left$19, n$7, right$19) match {
+[[34m  Info  [0m]                                                                                         case Leaf =>
+[[34m  Info  [0m]                                                                                           out == Nil
+[[34m  Info  [0m]                                                                                         case Node(l, x, r) =>
+[[34m  Info  [0m]                                                                                           l match {
+[[34m  Info  [0m]                                                                                             case Leaf =>
+[[34m  Info  [0m]                                                                                               r match {
+[[34m  Info  [0m]                                                                                                 case Leaf =>
+[[34m  Info  [0m]                                                                                                   out == Cons(x, Nil)
+[[34m  Info  [0m]                                                                                                 case Node(l2, x2, r2) =>
+[[34m  Info  [0m]                                                                                                   true
+[[34m  Info  [0m]                                                                                               }
+[[34m  Info  [0m]                                                                                             case Node(l1, x1, r1) =>
+[[34m  Info  [0m]                                                                                               r match {
+[[34m  Info  [0m]                                                                                                 case Leaf =>
+[[34m  Info  [0m]                                                                                                   true
+[[34m  Info  [0m]                                                                                                 case Node(l2, x2, r2) =>
+[[34m  Info  [0m]                                                                                                   (l1 == Leaf && r1 == Leaf && l2 == Leaf && r2 == Leaf) ==> out == Cons(x1, Cons(x, Cons(x2, Nil)))
+[[34m  Info  [0m]                                                                                               }
+[[34m  Info  [0m]                                                                                           }
+[[34m  Info  [0m]                                                                                       }
+[[34m  Info  [0m]                                                                                     x out
+[[34m  Info  [0m]                                                                                   ⟧ /28,0/
+[[34m  Info  [0m] [Introduce calls tree_collect_leaves$0(left$19), tree_collect_leaves$0(right$19)] Decomposed into:
+[[34m  Info  [0m] [Introduce calls tree_collect_leaves$0(left$19), tree_collect_leaves$0(right$19)] - ⟦ α left$19, n$7, right$19
+[[34m  Info  [0m]                                                                                       Π val rec$7: BooleanList = tree_collect_leaves(left$19)
+[[34m  Info  [0m]                                                                                         val rec$8: BooleanList = tree_collect_leaves(right$19)
+[[34m  Info  [0m]                                                                                         (↓tree_collect_leaves(Node(left$19, n$7, right$19)) && 谶Node(left$19, n$7, right$19) && ↓tree_collect_leaves(left$19) && ↓tree_collect_leaves(right$19)) && true
+[[34m  Info  [0m]                                                                                       φ Node(left$19, n$7, right$19) match {
+[[34m  Info  [0m]                                                                                           case Leaf =>
+[[34m  Info  [0m]                                                                                             out == Nil
+[[34m  Info  [0m]                                                                                           case Node(l, x, r) =>
+[[34m  Info  [0m]                                                                                             l match {
+[[34m  Info  [0m]                                                                                               case Leaf =>
+[[34m  Info  [0m]                                                                                                 r match {
+[[34m  Info  [0m]                                                                                                   case Leaf =>
+[[34m  Info  [0m]                                                                                                     out == Cons(x, Nil)
+[[34m  Info  [0m]                                                                                                   case Node(l2, x2, r2) =>
+[[34m  Info  [0m]                                                                                                     true
+[[34m  Info  [0m]                                                                                                 }
+[[34m  Info  [0m]                                                                                               case Node(l1, x1, r1) =>
+[[34m  Info  [0m]                                                                                                 r match {
+[[34m  Info  [0m]                                                                                                   case Leaf =>
+[[34m  Info  [0m]                                                                                                     true
+[[34m  Info  [0m]                                                                                                   case Node(l2, x2, r2) =>
+[[34m  Info  [0m]                                                                                                     (l1 == Leaf && r1 == Leaf && l2 == Leaf && r2 == Leaf) ==> out == Cons(x1, Cons(x, Cons(x2, Nil)))
+[[34m  Info  [0m]                                                                                                 }
+[[34m  Info  [0m]                                                                                             }
+[[34m  Info  [0m]                                                                                         }
+[[34m  Info  [0m]                                                                                       x out
+[[34m  Info  [0m]                                                                                     ⟧ /28,0/
+[[34m  Info  [0m] [Symbolic Term Expl. (1->7)] ⟦ α left$19, n$7, right$19
+[[34m  Info  [0m]                                Π val rec$7: BooleanList = tree_collect_leaves(left$19)
+[[34m  Info  [0m]                                  val rec$8: BooleanList = tree_collect_leaves(right$19)
+[[34m  Info  [0m]                                  (↓tree_collect_leaves(Node(left$19, n$7, right$19)) && 谶Node(left$19, n$7, right$19) && ↓tree_collect_leaves(left$19) && ↓tree_collect_leaves(right$19)) && true
+[[34m  Info  [0m]                                φ Node(left$19, n$7, right$19) match {
+[[34m  Info  [0m]                                    case Leaf =>
+[[34m  Info  [0m]                                      out == Nil
+[[34m  Info  [0m]                                    case Node(l, x, r) =>
+[[34m  Info  [0m]                                      l match {
+[[34m  Info  [0m]                                        case Leaf =>
+[[34m  Info  [0m]                                          r match {
+[[34m  Info  [0m]                                            case Leaf =>
+[[34m  Info  [0m]                                              out == Cons(x, Nil)
+[[34m  Info  [0m]                                            case Node(l2, x2, r2) =>
+[[34m  Info  [0m]                                              true
+[[34m  Info  [0m]                                          }
+[[34m  Info  [0m]                                        case Node(l1, x1, r1) =>
+[[34m  Info  [0m]                                          r match {
+[[34m  Info  [0m]                                            case Leaf =>
+[[34m  Info  [0m]                                              true
+[[34m  Info  [0m]                                            case Node(l2, x2, r2) =>
+[[34m  Info  [0m]                                              (l1 == Leaf && r1 == Leaf && l2 == Leaf && r2 == Leaf) ==> out == Cons(x1, Cons(x, Cons(x2, Nil)))
+[[34m  Info  [0m]                                          }
+[[34m  Info  [0m]                                      }
+[[34m  Info  [0m]                                  }
+[[34m  Info  [0m]                                x out
+[[34m  Info  [0m]                              ⟧ /28,0/
+[[34m  Info  [0m] [Symbolic Term Expl. (1->7)] Solved  with:  ⟨ true |  list_append(rec$7, Cons(n$7, rec$8)) ⟩
+[[34m  Info  [0m] 
+[[34m  Info  [0m] Finished in 8839ms
+[[34m  Info  [0m] ============================= tree_collect_leaves =============================
+[[34m  Info  [0m] def tree_collect_leaves(t : BooleanTree): BooleanList =  {
+[[34m  Info  [0m]   t match {
+[[34m  Info  [0m]     case Leaf =>
+[[34m  Info  [0m]       Nil
+[[34m  Info  [0m]     case Node(left, n, right) =>
+[[34m  Info  [0m]       list_append(tree_collect_leaves(left), Cons(n, tree_collect_leaves(right)))
+[[34m  Info  [0m]   }
+[[34m  Info  [0m] } ensuring {
+[[34m  Info  [0m]   (out : BooleanList) => t match {
+[[34m  Info  [0m]     case Leaf =>
+[[34m  Info  [0m]       out == Nil
+[[34m  Info  [0m]     case Node(l, x, r) =>
+[[34m  Info  [0m]       l match {
+[[34m  Info  [0m]         case Leaf =>
+[[34m  Info  [0m]           r match {
+[[34m  Info  [0m]             case Leaf =>
+[[34m  Info  [0m]               out == Cons(x, Nil)
+[[34m  Info  [0m]             case Node(l2, x2, r2) =>
+[[34m  Info  [0m]               true
+[[34m  Info  [0m]           }
+[[34m  Info  [0m]         case Node(l1, x1, r1) =>
+[[34m  Info  [0m]           r match {
+[[34m  Info  [0m]             case Leaf =>
+[[34m  Info  [0m]               true
+[[34m  Info  [0m]             case Node(l2, x2, r2) =>
+[[34m  Info  [0m]               (l1 == Leaf && r1 == Leaf && l2 == Leaf && r2 == Leaf) ==> out == Cons(x1, Cons(x, Cons(x2, Nil)))
+[[34m  Info  [0m]           }
+[[34m  Info  [0m]       }
+[[34m  Info  [0m]   }
+[[34m  Info  [0m] }
+[[34m  Info  [0m] 

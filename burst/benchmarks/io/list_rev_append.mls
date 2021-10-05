@@ -1,0 +1,24 @@
+type nat =
+  | O
+  | S of nat
+
+type list =
+  | Nil
+  | Cons of nat * list
+
+let append =
+  fix (append : list -> list -> list) =
+    fun (l1 : list) ->
+      fun (l2 : list) ->
+        match l1 with
+        | Nil -> l2
+        | Cons (h,t) -> Cons(h,append t l2)
+;;
+
+synth list -> list satisfying
+
+[Nil] -> Nil,
+[Cons(0,Nil)] -> Cons(0,Nil),
+[Cons(0,Cons(0,Cons(1,Nil)))] -> Cons(1,Cons(0,Cons(0,Nil))),
+
+(* FTA construction is unexpectedly slow *)

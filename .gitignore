@@ -1,0 +1,62 @@
+config.h
+*.tgz
+starexec*
+
+.DS_Store
+
+# - - -
+# OCaml
+# - - -
+
+# Compiler-generated intermediates
+*.annot
+*.cmo
+*.cma
+*.cmi
+*.a
+*.o
+*.cmx
+*.cmxs
+*.cmxa
+
+# ocamlbuild working directory
+_build/
+BurstCmdLine.exe
+auts/
+
+# ocamlbuild targets
+*.byte
+*.native
+
+# dune/jbuilder generated files
+.merlin
+*.install
+
+# External
+_dep
+_log*
+_comp
+
+# Temporaries
+ocamlprof.dump
+gmon.out
+_tags
+
+# - - -
+# Haskell
+# - - -
+
+# stack.*
+.stack*
+stack.yaml.lock
+
+
+# - - -
+# Editor/IDE
+# - - -
+
+.vscode
+*.pyc
+__pycache__
+
+burst/*.out

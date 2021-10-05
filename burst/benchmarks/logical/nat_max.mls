@@ -1,0 +1,43 @@
+include "nat.decls"
+include "compare.decls"
+
+synth nat -> nat -> nat satisfying
+
+type bool =
+  | True
+  | False
+
+let geq =
+  fix (geq : nat -> nat -> bool) =
+    fun (x1:nat) ->
+    fun (x2:nat) ->
+      match x1 with
+        | O -> x2 == O
+        | S y1 ->
+          match x2 with
+          | O -> True
+          | S y2 -> geq y1 y2
+;;
+
+let and =
+  fun (b1:bool) ->
+    fun (b2:bool) ->
+      match b1 with
+      | True -> b2
+      | False -> False
+;;
+
+fun (in1in2:nat * nat) -> (fun (out : nat) ->
+    (and (geq out in1in2.0) (geq out in1in2.1)))
+
+(*
+[0,0] -> 0,
+[0,1] -> 1,
+[0,2] -> 2,
+[1,0] -> 1,
+[1,1] -> 1,
+[1,2] -> 2,
+[2,0] -> 2,
+[2,1] -> 2,
+[2,2] -> 2
+*)

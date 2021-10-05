@@ -1,0 +1,26 @@
+type nat =
+  | O
+  | S of nat
+
+type bool =
+  | True
+  | False
+
+type list =
+  | Nil
+  | Cons of bool * list
+
+synth list -> bool satisfying
+
+equiv
+
+fix (f : list -> bool) =
+  fun (x:list) ->
+    match x with
+      | Nil -> True
+      | Cons (h,t) ->
+        (match h with
+           | True -> f t
+           | False -> (match f t with
+                         | True -> False
+                         | False -> True))

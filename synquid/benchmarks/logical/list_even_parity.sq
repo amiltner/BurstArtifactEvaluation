@@ -1,0 +1,22 @@
+data Boolean where
+      T :: Boolean
+      F :: Boolean
+
+data BooleanList where
+      Nil :: BooleanList
+      Cons :: Boolean -> BooleanList -> BooleanList
+      
+termination measure len :: BooleanList -> {Int | _v >= 0} where
+      Nil -> 0
+      Cons x xs -> 1 + len xs
+
+measure even_len :: BooleanList -> Bool where
+    Nil -> True
+    Cons b t -> !(even_len t)
+
+measure to_trues :: BooleanList -> BooleanList where
+    Nil -> Nil
+    Cons b t -> if b == T then Cons b (to_trues t) else (to_trues t)
+
+list_even_parity :: bl:BooleanList -> x: a -> {Boolean | if even_len (to_trues bl) then _v == T else _v == F}
+list_even_parity = ??

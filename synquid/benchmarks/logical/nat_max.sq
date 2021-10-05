@@ -1,0 +1,15 @@
+data Nat where
+  Z :: Nat
+  S :: Nat -> Nat
+
+termination measure dec :: Nat -> {Int | _v >= 0} where
+  Z -> 0
+  S m -> 1 + dec m
+  
+  
+nat_max :: in1:Nat -> in2:Nat -> { Nat | 
+
+   (dec _v >= dec in1) && (dec _v >= dec in2)
+
+}
+nat_max = ??

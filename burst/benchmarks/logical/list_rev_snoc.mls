@@ -1,0 +1,56 @@
+type nat =
+  | O
+  | S of nat
+
+type list =
+  | Nil
+  | Cons of nat * list
+
+let snoc =
+  fix (snoc : list -> nat -> list) =
+    fun (l1 : list) ->
+      fun (n : nat) ->
+        match l1 with
+        | Nil -> Cons (n, Nil)
+        | Cons (h,t) -> Cons(h,snoc t n)
+;;
+
+synth list -> list satisfying
+
+type bool =
+  | True
+  | False
+
+type opt =
+  | None
+  | Some of nat
+
+let size =
+  fix (size : list -> nat) =
+    fun (x:list) ->
+      match x with
+        | Nil -> O
+        | Cons (_, t) -> S (size t)
+;;
+
+let last =
+  fix (last : list -> opt) =
+    fun (x:list) ->
+      match x with
+      | Nil -> None
+      | Cons (n, Nil) -> Some n
+      | Cons (_, t) -> last t
+;;
+
+let and =
+  fun (b1:bool) ->
+    fun (b2:bool) ->
+      match b1 with
+      | True -> b2
+      | False -> False
+;;
+
+fun (input:list) -> (fun (out : list) ->
+    match input with
+    | Nil -> out == Nil
+    | Cons (x, _) -> and ((size out) == (size input)) ((Some x) == (last out)))

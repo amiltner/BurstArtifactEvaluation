@@ -1,0 +1,137 @@
+type nat =
+  | O
+  | S of nat
+
+type list =
+  | Nil
+  | Cons of nat * list
+
+type tree =
+  | Leaf
+  | Node of tree * nat * tree
+
+let append =
+  fix (append : list -> list -> list) =
+    fun (l1 : list) ->
+      fun (l2 : list) ->
+        match l1 with
+        | Nil -> l2
+        | Cons (h,t) -> Cons(h,append t l2)
+;;
+
+synth tree -> list satisfying
+
+type bool =
+  | True
+  | False
+
+type cmp =
+  | LT
+  | EQ
+  | GT
+
+let and =
+  fun (b1 : bool) ->
+    fun (b2 : bool) ->
+      match (b1, b2) with
+      | (True, True) -> True
+      | (_, _) -> False
+;;
+
+let compare =
+  fix (compare : nat -> nat -> cmp) =
+    fun (x1 : nat) ->
+      fun (x2 : nat) ->
+        match (x1,x2) with
+        | (O,O) -> EQ
+        | (O,S _) -> LT
+        | (S _,O) -> GT
+        | (S x1,S x2) -> compare x1 x2
+;;
+
+let contains =
+  fix (contains : list -> nat -> bool) =
+    fun (l:list) ->
+    fun (n:nat) ->
+      match l with
+      | Nil -> False
+      | Cons (h,t) ->
+        match h == n with
+        | True -> True
+        | False -> contains t n
+;;
+
+let for_all =
+  fix (for_all : (nat -> bool) -> tree -> bool) =
+    fun (f:nat -> bool) ->
+    fun (t:tree) ->
+      match t with
+      | Leaf -> True
+      | Node (l, n, r) ->
+        match f n with
+        | True -> and (for_all f l) (for_all f r)
+        | False -> False
+;;
+
+let is_sorted =
+  fix (is_sorted : list -> bool) =
+  fun (l : list) ->
+    match l with
+    | Nil -> True
+    | Cons (_, Nil) -> True
+    | Cons (x, t) ->
+      match t with | Cons (y, _) ->
+      match (compare x y) with
+      | GT -> False
+      | _ -> is_sorted t
+;;
+
+let inorder =
+  fix (inorder : tree -> list) =
+  fun (t : tree) ->
+    match t with
+    | Leaf -> Nil
+    | Node (l, n, r) -> append (inorder l) (Cons (n, inorder r))
+;;
+
+let preorder =
+  fix (preorder : tree -> list) =
+  fun (t : tree) ->
+    match t with
+    | Leaf -> Nil
+    | Node (l, n, r) -> Cons (n, append (preorder l) (preorder r))
+;;
+
+let is_bst =
+  fun (t : tree) ->
+    (is_sorted (inorder t))
+;;
+
+fun (input:tree) -> (fun (out : list) -> 
+    match is_bst input with
+    | True -> out == (preorder input)
+    | False -> True)
+
+(*
+type bool =
+  | True
+  | False
+
+fun (input:tree) -> (fun (out:list) ->
+    match input with
+    | Leaf -> out == Nil
+    | Node (Leaf, x, Leaf) -> out == (Cons (x, Nil))
+    | Node (Node (Leaf, x, Leaf), y, Leaf) -> out == (Cons (y, Cons (x, Nil)))
+    | Node (Leaf, x, Node (Leaf, y, Leaf)) -> out == (Cons (x, Cons (y, Nil)))
+    | Node (Node (Leaf, x, Leaf), y, Node (Leaf, z, Leaf)) -> out == (Cons (y, Cons (x, Cons(z, Nil))))
+    | _ -> True)
+*)
+(*
+[Leaf] -> Nil,
+[Node (Leaf, 1, Leaf)] -> Cons(1, Nil),
+[Node (Leaf, 2, Leaf)] -> Cons(2, Nil),
+[Node (Node (Leaf, 1, Leaf), 2, Leaf)] -> Cons(1, Cons(2, Nil)),
+[Node (Leaf, 1, Node (Leaf, 2, Leaf))] -> Cons(2, Cons(1, Nil)),
+*)
+
+(* this slow *)

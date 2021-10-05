@@ -1,0 +1,24 @@
+( library
+  ( name
+      smyth
+  )
+  ( public_name
+      smyth
+  )
+  (preprocess (pps ppx_bin_prot ppx_hash ppx_deriving.std ppx_let ppx_optcomp ppx_compare ppx_sexp_conv))
+  ( libraries
+      ; user libraries
+      stdlib2
+
+      ; opam libraries
+      unix bark
+      core
+  )
+  ( flags
+      ; (-open Pervasives2)
+      (-open Pervasives2 -w +a-4-9-42-48 -warn-error -a+1..66-3-33)
+  )
+  ( ocamlopt_flags
+      (-O3)
+  )
+)

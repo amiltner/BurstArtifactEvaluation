@@ -1,0 +1,51 @@
+type nat =
+  | O
+  | S of nat
+
+type list =
+  | Nil
+  | Cons of nat * list
+
+type bool =
+  | True
+  | False
+
+synth (nat -> nat -> nat) -> nat -> list -> nat satisfying
+
+let sum =
+  fix (sum : nat -> nat -> nat) =
+    fun (n1 : nat) ->
+      fun (n2 : nat) ->
+        match n1 with
+        | O -> n2
+        | S n1p -> S (sum n1p n2)
+;;
+
+let zero =
+  fun (n1:nat) ->
+    fun (n2:nat) -> O
+;;
+
+let count =
+  fun (n1:nat) ->
+    fun (n2:nat) -> S n1
+;;
+
+let size =
+  fix (size : list -> nat) =
+    fun (x:list) ->
+      match x with
+        | Nil -> O
+        | Cons (_, t) -> S (size t)
+;;
+
+fun (in1in2in3:(nat->nat->nat)*nat*list) -> (fun (out : nat) ->
+   match (in1in2in3.0 == zero) with
+   | True -> (match (in1in2in3.1) with
+              | O -> (out == O)
+              | _ -> True)
+   | False -> (match (in1in2in3.0 == count) with
+               | True -> (out == (sum (size in1in2in3.2) in1in2in3.1))
+               | False -> (match (in1in2in3.0 == sum,in1in2in3.2) with
+                           | (True,Cons (a , Cons (b , Cons (c , Nil)))) -> out == (sum in1in2in3.1 (sum a (sum b c)))
+                           | _ -> True)))

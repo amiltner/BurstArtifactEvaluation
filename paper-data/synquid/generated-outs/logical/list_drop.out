@@ -1,0 +1,8 @@
+list_drop :: xn:Nat -> xs:NatList -> {NatList|if len xs - dec xn < 0 then len _v == 0 else len xs - dec xn == len _v}
+list_drop = \xn . \xs . 
+    match xn with
+      Z -> xs
+      S x2 -> 
+        match xs with
+          Nil -> xs
+          Cons x5 x6 -> list_drop x2 x6

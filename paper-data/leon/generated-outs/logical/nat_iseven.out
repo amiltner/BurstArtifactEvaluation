@@ -1,0 +1,357 @@
+[[33mWarning [0m] Refusing to inline recursive function 'listWebElementToWebTree'!
+[[33mWarning [0m] The Z3 native interface is not available, falling back to smt-cvc4.
+[[34m  Info  [0m] ========================== Synthesizing 'nat_iseven' ==========================
+[[34m  Info  [0m] [Symbolic Term Expl. (1->7)] ⟦ α n
+[[34m  Info  [0m]                                Π ↓nat_iseven(n) && true
+[[34m  Info  [0m]                                φ n match {
+[[34m  Info  [0m]                                    case Z =>
+[[34m  Info  [0m]                                      out == T
+[[34m  Info  [0m]                                    case S(t1) =>
+[[34m  Info  [0m]                                      t1 match {
+[[34m  Info  [0m]                                        case Z =>
+[[34m  Info  [0m]                                          out == F
+[[34m  Info  [0m]                                        case S(t2) =>
+[[34m  Info  [0m]                                          t2 match {
+[[34m  Info  [0m]                                            case Z =>
+[[34m  Info  [0m]                                              out == T
+[[34m  Info  [0m]                                            case S(t3) =>
+[[34m  Info  [0m]                                              true
+[[34m  Info  [0m]                                          }
+[[34m  Info  [0m]                                      }
+[[34m  Info  [0m]                                  }
+[[34m  Info  [0m]                                x out
+[[34m  Info  [0m]                              ⟧ /20,0/
+[[34m  Info  [0m] [Symbolic Term Expl. (1->7)] Failed
+[[34m  Info  [0m] [Optimistic Ground   ] ⟦ α n
+[[34m  Info  [0m]                          Π ↓nat_iseven(n) && true
+[[34m  Info  [0m]                          φ n match {
+[[34m  Info  [0m]                              case Z =>
+[[34m  Info  [0m]                                out == T
+[[34m  Info  [0m]                              case S(t1) =>
+[[34m  Info  [0m]                                t1 match {
+[[34m  Info  [0m]                                  case Z =>
+[[34m  Info  [0m]                                    out == F
+[[34m  Info  [0m]                                  case S(t2) =>
+[[34m  Info  [0m]                                    t2 match {
+[[34m  Info  [0m]                                      case Z =>
+[[34m  Info  [0m]                                        out == T
+[[34m  Info  [0m]                                      case S(t3) =>
+[[34m  Info  [0m]                                        true
+[[34m  Info  [0m]                                    }
+[[34m  Info  [0m]                                }
+[[34m  Info  [0m]                            }
+[[34m  Info  [0m]                          x out
+[[34m  Info  [0m]                        ⟧ /20,0/
+[[34m  Info  [0m] [Optimistic Ground   ] Failed
+[[34m  Info  [0m] [ADT Split on 'n'    ] ⟦ α n
+[[34m  Info  [0m]                          Π ↓nat_iseven(n) && true
+[[34m  Info  [0m]                          φ n match {
+[[34m  Info  [0m]                              case Z =>
+[[34m  Info  [0m]                                out == T
+[[34m  Info  [0m]                              case S(t1) =>
+[[34m  Info  [0m]                                t1 match {
+[[34m  Info  [0m]                                  case Z =>
+[[34m  Info  [0m]                                    out == F
+[[34m  Info  [0m]                                  case S(t2) =>
+[[34m  Info  [0m]                                    t2 match {
+[[34m  Info  [0m]                                      case Z =>
+[[34m  Info  [0m]                                        out == T
+[[34m  Info  [0m]                                      case S(t3) =>
+[[34m  Info  [0m]                                        true
+[[34m  Info  [0m]                                    }
+[[34m  Info  [0m]                                }
+[[34m  Info  [0m]                            }
+[[34m  Info  [0m]                          x out
+[[34m  Info  [0m]                        ⟧ /20,0/
+[[34m  Info  [0m] [ADT Split on 'n'    ] Decomposed into:
+[[34m  Info  [0m] [ADT Split on 'n'    ] - ⟦ α ()
+[[34m  Info  [0m]                            Π (↓nat_iseven(Z) && 谶Z) && true
+[[34m  Info  [0m]                            φ Z match {
+[[34m  Info  [0m]                                case Z =>
+[[34m  Info  [0m]                                  out == T
+[[34m  Info  [0m]                                case S(t1) =>
+[[34m  Info  [0m]                                  t1 match {
+[[34m  Info  [0m]                                    case Z =>
+[[34m  Info  [0m]                                      out == F
+[[34m  Info  [0m]                                    case S(t2) =>
+[[34m  Info  [0m]                                      t2 match {
+[[34m  Info  [0m]                                        case Z =>
+[[34m  Info  [0m]                                          out == T
+[[34m  Info  [0m]                                        case S(t3) =>
+[[34m  Info  [0m]                                          true
+[[34m  Info  [0m]                                      }
+[[34m  Info  [0m]                                  }
+[[34m  Info  [0m]                              }
+[[34m  Info  [0m]                            x out
+[[34m  Info  [0m]                          ⟧ /1,0/
+[[34m  Info  [0m] [ADT Split on 'n'    ] - ⟦ α nat$2
+[[34m  Info  [0m]                            Π (↓nat_iseven(S(nat$2)) && 谶S(nat$2)) && true
+[[34m  Info  [0m]                            φ S(nat$2) match {
+[[34m  Info  [0m]                                case Z =>
+[[34m  Info  [0m]                                  out == T
+[[34m  Info  [0m]                                case S(t1) =>
+[[34m  Info  [0m]                                  t1 match {
+[[34m  Info  [0m]                                    case Z =>
+[[34m  Info  [0m]                                      out == F
+[[34m  Info  [0m]                                    case S(t2) =>
+[[34m  Info  [0m]                                      t2 match {
+[[34m  Info  [0m]                                        case Z =>
+[[34m  Info  [0m]                                          out == T
+[[34m  Info  [0m]                                        case S(t3) =>
+[[34m  Info  [0m]                                          true
+[[34m  Info  [0m]                                      }
+[[34m  Info  [0m]                                  }
+[[34m  Info  [0m]                              }
+[[34m  Info  [0m]                            x out
+[[34m  Info  [0m]                          ⟧ /19,0/
+[[34m  Info  [0m] [Ground              ] ⟦ α ()
+[[34m  Info  [0m]                          Π (↓nat_iseven(Z) && 谶Z) && true
+[[34m  Info  [0m]                          φ Z match {
+[[34m  Info  [0m]                              case Z =>
+[[34m  Info  [0m]                                out == T
+[[34m  Info  [0m]                              case S(t1) =>
+[[34m  Info  [0m]                                t1 match {
+[[34m  Info  [0m]                                  case Z =>
+[[34m  Info  [0m]                                    out == F
+[[34m  Info  [0m]                                  case S(t2) =>
+[[34m  Info  [0m]                                    t2 match {
+[[34m  Info  [0m]                                      case Z =>
+[[34m  Info  [0m]                                        out == T
+[[34m  Info  [0m]                                      case S(t3) =>
+[[34m  Info  [0m]                                        true
+[[34m  Info  [0m]                                    }
+[[34m  Info  [0m]                                }
+[[34m  Info  [0m]                            }
+[[34m  Info  [0m]                          x out
+[[34m  Info  [0m]                        ⟧ /1,0/
+[[34m  Info  [0m] [Ground              ] Solved  with:  ⟨ true |  T ⟩
+[[34m  Info  [0m] 
+[[34m  Info  [0m] [Introduce calls nat_iseven$0(nat$2)] ⟦ α nat$2
+[[34m  Info  [0m]                                         Π (↓nat_iseven(S(nat$2)) && 谶S(nat$2)) && true
+[[34m  Info  [0m]                                         φ S(nat$2) match {
+[[34m  Info  [0m]                                             case Z =>
+[[34m  Info  [0m]                                               out == T
+[[34m  Info  [0m]                                             case S(t1) =>
+[[34m  Info  [0m]                                               t1 match {
+[[34m  Info  [0m]                                                 case Z =>
+[[34m  Info  [0m]                                                   out == F
+[[34m  Info  [0m]                                                 case S(t2) =>
+[[34m  Info  [0m]                                                   t2 match {
+[[34m  Info  [0m]                                                     case Z =>
+[[34m  Info  [0m]                                                       out == T
+[[34m  Info  [0m]                                                     case S(t3) =>
+[[34m  Info  [0m]                                                       true
+[[34m  Info  [0m]                                                   }
+[[34m  Info  [0m]                                               }
+[[34m  Info  [0m]                                           }
+[[34m  Info  [0m]                                         x out
+[[34m  Info  [0m]                                       ⟧ /19,0/
+[[34m  Info  [0m] [Introduce calls nat_iseven$0(nat$2)] Decomposed into:
+[[34m  Info  [0m] [Introduce calls nat_iseven$0(nat$2)] - ⟦ α nat$2
+[[34m  Info  [0m]                                           Π val rec$7: Boolean = nat_iseven(nat$2)
+[[34m  Info  [0m]                                             (↓nat_iseven(S(nat$2)) && 谶S(nat$2) && ↓nat_iseven(nat$2)) && true
+[[34m  Info  [0m]                                           φ S(nat$2) match {
+[[34m  Info  [0m]                                               case Z =>
+[[34m  Info  [0m]                                                 out == T
+[[34m  Info  [0m]                                               case S(t1) =>
+[[34m  Info  [0m]                                                 t1 match {
+[[34m  Info  [0m]                                                   case Z =>
+[[34m  Info  [0m]                                                     out == F
+[[34m  Info  [0m]                                                   case S(t2) =>
+[[34m  Info  [0m]                                                     t2 match {
+[[34m  Info  [0m]                                                       case Z =>
+[[34m  Info  [0m]                                                         out == T
+[[34m  Info  [0m]                                                       case S(t3) =>
+[[34m  Info  [0m]                                                         true
+[[34m  Info  [0m]                                                     }
+[[34m  Info  [0m]                                                 }
+[[34m  Info  [0m]                                             }
+[[34m  Info  [0m]                                           x out
+[[34m  Info  [0m]                                         ⟧ /19,0/
+[[34m  Info  [0m] [Symbolic Term Expl. (1->7)] ⟦ α nat$2
+[[34m  Info  [0m]                                Π val rec$7: Boolean = nat_iseven(nat$2)
+[[34m  Info  [0m]                                  (↓nat_iseven(S(nat$2)) && 谶S(nat$2) && ↓nat_iseven(nat$2)) && true
+[[34m  Info  [0m]                                φ S(nat$2) match {
+[[34m  Info  [0m]                                    case Z =>
+[[34m  Info  [0m]                                      out == T
+[[34m  Info  [0m]                                    case S(t1) =>
+[[34m  Info  [0m]                                      t1 match {
+[[34m  Info  [0m]                                        case Z =>
+[[34m  Info  [0m]                                          out == F
+[[34m  Info  [0m]                                        case S(t2) =>
+[[34m  Info  [0m]                                          t2 match {
+[[34m  Info  [0m]                                            case Z =>
+[[34m  Info  [0m]                                              out == T
+[[34m  Info  [0m]                                            case S(t3) =>
+[[34m  Info  [0m]                                              true
+[[34m  Info  [0m]                                          }
+[[34m  Info  [0m]                                      }
+[[34m  Info  [0m]                                  }
+[[34m  Info  [0m]                                x out
+[[34m  Info  [0m]                              ⟧ /19,0/
+[[34m  Info  [0m] [Symbolic Term Expl. (1->7)] Failed
+[[34m  Info  [0m] [Optimistic Ground   ] ⟦ α nat$2
+[[34m  Info  [0m]                          Π val rec$7: Boolean = nat_iseven(nat$2)
+[[34m  Info  [0m]                            (↓nat_iseven(S(nat$2)) && 谶S(nat$2) && ↓nat_iseven(nat$2)) && true
+[[34m  Info  [0m]                          φ S(nat$2) match {
+[[34m  Info  [0m]                              case Z =>
+[[34m  Info  [0m]                                out == T
+[[34m  Info  [0m]                              case S(t1) =>
+[[34m  Info  [0m]                                t1 match {
+[[34m  Info  [0m]                                  case Z =>
+[[34m  Info  [0m]                                    out == F
+[[34m  Info  [0m]                                  case S(t2) =>
+[[34m  Info  [0m]                                    t2 match {
+[[34m  Info  [0m]                                      case Z =>
+[[34m  Info  [0m]                                        out == T
+[[34m  Info  [0m]                                      case S(t3) =>
+[[34m  Info  [0m]                                        true
+[[34m  Info  [0m]                                    }
+[[34m  Info  [0m]                                }
+[[34m  Info  [0m]                            }
+[[34m  Info  [0m]                          x out
+[[34m  Info  [0m]                        ⟧ /19,0/
+[[34m  Info  [0m] [Optimistic Ground   ] Failed
+[[34m  Info  [0m] [ADT Split on 'rec$7'] ⟦ α nat$2
+[[34m  Info  [0m]                          Π val rec$7: Boolean = nat_iseven(nat$2)
+[[34m  Info  [0m]                            (↓nat_iseven(S(nat$2)) && 谶S(nat$2) && ↓nat_iseven(nat$2)) && true
+[[34m  Info  [0m]                          φ S(nat$2) match {
+[[34m  Info  [0m]                              case Z =>
+[[34m  Info  [0m]                                out == T
+[[34m  Info  [0m]                              case S(t1) =>
+[[34m  Info  [0m]                                t1 match {
+[[34m  Info  [0m]                                  case Z =>
+[[34m  Info  [0m]                                    out == F
+[[34m  Info  [0m]                                  case S(t2) =>
+[[34m  Info  [0m]                                    t2 match {
+[[34m  Info  [0m]                                      case Z =>
+[[34m  Info  [0m]                                        out == T
+[[34m  Info  [0m]                                      case S(t3) =>
+[[34m  Info  [0m]                                        true
+[[34m  Info  [0m]                                    }
+[[34m  Info  [0m]                                }
+[[34m  Info  [0m]                            }
+[[34m  Info  [0m]                          x out
+[[34m  Info  [0m]                        ⟧ /19,0/
+[[34m  Info  [0m] [ADT Split on 'rec$7'] Decomposed into:
+[[34m  Info  [0m] [ADT Split on 'rec$7'] - ⟦ α nat$2
+[[34m  Info  [0m]                            Π val rec$7: Boolean = nat_iseven(nat$2)
+[[34m  Info  [0m]                              (rec$7 == F) && ((↓nat_iseven(S(nat$2)) && 谶S(nat$2) && ↓nat_iseven(nat$2) && 谶F && inactive(rec$7)) && true)
+[[34m  Info  [0m]                            φ S(nat$2) match {
+[[34m  Info  [0m]                                case Z =>
+[[34m  Info  [0m]                                  out == T
+[[34m  Info  [0m]                                case S(t1) =>
+[[34m  Info  [0m]                                  t1 match {
+[[34m  Info  [0m]                                    case Z =>
+[[34m  Info  [0m]                                      out == F
+[[34m  Info  [0m]                                    case S(t2) =>
+[[34m  Info  [0m]                                      t2 match {
+[[34m  Info  [0m]                                        case Z =>
+[[34m  Info  [0m]                                          out == T
+[[34m  Info  [0m]                                        case S(t3) =>
+[[34m  Info  [0m]                                          true
+[[34m  Info  [0m]                                      }
+[[34m  Info  [0m]                                  }
+[[34m  Info  [0m]                              }
+[[34m  Info  [0m]                            x out
+[[34m  Info  [0m]                          ⟧ /19,0/
+[[34m  Info  [0m] [ADT Split on 'rec$7'] - ⟦ α nat$2
+[[34m  Info  [0m]                            Π val rec$7: Boolean = nat_iseven(nat$2)
+[[34m  Info  [0m]                              (rec$7 == T) && ((↓nat_iseven(S(nat$2)) && 谶S(nat$2) && ↓nat_iseven(nat$2) && 谶T && inactive(rec$7)) && true)
+[[34m  Info  [0m]                            φ S(nat$2) match {
+[[34m  Info  [0m]                                case Z =>
+[[34m  Info  [0m]                                  out == T
+[[34m  Info  [0m]                                case S(t1) =>
+[[34m  Info  [0m]                                  t1 match {
+[[34m  Info  [0m]                                    case Z =>
+[[34m  Info  [0m]                                      out == F
+[[34m  Info  [0m]                                    case S(t2) =>
+[[34m  Info  [0m]                                      t2 match {
+[[34m  Info  [0m]                                        case Z =>
+[[34m  Info  [0m]                                          out == T
+[[34m  Info  [0m]                                        case S(t3) =>
+[[34m  Info  [0m]                                          true
+[[34m  Info  [0m]                                      }
+[[34m  Info  [0m]                                  }
+[[34m  Info  [0m]                              }
+[[34m  Info  [0m]                            x out
+[[34m  Info  [0m]                          ⟧ /19,0/
+[[34m  Info  [0m] [Symbolic Term Expl. (1->7)] ⟦ α nat$2
+[[34m  Info  [0m]                                Π val rec$7: Boolean = nat_iseven(nat$2)
+[[34m  Info  [0m]                                  (rec$7 == F) && ((↓nat_iseven(S(nat$2)) && 谶S(nat$2) && ↓nat_iseven(nat$2) && 谶F && inactive(rec$7)) && true)
+[[34m  Info  [0m]                                φ S(nat$2) match {
+[[34m  Info  [0m]                                    case Z =>
+[[34m  Info  [0m]                                      out == T
+[[34m  Info  [0m]                                    case S(t1) =>
+[[34m  Info  [0m]                                      t1 match {
+[[34m  Info  [0m]                                        case Z =>
+[[34m  Info  [0m]                                          out == F
+[[34m  Info  [0m]                                        case S(t2) =>
+[[34m  Info  [0m]                                          t2 match {
+[[34m  Info  [0m]                                            case Z =>
+[[34m  Info  [0m]                                              out == T
+[[34m  Info  [0m]                                            case S(t3) =>
+[[34m  Info  [0m]                                              true
+[[34m  Info  [0m]                                          }
+[[34m  Info  [0m]                                      }
+[[34m  Info  [0m]                                  }
+[[34m  Info  [0m]                                x out
+[[34m  Info  [0m]                              ⟧ /19,0/
+[[34m  Info  [0m] [Symbolic Term Expl. (1->7)] Solved  with:  ⟨ true |  T ⟩
+[[34m  Info  [0m] 
+[[34m  Info  [0m] [Symbolic Term Expl. (1->7)] ⟦ α nat$2
+[[34m  Info  [0m]                                Π val rec$7: Boolean = nat_iseven(nat$2)
+[[34m  Info  [0m]                                  (rec$7 == T) && ((↓nat_iseven(S(nat$2)) && 谶S(nat$2) && ↓nat_iseven(nat$2) && 谶T && inactive(rec$7)) && true)
+[[34m  Info  [0m]                                φ S(nat$2) match {
+[[34m  Info  [0m]                                    case Z =>
+[[34m  Info  [0m]                                      out == T
+[[34m  Info  [0m]                                    case S(t1) =>
+[[34m  Info  [0m]                                      t1 match {
+[[34m  Info  [0m]                                        case Z =>
+[[34m  Info  [0m]                                          out == F
+[[34m  Info  [0m]                                        case S(t2) =>
+[[34m  Info  [0m]                                          t2 match {
+[[34m  Info  [0m]                                            case Z =>
+[[34m  Info  [0m]                                              out == T
+[[34m  Info  [0m]                                            case S(t3) =>
+[[34m  Info  [0m]                                              true
+[[34m  Info  [0m]                                          }
+[[34m  Info  [0m]                                      }
+[[34m  Info  [0m]                                  }
+[[34m  Info  [0m]                                x out
+[[34m  Info  [0m]                              ⟧ /19,0/
+[[34m  Info  [0m] [Symbolic Term Expl. (1->7)] Solved  with:  ⟨ true |  F ⟩
+[[34m  Info  [0m] 
+[[34m  Info  [0m] Finished in 5886ms
+[[34m  Info  [0m] ================================== nat_iseven ==================================
+[[34m  Info  [0m] def nat_iseven(n : Nat): Boolean =  {
+[[34m  Info  [0m]   n match {
+[[34m  Info  [0m]     case Z =>
+[[34m  Info  [0m]       T
+[[34m  Info  [0m]     case S(nat) =>
+[[34m  Info  [0m]       nat_iseven(nat) match {
+[[34m  Info  [0m]         case F =>
+[[34m  Info  [0m]           T
+[[34m  Info  [0m]         case T =>
+[[34m  Info  [0m]           F
+[[34m  Info  [0m]       }
+[[34m  Info  [0m]   }
+[[34m  Info  [0m] } ensuring {
+[[34m  Info  [0m]   (out : Boolean) => n match {
+[[34m  Info  [0m]     case Z =>
+[[34m  Info  [0m]       out == T
+[[34m  Info  [0m]     case S(t1) =>
+[[34m  Info  [0m]       t1 match {
+[[34m  Info  [0m]         case Z =>
+[[34m  Info  [0m]           out == F
+[[34m  Info  [0m]         case S(t2) =>
+[[34m  Info  [0m]           t2 match {
+[[34m  Info  [0m]             case Z =>
+[[34m  Info  [0m]               out == T
+[[34m  Info  [0m]             case S(t3) =>
+[[34m  Info  [0m]               true
+[[34m  Info  [0m]           }
+[[34m  Info  [0m]       }
+[[34m  Info  [0m]   }
+[[34m  Info  [0m] }
+[[34m  Info  [0m] 

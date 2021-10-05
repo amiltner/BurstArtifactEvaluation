@@ -1,0 +1,31 @@
+fun (x:(nat -> nat) * tree) ->
+  (fun (x1:) ->
+     (fun (fixf:) -> fixf)
+       (fix (fixf : ) =
+          fun (x0:) ->
+            match x0 with
+              | Node y1 -> Node (fixf (y1 . 0), x1 (y1 . 1), fixf (y1 . 2))
+              | Leaf y1 -> Leaf))
+    (x . 0) (x . 1)
+;
+0.
+;
+0.
+;
+0.
+;
+0.
+;
+0.
+;
+0.
+;
+0.
+;
+0.
+;
+0.
+;
+0.
+;
+0

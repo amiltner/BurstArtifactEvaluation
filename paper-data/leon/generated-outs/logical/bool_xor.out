@@ -1,0 +1,133 @@
+[[33mWarning [0m] Refusing to inline recursive function 'listWebElementToWebTree'!
+[[33mWarning [0m] The Z3 native interface is not available, falling back to smt-cvc4.
+[[34m  Info  [0m] =========================== Synthesizing 'bool_impl' ===========================
+[[34m  Info  [0m] [Symbolic Term Expl. (1->7)] ⟦ α p, q
+[[34m  Info  [0m]                                Π ↓bool_impl(p, q) && true
+[[34m  Info  [0m]                                φ p != q ==> out == T && out == T ==> p != q
+[[34m  Info  [0m]                                x out
+[[34m  Info  [0m]                              ⟧ /4,0/
+[[34m  Info  [0m] [Symbolic Term Expl. (1->7)] Failed
+[[34m  Info  [0m] [Optimistic Ground   ] ⟦ α p, q
+[[34m  Info  [0m]                          Π ↓bool_impl(p, q) && true
+[[34m  Info  [0m]                          φ p != q ==> out == T && out == T ==> p != q
+[[34m  Info  [0m]                          x out
+[[34m  Info  [0m]                        ⟧ /4,0/
+[[34m  Info  [0m] [Optimistic Ground   ] Failed
+[[34m  Info  [0m] [ADT Split on 'p'    ] ⟦ α p, q
+[[34m  Info  [0m]                          Π ↓bool_impl(p, q) && true
+[[34m  Info  [0m]                          φ p != q ==> out == T && out == T ==> p != q
+[[34m  Info  [0m]                          x out
+[[34m  Info  [0m]                        ⟧ /4,0/
+[[34m  Info  [0m] [ADT Split on 'p'    ] Decomposed into:
+[[34m  Info  [0m] [ADT Split on 'p'    ] - ⟦ α q
+[[34m  Info  [0m]                            Π (↓bool_impl(F, q) && 谶F) && true
+[[34m  Info  [0m]                            φ F != q ==> out == T && out == T ==> F != q
+[[34m  Info  [0m]                            x out
+[[34m  Info  [0m]                          ⟧ /2,0/
+[[34m  Info  [0m] [ADT Split on 'p'    ] - ⟦ α q
+[[34m  Info  [0m]                            Π (↓bool_impl(T, q) && 谶T) && true
+[[34m  Info  [0m]                            φ T != q ==> out == T && out == T ==> T != q
+[[34m  Info  [0m]                            x out
+[[34m  Info  [0m]                          ⟧ /2,0/
+[[34m  Info  [0m] [Symbolic Term Expl. (1->7)] ⟦ α q
+[[34m  Info  [0m]                                Π (↓bool_impl(F, q) && 谶F) && true
+[[34m  Info  [0m]                                φ F != q ==> out == T && out == T ==> F != q
+[[34m  Info  [0m]                                x out
+[[34m  Info  [0m]                              ⟧ /2,0/
+[[34m  Info  [0m] [Symbolic Term Expl. (1->7)] Solved  with:  ⟨ true |  q ⟩
+[[34m  Info  [0m] 
+[[34m  Info  [0m] [Symbolic Term Expl. (1->7)] ⟦ α q
+[[34m  Info  [0m]                                Π (↓bool_impl(T, q) && 谶T) && true
+[[34m  Info  [0m]                                φ T != q ==> out == T && out == T ==> T != q
+[[34m  Info  [0m]                                x out
+[[34m  Info  [0m]                              ⟧ /2,0/
+[[34m  Info  [0m] [Symbolic Term Expl. (1->7)] Failed
+[[34m  Info  [0m] [Optimistic Ground   ] ⟦ α q
+[[34m  Info  [0m]                          Π (↓bool_impl(T, q) && 谶T) && true
+[[34m  Info  [0m]                          φ T != q ==> out == T && out == T ==> T != q
+[[34m  Info  [0m]                          x out
+[[34m  Info  [0m]                        ⟧ /2,0/
+[[34m  Info  [0m] [Optimistic Ground   ] Failed
+[[34m  Info  [0m] [ADT Split on 'q'    ] ⟦ α p, q
+[[34m  Info  [0m]                          Π ↓bool_impl(p, q) && true
+[[34m  Info  [0m]                          φ p != q ==> out == T && out == T ==> p != q
+[[34m  Info  [0m]                          x out
+[[34m  Info  [0m]                        ⟧ /4,0/
+[[34m  Info  [0m] [ADT Split on 'q'    ] Decomposed into:
+[[34m  Info  [0m] [ADT Split on 'q'    ] - ⟦ α p
+[[34m  Info  [0m]                            Π (↓bool_impl(p, F) && 谶F) && true
+[[34m  Info  [0m]                            φ p != F ==> out == T && out == T ==> p != F
+[[34m  Info  [0m]                            x out
+[[34m  Info  [0m]                          ⟧ /2,0/
+[[34m  Info  [0m] [ADT Split on 'q'    ] - ⟦ α p
+[[34m  Info  [0m]                            Π (↓bool_impl(p, T) && 谶T) && true
+[[34m  Info  [0m]                            φ p != T ==> out == T && out == T ==> p != T
+[[34m  Info  [0m]                            x out
+[[34m  Info  [0m]                          ⟧ /2,0/
+[[34m  Info  [0m] [Symbolic Term Expl. (1->7)] ⟦ α p
+[[34m  Info  [0m]                                Π (↓bool_impl(p, F) && 谶F) && true
+[[34m  Info  [0m]                                φ p != F ==> out == T && out == T ==> p != F
+[[34m  Info  [0m]                                x out
+[[34m  Info  [0m]                              ⟧ /2,0/
+[[34m  Info  [0m] [Symbolic Term Expl. (1->7)] Solved  with:  ⟨ true |  p ⟩
+[[34m  Info  [0m] 
+[[34m  Info  [0m] [Symbolic Term Expl. (1->7)] ⟦ α p
+[[34m  Info  [0m]                                Π (↓bool_impl(p, T) && 谶T) && true
+[[34m  Info  [0m]                                φ p != T ==> out == T && out == T ==> p != T
+[[34m  Info  [0m]                                x out
+[[34m  Info  [0m]                              ⟧ /2,0/
+[[34m  Info  [0m] [Symbolic Term Expl. (1->7)] Failed
+[[34m  Info  [0m] [Optimistic Ground   ] ⟦ α p
+[[34m  Info  [0m]                          Π (↓bool_impl(p, T) && 谶T) && true
+[[34m  Info  [0m]                          φ p != T ==> out == T && out == T ==> p != T
+[[34m  Info  [0m]                          x out
+[[34m  Info  [0m]                        ⟧ /2,0/
+[[34m  Info  [0m] [Optimistic Ground   ] Failed
+[[34m  Info  [0m] [ADT Split on 'q'    ] ⟦ α q
+[[34m  Info  [0m]                          Π (↓bool_impl(T, q) && 谶T) && true
+[[34m  Info  [0m]                          φ T != q ==> out == T && out == T ==> T != q
+[[34m  Info  [0m]                          x out
+[[34m  Info  [0m]                        ⟧ /2,0/
+[[34m  Info  [0m] [ADT Split on 'q'    ] Decomposed into:
+[[34m  Info  [0m] [ADT Split on 'q'    ] - ⟦ α ()
+[[34m  Info  [0m]                            Π (↓bool_impl(T, F) && 谶T && 谶F) && true
+[[34m  Info  [0m]                            φ T != F ==> out == T && out == T ==> T != F
+[[34m  Info  [0m]                            x out
+[[34m  Info  [0m]                          ⟧ /1,0/
+[[34m  Info  [0m] [ADT Split on 'q'    ] - ⟦ α ()
+[[34m  Info  [0m]                            Π (↓bool_impl(T, T) && 谶T && 谶T) && true
+[[34m  Info  [0m]                            φ T != T ==> out == T && out == T ==> T != T
+[[34m  Info  [0m]                            x out
+[[34m  Info  [0m]                          ⟧ /1,0/
+[[34m  Info  [0m] [Ground              ] ⟦ α ()
+[[34m  Info  [0m]                          Π (↓bool_impl(T, F) && 谶T && 谶F) && true
+[[34m  Info  [0m]                          φ T != F ==> out == T && out == T ==> T != F
+[[34m  Info  [0m]                          x out
+[[34m  Info  [0m]                        ⟧ /1,0/
+[[34m  Info  [0m] [Ground              ] Solved  with:  ⟨ true |  T ⟩
+[[34m  Info  [0m] 
+[[34m  Info  [0m] [Ground              ] ⟦ α ()
+[[34m  Info  [0m]                          Π (↓bool_impl(T, T) && 谶T && 谶T) && true
+[[34m  Info  [0m]                          φ T != T ==> out == T && out == T ==> T != T
+[[34m  Info  [0m]                          x out
+[[34m  Info  [0m]                        ⟧ /1,0/
+[[34m  Info  [0m] [Ground              ] Solved  with:  ⟨ true |  F ⟩
+[[34m  Info  [0m] 
+[[34m  Info  [0m] Finished in 9385ms
+[[34m  Info  [0m] ================================== bool_impl ==================================
+[[34m  Info  [0m] def bool_impl(p : Boolean, q : Boolean): Boolean =  {
+[[34m  Info  [0m]   p match {
+[[34m  Info  [0m]     case F =>
+[[34m  Info  [0m]       q
+[[34m  Info  [0m]     case T =>
+[[34m  Info  [0m]       q match {
+[[34m  Info  [0m]         case F =>
+[[34m  Info  [0m]           T
+[[34m  Info  [0m]         case T =>
+[[34m  Info  [0m]           F
+[[34m  Info  [0m]       }
+[[34m  Info  [0m]   }
+[[34m  Info  [0m] } ensuring {
+[[34m  Info  [0m]   (out : Boolean) => p != q ==> out == T && out == T ==> p != q
+[[34m  Info  [0m] }
+[[34m  Info  [0m] 

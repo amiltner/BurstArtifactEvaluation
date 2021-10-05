@@ -1,0 +1,41 @@
+type nat =
+  | O
+  | S of nat
+
+type list =
+  | Nil
+  | Cons of nat * list
+
+type cmp =
+  | LT
+  | EQ
+  | GT
+
+let compare =
+  fix (compare : nat -> nat -> cmp) =
+    fun (x1 : nat) ->
+      fun (x2 : nat) ->
+        match x1 with
+        | O -> (match x2 with
+                | O -> EQ
+                | S _ -> LT)
+        | S x1 -> (match x2 with
+                | O -> GT
+                | S x2 -> compare x1 x2)
+;;
+
+synth list -> list satisfying
+
+[Nil] -> Nil,
+[Cons(0,Nil)] -> Cons(0,Nil),
+[Cons(1,Nil)] -> Cons(1,Nil),
+[Cons(0,Cons(0,Nil))] -> Cons(0,Nil),
+[Cons(1,Cons(1,Nil))] -> Cons(1,Nil),
+[Cons(2,Cons(0,Nil))] -> Cons(2,Cons(0,Nil)),
+[Cons(1,Cons(0,Cons(0,Nil)))] -> Cons(1,Cons(0,Nil)),
+[Cons(0,Cons(1,Cons(1,Nil)))] -> Cons(0,Cons(1,Nil)),
+[Cons(2,Cons(1,Cons(0,Cons(0,Nil))))] -> Cons(2,Cons(1,Cons(0,Nil))),
+[Cons(2,Cons(2,Cons(1,Cons(0,Cons(0,Nil)))))] -> Cons(2,Cons(1,Cons(0,Nil))),
+[Cons(2,Cons(2,Cons(0,Nil)))] -> Cons(2,Cons(0,Nil)),
+[Cons(2,Cons(2,Cons(2,Cons(0,Nil))))] -> Cons(2,Cons(0,Nil)),
+[Cons(1,Cons(2,Cons(2,Cons(2,Cons(0,Nil)))))] -> Cons(1,Cons(2,Cons(0,Nil))),

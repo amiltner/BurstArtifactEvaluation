@@ -1,0 +1,39 @@
+type cmp =
+  | CEq
+  | CGt
+  | CLt
+
+type nat =
+  | O
+  | S of nat
+
+type tree =
+  | Leaf
+  | Node of tree * nat * tree
+
+let comp_nat =
+  fix (comp_nat : nat -> nat -> cmp) =
+    fun (x1 : nat) ->
+      fun (x2 : nat) ->
+        match x1 with
+        | O -> (match x2 with
+                | O -> CEq
+                | S _ -> CLt)
+        | S x1 -> (match x2 with
+                | O -> CGt
+                | S x2 -> comp_nat x1 x2)
+;;
+
+synth tree -> nat -> tree satisfying
+
+equiv
+
+fix (f : tree -> nat -> tree) =
+  fun (t:tree) ->
+    fun (n:nat) ->
+      match t with
+        | Leaf -> Node (Leaf, n, Leaf)
+        | Node (l,x,r) -> (match comp_nat x n with
+                       | CEq -> t
+                       | CLt -> Node (f l n, x, r)
+                       | CGt -> Node (l, x, f r n))

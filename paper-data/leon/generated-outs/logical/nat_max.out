@@ -1,0 +1,114 @@
+[[33mWarning [0m] Refusing to inline recursive function 'listWebElementToWebTree'!
+[[33mWarning [0m] The Z3 native interface is not available, falling back to smt-cvc4.
+[[34m  Info  [0m] ============================ Synthesizing 'nat_max' ============================
+[[34m  Info  [0m] [Symbolic Term Expl. (1->7)] ⟦ α xs, ys
+[[34m  Info  [0m]                                Π ↓nat_max(xs, ys) && true
+[[34m  Info  [0m]                                φ nat_to_int(out) >= nat_to_int(xs) && nat_to_int(out) >= nat_to_int(ys)
+[[34m  Info  [0m]                                x out
+[[34m  Info  [0m]                              ⟧ /21,0/
+[[34m  Info  [0m] [Symbolic Term Expl. (1->7)] Failed
+[[34m  Info  [0m] [Optimistic Ground   ] ⟦ α xs, ys
+[[34m  Info  [0m]                          Π ↓nat_max(xs, ys) && true
+[[34m  Info  [0m]                          φ nat_to_int(out) >= nat_to_int(xs) && nat_to_int(out) >= nat_to_int(ys)
+[[34m  Info  [0m]                          x out
+[[34m  Info  [0m]                        ⟧ /21,0/
+[[34m  Info  [0m] [Optimistic Ground   ] Failed
+[[34m  Info  [0m] [ADT Split on 'xs'   ] ⟦ α xs, ys
+[[34m  Info  [0m]                          Π ↓nat_max(xs, ys) && true
+[[34m  Info  [0m]                          φ nat_to_int(out) >= nat_to_int(xs) && nat_to_int(out) >= nat_to_int(ys)
+[[34m  Info  [0m]                          x out
+[[34m  Info  [0m]                        ⟧ /21,0/
+[[34m  Info  [0m] [ADT Split on 'xs'   ] Decomposed into:
+[[34m  Info  [0m] [ADT Split on 'xs'   ] - ⟦ α ys
+[[34m  Info  [0m]                            Π (↓nat_max(Z, ys) && 谶Z) && true
+[[34m  Info  [0m]                            φ nat_to_int(out) >= nat_to_int(Z) && nat_to_int(out) >= nat_to_int(ys)
+[[34m  Info  [0m]                            x out
+[[34m  Info  [0m]                          ⟧ /6,0/
+[[34m  Info  [0m] [ADT Split on 'xs'   ] - ⟦ α nat$2, ys
+[[34m  Info  [0m]                            Π (↓nat_max(S(nat$2), ys) && 谶S(nat$2)) && true
+[[34m  Info  [0m]                            φ nat_to_int(out) >= nat_to_int(S(nat$2)) && nat_to_int(out) >= nat_to_int(ys)
+[[34m  Info  [0m]                            x out
+[[34m  Info  [0m]                          ⟧ /15,0/
+[[34m  Info  [0m] [Symbolic Term Expl. (1->7)] ⟦ α ys
+[[34m  Info  [0m]                                Π (↓nat_max(Z, ys) && 谶Z) && true
+[[34m  Info  [0m]                                φ nat_to_int(out) >= nat_to_int(Z) && nat_to_int(out) >= nat_to_int(ys)
+[[34m  Info  [0m]                                x out
+[[34m  Info  [0m]                              ⟧ /6,0/
+[[34m  Info  [0m] STE could not prove the validity of the resulting expression
+[[34m  Info  [0m] STE could not prove the validity of the resulting 1 expression(s)
+[[34m  Info  [0m] [Symbolic Term Expl. (1->7)] Solved (untrusted) with:  ⟨ true |  ys ⟩
+[[34m  Info  [0m] 
+[[34m  Info  [0m] [ADT Split on 'ys'   ] ⟦ α xs, ys
+[[34m  Info  [0m]                          Π ↓nat_max(xs, ys) && true
+[[34m  Info  [0m]                          φ nat_to_int(out) >= nat_to_int(xs) && nat_to_int(out) >= nat_to_int(ys)
+[[34m  Info  [0m]                          x out
+[[34m  Info  [0m]                        ⟧ /21,0/
+[[34m  Info  [0m] [ADT Split on 'ys'   ] Decomposed into:
+[[34m  Info  [0m] [ADT Split on 'ys'   ] - ⟦ α xs
+[[34m  Info  [0m]                            Π (↓nat_max(xs, Z) && 谶Z) && true
+[[34m  Info  [0m]                            φ nat_to_int(out) >= nat_to_int(xs) && nat_to_int(out) >= nat_to_int(Z)
+[[34m  Info  [0m]                            x out
+[[34m  Info  [0m]                          ⟧ /5,0/
+[[34m  Info  [0m] [ADT Split on 'ys'   ] - ⟦ α nat$3, xs
+[[34m  Info  [0m]                            Π (↓nat_max(xs, S(nat$3)) && 谶S(nat$3)) && true
+[[34m  Info  [0m]                            φ nat_to_int(out) >= nat_to_int(xs) && nat_to_int(out) >= nat_to_int(S(nat$3))
+[[34m  Info  [0m]                            x out
+[[34m  Info  [0m]                          ⟧ /16,0/
+[[34m  Info  [0m] [Symbolic Term Expl. (1->7)] ⟦ α xs
+[[34m  Info  [0m]                                Π (↓nat_max(xs, Z) && 谶Z) && true
+[[34m  Info  [0m]                                φ nat_to_int(out) >= nat_to_int(xs) && nat_to_int(out) >= nat_to_int(Z)
+[[34m  Info  [0m]                                x out
+[[34m  Info  [0m]                              ⟧ /5,0/
+[[34m  Info  [0m] STE could not prove the validity of the resulting expression
+[[34m  Info  [0m] STE could not prove the validity of the resulting 1 expression(s)
+[[34m  Info  [0m] [Symbolic Term Expl. (1->7)] Solved (untrusted) with:  ⟨ true |  xs ⟩
+[[34m  Info  [0m] 
+[[34m  Info  [0m] [Introduce calls nat_max$0(nat$2, ys$0)] ⟦ α nat$2, ys
+[[34m  Info  [0m]                                            Π (↓nat_max(S(nat$2), ys) && 谶S(nat$2)) && true
+[[34m  Info  [0m]                                            φ nat_to_int(out) >= nat_to_int(S(nat$2)) && nat_to_int(out) >= nat_to_int(ys)
+[[34m  Info  [0m]                                            x out
+[[34m  Info  [0m]                                          ⟧ /15,0/
+[[34m  Info  [0m] [Introduce calls nat_max$0(nat$2, ys$0)] Decomposed into:
+[[34m  Info  [0m] [Introduce calls nat_max$0(nat$2, ys$0)] - ⟦ α nat$2, ys
+[[34m  Info  [0m]                                              Π val rec$9: Nat = nat_max(nat$2, ys)
+[[34m  Info  [0m]                                                (↓nat_max(S(nat$2), ys) && 谶S(nat$2) && ↓nat_max(nat$2, ys)) && true
+[[34m  Info  [0m]                                              φ nat_to_int(out) >= nat_to_int(S(nat$2)) && nat_to_int(out) >= nat_to_int(ys)
+[[34m  Info  [0m]                                              x out
+[[34m  Info  [0m]                                            ⟧ /15,0/
+[[34m  Info  [0m] [Symbolic Term Expl. (1->7)] ⟦ α nat$2, ys
+[[34m  Info  [0m]                                Π val rec$9: Nat = nat_max(nat$2, ys)
+[[34m  Info  [0m]                                  (↓nat_max(S(nat$2), ys) && 谶S(nat$2) && ↓nat_max(nat$2, ys)) && true
+[[34m  Info  [0m]                                φ nat_to_int(out) >= nat_to_int(S(nat$2)) && nat_to_int(out) >= nat_to_int(ys)
+[[34m  Info  [0m]                                x out
+[[34m  Info  [0m]                              ⟧ /15,0/
+[[34m  Info  [0m] STE could not prove the validity of the resulting expression
+[[34m  Info  [0m] STE could not prove the validity of the resulting 1 expression(s)
+[[34m  Info  [0m] [Symbolic Term Expl. (1->7)] Solved (untrusted) with:  ⟨ true |  S(rec$9) ⟩
+[[34m  Info  [0m] 
+[[34m  Info  [0m] Finished in 23783ms
+[[34m  Info  [0m] Solution requires validation
+[[34m  Info  [0m]  - Now considering 'postcondition' VC for nat_max @30:48...
+[[33mWarning [0m]  => TIMEOUT
+[[34m  Info  [0m]  - Now considering 'precond. (call nat_to_int(out))' VC for nat_max @38:6...
+[[34m  Info  [0m]  => VALID
+[[34m  Info  [0m]  - Now considering 'precond. (call nat_to_int(xs))' VC for nat_max @38:25...
+[[34m  Info  [0m]  => VALID
+[[34m  Info  [0m]  - Now considering 'precond. (call nat_to_int(out))' VC for nat_max @38:45...
+[[34m  Info  [0m]  => VALID
+[[34m  Info  [0m]  - Now considering 'precond. (call nat_to_int(ys))' VC for nat_max @38:64...
+[[34m  Info  [0m]  => VALID
+[[34m  Info  [0m]  - Now considering 'match exhaustiveness' VC for nat_max @?:?...
+[[34m  Info  [0m]  => VALID
+[[33mWarning [0m] Solution may be invalid:
+[[34m  Info  [0m] =================================== nat_max ===================================
+[[34m  Info  [0m] def nat_max(xs : Nat, ys : Nat): Nat =  {
+[[34m  Info  [0m]   xs match {
+[[34m  Info  [0m]     case Z =>
+[[34m  Info  [0m]       ys
+[[34m  Info  [0m]     case S(nat) =>
+[[34m  Info  [0m]       S(nat_max(nat, ys))
+[[34m  Info  [0m]   }
+[[34m  Info  [0m] } ensuring {
+[[34m  Info  [0m]   (out : Nat) => nat_to_int(out) >= nat_to_int(xs) && nat_to_int(out) >= nat_to_int(ys)
+[[34m  Info  [0m] }
+[[34m  Info  [0m] 

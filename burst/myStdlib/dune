@@ -1,0 +1,5 @@
+(library
+    (name myStdLib)
+    (public_name myStdLib)
+    (preprocess (pps ppx_hash ppx_sexp_conv ppx_bin_prot ppx_deriving.std))
+    (libraries core str))

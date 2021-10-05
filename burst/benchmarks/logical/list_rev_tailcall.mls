@@ -1,0 +1,73 @@
+type nat =
+  | O
+  | S of nat
+
+type list =
+  | Nil
+  | Cons of nat * list
+
+synth list -> list -> list satisfying
+
+type bool =
+  | True
+  | False
+
+let size =
+  fix (size : list -> nat) =
+    fun (x:list) ->
+      match x with
+        | Nil -> O
+        | Cons (_, t) -> S (size t)
+;;
+
+let and =
+  fun (b1:bool) ->
+    fun (b2:bool) ->
+      match b1 with
+      | True -> b2
+      | False -> False
+;;
+
+let plus =
+  fix (plus : nat -> nat -> nat) =
+    fun (x1:nat) ->
+      fun (x2:nat) ->
+        match x1 with
+        | O -> x2
+        | S x1p -> S (plus x1p x2)
+;;
+
+type cmp =
+  | LT
+  | EQ
+  | GT
+
+let compare =
+  fix (compare : nat -> nat -> cmp) =
+    fun (x1 : nat) ->
+      fun (x2 : nat) ->
+        match (x1,x2) with
+        | (O,O) -> EQ
+        | (O,S _) -> LT
+        | (S _,O) -> GT
+        | (S x1,S x2) -> compare x1 x2
+;;
+
+let lastn =
+  fix (lastn : list -> nat -> list) =
+    (fun (l:list) ->
+      (fun (n:nat) ->
+        (match compare n (size l) with
+        | EQ -> l
+        | GT -> l
+        | LT -> (match l with
+                 | Nil -> Nil
+                 | Cons (_,t) -> lastn t n))))
+;;
+
+fun (in1in2:list*list) -> (fun (out : list) ->
+    (and
+      ((size out) == (plus (size in1in2.0) (size in1in2.1)))
+      (match in1in2.0 with
+       | Nil -> True
+       | Cons (x, _) -> (lastn out (S (size in1in2.1))) == Cons (x, in1in2.1))))

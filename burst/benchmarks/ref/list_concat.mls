@@ -1,0 +1,30 @@
+type nat =
+  | O
+  | S of nat
+
+type list =
+  | Nil
+  | Cons of nat * list
+
+type llist =
+  | LNil
+  | LCons of list * llist
+
+let append =
+  fix (append : list -> list -> list) =
+    fun (l1 : list) ->
+      fun (l2 : list) ->
+        match l1 with
+        | Nil -> l2
+        | Cons (h,t) -> Cons(h,append t l2)
+;;
+
+synth llist -> list satisfying
+
+equiv
+
+fix (f : llist -> list) =
+  fun (x:llist) ->
+    match x with
+      | LNil -> Nil
+      | LCons (hl,tll) -> append hl (f tll)

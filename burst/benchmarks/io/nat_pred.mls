@@ -1,0 +1,6 @@
+include "nat.decls"
+
+synth nat -> nat satisfying
+
+[0] -> 0,
+[2] -> 1

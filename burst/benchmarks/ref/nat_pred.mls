@@ -1,0 +1,10 @@
+include "nat.decls"
+
+synth nat -> nat satisfying
+
+equiv
+
+fun (x:nat) ->
+  match x with
+    | O -> O
+    | S np -> np

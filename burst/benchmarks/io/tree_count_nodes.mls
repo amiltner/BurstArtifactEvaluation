@@ -1,0 +1,25 @@
+type nat =
+  | O
+  | S of nat
+
+type tree =
+  | Leaf
+  | Node of tree * nat * tree
+
+let sum =
+  fix (sum : nat -> nat -> nat) =
+    fun (n1 : nat) ->
+      fun (n2 : nat) ->
+        match n1 with
+        | O -> n2
+        | S n1p -> S (sum n1p n2)
+;;
+
+synth tree -> nat satisfying
+
+[Leaf] -> 0,
+[Node (Leaf, 0, Leaf)] -> 1,
+[Node (Node (Leaf, 0, Leaf), 0, Leaf)] -> 2,
+[Node (Leaf, 0, Node (Leaf, 0, Leaf))] -> 2,
+[Node (Node (Leaf, 0, Node (Leaf, 0, Leaf)), 0, Leaf)] -> 3,
+[Node (Leaf, 0, Node (Leaf, 0, Node (Leaf, 0, Leaf)))] -> 3,

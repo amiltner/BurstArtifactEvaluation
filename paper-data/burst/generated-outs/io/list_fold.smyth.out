@@ -1,0 +1,32 @@
+fun (x:(nat -> nat -> nat) * nat * list) ->
+  (fun (x2:) ->
+     fun (x1:) ->
+       (fun (fixf:) -> fixf)
+         (fix (fixf : ) =
+            fun (x0:) ->
+              match x0 with
+                | Nil y1 -> x1
+                | Cons y1 -> sum (fixf (y1 . 1)) (y1 . 0)))
+    (x . 0) (x . 1) (x . 2)
+;
+0.
+;
+0.
+;
+0.
+;
+0.
+;
+0.
+;
+0.
+;
+0.
+;
+0.
+;
+0.
+;
+0.
+;
+0

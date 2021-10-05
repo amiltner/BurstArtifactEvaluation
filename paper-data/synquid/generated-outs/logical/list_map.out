@@ -1,0 +1,2 @@
+benchmarks/postconditional/list_map.sq:45: Resolution Error:
+  Variable f is not in scope

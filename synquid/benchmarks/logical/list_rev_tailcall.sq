@@ -1,0 +1,38 @@
+
+data Nat where
+  Z :: Nat
+  S :: Nat -> Nat
+
+termination measure dec :: Nat -> {Int | _v >= 0} where
+  Z -> 0
+  S m -> 1 + dec m
+  
+data NatList where
+  Nil :: NatList
+  Cons :: Nat -> NatList -> NatList
+
+measure hd :: NatList -> Nat where
+  Nil -> Z
+  Cons h t -> h
+
+measure tl :: NatList -> NatList where
+  Nil -> Nil
+  Cons h t -> t
+
+termination measure len :: NatList -> {Int | _v >= 0} where
+  Nil -> 0
+  Cons x xs -> 1 + len xs
+
+data MP where
+  MP :: {Int | _v >= 0} -> NatList -> MP
+
+measure last :: MP -> NatList where
+  MP i l -> if i <= len l then l else last (MP (i-1) (tl l))
+  
+list_rev_tailcall :: xs:NatList -> acc:NatList -> { NatList | 
+
+  len xs + len acc == len _v &&
+  (xs != Nil ==> last (MP (len acc + 1) _v) == Cons (hd xs) acc)
+
+}
+list_rev_tailcall = ??

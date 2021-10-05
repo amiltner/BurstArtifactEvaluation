@@ -1,0 +1,14 @@
+list_append :: arg1:NatList -> arg0:NatList -> NatList
+list_append = \l1 . \l2 . 
+    match l1 with
+      Nil -> l2
+      Cons head tail -> Cons head
+                          (list_append tail l2)
+
+tree_inorder :: t:NatTree -> {NatList|sndT (tree_ordered_str t) ==> list_ordered _v && elems_tree t == elems_list _v}
+benchmarks/postconditional/tree_inorder.sq:111: Error:
+  Cannot match shape 'Nat'
+  with shape 'NatTree'
+  when checking Z :: NatTree in
+  \t . 
+    match Node Z ?? ?? with

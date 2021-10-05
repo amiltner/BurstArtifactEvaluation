@@ -1,0 +1,13 @@
+type nat =
+  | O
+  | S of nat
+
+type list =
+  | Nil
+  | Cons of nat * list
+
+synth list -> nat satisfying
+
+[Nil] -> 0,
+[Cons(0,Nil)] -> 1,
+[Cons(0,Cons(0,Nil))] -> 2,

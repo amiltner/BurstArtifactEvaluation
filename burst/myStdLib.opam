@@ -1,0 +1,21 @@
+opam-version: "1.2"
+
+name: "myStdLib"
+version: "0.6b"
+
+bug-reports: "https://github.com/todo"
+license: "MIT"
+dev-repo: "git+https://github.com:todo"
+
+available: [ ocaml-version >= "4.04.2" ]
+
+build: [
+  [ "dune" "build" "-p" name "-j" jobs ]
+]
+
+depends: [
+  "dune"          {build & >= "1.1.1"}
+  "alcotest"      {test & >= "0.7"}
+  "core"          {>= "0.11"}
+  "core_extended" {>= "0.11"}
+]

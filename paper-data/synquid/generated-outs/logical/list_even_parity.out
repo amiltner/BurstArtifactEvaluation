@@ -1,0 +1,9 @@
+list_even_parity :: bl:BooleanList -> x:a -> {Boolean|if even_len (to_trues bl) then _v == (T) else _v == (F)}
+benchmarks/postconditional/list_even_parity.sq:22: Error:
+  Cannot match shape 'Boolean'
+  with shape 'BooleanList'
+  when checking T ::
+  {BooleanList|len _v >= 0 && len _v < len bl}
+  in
+  \bl . \x . 
+      match list_even_parity T ?? with

@@ -1,0 +1,5 @@
+nat_pred :: in1:Nat -> {Nat|(in1 == (Z) ==> _v == (Z)) && (in1 != (Z) ==> dec _v == dec in1 - 1)}
+nat_pred = \in1 . 
+  match in1 with
+    Z -> in1
+    S x2 -> x2

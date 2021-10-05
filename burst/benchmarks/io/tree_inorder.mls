@@ -1,0 +1,29 @@
+type nat =
+  | O
+  | S of nat
+
+type list =
+  | Nil
+  | Cons of nat * list
+
+type tree =
+  | Leaf
+  | Node of tree * nat * tree
+
+let append =
+  fix (append : list -> list -> list) =
+    fun (l1 : list) ->
+      fun (l2 : list) ->
+        match l1 with
+        | Nil -> l2
+        | Cons (h,t) -> Cons(h,append t l2)
+;;
+
+synth tree -> list satisfying
+
+[Leaf] -> Nil,
+[Node (Leaf, 1, Leaf)] -> Cons(1, Nil),
+[Node (Node (Leaf, 1, Leaf), 2, Leaf)] -> Cons(1, Cons(2, Nil)),
+[Node (Leaf, 1, Node (Leaf, 2, Leaf))] -> Cons(1, Cons(2, Nil)),
+
+(* this slow *)

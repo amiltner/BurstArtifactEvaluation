@@ -1,0 +1,2 @@
+benchmarks/postconditional/list_fold.sq:63: Resolution Error:
+  Variable f is not in scope

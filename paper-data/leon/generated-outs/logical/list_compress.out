@@ -1,0 +1,1131 @@
+[[33mWarning [0m] Refusing to inline recursive function 'listWebElementToWebTree'!
+[[33mWarning [0m] The Z3 native interface is not available, falling back to smt-cvc4.
+[[34m  Info  [0m] ========================= Synthesizing 'list_compress' =========================
+[[34m  Info  [0m] [Symbolic Term Expl. (1->7)] ⟦ α xs
+[[34m  Info  [0m]                                Π ↓list_compress(xs) && true
+[[34m  Info  [0m]                                φ no_dupes(out) && content(xs).subsetOf(content(out))
+[[34m  Info  [0m]                                x out
+[[34m  Info  [0m]                              ⟧ /24,0/
+[[34m  Info  [0m] [Symbolic Term Expl. (1->7)] Failed
+[[34m  Info  [0m] [Optimistic Ground   ] ⟦ α xs
+[[34m  Info  [0m]                          Π ↓list_compress(xs) && true
+[[34m  Info  [0m]                          φ no_dupes(out) && content(xs).subsetOf(content(out))
+[[34m  Info  [0m]                          x out
+[[34m  Info  [0m]                        ⟧ /24,0/
+[[34m  Info  [0m] [Optimistic Ground   ] Failed
+[[34m  Info  [0m] [ADT Split on 'xs'   ] ⟦ α xs
+[[34m  Info  [0m]                          Π ↓list_compress(xs) && true
+[[34m  Info  [0m]                          φ no_dupes(out) && content(xs).subsetOf(content(out))
+[[34m  Info  [0m]                          x out
+[[34m  Info  [0m]                        ⟧ /24,0/
+[[34m  Info  [0m] [ADT Split on 'xs'   ] Decomposed into:
+[[34m  Info  [0m] [ADT Split on 'xs'   ] - ⟦ α ()
+[[34m  Info  [0m]                            Π (↓list_compress(Nil) && 谶Nil) && true
+[[34m  Info  [0m]                            φ no_dupes(out) && content(Nil).subsetOf(content(out))
+[[34m  Info  [0m]                            x out
+[[34m  Info  [0m]                          ⟧ /1,0/
+[[34m  Info  [0m] [ADT Split on 'xs'   ] - ⟦ α head$12, tail$17
+[[34m  Info  [0m]                            Π (↓list_compress(Cons(head$12, tail$17)) && 谶Cons(head$12, tail$17)) && true
+[[34m  Info  [0m]                            φ no_dupes(out) && content(Cons(head$12, tail$17)).subsetOf(content(out))
+[[34m  Info  [0m]                            x out
+[[34m  Info  [0m]                          ⟧ /23,0/
+[[34m  Info  [0m] [Ground              ] ⟦ α ()
+[[34m  Info  [0m]                          Π (↓list_compress(Nil) && 谶Nil) && true
+[[34m  Info  [0m]                          φ no_dupes(out) && content(Nil).subsetOf(content(out))
+[[34m  Info  [0m]                          x out
+[[34m  Info  [0m]                        ⟧ /1,0/
+[[34m  Info  [0m] [Ground              ] Solved  with:  ⟨ true |  Nil ⟩
+[[34m  Info  [0m] 
+[[34m  Info  [0m] [Introduce calls list_compress$0(tail$17)] ⟦ α head$12, tail$17
+[[34m  Info  [0m]                                              Π (↓list_compress(Cons(head$12, tail$17)) && 谶Cons(head$12, tail$17)) && true
+[[34m  Info  [0m]                                              φ no_dupes(out) && content(Cons(head$12, tail$17)).subsetOf(content(out))
+[[34m  Info  [0m]                                              x out
+[[34m  Info  [0m]                                            ⟧ /23,0/
+[[34m  Info  [0m] [Introduce calls list_compress$0(tail$17)] Decomposed into:
+[[34m  Info  [0m] [Introduce calls list_compress$0(tail$17)] - ⟦ α head$12, tail$17
+[[34m  Info  [0m]                                                Π val rec$7: NatList = list_compress(tail$17)
+[[34m  Info  [0m]                                                  (↓list_compress(Cons(head$12, tail$17)) && 谶Cons(head$12, tail$17) && ↓list_compress(tail$17)) && true
+[[34m  Info  [0m]                                                φ no_dupes(out) && content(Cons(head$12, tail$17)).subsetOf(content(out))
+[[34m  Info  [0m]                                                x out
+[[34m  Info  [0m]                                              ⟧ /23,0/
+[[34m  Info  [0m] [Symbolic Term Expl. (1->7)] ⟦ α head$12, tail$17
+[[34m  Info  [0m]                                Π val rec$7: NatList = list_compress(tail$17)
+[[34m  Info  [0m]                                  (↓list_compress(Cons(head$12, tail$17)) && 谶Cons(head$12, tail$17) && ↓list_compress(tail$17)) && true
+[[34m  Info  [0m]                                φ no_dupes(out) && content(Cons(head$12, tail$17)).subsetOf(content(out))
+[[34m  Info  [0m]                                x out
+[[34m  Info  [0m]                              ⟧ /23,0/
+[[34m  Info  [0m] [Symbolic Term Expl. (1->7)] Failed
+[[34m  Info  [0m] [Optimistic Ground   ] ⟦ α head$12, tail$17
+[[34m  Info  [0m]                          Π val rec$7: NatList = list_compress(tail$17)
+[[34m  Info  [0m]                            (↓list_compress(Cons(head$12, tail$17)) && 谶Cons(head$12, tail$17) && ↓list_compress(tail$17)) && true
+[[34m  Info  [0m]                          φ no_dupes(out) && content(Cons(head$12, tail$17)).subsetOf(content(out))
+[[34m  Info  [0m]                          x out
+[[34m  Info  [0m]                        ⟧ /23,0/
+[[34m  Info  [0m] [Optimistic Ground   ] Failed
+[[34m  Info  [0m] [ADT Split on 'head$12'] ⟦ α head$12, tail$17
+[[34m  Info  [0m]                            Π val rec$7: NatList = list_compress(tail$17)
+[[34m  Info  [0m]                              (↓list_compress(Cons(head$12, tail$17)) && 谶Cons(head$12, tail$17) && ↓list_compress(tail$17)) && true
+[[34m  Info  [0m]                            φ no_dupes(out) && content(Cons(head$12, tail$17)).subsetOf(content(out))
+[[34m  Info  [0m]                            x out
+[[34m  Info  [0m]                          ⟧ /23,0/
+[[34m  Info  [0m] [ADT Split on 'head$12'] Decomposed into:
+[[34m  Info  [0m] [ADT Split on 'head$12'] - ⟦ α tail$17
+[[34m  Info  [0m]                              Π val rec$7: NatList = list_compress(tail$17)
+[[34m  Info  [0m]                                (↓list_compress(Cons(Z, tail$17)) && 谶Cons(Z, tail$17) && ↓list_compress(tail$17) && 谶Z) && true
+[[34m  Info  [0m]                              φ no_dupes(out) && content(Cons(Z, tail$17)).subsetOf(content(out))
+[[34m  Info  [0m]                              x out
+[[34m  Info  [0m]                            ⟧ /10,0/
+[[34m  Info  [0m] [ADT Split on 'head$12'] - ⟦ α nat$4, tail$17
+[[34m  Info  [0m]                              Π val rec$7: NatList = list_compress(tail$17)
+[[34m  Info  [0m]                                (↓list_compress(Cons(S(nat$4), tail$17)) && 谶Cons(S(nat$4), tail$17) && ↓list_compress(tail$17) && 谶S(nat$4)) && true
+[[34m  Info  [0m]                              φ no_dupes(out) && content(Cons(S(nat$4), tail$17)).subsetOf(content(out))
+[[34m  Info  [0m]                              x out
+[[34m  Info  [0m]                            ⟧ /13,0/
+[[34m  Info  [0m] [Symbolic Term Expl. (1->7)] ⟦ α tail$17
+[[34m  Info  [0m]                                Π val rec$7: NatList = list_compress(tail$17)
+[[34m  Info  [0m]                                  (↓list_compress(Cons(Z, tail$17)) && 谶Cons(Z, tail$17) && ↓list_compress(tail$17) && 谶Z) && true
+[[34m  Info  [0m]                                φ no_dupes(out) && content(Cons(Z, tail$17)).subsetOf(content(out))
+[[34m  Info  [0m]                                x out
+[[34m  Info  [0m]                              ⟧ /10,0/
+[[34m  Info  [0m] [Symbolic Term Expl. (1->7)] Failed
+[[34m  Info  [0m] [Optimistic Ground   ] ⟦ α tail$17
+[[34m  Info  [0m]                          Π val rec$7: NatList = list_compress(tail$17)
+[[34m  Info  [0m]                            (↓list_compress(Cons(Z, tail$17)) && 谶Cons(Z, tail$17) && ↓list_compress(tail$17) && 谶Z) && true
+[[34m  Info  [0m]                          φ no_dupes(out) && content(Cons(Z, tail$17)).subsetOf(content(out))
+[[34m  Info  [0m]                          x out
+[[34m  Info  [0m]                        ⟧ /10,0/
+[[34m  Info  [0m] [Optimistic Ground   ] Failed
+[[34m  Info  [0m] [ADT Split on 'tail$17'] ⟦ α head$12, tail$17
+[[34m  Info  [0m]                            Π val rec$7: NatList = list_compress(tail$17)
+[[34m  Info  [0m]                              (↓list_compress(Cons(head$12, tail$17)) && 谶Cons(head$12, tail$17) && ↓list_compress(tail$17)) && true
+[[34m  Info  [0m]                            φ no_dupes(out) && content(Cons(head$12, tail$17)).subsetOf(content(out))
+[[34m  Info  [0m]                            x out
+[[34m  Info  [0m]                          ⟧ /23,0/
+[[34m  Info  [0m] [ADT Split on 'tail$17'] Decomposed into:
+[[34m  Info  [0m] [ADT Split on 'tail$17'] - ⟦ α head$12
+[[34m  Info  [0m]                              Π val rec$7: NatList = list_compress(Nil)
+[[34m  Info  [0m]                                (↓list_compress(Cons(head$12, Nil)) && 谶Cons(head$12, Nil) && ↓list_compress(Nil) && 谶Nil) && true
+[[34m  Info  [0m]                              φ no_dupes(out) && content(Cons(head$12, Nil)).subsetOf(content(out))
+[[34m  Info  [0m]                              x out
+[[34m  Info  [0m]                            ⟧ /4,0/
+[[34m  Info  [0m] [ADT Split on 'tail$17'] - ⟦ α head$17, tail$21, head$12
+[[34m  Info  [0m]                              Π val rec$7: NatList = list_compress(Cons(head$17, tail$21))
+[[34m  Info  [0m]                                (↓list_compress(Cons(head$12, Cons(head$17, tail$21))) && 谶Cons(head$12, Cons(head$17, tail$21)) && ↓list_compress(Cons(head$17, tail$21)) && 谶Cons(head$17, tail$21)) && true
+[[34m  Info  [0m]                              φ no_dupes(out) && content(Cons(head$12, Cons(head$17, tail$21))).subsetOf(content(out))
+[[34m  Info  [0m]                              x out
+[[34m  Info  [0m]                            ⟧ /19,0/
+[[34m  Info  [0m] [Symbolic Term Expl. (1->7)] ⟦ α head$12
+[[34m  Info  [0m]                                Π val rec$7: NatList = list_compress(Nil)
+[[34m  Info  [0m]                                  (↓list_compress(Cons(head$12, Nil)) && 谶Cons(head$12, Nil) && ↓list_compress(Nil) && 谶Nil) && true
+[[34m  Info  [0m]                                φ no_dupes(out) && content(Cons(head$12, Nil)).subsetOf(content(out))
+[[34m  Info  [0m]                                x out
+[[34m  Info  [0m]                              ⟧ /4,0/
+[[34m  Info  [0m] [Symbolic Term Expl. (1->7)] Solved  with:  ⟨ true |  Cons(head$12, rec$7) ⟩
+[[34m  Info  [0m] 
+[[34m  Info  [0m] [ADT Split on 'rec$7'] ⟦ α head$12, tail$17
+[[34m  Info  [0m]                          Π val rec$7: NatList = list_compress(tail$17)
+[[34m  Info  [0m]                            (↓list_compress(Cons(head$12, tail$17)) && 谶Cons(head$12, tail$17) && ↓list_compress(tail$17)) && true
+[[34m  Info  [0m]                          φ no_dupes(out) && content(Cons(head$12, tail$17)).subsetOf(content(out))
+[[34m  Info  [0m]                          x out
+[[34m  Info  [0m]                        ⟧ /23,0/
+[[34m  Info  [0m] [ADT Split on 'rec$7'] Decomposed into:
+[[34m  Info  [0m] [ADT Split on 'rec$7'] - ⟦ α head$12, tail$17
+[[34m  Info  [0m]                            Π val rec$7: NatList = list_compress(tail$17)
+[[34m  Info  [0m]                              (rec$7 == Nil) && ((↓list_compress(Cons(head$12, tail$17)) && 谶Cons(head$12, tail$17) && ↓list_compress(tail$17) && 谶Nil && inactive(rec$7)) && true)
+[[34m  Info  [0m]                            φ no_dupes(out) && content(Cons(head$12, tail$17)).subsetOf(content(out))
+[[34m  Info  [0m]                            x out
+[[34m  Info  [0m]                          ⟧ /23,0/
+[[34m  Info  [0m] [ADT Split on 'rec$7'] - ⟦ α head$12, tail$17
+[[34m  Info  [0m]                            Π val rec$7: NatList = list_compress(tail$17)
+[[34m  Info  [0m]                              rec$7.isInstanceOf[Cons] && {
+[[34m  Info  [0m]                                val head$18: Nat = rec$7.head
+[[34m  Info  [0m]                                val tail$22: NatList = rec$7.tail
+[[34m  Info  [0m]                                (↓list_compress(Cons(head$12, tail$17)) && 谶Cons(head$12, tail$17) && ↓list_compress(tail$17) && 谶Cons(head$18, tail$22) && inactive(rec$7)) && true
+[[34m  Info  [0m]                              }
+[[34m  Info  [0m]                            φ no_dupes(out) && content(Cons(head$12, tail$17)).subsetOf(content(out))
+[[34m  Info  [0m]                            x out
+[[34m  Info  [0m]                          ⟧ /23,0/
+[[34m  Info  [0m] [Symbolic Term Expl. (1->7)] ⟦ α head$12, tail$17
+[[34m  Info  [0m]                                Π val rec$7: NatList = list_compress(tail$17)
+[[34m  Info  [0m]                                  (rec$7 == Nil) && ((↓list_compress(Cons(head$12, tail$17)) && 谶Cons(head$12, tail$17) && ↓list_compress(tail$17) && 谶Nil && inactive(rec$7)) && true)
+[[34m  Info  [0m]                                φ no_dupes(out) && content(Cons(head$12, tail$17)).subsetOf(content(out))
+[[34m  Info  [0m]                                x out
+[[34m  Info  [0m]                              ⟧ /23,0/
+[[34m  Info  [0m] [Symbolic Term Expl. (1->7)] Solved  with:  ⟨ true |  Cons(head$12, tail$17) ⟩
+[[34m  Info  [0m] 
+[[34m  Info  [0m] [Symbolic Term Expl. (1->7)] ⟦ α head$12, tail$17
+[[34m  Info  [0m]                                Π val rec$7: NatList = list_compress(tail$17)
+[[34m  Info  [0m]                                  rec$7.isInstanceOf[Cons] && {
+[[34m  Info  [0m]                                    val head$18: Nat = rec$7.head
+[[34m  Info  [0m]                                    val tail$22: NatList = rec$7.tail
+[[34m  Info  [0m]                                    (↓list_compress(Cons(head$12, tail$17)) && 谶Cons(head$12, tail$17) && ↓list_compress(tail$17) && 谶Cons(head$18, tail$22) && inactive(rec$7)) && true
+[[34m  Info  [0m]                                  }
+[[34m  Info  [0m]                                φ no_dupes(out) && content(Cons(head$12, tail$17)).subsetOf(content(out))
+[[34m  Info  [0m]                                x out
+[[34m  Info  [0m]                              ⟧ /23,0/
+[[34m  Info  [0m] [Symbolic Term Expl. (1->7)] Failed
+[[34m  Info  [0m] [Optimistic Ground   ] ⟦ α head$12, tail$17
+[[34m  Info  [0m]                          Π val rec$7: NatList = list_compress(tail$17)
+[[34m  Info  [0m]                            rec$7.isInstanceOf[Cons] && {
+[[34m  Info  [0m]                              val head$18: Nat = rec$7.head
+[[34m  Info  [0m]                              val tail$22: NatList = rec$7.tail
+[[34m  Info  [0m]                              (↓list_compress(Cons(head$12, tail$17)) && 谶Cons(head$12, tail$17) && ↓list_compress(tail$17) && 谶Cons(head$18, tail$22) && inactive(rec$7)) && true
+[[34m  Info  [0m]                            }
+[[34m  Info  [0m]                          φ no_dupes(out) && content(Cons(head$12, tail$17)).subsetOf(content(out))
+[[34m  Info  [0m]                          x out
+[[34m  Info  [0m]                        ⟧ /23,0/
+[[34m  Info  [0m] [Optimistic Ground   ] Failed
+[[34m  Info  [0m] [Introduce calls list_compress$0(tail$21)] ⟦ α head$17, tail$21, head$12
+[[34m  Info  [0m]                                              Π val rec$7: NatList = list_compress(Cons(head$17, tail$21))
+[[34m  Info  [0m]                                                (↓list_compress(Cons(head$12, Cons(head$17, tail$21))) && 谶Cons(head$12, Cons(head$17, tail$21)) && ↓list_compress(Cons(head$17, tail$21)) && 谶Cons(head$17, tail$21)) && true
+[[34m  Info  [0m]                                              φ no_dupes(out) && content(Cons(head$12, Cons(head$17, tail$21))).subsetOf(content(out))
+[[34m  Info  [0m]                                              x out
+[[34m  Info  [0m]                                            ⟧ /19,0/
+[[34m  Info  [0m] [Introduce calls list_compress$0(tail$21)] Decomposed into:
+[[34m  Info  [0m] [Introduce calls list_compress$0(tail$21)] - ⟦ α head$17, tail$21, head$12
+[[34m  Info  [0m]                                                Π val rec$7: NatList = list_compress(Cons(head$17, tail$21))
+[[34m  Info  [0m]                                                  val rec$138: NatList = list_compress(tail$21)
+[[34m  Info  [0m]                                                  (↓list_compress(Cons(head$12, Cons(head$17, tail$21))) && 谶Cons(head$12, Cons(head$17, tail$21)) && ↓list_compress(Cons(head$17, tail$21)) && 谶Cons(head$17, tail$21) && ↓list_compress(tail$21)) && true
+[[34m  Info  [0m]                                                φ no_dupes(out) && content(Cons(head$12, Cons(head$17, tail$21))).subsetOf(content(out))
+[[34m  Info  [0m]                                                x out
+[[34m  Info  [0m]                                              ⟧ /19,0/
+[[34m  Info  [0m] [Symbolic Term Expl. (1->7)] ⟦ α head$17, tail$21, head$12
+[[34m  Info  [0m]                                Π val rec$7: NatList = list_compress(Cons(head$17, tail$21))
+[[34m  Info  [0m]                                  val rec$138: NatList = list_compress(tail$21)
+[[34m  Info  [0m]                                  (↓list_compress(Cons(head$12, Cons(head$17, tail$21))) && 谶Cons(head$12, Cons(head$17, tail$21)) && ↓list_compress(Cons(head$17, tail$21)) && 谶Cons(head$17, tail$21) && ↓list_compress(tail$21)) && true
+[[34m  Info  [0m]                                φ no_dupes(out) && content(Cons(head$12, Cons(head$17, tail$21))).subsetOf(content(out))
+[[34m  Info  [0m]                                x out
+[[34m  Info  [0m]                              ⟧ /19,0/
+[[34m  Info  [0m] [Symbolic Term Expl. (1->7)] Failed
+[[34m  Info  [0m] [Optimistic Ground   ] ⟦ α head$17, tail$21, head$12
+[[34m  Info  [0m]                          Π val rec$7: NatList = list_compress(Cons(head$17, tail$21))
+[[34m  Info  [0m]                            val rec$138: NatList = list_compress(tail$21)
+[[34m  Info  [0m]                            (↓list_compress(Cons(head$12, Cons(head$17, tail$21))) && 谶Cons(head$12, Cons(head$17, tail$21)) && ↓list_compress(Cons(head$17, tail$21)) && 谶Cons(head$17, tail$21) && ↓list_compress(tail$21)) && true
+[[34m  Info  [0m]                          φ no_dupes(out) && content(Cons(head$12, Cons(head$17, tail$21))).subsetOf(content(out))
+[[34m  Info  [0m]                          x out
+[[34m  Info  [0m]                        ⟧ /19,0/
+[[34m  Info  [0m] [Optimistic Ground   ] Failed
+[[34m  Info  [0m] [ADT Split on 'tail$17'] ⟦ α tail$17
+[[34m  Info  [0m]                            Π val rec$7: NatList = list_compress(tail$17)
+[[34m  Info  [0m]                              (↓list_compress(Cons(Z, tail$17)) && 谶Cons(Z, tail$17) && ↓list_compress(tail$17) && 谶Z) && true
+[[34m  Info  [0m]                            φ no_dupes(out) && content(Cons(Z, tail$17)).subsetOf(content(out))
+[[34m  Info  [0m]                            x out
+[[34m  Info  [0m]                          ⟧ /10,0/
+[[34m  Info  [0m] [ADT Split on 'tail$17'] Decomposed into:
+[[34m  Info  [0m] [ADT Split on 'tail$17'] - ⟦ α ()
+[[34m  Info  [0m]                              Π val rec$7: NatList = list_compress(Nil)
+[[34m  Info  [0m]                                (↓list_compress(Cons(Z, Nil)) && 谶Cons(Z, Nil) && ↓list_compress(Nil) && 谶Z && 谶Nil) && true
+[[34m  Info  [0m]                              φ no_dupes(out) && content(Cons(Z, Nil)).subsetOf(content(out))
+[[34m  Info  [0m]                              x out
+[[34m  Info  [0m]                            ⟧ /1,0/
+[[34m  Info  [0m] [ADT Split on 'tail$17'] - ⟦ α head$140, tail$143
+[[34m  Info  [0m]                              Π val rec$7: NatList = list_compress(Cons(head$140, tail$143))
+[[34m  Info  [0m]                                (↓list_compress(Cons(Z, Cons(head$140, tail$143))) && 谶Cons(Z, Cons(head$140, tail$143)) && ↓list_compress(Cons(head$140, tail$143)) && 谶Z && 谶Cons(head$140, tail$143)) && true
+[[34m  Info  [0m]                              φ no_dupes(out) && content(Cons(Z, Cons(head$140, tail$143))).subsetOf(content(out))
+[[34m  Info  [0m]                              x out
+[[34m  Info  [0m]                            ⟧ /9,0/
+[[34m  Info  [0m] [Ground              ] ⟦ α ()
+[[34m  Info  [0m]                          Π val rec$7: NatList = list_compress(Nil)
+[[34m  Info  [0m]                            (↓list_compress(Cons(Z, Nil)) && 谶Cons(Z, Nil) && ↓list_compress(Nil) && 谶Z && 谶Nil) && true
+[[34m  Info  [0m]                          φ no_dupes(out) && content(Cons(Z, Nil)).subsetOf(content(out))
+[[34m  Info  [0m]                          x out
+[[34m  Info  [0m]                        ⟧ /1,0/
+[[34m  Info  [0m] [Ground              ] Solved  with:  ⟨ true |  Cons(Z, Nil) ⟩
+[[34m  Info  [0m] 
+[[34m  Info  [0m] [ADT Split on 'rec$7'] ⟦ α tail$17
+[[34m  Info  [0m]                          Π val rec$7: NatList = list_compress(tail$17)
+[[34m  Info  [0m]                            (↓list_compress(Cons(Z, tail$17)) && 谶Cons(Z, tail$17) && ↓list_compress(tail$17) && 谶Z) && true
+[[34m  Info  [0m]                          φ no_dupes(out) && content(Cons(Z, tail$17)).subsetOf(content(out))
+[[34m  Info  [0m]                          x out
+[[34m  Info  [0m]                        ⟧ /10,0/
+[[34m  Info  [0m] [ADT Split on 'rec$7'] Decomposed into:
+[[34m  Info  [0m] [ADT Split on 'rec$7'] - ⟦ α tail$17
+[[34m  Info  [0m]                            Π val rec$7: NatList = list_compress(tail$17)
+[[34m  Info  [0m]                              (rec$7 == Nil) && ((↓list_compress(Cons(Z, tail$17)) && 谶Cons(Z, tail$17) && ↓list_compress(tail$17) && 谶Z && 谶Nil && inactive(rec$7)) && true)
+[[34m  Info  [0m]                            φ no_dupes(out) && content(Cons(Z, tail$17)).subsetOf(content(out))
+[[34m  Info  [0m]                            x out
+[[34m  Info  [0m]                          ⟧ /10,0/
+[[34m  Info  [0m] [ADT Split on 'rec$7'] - ⟦ α tail$17
+[[34m  Info  [0m]                            Π val rec$7: NatList = list_compress(tail$17)
+[[34m  Info  [0m]                              rec$7.isInstanceOf[Cons] && {
+[[34m  Info  [0m]                                val head$141: Nat = rec$7.head
+[[34m  Info  [0m]                                val tail$144: NatList = rec$7.tail
+[[34m  Info  [0m]                                (↓list_compress(Cons(Z, tail$17)) && 谶Cons(Z, tail$17) && ↓list_compress(tail$17) && 谶Z && 谶Cons(head$141, tail$144) && inactive(rec$7)) && true
+[[34m  Info  [0m]                              }
+[[34m  Info  [0m]                            φ no_dupes(out) && content(Cons(Z, tail$17)).subsetOf(content(out))
+[[34m  Info  [0m]                            x out
+[[34m  Info  [0m]                          ⟧ /10,0/
+[[34m  Info  [0m] [Symbolic Term Expl. (1->7)] ⟦ α tail$17
+[[34m  Info  [0m]                                Π val rec$7: NatList = list_compress(tail$17)
+[[34m  Info  [0m]                                  (rec$7 == Nil) && ((↓list_compress(Cons(Z, tail$17)) && 谶Cons(Z, tail$17) && ↓list_compress(tail$17) && 谶Z && 谶Nil && inactive(rec$7)) && true)
+[[34m  Info  [0m]                                φ no_dupes(out) && content(Cons(Z, tail$17)).subsetOf(content(out))
+[[34m  Info  [0m]                                x out
+[[34m  Info  [0m]                              ⟧ /10,0/
+[[34m  Info  [0m] [Symbolic Term Expl. (1->7)] Solved  with:  ⟨ true |  Cons(Z, tail$17) ⟩
+[[34m  Info  [0m] 
+[[34m  Info  [0m] [Symbolic Term Expl. (1->7)] ⟦ α tail$17
+[[34m  Info  [0m]                                Π val rec$7: NatList = list_compress(tail$17)
+[[34m  Info  [0m]                                  rec$7.isInstanceOf[Cons] && {
+[[34m  Info  [0m]                                    val head$141: Nat = rec$7.head
+[[34m  Info  [0m]                                    val tail$144: NatList = rec$7.tail
+[[34m  Info  [0m]                                    (↓list_compress(Cons(Z, tail$17)) && 谶Cons(Z, tail$17) && ↓list_compress(tail$17) && 谶Z && 谶Cons(head$141, tail$144) && inactive(rec$7)) && true
+[[34m  Info  [0m]                                  }
+[[34m  Info  [0m]                                φ no_dupes(out) && content(Cons(Z, tail$17)).subsetOf(content(out))
+[[34m  Info  [0m]                                x out
+[[34m  Info  [0m]                              ⟧ /10,0/
+[[34m  Info  [0m] [Symbolic Term Expl. (1->7)] Failed
+[[34m  Info  [0m] [Optimistic Ground   ] ⟦ α tail$17
+[[34m  Info  [0m]                          Π val rec$7: NatList = list_compress(tail$17)
+[[34m  Info  [0m]                            rec$7.isInstanceOf[Cons] && {
+[[34m  Info  [0m]                              val head$141: Nat = rec$7.head
+[[34m  Info  [0m]                              val tail$144: NatList = rec$7.tail
+[[34m  Info  [0m]                              (↓list_compress(Cons(Z, tail$17)) && 谶Cons(Z, tail$17) && ↓list_compress(tail$17) && 谶Z && 谶Cons(head$141, tail$144) && inactive(rec$7)) && true
+[[34m  Info  [0m]                            }
+[[34m  Info  [0m]                          φ no_dupes(out) && content(Cons(Z, tail$17)).subsetOf(content(out))
+[[34m  Info  [0m]                          x out
+[[34m  Info  [0m]                        ⟧ /10,0/
+[[34m  Info  [0m] [Optimistic Ground   ] Failed
+[[34m  Info  [0m] [ADT Split on 'head$12'] ⟦ α head$12, tail$17
+[[34m  Info  [0m]                            Π val rec$7: NatList = list_compress(tail$17)
+[[34m  Info  [0m]                              rec$7.isInstanceOf[Cons] && {
+[[34m  Info  [0m]                                val head$18: Nat = rec$7.head
+[[34m  Info  [0m]                                val tail$22: NatList = rec$7.tail
+[[34m  Info  [0m]                                (↓list_compress(Cons(head$12, tail$17)) && 谶Cons(head$12, tail$17) && ↓list_compress(tail$17) && 谶Cons(head$18, tail$22) && inactive(rec$7)) && true
+[[34m  Info  [0m]                              }
+[[34m  Info  [0m]                            φ no_dupes(out) && content(Cons(head$12, tail$17)).subsetOf(content(out))
+[[34m  Info  [0m]                            x out
+[[34m  Info  [0m]                          ⟧ /23,0/
+[[34m  Info  [0m] [ADT Split on 'head$12'] Decomposed into:
+[[34m  Info  [0m] [ADT Split on 'head$12'] - ⟦ α tail$17
+[[34m  Info  [0m]                              Π val rec$7: NatList = list_compress(tail$17)
+[[34m  Info  [0m]                                rec$7.isInstanceOf[Cons] && {
+[[34m  Info  [0m]                                  val head$18: Nat = rec$7.head
+[[34m  Info  [0m]                                  val tail$22: NatList = rec$7.tail
+[[34m  Info  [0m]                                  (↓list_compress(Cons(Z, tail$17)) && 谶Cons(Z, tail$17) && ↓list_compress(tail$17) && 谶Cons(head$18, tail$22) && inactive(rec$7) && 谶Z) && true
+[[34m  Info  [0m]                                }
+[[34m  Info  [0m]                              φ no_dupes(out) && content(Cons(Z, tail$17)).subsetOf(content(out))
+[[34m  Info  [0m]                              x out
+[[34m  Info  [0m]                            ⟧ /10,0/
+[[34m  Info  [0m] [ADT Split on 'head$12'] - ⟦ α nat$17, tail$17
+[[34m  Info  [0m]                              Π val rec$7: NatList = list_compress(tail$17)
+[[34m  Info  [0m]                                rec$7.isInstanceOf[Cons] && {
+[[34m  Info  [0m]                                  val head$18: Nat = rec$7.head
+[[34m  Info  [0m]                                  val tail$22: NatList = rec$7.tail
+[[34m  Info  [0m]                                  (↓list_compress(Cons(S(nat$17), tail$17)) && 谶Cons(S(nat$17), tail$17) && ↓list_compress(tail$17) && 谶Cons(head$18, tail$22) && inactive(rec$7) && 谶S(nat$17)) && true
+[[34m  Info  [0m]                                }
+[[34m  Info  [0m]                              φ no_dupes(out) && content(Cons(S(nat$17), tail$17)).subsetOf(content(out))
+[[34m  Info  [0m]                              x out
+[[34m  Info  [0m]                            ⟧ /13,0/
+[[34m  Info  [0m] [Symbolic Term Expl. (1->7)] ⟦ α tail$17
+[[34m  Info  [0m]                                Π val rec$7: NatList = list_compress(tail$17)
+[[34m  Info  [0m]                                  rec$7.isInstanceOf[Cons] && {
+[[34m  Info  [0m]                                    val head$18: Nat = rec$7.head
+[[34m  Info  [0m]                                    val tail$22: NatList = rec$7.tail
+[[34m  Info  [0m]                                    (↓list_compress(Cons(Z, tail$17)) && 谶Cons(Z, tail$17) && ↓list_compress(tail$17) && 谶Cons(head$18, tail$22) && inactive(rec$7) && 谶Z) && true
+[[34m  Info  [0m]                                  }
+[[34m  Info  [0m]                                φ no_dupes(out) && content(Cons(Z, tail$17)).subsetOf(content(out))
+[[34m  Info  [0m]                                x out
+[[34m  Info  [0m]                              ⟧ /10,0/
+[[34m  Info  [0m] [Symbolic Term Expl. (1->7)] Failed
+[[34m  Info  [0m] [Optimistic Ground   ] ⟦ α tail$17
+[[34m  Info  [0m]                          Π val rec$7: NatList = list_compress(tail$17)
+[[34m  Info  [0m]                            rec$7.isInstanceOf[Cons] && {
+[[34m  Info  [0m]                              val head$18: Nat = rec$7.head
+[[34m  Info  [0m]                              val tail$22: NatList = rec$7.tail
+[[34m  Info  [0m]                              (↓list_compress(Cons(Z, tail$17)) && 谶Cons(Z, tail$17) && ↓list_compress(tail$17) && 谶Cons(head$18, tail$22) && inactive(rec$7) && 谶Z) && true
+[[34m  Info  [0m]                            }
+[[34m  Info  [0m]                          φ no_dupes(out) && content(Cons(Z, tail$17)).subsetOf(content(out))
+[[34m  Info  [0m]                          x out
+[[34m  Info  [0m]                        ⟧ /10,0/
+[[34m  Info  [0m] [Optimistic Ground   ] Failed
+[[34m  Info  [0m] [ADT Split on 'head$18'] ⟦ α head$12, tail$17
+[[34m  Info  [0m]                            Π val rec$7: NatList = list_compress(tail$17)
+[[34m  Info  [0m]                              rec$7.isInstanceOf[Cons] && {
+[[34m  Info  [0m]                                val head$18: Nat = rec$7.head
+[[34m  Info  [0m]                                val tail$22: NatList = rec$7.tail
+[[34m  Info  [0m]                                (↓list_compress(Cons(head$12, tail$17)) && 谶Cons(head$12, tail$17) && ↓list_compress(tail$17) && 谶Cons(head$18, tail$22) && inactive(rec$7)) && true
+[[34m  Info  [0m]                              }
+[[34m  Info  [0m]                            φ no_dupes(out) && content(Cons(head$12, tail$17)).subsetOf(content(out))
+[[34m  Info  [0m]                            x out
+[[34m  Info  [0m]                          ⟧ /23,0/
+[[34m  Info  [0m] [ADT Split on 'head$18'] Decomposed into:
+[[34m  Info  [0m] [ADT Split on 'head$18'] - ⟦ α head$12, tail$17
+[[34m  Info  [0m]                              Π val rec$7: NatList = list_compress(tail$17)
+[[34m  Info  [0m]                                rec$7.isInstanceOf[Cons] && {
+[[34m  Info  [0m]                                  val head$18: Nat = rec$7.head
+[[34m  Info  [0m]                                  val tail$22: NatList = rec$7.tail
+[[34m  Info  [0m]                                  (head$18 == Z) && ((↓list_compress(Cons(head$12, tail$17)) && 谶Cons(head$12, tail$17) && ↓list_compress(tail$17) && 谶Cons(Z, tail$22) && inactive(rec$7) && 谶Z && inactive(head$18)) && true)
+[[34m  Info  [0m]                                }
+[[34m  Info  [0m]                              φ no_dupes(out) && content(Cons(head$12, tail$17)).subsetOf(content(out))
+[[34m  Info  [0m]                              x out
+[[34m  Info  [0m]                            ⟧ /23,0/
+[[34m  Info  [0m] [ADT Split on 'head$18'] - ⟦ α head$12, tail$17
+[[34m  Info  [0m]                              Π val rec$7: NatList = list_compress(tail$17)
+[[34m  Info  [0m]                                rec$7.isInstanceOf[Cons] && {
+[[34m  Info  [0m]                                  val head$18: Nat = rec$7.head
+[[34m  Info  [0m]                                  val tail$22: NatList = rec$7.tail
+[[34m  Info  [0m]                                  head$18.isInstanceOf[S] && {
+[[34m  Info  [0m]                                    val nat$18: Nat = head$18.nat
+[[34m  Info  [0m]                                    (↓list_compress(Cons(head$12, tail$17)) && 谶Cons(head$12, tail$17) && ↓list_compress(tail$17) && 谶Cons(S(nat$18), tail$22) && inactive(rec$7) && 谶S(nat$18) && inactive(head$18)) && true
+[[34m  Info  [0m]                                  }
+[[34m  Info  [0m]                                }
+[[34m  Info  [0m]                              φ no_dupes(out) && content(Cons(head$12, tail$17)).subsetOf(content(out))
+[[34m  Info  [0m]                              x out
+[[34m  Info  [0m]                            ⟧ /23,0/
+[[34m  Info  [0m] [Symbolic Term Expl. (1->7)] ⟦ α head$12, tail$17
+[[34m  Info  [0m]                                Π val rec$7: NatList = list_compress(tail$17)
+[[34m  Info  [0m]                                  rec$7.isInstanceOf[Cons] && {
+[[34m  Info  [0m]                                    val head$18: Nat = rec$7.head
+[[34m  Info  [0m]                                    val tail$22: NatList = rec$7.tail
+[[34m  Info  [0m]                                    (head$18 == Z) && ((↓list_compress(Cons(head$12, tail$17)) && 谶Cons(head$12, tail$17) && ↓list_compress(tail$17) && 谶Cons(Z, tail$22) && inactive(rec$7) && 谶Z && inactive(head$18)) && true)
+[[34m  Info  [0m]                                  }
+[[34m  Info  [0m]                                φ no_dupes(out) && content(Cons(head$12, tail$17)).subsetOf(content(out))
+[[34m  Info  [0m]                                x out
+[[34m  Info  [0m]                              ⟧ /23,0/
+[[34m  Info  [0m] [Symbolic Term Expl. (1->7)] Failed
+[[34m  Info  [0m] [Optimistic Ground   ] ⟦ α head$12, tail$17
+[[34m  Info  [0m]                          Π val rec$7: NatList = list_compress(tail$17)
+[[34m  Info  [0m]                            rec$7.isInstanceOf[Cons] && {
+[[34m  Info  [0m]                              val head$18: Nat = rec$7.head
+[[34m  Info  [0m]                              val tail$22: NatList = rec$7.tail
+[[34m  Info  [0m]                              (head$18 == Z) && ((↓list_compress(Cons(head$12, tail$17)) && 谶Cons(head$12, tail$17) && ↓list_compress(tail$17) && 谶Cons(Z, tail$22) && inactive(rec$7) && 谶Z && inactive(head$18)) && true)
+[[34m  Info  [0m]                            }
+[[34m  Info  [0m]                          φ no_dupes(out) && content(Cons(head$12, tail$17)).subsetOf(content(out))
+[[34m  Info  [0m]                          x out
+[[34m  Info  [0m]                        ⟧ /23,0/
+[[34m  Info  [0m] [Optimistic Ground   ] Failed
+[[34m  Info  [0m] [ADT Split on 'tail$17'] ⟦ α head$12, tail$17
+[[34m  Info  [0m]                            Π val rec$7: NatList = list_compress(tail$17)
+[[34m  Info  [0m]                              rec$7.isInstanceOf[Cons] && {
+[[34m  Info  [0m]                                val head$18: Nat = rec$7.head
+[[34m  Info  [0m]                                val tail$22: NatList = rec$7.tail
+[[34m  Info  [0m]                                (↓list_compress(Cons(head$12, tail$17)) && 谶Cons(head$12, tail$17) && ↓list_compress(tail$17) && 谶Cons(head$18, tail$22) && inactive(rec$7)) && true
+[[34m  Info  [0m]                              }
+[[34m  Info  [0m]                            φ no_dupes(out) && content(Cons(head$12, tail$17)).subsetOf(content(out))
+[[34m  Info  [0m]                            x out
+[[34m  Info  [0m]                          ⟧ /23,0/
+[[34m  Info  [0m] [ADT Split on 'tail$17'] Decomposed into:
+[[34m  Info  [0m] [ADT Split on 'tail$17'] - ⟦ α head$12
+[[34m  Info  [0m]                              Π val rec$7: NatList = list_compress(Nil)
+[[34m  Info  [0m]                                rec$7.isInstanceOf[Cons] && {
+[[34m  Info  [0m]                                  val head$18: Nat = rec$7.head
+[[34m  Info  [0m]                                  val tail$22: NatList = rec$7.tail
+[[34m  Info  [0m]                                  (↓list_compress(Cons(head$12, Nil)) && 谶Cons(head$12, Nil) && ↓list_compress(Nil) && 谶Cons(head$18, tail$22) && inactive(rec$7) && 谶Nil) && true
+[[34m  Info  [0m]                                }
+[[34m  Info  [0m]                              φ no_dupes(out) && content(Cons(head$12, Nil)).subsetOf(content(out))
+[[34m  Info  [0m]                              x out
+[[34m  Info  [0m]                            ⟧ /4,0/
+[[34m  Info  [0m] [ADT Split on 'tail$17'] - ⟦ α head$586, tail$1307, head$12
+[[34m  Info  [0m]                              Π val rec$7: NatList = list_compress(Cons(head$586, tail$1307))
+[[34m  Info  [0m]                                rec$7.isInstanceOf[Cons] && {
+[[34m  Info  [0m]                                  val head$18: Nat = rec$7.head
+[[34m  Info  [0m]                                  val tail$22: NatList = rec$7.tail
+[[34m  Info  [0m]                                  (↓list_compress(Cons(head$12, Cons(head$586, tail$1307))) && 谶Cons(head$12, Cons(head$586, tail$1307)) && ↓list_compress(Cons(head$586, tail$1307)) && 谶Cons(head$18, tail$22) && inactive(rec$7) && 谶Cons(head$586, tail$1307)) && true
+[[34m  Info  [0m]                                }
+[[34m  Info  [0m]                              φ no_dupes(out) && content(Cons(head$12, Cons(head$586, tail$1307))).subsetOf(content(out))
+[[34m  Info  [0m]                              x out
+[[34m  Info  [0m]                            ⟧ /19,0/
+[[34m  Info  [0m] [Symbolic Term Expl. (1->7)] ⟦ α head$12
+[[34m  Info  [0m]                                Π val rec$7: NatList = list_compress(Nil)
+[[34m  Info  [0m]                                  rec$7.isInstanceOf[Cons] && {
+[[34m  Info  [0m]                                    val head$18: Nat = rec$7.head
+[[34m  Info  [0m]                                    val tail$22: NatList = rec$7.tail
+[[34m  Info  [0m]                                    (↓list_compress(Cons(head$12, Nil)) && 谶Cons(head$12, Nil) && ↓list_compress(Nil) && 谶Cons(head$18, tail$22) && inactive(rec$7) && 谶Nil) && true
+[[34m  Info  [0m]                                  }
+[[34m  Info  [0m]                                φ no_dupes(out) && content(Cons(head$12, Nil)).subsetOf(content(out))
+[[34m  Info  [0m]                                x out
+[[34m  Info  [0m]                              ⟧ /4,0/
+[[34m  Info  [0m] [Symbolic Term Expl. (1->7)] Solved  with:  ⟨ true |  tail$22 ⟩
+[[34m  Info  [0m] 
+[[34m  Info  [0m] [ADT Split on 'tail$22'] ⟦ α head$12, tail$17
+[[34m  Info  [0m]                            Π val rec$7: NatList = list_compress(tail$17)
+[[34m  Info  [0m]                              rec$7.isInstanceOf[Cons] && {
+[[34m  Info  [0m]                                val head$18: Nat = rec$7.head
+[[34m  Info  [0m]                                val tail$22: NatList = rec$7.tail
+[[34m  Info  [0m]                                (↓list_compress(Cons(head$12, tail$17)) && 谶Cons(head$12, tail$17) && ↓list_compress(tail$17) && 谶Cons(head$18, tail$22) && inactive(rec$7)) && true
+[[34m  Info  [0m]                              }
+[[34m  Info  [0m]                            φ no_dupes(out) && content(Cons(head$12, tail$17)).subsetOf(content(out))
+[[34m  Info  [0m]                            x out
+[[34m  Info  [0m]                          ⟧ /23,0/
+[[34m  Info  [0m] [ADT Split on 'tail$22'] Decomposed into:
+[[34m  Info  [0m] [ADT Split on 'tail$22'] - ⟦ α head$12, tail$17
+[[34m  Info  [0m]                              Π val rec$7: NatList = list_compress(tail$17)
+[[34m  Info  [0m]                                rec$7.isInstanceOf[Cons] && {
+[[34m  Info  [0m]                                  val head$18: Nat = rec$7.head
+[[34m  Info  [0m]                                  val tail$22: NatList = rec$7.tail
+[[34m  Info  [0m]                                  (tail$22 == Nil) && ((↓list_compress(Cons(head$12, tail$17)) && 谶Cons(head$12, tail$17) && ↓list_compress(tail$17) && 谶Cons(head$18, Nil) && inactive(rec$7) && 谶Nil && inactive(tail$22)) && true)
+[[34m  Info  [0m]                                }
+[[34m  Info  [0m]                              φ no_dupes(out) && content(Cons(head$12, tail$17)).subsetOf(content(out))
+[[34m  Info  [0m]                              x out
+[[34m  Info  [0m]                            ⟧ /23,0/
+[[34m  Info  [0m] [ADT Split on 'tail$22'] - ⟦ α head$12, tail$17
+[[34m  Info  [0m]                              Π val rec$7: NatList = list_compress(tail$17)
+[[34m  Info  [0m]                                rec$7.isInstanceOf[Cons] && {
+[[34m  Info  [0m]                                  val head$18: Nat = rec$7.head
+[[34m  Info  [0m]                                  val tail$22: NatList = rec$7.tail
+[[34m  Info  [0m]                                  tail$22.isInstanceOf[Cons] && {
+[[34m  Info  [0m]                                    val head$587: Nat = tail$22.head
+[[34m  Info  [0m]                                    val tail$1308: NatList = tail$22.tail
+[[34m  Info  [0m]                                    (↓list_compress(Cons(head$12, tail$17)) && 谶Cons(head$12, tail$17) && ↓list_compress(tail$17) && 谶Cons(head$18, Cons(head$587, tail$1308)) && inactive(rec$7) && 谶Cons(head$587, tail$1308) && inactive(tail$22)) && true
+[[34m  Info  [0m]                                  }
+[[34m  Info  [0m]                                }
+[[34m  Info  [0m]                              φ no_dupes(out) && content(Cons(head$12, tail$17)).subsetOf(content(out))
+[[34m  Info  [0m]                              x out
+[[34m  Info  [0m]                            ⟧ /23,0/
+[[34m  Info  [0m] [Symbolic Term Expl. (1->7)] ⟦ α head$12, tail$17
+[[34m  Info  [0m]                                Π val rec$7: NatList = list_compress(tail$17)
+[[34m  Info  [0m]                                  rec$7.isInstanceOf[Cons] && {
+[[34m  Info  [0m]                                    val head$18: Nat = rec$7.head
+[[34m  Info  [0m]                                    val tail$22: NatList = rec$7.tail
+[[34m  Info  [0m]                                    (tail$22 == Nil) && ((↓list_compress(Cons(head$12, tail$17)) && 谶Cons(head$12, tail$17) && ↓list_compress(tail$17) && 谶Cons(head$18, Nil) && inactive(rec$7) && 谶Nil && inactive(tail$22)) && true)
+[[34m  Info  [0m]                                  }
+[[34m  Info  [0m]                                φ no_dupes(out) && content(Cons(head$12, tail$17)).subsetOf(content(out))
+[[34m  Info  [0m]                                x out
+[[34m  Info  [0m]                              ⟧ /23,0/
+[[34m  Info  [0m] [Symbolic Term Expl. (1->7)] Failed
+[[34m  Info  [0m] [Optimistic Ground   ] ⟦ α head$12, tail$17
+[[34m  Info  [0m]                          Π val rec$7: NatList = list_compress(tail$17)
+[[34m  Info  [0m]                            rec$7.isInstanceOf[Cons] && {
+[[34m  Info  [0m]                              val head$18: Nat = rec$7.head
+[[34m  Info  [0m]                              val tail$22: NatList = rec$7.tail
+[[34m  Info  [0m]                              (tail$22 == Nil) && ((↓list_compress(Cons(head$12, tail$17)) && 谶Cons(head$12, tail$17) && ↓list_compress(tail$17) && 谶Cons(head$18, Nil) && inactive(rec$7) && 谶Nil && inactive(tail$22)) && true)
+[[34m  Info  [0m]                            }
+[[34m  Info  [0m]                          φ no_dupes(out) && content(Cons(head$12, tail$17)).subsetOf(content(out))
+[[34m  Info  [0m]                          x out
+[[34m  Info  [0m]                        ⟧ /23,0/
+[[34m  Info  [0m] [Optimistic Ground   ] Failed
+[[34m  Info  [0m] [Introduce calls list_compress$0(tail$143)] ⟦ α head$140, tail$143
+[[34m  Info  [0m]                                               Π val rec$7: NatList = list_compress(Cons(head$140, tail$143))
+[[34m  Info  [0m]                                                 (↓list_compress(Cons(Z, Cons(head$140, tail$143))) && 谶Cons(Z, Cons(head$140, tail$143)) && ↓list_compress(Cons(head$140, tail$143)) && 谶Z && 谶Cons(head$140, tail$143)) && true
+[[34m  Info  [0m]                                               φ no_dupes(out) && content(Cons(Z, Cons(head$140, tail$143))).subsetOf(content(out))
+[[34m  Info  [0m]                                               x out
+[[34m  Info  [0m]                                             ⟧ /9,0/
+[[34m  Info  [0m] [Introduce calls list_compress$0(tail$143)] Decomposed into:
+[[34m  Info  [0m] [Introduce calls list_compress$0(tail$143)] - ⟦ α head$140, tail$143
+[[34m  Info  [0m]                                                 Π val rec$7: NatList = list_compress(Cons(head$140, tail$143))
+[[34m  Info  [0m]                                                   val rec$528: NatList = list_compress(tail$143)
+[[34m  Info  [0m]                                                   (↓list_compress(Cons(Z, Cons(head$140, tail$143))) && 谶Cons(Z, Cons(head$140, tail$143)) && ↓list_compress(Cons(head$140, tail$143)) && 谶Z && 谶Cons(head$140, tail$143) && ↓list_compress(tail$143)) && true
+[[34m  Info  [0m]                                                 φ no_dupes(out) && content(Cons(Z, Cons(head$140, tail$143))).subsetOf(content(out))
+[[34m  Info  [0m]                                                 x out
+[[34m  Info  [0m]                                               ⟧ /9,0/
+[[34m  Info  [0m] [Symbolic Term Expl. (1->7)] ⟦ α head$140, tail$143
+[[34m  Info  [0m]                                Π val rec$7: NatList = list_compress(Cons(head$140, tail$143))
+[[34m  Info  [0m]                                  val rec$528: NatList = list_compress(tail$143)
+[[34m  Info  [0m]                                  (↓list_compress(Cons(Z, Cons(head$140, tail$143))) && 谶Cons(Z, Cons(head$140, tail$143)) && ↓list_compress(Cons(head$140, tail$143)) && 谶Z && 谶Cons(head$140, tail$143) && ↓list_compress(tail$143)) && true
+[[34m  Info  [0m]                                φ no_dupes(out) && content(Cons(Z, Cons(head$140, tail$143))).subsetOf(content(out))
+[[34m  Info  [0m]                                x out
+[[34m  Info  [0m]                              ⟧ /9,0/
+[[34m  Info  [0m] STE could not prove the validity of the resulting expression
+[[34m  Info  [0m] STE could not prove the validity of the resulting 1 expression(s)
+[[34m  Info  [0m] [Symbolic Term Expl. (1->7)] Solved (untrusted) with:  ⟨ true |  Cons(Z, Cons(S(head$140), rec$7)) ⟩
+[[34m  Info  [0m] 
+[[34m  Info  [0m] [ADT Split on 'head$17'] ⟦ α head$17, tail$21, head$12
+[[34m  Info  [0m]                            Π val rec$7: NatList = list_compress(Cons(head$17, tail$21))
+[[34m  Info  [0m]                              val rec$138: NatList = list_compress(tail$21)
+[[34m  Info  [0m]                              (↓list_compress(Cons(head$12, Cons(head$17, tail$21))) && 谶Cons(head$12, Cons(head$17, tail$21)) && ↓list_compress(Cons(head$17, tail$21)) && 谶Cons(head$17, tail$21) && ↓list_compress(tail$21)) && true
+[[34m  Info  [0m]                            φ no_dupes(out) && content(Cons(head$12, Cons(head$17, tail$21))).subsetOf(content(out))
+[[34m  Info  [0m]                            x out
+[[34m  Info  [0m]                          ⟧ /19,0/
+[[34m  Info  [0m] [ADT Split on 'head$17'] Decomposed into:
+[[34m  Info  [0m] [ADT Split on 'head$17'] - ⟦ α tail$21, head$12
+[[34m  Info  [0m]                              Π val rec$7: NatList = list_compress(Cons(Z, tail$21))
+[[34m  Info  [0m]                                val rec$138: NatList = list_compress(tail$21)
+[[34m  Info  [0m]                                (↓list_compress(Cons(head$12, Cons(Z, tail$21))) && 谶Cons(head$12, Cons(Z, tail$21)) && ↓list_compress(Cons(Z, tail$21)) && 谶Cons(Z, tail$21) && ↓list_compress(tail$21) && 谶Z) && true
+[[34m  Info  [0m]                              φ no_dupes(out) && content(Cons(head$12, Cons(Z, tail$21))).subsetOf(content(out))
+[[34m  Info  [0m]                              x out
+[[34m  Info  [0m]                            ⟧ /12,0/
+[[34m  Info  [0m] [ADT Split on 'head$17'] - ⟦ α nat$27, tail$21, head$12
+[[34m  Info  [0m]                              Π val rec$7: NatList = list_compress(Cons(S(nat$27), tail$21))
+[[34m  Info  [0m]                                val rec$138: NatList = list_compress(tail$21)
+[[34m  Info  [0m]                                (↓list_compress(Cons(head$12, Cons(S(nat$27), tail$21))) && 谶Cons(head$12, Cons(S(nat$27), tail$21)) && ↓list_compress(Cons(S(nat$27), tail$21)) && 谶Cons(S(nat$27), tail$21) && ↓list_compress(tail$21) && 谶S(nat$27)) && true
+[[34m  Info  [0m]                              φ no_dupes(out) && content(Cons(head$12, Cons(S(nat$27), tail$21))).subsetOf(content(out))
+[[34m  Info  [0m]                              x out
+[[34m  Info  [0m]                            ⟧ /7,0/
+[[34m  Info  [0m] [Symbolic Term Expl. (1->7)] ⟦ α tail$21, head$12
+[[34m  Info  [0m]                                Π val rec$7: NatList = list_compress(Cons(Z, tail$21))
+[[34m  Info  [0m]                                  val rec$138: NatList = list_compress(tail$21)
+[[34m  Info  [0m]                                  (↓list_compress(Cons(head$12, Cons(Z, tail$21))) && 谶Cons(head$12, Cons(Z, tail$21)) && ↓list_compress(Cons(Z, tail$21)) && 谶Cons(Z, tail$21) && ↓list_compress(tail$21) && 谶Z) && true
+[[34m  Info  [0m]                                φ no_dupes(out) && content(Cons(head$12, Cons(Z, tail$21))).subsetOf(content(out))
+[[34m  Info  [0m]                                x out
+[[34m  Info  [0m]                              ⟧ /12,0/
+[[34m  Info  [0m] [Symbolic Term Expl. (1->7)] Failed
+[[34m  Info  [0m] [Optimistic Ground   ] ⟦ α tail$21, head$12
+[[34m  Info  [0m]                          Π val rec$7: NatList = list_compress(Cons(Z, tail$21))
+[[34m  Info  [0m]                            val rec$138: NatList = list_compress(tail$21)
+[[34m  Info  [0m]                            (↓list_compress(Cons(head$12, Cons(Z, tail$21))) && 谶Cons(head$12, Cons(Z, tail$21)) && ↓list_compress(Cons(Z, tail$21)) && 谶Cons(Z, tail$21) && ↓list_compress(tail$21) && 谶Z) && true
+[[34m  Info  [0m]                          φ no_dupes(out) && content(Cons(head$12, Cons(Z, tail$21))).subsetOf(content(out))
+[[34m  Info  [0m]                          x out
+[[34m  Info  [0m]                        ⟧ /12,0/
+[[34m  Info  [0m] [Optimistic Ground   ] Failed
+[[34m  Info  [0m] [ADT Split on 'head$12'] ⟦ α head$17, tail$21, head$12
+[[34m  Info  [0m]                            Π val rec$7: NatList = list_compress(Cons(head$17, tail$21))
+[[34m  Info  [0m]                              val rec$138: NatList = list_compress(tail$21)
+[[34m  Info  [0m]                              (↓list_compress(Cons(head$12, Cons(head$17, tail$21))) && 谶Cons(head$12, Cons(head$17, tail$21)) && ↓list_compress(Cons(head$17, tail$21)) && 谶Cons(head$17, tail$21) && ↓list_compress(tail$21)) && true
+[[34m  Info  [0m]                            φ no_dupes(out) && content(Cons(head$12, Cons(head$17, tail$21))).subsetOf(content(out))
+[[34m  Info  [0m]                            x out
+[[34m  Info  [0m]                          ⟧ /19,0/
+[[34m  Info  [0m] [ADT Split on 'head$12'] Decomposed into:
+[[34m  Info  [0m] [ADT Split on 'head$12'] - ⟦ α head$17, tail$21
+[[34m  Info  [0m]                              Π val rec$7: NatList = list_compress(Cons(head$17, tail$21))
+[[34m  Info  [0m]                                val rec$138: NatList = list_compress(tail$21)
+[[34m  Info  [0m]                                (↓list_compress(Cons(Z, Cons(head$17, tail$21))) && 谶Cons(Z, Cons(head$17, tail$21)) && ↓list_compress(Cons(head$17, tail$21)) && 谶Cons(head$17, tail$21) && ↓list_compress(tail$21) && 谶Z) && true
+[[34m  Info  [0m]                              φ no_dupes(out) && content(Cons(Z, Cons(head$17, tail$21))).subsetOf(content(out))
+[[34m  Info  [0m]                              x out
+[[34m  Info  [0m]                            ⟧ /9,0/
+[[34m  Info  [0m] [ADT Split on 'head$12'] - ⟦ α nat$28, head$17, tail$21
+[[34m  Info  [0m]                              Π val rec$7: NatList = list_compress(Cons(head$17, tail$21))
+[[34m  Info  [0m]                                val rec$138: NatList = list_compress(tail$21)
+[[34m  Info  [0m]                                (↓list_compress(Cons(S(nat$28), Cons(head$17, tail$21))) && 谶Cons(S(nat$28), Cons(head$17, tail$21)) && ↓list_compress(Cons(head$17, tail$21)) && 谶Cons(head$17, tail$21) && ↓list_compress(tail$21) && 谶S(nat$28)) && true
+[[34m  Info  [0m]                              φ no_dupes(out) && content(Cons(S(nat$28), Cons(head$17, tail$21))).subsetOf(content(out))
+[[34m  Info  [0m]                              x out
+[[34m  Info  [0m]                            ⟧ /10,0/
+[[34m  Info  [0m] [Symbolic Term Expl. (1->7)] ⟦ α head$17, tail$21
+[[34m  Info  [0m]                                Π val rec$7: NatList = list_compress(Cons(head$17, tail$21))
+[[34m  Info  [0m]                                  val rec$138: NatList = list_compress(tail$21)
+[[34m  Info  [0m]                                  (↓list_compress(Cons(Z, Cons(head$17, tail$21))) && 谶Cons(Z, Cons(head$17, tail$21)) && ↓list_compress(Cons(head$17, tail$21)) && 谶Cons(head$17, tail$21) && ↓list_compress(tail$21) && 谶Z) && true
+[[34m  Info  [0m]                                φ no_dupes(out) && content(Cons(Z, Cons(head$17, tail$21))).subsetOf(content(out))
+[[34m  Info  [0m]                                x out
+[[34m  Info  [0m]                              ⟧ /9,0/
+[[34m  Info  [0m] STE could not prove the validity of the resulting expression
+[[34m  Info  [0m] STE could not prove the validity of the resulting 1 expression(s)
+[[34m  Info  [0m] [Symbolic Term Expl. (1->7)] Solved (untrusted) with:  ⟨ true |  Cons(Z, Cons(S(head$17), rec$7)) ⟩
+[[34m  Info  [0m] 
+[[34m  Info  [0m] [ADT Split on 'tail$21'] ⟦ α head$17, tail$21, head$12
+[[34m  Info  [0m]                            Π val rec$7: NatList = list_compress(Cons(head$17, tail$21))
+[[34m  Info  [0m]                              val rec$138: NatList = list_compress(tail$21)
+[[34m  Info  [0m]                              (↓list_compress(Cons(head$12, Cons(head$17, tail$21))) && 谶Cons(head$12, Cons(head$17, tail$21)) && ↓list_compress(Cons(head$17, tail$21)) && 谶Cons(head$17, tail$21) && ↓list_compress(tail$21)) && true
+[[34m  Info  [0m]                            φ no_dupes(out) && content(Cons(head$12, Cons(head$17, tail$21))).subsetOf(content(out))
+[[34m  Info  [0m]                            x out
+[[34m  Info  [0m]                          ⟧ /19,0/
+[[34m  Info  [0m] [ADT Split on 'tail$21'] Decomposed into:
+[[34m  Info  [0m] [ADT Split on 'tail$21'] - ⟦ α head$17, head$12
+[[34m  Info  [0m]                              Π val rec$7: NatList = list_compress(Cons(head$17, Nil))
+[[34m  Info  [0m]                                val rec$138: NatList = list_compress(Nil)
+[[34m  Info  [0m]                                (↓list_compress(Cons(head$12, Cons(head$17, Nil))) && 谶Cons(head$12, Cons(head$17, Nil)) && ↓list_compress(Cons(head$17, Nil)) && 谶Cons(head$17, Nil) && ↓list_compress(Nil) && 谶Nil) && true
+[[34m  Info  [0m]                              φ no_dupes(out) && content(Cons(head$12, Cons(head$17, Nil))).subsetOf(content(out))
+[[34m  Info  [0m]                              x out
+[[34m  Info  [0m]                            ⟧ /8,0/
+[[34m  Info  [0m] [ADT Split on 'tail$21'] - ⟦ α head$2673, tail$6760, head$17, head$12
+[[34m  Info  [0m]                              Π val rec$7: NatList = list_compress(Cons(head$17, Cons(head$2673, tail$6760)))
+[[34m  Info  [0m]                                val rec$138: NatList = list_compress(Cons(head$2673, tail$6760))
+[[34m  Info  [0m]                                (↓list_compress(Cons(head$12, Cons(head$17, Cons(head$2673, tail$6760)))) && 谶Cons(head$12, Cons(head$17, Cons(head$2673, tail$6760))) && ↓list_compress(Cons(head$17, Cons(head$2673, tail$6760))) && 谶Cons(head$17, Cons(head$2673, tail$6760)) && ↓list_compress(Cons(head$2673, tail$6760)) && 谶Cons(head$2673, tail$6760)) && true
+[[34m  Info  [0m]                              φ no_dupes(out) && content(Cons(head$12, Cons(head$17, Cons(head$2673, tail$6760)))).subsetOf(content(out))
+[[34m  Info  [0m]                              x out
+[[34m  Info  [0m]                            ⟧ /11,0/
+[[34m  Info  [0m] [Symbolic Term Expl. (1->7)] ⟦ α head$17, head$12
+[[34m  Info  [0m]                                Π val rec$7: NatList = list_compress(Cons(head$17, Nil))
+[[34m  Info  [0m]                                  val rec$138: NatList = list_compress(Nil)
+[[34m  Info  [0m]                                  (↓list_compress(Cons(head$12, Cons(head$17, Nil))) && 谶Cons(head$12, Cons(head$17, Nil)) && ↓list_compress(Cons(head$17, Nil)) && 谶Cons(head$17, Nil) && ↓list_compress(Nil) && 谶Nil) && true
+[[34m  Info  [0m]                                φ no_dupes(out) && content(Cons(head$12, Cons(head$17, Nil))).subsetOf(content(out))
+[[34m  Info  [0m]                                x out
+[[34m  Info  [0m]                              ⟧ /8,0/
+[[34m  Info  [0m] [Symbolic Term Expl. (1->7)] Failed
+[[34m  Info  [0m] [Optimistic Ground   ] ⟦ α head$17, head$12
+[[34m  Info  [0m]                          Π val rec$7: NatList = list_compress(Cons(head$17, Nil))
+[[34m  Info  [0m]                            val rec$138: NatList = list_compress(Nil)
+[[34m  Info  [0m]                            (↓list_compress(Cons(head$12, Cons(head$17, Nil))) && 谶Cons(head$12, Cons(head$17, Nil)) && ↓list_compress(Cons(head$17, Nil)) && 谶Cons(head$17, Nil) && ↓list_compress(Nil) && 谶Nil) && true
+[[34m  Info  [0m]                          φ no_dupes(out) && content(Cons(head$12, Cons(head$17, Nil))).subsetOf(content(out))
+[[34m  Info  [0m]                          x out
+[[34m  Info  [0m]                        ⟧ /8,0/
+[[34m  Info  [0m] [Optimistic Ground   ] Failed
+[[34m  Info  [0m] [ADT Split on 'rec$7'] ⟦ α head$17, tail$21, head$12
+[[34m  Info  [0m]                          Π val rec$7: NatList = list_compress(Cons(head$17, tail$21))
+[[34m  Info  [0m]                            val rec$138: NatList = list_compress(tail$21)
+[[34m  Info  [0m]                            (↓list_compress(Cons(head$12, Cons(head$17, tail$21))) && 谶Cons(head$12, Cons(head$17, tail$21)) && ↓list_compress(Cons(head$17, tail$21)) && 谶Cons(head$17, tail$21) && ↓list_compress(tail$21)) && true
+[[34m  Info  [0m]                          φ no_dupes(out) && content(Cons(head$12, Cons(head$17, tail$21))).subsetOf(content(out))
+[[34m  Info  [0m]                          x out
+[[34m  Info  [0m]                        ⟧ /19,0/
+[[34m  Info  [0m] [ADT Split on 'rec$7'] Decomposed into:
+[[34m  Info  [0m] [ADT Split on 'rec$7'] - ⟦ α head$17, tail$21, head$12
+[[34m  Info  [0m]                            Π val rec$7: NatList = list_compress(Cons(head$17, tail$21))
+[[34m  Info  [0m]                              val rec$138: NatList = list_compress(tail$21)
+[[34m  Info  [0m]                              (rec$7 == Nil) && ((↓list_compress(Cons(head$12, Cons(head$17, tail$21))) && 谶Cons(head$12, Cons(head$17, tail$21)) && ↓list_compress(Cons(head$17, tail$21)) && 谶Cons(head$17, tail$21) && ↓list_compress(tail$21) && 谶Nil && inactive(rec$7)) && true)
+[[34m  Info  [0m]                            φ no_dupes(out) && content(Cons(head$12, Cons(head$17, tail$21))).subsetOf(content(out))
+[[34m  Info  [0m]                            x out
+[[34m  Info  [0m]                          ⟧ /19,0/
+[[34m  Info  [0m] [ADT Split on 'rec$7'] - ⟦ α head$17, tail$21, head$12
+[[34m  Info  [0m]                            Π val rec$7: NatList = list_compress(Cons(head$17, tail$21))
+[[34m  Info  [0m]                              val rec$138: NatList = list_compress(tail$21)
+[[34m  Info  [0m]                              rec$7.isInstanceOf[Cons] && {
+[[34m  Info  [0m]                                val head$2674: Nat = rec$7.head
+[[34m  Info  [0m]                                val tail$6761: NatList = rec$7.tail
+[[34m  Info  [0m]                                (↓list_compress(Cons(head$12, Cons(head$17, tail$21))) && 谶Cons(head$12, Cons(head$17, tail$21)) && ↓list_compress(Cons(head$17, tail$21)) && 谶Cons(head$17, tail$21) && ↓list_compress(tail$21) && 谶Cons(head$2674, tail$6761) && inactive(rec$7)) && true
+[[34m  Info  [0m]                              }
+[[34m  Info  [0m]                            φ no_dupes(out) && content(Cons(head$12, Cons(head$17, tail$21))).subsetOf(content(out))
+[[34m  Info  [0m]                            x out
+[[34m  Info  [0m]                          ⟧ /19,0/
+[[34m  Info  [0m] [Symbolic Term Expl. (1->7)] ⟦ α head$17, tail$21, head$12
+[[34m  Info  [0m]                                Π val rec$7: NatList = list_compress(Cons(head$17, tail$21))
+[[34m  Info  [0m]                                  val rec$138: NatList = list_compress(tail$21)
+[[34m  Info  [0m]                                  (rec$7 == Nil) && ((↓list_compress(Cons(head$12, Cons(head$17, tail$21))) && 谶Cons(head$12, Cons(head$17, tail$21)) && ↓list_compress(Cons(head$17, tail$21)) && 谶Cons(head$17, tail$21) && ↓list_compress(tail$21) && 谶Nil && inactive(rec$7)) && true)
+[[34m  Info  [0m]                                φ no_dupes(out) && content(Cons(head$12, Cons(head$17, tail$21))).subsetOf(content(out))
+[[34m  Info  [0m]                                x out
+[[34m  Info  [0m]                              ⟧ /19,0/
+[[34m  Info  [0m] [Symbolic Term Expl. (1->7)] Failed
+[[34m  Info  [0m] [Optimistic Ground   ] ⟦ α head$17, tail$21, head$12
+[[34m  Info  [0m]                          Π val rec$7: NatList = list_compress(Cons(head$17, tail$21))
+[[34m  Info  [0m]                            val rec$138: NatList = list_compress(tail$21)
+[[34m  Info  [0m]                            (rec$7 == Nil) && ((↓list_compress(Cons(head$12, Cons(head$17, tail$21))) && 谶Cons(head$12, Cons(head$17, tail$21)) && ↓list_compress(Cons(head$17, tail$21)) && 谶Cons(head$17, tail$21) && ↓list_compress(tail$21) && 谶Nil && inactive(rec$7)) && true)
+[[34m  Info  [0m]                          φ no_dupes(out) && content(Cons(head$12, Cons(head$17, tail$21))).subsetOf(content(out))
+[[34m  Info  [0m]                          x out
+[[34m  Info  [0m]                        ⟧ /19,0/
+[[34m  Info  [0m] [Optimistic Ground   ] Failed
+[[34m  Info  [0m] [ADT Split on 'rec$138'] ⟦ α head$17, tail$21, head$12
+[[34m  Info  [0m]                            Π val rec$7: NatList = list_compress(Cons(head$17, tail$21))
+[[34m  Info  [0m]                              val rec$138: NatList = list_compress(tail$21)
+[[34m  Info  [0m]                              (↓list_compress(Cons(head$12, Cons(head$17, tail$21))) && 谶Cons(head$12, Cons(head$17, tail$21)) && ↓list_compress(Cons(head$17, tail$21)) && 谶Cons(head$17, tail$21) && ↓list_compress(tail$21)) && true
+[[34m  Info  [0m]                            φ no_dupes(out) && content(Cons(head$12, Cons(head$17, tail$21))).subsetOf(content(out))
+[[34m  Info  [0m]                            x out
+[[34m  Info  [0m]                          ⟧ /19,0/
+[[34m  Info  [0m] [ADT Split on 'rec$138'] Decomposed into:
+[[34m  Info  [0m] [ADT Split on 'rec$138'] - ⟦ α head$17, tail$21, head$12
+[[34m  Info  [0m]                              Π val rec$7: NatList = list_compress(Cons(head$17, tail$21))
+[[34m  Info  [0m]                                val rec$138: NatList = list_compress(tail$21)
+[[34m  Info  [0m]                                (rec$138 == Nil) && ((↓list_compress(Cons(head$12, Cons(head$17, tail$21))) && 谶Cons(head$12, Cons(head$17, tail$21)) && ↓list_compress(Cons(head$17, tail$21)) && 谶Cons(head$17, tail$21) && ↓list_compress(tail$21) && 谶Nil && inactive(rec$138)) && true)
+[[34m  Info  [0m]                              φ no_dupes(out) && content(Cons(head$12, Cons(head$17, tail$21))).subsetOf(content(out))
+[[34m  Info  [0m]                              x out
+[[34m  Info  [0m]                            ⟧ /19,0/
+[[34m  Info  [0m] [ADT Split on 'rec$138'] - ⟦ α head$17, tail$21, head$12
+[[34m  Info  [0m]                              Π val rec$7: NatList = list_compress(Cons(head$17, tail$21))
+[[34m  Info  [0m]                                val rec$138: NatList = list_compress(tail$21)
+[[34m  Info  [0m]                                rec$138.isInstanceOf[Cons] && {
+[[34m  Info  [0m]                                  val head$2675: Nat = rec$138.head
+[[34m  Info  [0m]                                  val tail$6762: NatList = rec$138.tail
+[[34m  Info  [0m]                                  (↓list_compress(Cons(head$12, Cons(head$17, tail$21))) && 谶Cons(head$12, Cons(head$17, tail$21)) && ↓list_compress(Cons(head$17, tail$21)) && 谶Cons(head$17, tail$21) && ↓list_compress(tail$21) && 谶Cons(head$2675, tail$6762) && inactive(rec$138)) && true
+[[34m  Info  [0m]                                }
+[[34m  Info  [0m]                              φ no_dupes(out) && content(Cons(head$12, Cons(head$17, tail$21))).subsetOf(content(out))
+[[34m  Info  [0m]                              x out
+[[34m  Info  [0m]                            ⟧ /19,0/
+[[34m  Info  [0m] [Symbolic Term Expl. (1->7)] ⟦ α head$17, tail$21, head$12
+[[34m  Info  [0m]                                Π val rec$7: NatList = list_compress(Cons(head$17, tail$21))
+[[34m  Info  [0m]                                  val rec$138: NatList = list_compress(tail$21)
+[[34m  Info  [0m]                                  (rec$138 == Nil) && ((↓list_compress(Cons(head$12, Cons(head$17, tail$21))) && 谶Cons(head$12, Cons(head$17, tail$21)) && ↓list_compress(Cons(head$17, tail$21)) && 谶Cons(head$17, tail$21) && ↓list_compress(tail$21) && 谶Nil && inactive(rec$138)) && true)
+[[34m  Info  [0m]                                φ no_dupes(out) && content(Cons(head$12, Cons(head$17, tail$21))).subsetOf(content(out))
+[[34m  Info  [0m]                                x out
+[[34m  Info  [0m]                              ⟧ /19,0/
+[[34m  Info  [0m] STE could not prove the validity of the resulting expression
+[[34m  Info  [0m] STE could not prove the validity of the resulting 1 expression(s)
+[[34m  Info  [0m] [Symbolic Term Expl. (1->7)] Solved (untrusted) with:  ⟨ true |  rec$7 ⟩
+[[34m  Info  [0m] 
+[[34m  Info  [0m] [Symbolic Term Expl. (1->7)] ⟦ α head$17, tail$21, head$12
+[[34m  Info  [0m]                                Π val rec$7: NatList = list_compress(Cons(head$17, tail$21))
+[[34m  Info  [0m]                                  val rec$138: NatList = list_compress(tail$21)
+[[34m  Info  [0m]                                  rec$138.isInstanceOf[Cons] && {
+[[34m  Info  [0m]                                    val head$2675: Nat = rec$138.head
+[[34m  Info  [0m]                                    val tail$6762: NatList = rec$138.tail
+[[34m  Info  [0m]                                    (↓list_compress(Cons(head$12, Cons(head$17, tail$21))) && 谶Cons(head$12, Cons(head$17, tail$21)) && ↓list_compress(Cons(head$17, tail$21)) && 谶Cons(head$17, tail$21) && ↓list_compress(tail$21) && 谶Cons(head$2675, tail$6762) && inactive(rec$138)) && true
+[[34m  Info  [0m]                                  }
+[[34m  Info  [0m]                                φ no_dupes(out) && content(Cons(head$12, Cons(head$17, tail$21))).subsetOf(content(out))
+[[34m  Info  [0m]                                x out
+[[34m  Info  [0m]                              ⟧ /19,0/
+[[34m  Info  [0m] [Symbolic Term Expl. (1->7)] Failed
+[[34m  Info  [0m] [Optimistic Ground   ] ⟦ α head$17, tail$21, head$12
+[[34m  Info  [0m]                          Π val rec$7: NatList = list_compress(Cons(head$17, tail$21))
+[[34m  Info  [0m]                            val rec$138: NatList = list_compress(tail$21)
+[[34m  Info  [0m]                            rec$138.isInstanceOf[Cons] && {
+[[34m  Info  [0m]                              val head$2675: Nat = rec$138.head
+[[34m  Info  [0m]                              val tail$6762: NatList = rec$138.tail
+[[34m  Info  [0m]                              (↓list_compress(Cons(head$12, Cons(head$17, tail$21))) && 谶Cons(head$12, Cons(head$17, tail$21)) && ↓list_compress(Cons(head$17, tail$21)) && 谶Cons(head$17, tail$21) && ↓list_compress(tail$21) && 谶Cons(head$2675, tail$6762) && inactive(rec$138)) && true
+[[34m  Info  [0m]                            }
+[[34m  Info  [0m]                          φ no_dupes(out) && content(Cons(head$12, Cons(head$17, tail$21))).subsetOf(content(out))
+[[34m  Info  [0m]                          x out
+[[34m  Info  [0m]                        ⟧ /19,0/
+[[34m  Info  [0m] [Optimistic Ground   ] Failed
+[[34m  Info  [0m] [Introduce calls list_compress$0(tail$1307)] ⟦ α head$586, tail$1307, head$12
+[[34m  Info  [0m]                                                Π val rec$7: NatList = list_compress(Cons(head$586, tail$1307))
+[[34m  Info  [0m]                                                  rec$7.isInstanceOf[Cons] && {
+[[34m  Info  [0m]                                                    val head$18: Nat = rec$7.head
+[[34m  Info  [0m]                                                    val tail$22: NatList = rec$7.tail
+[[34m  Info  [0m]                                                    (↓list_compress(Cons(head$12, Cons(head$586, tail$1307))) && 谶Cons(head$12, Cons(head$586, tail$1307)) && ↓list_compress(Cons(head$586, tail$1307)) && 谶Cons(head$18, tail$22) && inactive(rec$7) && 谶Cons(head$586, tail$1307)) && true
+[[34m  Info  [0m]                                                  }
+[[34m  Info  [0m]                                                φ no_dupes(out) && content(Cons(head$12, Cons(head$586, tail$1307))).subsetOf(content(out))
+[[34m  Info  [0m]                                                x out
+[[34m  Info  [0m]                                              ⟧ /19,0/
+[[34m  Info  [0m] [Introduce calls list_compress$0(tail$1307)] Decomposed into:
+[[34m  Info  [0m] [Introduce calls list_compress$0(tail$1307)] - ⟦ α head$586, tail$1307, head$12
+[[34m  Info  [0m]                                                  Π val rec$7: NatList = list_compress(Cons(head$586, tail$1307))
+[[34m  Info  [0m]                                                    rec$7.isInstanceOf[Cons] && {
+[[34m  Info  [0m]                                                      val head$18: Nat = rec$7.head
+[[34m  Info  [0m]                                                      val tail$22: NatList = rec$7.tail
+[[34m  Info  [0m]                                                      val rec$1293: NatList = list_compress(tail$1307)
+[[34m  Info  [0m]                                                      (↓list_compress(Cons(head$12, Cons(head$586, tail$1307))) && 谶Cons(head$12, Cons(head$586, tail$1307)) && ↓list_compress(Cons(head$586, tail$1307)) && 谶Cons(head$18, tail$22) && inactive(rec$7) && 谶Cons(head$586, tail$1307) && ↓list_compress(tail$1307)) && true
+[[34m  Info  [0m]                                                    }
+[[34m  Info  [0m]                                                  φ no_dupes(out) && content(Cons(head$12, Cons(head$586, tail$1307))).subsetOf(content(out))
+[[34m  Info  [0m]                                                  x out
+[[34m  Info  [0m]                                                ⟧ /19,0/
+[[34m  Info  [0m] [Symbolic Term Expl. (1->7)] ⟦ α head$586, tail$1307, head$12
+[[34m  Info  [0m]                                Π val rec$7: NatList = list_compress(Cons(head$586, tail$1307))
+[[34m  Info  [0m]                                  rec$7.isInstanceOf[Cons] && {
+[[34m  Info  [0m]                                    val head$18: Nat = rec$7.head
+[[34m  Info  [0m]                                    val tail$22: NatList = rec$7.tail
+[[34m  Info  [0m]                                    val rec$1293: NatList = list_compress(tail$1307)
+[[34m  Info  [0m]                                    (↓list_compress(Cons(head$12, Cons(head$586, tail$1307))) && 谶Cons(head$12, Cons(head$586, tail$1307)) && ↓list_compress(Cons(head$586, tail$1307)) && 谶Cons(head$18, tail$22) && inactive(rec$7) && 谶Cons(head$586, tail$1307) && ↓list_compress(tail$1307)) && true
+[[34m  Info  [0m]                                  }
+[[34m  Info  [0m]                                φ no_dupes(out) && content(Cons(head$12, Cons(head$586, tail$1307))).subsetOf(content(out))
+[[34m  Info  [0m]                                x out
+[[34m  Info  [0m]                              ⟧ /19,0/
+val rec$7: NatList = list_compress(Cons(head$586, tail$1307))
+rec$7.isInstanceOf[Cons] && {
+  val head$18: Nat = rec$7.head
+  val tail$22: NatList = rec$7.tail
+  val rec$1293: NatList = list_compress(tail$1307)
+  val out: NatList = {
+    {
+      val Nat#Constructor(false)↑@0|1|$347: Nat = if (B$2136) {
+        head$12
+      } else if (B$2135) {
+        head$586
+      } else {
+        head$18
+      }
+      val NatList#Constructor(false)↑@1|1|$163: NatList = if (B$2140) {
+        rec$1293
+      } else if (B$2139) {
+        tail$22
+      } else if (B$2138) {
+        tail$1307
+      } else {
+        Cons(head$12, Cons(head$586, tail$1307))
+      }
+      val NatList#Constructor(false)↑@1|3|$52: NatList = if (B$2144) {
+        Cons(Z, NatList#Constructor(false)↑@1|1|$163)
+      } else if (B$2142) {
+        Cons(Nat#Constructor(false)↑@0|1|$347, NatList#Constructor(false)↑@1|1|$163)
+      } else {
+        Cons(Nat#Constructor(false)↑@0|1|$347, Nil)
+      }
+      val Nat#Constructor(false)↑@0|3|$90: Nat = S(S(if (B$2153) {
+        head$12
+      } else if (B$2152) {
+        head$586
+      } else {
+        head$18
+      }))
+      if (B$2163) {
+        Cons(Z, NatList#Constructor(false)↑@1|3|$52)
+      } else if (B$2161) {
+        Cons(Nat#Constructor(false)↑@0|3|$90, if (B$2159) {
+          rec$1293
+        } else if (B$2158) {
+          tail$22
+        } else if (B$2157) {
+          tail$1307
+        } else {
+          Cons(head$12, Cons(head$586, tail$1307))
+        })
+      } else if (B$2147) {
+        Cons(if (B$2133) {
+          head$12
+        } else if (B$2132) {
+          head$586
+        } else {
+          head$18
+        }, NatList#Constructor(false)↑@1|3|$52)
+      } else {
+        Cons(Nat#Constructor(false)↑@0|3|$90, Nil)
+      }
+    }
+  }
+  no_dupes(out) && content(Cons(head$12, Cons(head$586, tail$1307))).subsetOf(content(out))
+}
+[[34m  Info  [0m] [Symbolic Term Expl. (1->7)] Failed
+[[34m  Info  [0m] [Optimistic Ground   ] ⟦ α head$586, tail$1307, head$12
+[[34m  Info  [0m]                          Π val rec$7: NatList = list_compress(Cons(head$586, tail$1307))
+[[34m  Info  [0m]                            rec$7.isInstanceOf[Cons] && {
+[[34m  Info  [0m]                              val head$18: Nat = rec$7.head
+[[34m  Info  [0m]                              val tail$22: NatList = rec$7.tail
+[[34m  Info  [0m]                              val rec$1293: NatList = list_compress(tail$1307)
+[[34m  Info  [0m]                              (↓list_compress(Cons(head$12, Cons(head$586, tail$1307))) && 谶Cons(head$12, Cons(head$586, tail$1307)) && ↓list_compress(Cons(head$586, tail$1307)) && 谶Cons(head$18, tail$22) && inactive(rec$7) && 谶Cons(head$586, tail$1307) && ↓list_compress(tail$1307)) && true
+[[34m  Info  [0m]                            }
+[[34m  Info  [0m]                          φ no_dupes(out) && content(Cons(head$12, Cons(head$586, tail$1307))).subsetOf(content(out))
+[[34m  Info  [0m]                          x out
+[[34m  Info  [0m]                        ⟧ /19,0/
+[[34m  Info  [0m] [Optimistic Ground   ] Failed
+[[34m  Info  [0m] [ADT Split on 'head$18'] ⟦ α tail$17
+[[34m  Info  [0m]                            Π val rec$7: NatList = list_compress(tail$17)
+[[34m  Info  [0m]                              rec$7.isInstanceOf[Cons] && {
+[[34m  Info  [0m]                                val head$18: Nat = rec$7.head
+[[34m  Info  [0m]                                val tail$22: NatList = rec$7.tail
+[[34m  Info  [0m]                                (↓list_compress(Cons(Z, tail$17)) && 谶Cons(Z, tail$17) && ↓list_compress(tail$17) && 谶Cons(head$18, tail$22) && inactive(rec$7) && 谶Z) && true
+[[34m  Info  [0m]                              }
+[[34m  Info  [0m]                            φ no_dupes(out) && content(Cons(Z, tail$17)).subsetOf(content(out))
+[[34m  Info  [0m]                            x out
+[[34m  Info  [0m]                          ⟧ /10,0/
+[[34m  Info  [0m] [ADT Split on 'head$18'] Decomposed into:
+[[34m  Info  [0m] [ADT Split on 'head$18'] - ⟦ α tail$17
+[[34m  Info  [0m]                              Π val rec$7: NatList = list_compress(tail$17)
+[[34m  Info  [0m]                                rec$7.isInstanceOf[Cons] && {
+[[34m  Info  [0m]                                  val head$18: Nat = rec$7.head
+[[34m  Info  [0m]                                  val tail$22: NatList = rec$7.tail
+[[34m  Info  [0m]                                  (head$18 == Z) && ((↓list_compress(Cons(Z, tail$17)) && 谶Cons(Z, tail$17) && ↓list_compress(tail$17) && 谶Cons(Z, tail$22) && inactive(rec$7) && 谶Z && 谶Z && inactive(head$18)) && true)
+[[34m  Info  [0m]                                }
+[[34m  Info  [0m]                              φ no_dupes(out) && content(Cons(Z, tail$17)).subsetOf(content(out))
+[[34m  Info  [0m]                              x out
+[[34m  Info  [0m]                            ⟧ /10,0/
+[[34m  Info  [0m] [ADT Split on 'head$18'] - ⟦ α tail$17
+[[34m  Info  [0m]                              Π val rec$7: NatList = list_compress(tail$17)
+[[34m  Info  [0m]                                rec$7.isInstanceOf[Cons] && {
+[[34m  Info  [0m]                                  val head$18: Nat = rec$7.head
+[[34m  Info  [0m]                                  val tail$22: NatList = rec$7.tail
+[[34m  Info  [0m]                                  head$18.isInstanceOf[S] && {
+[[34m  Info  [0m]                                    val nat$178: Nat = head$18.nat
+[[34m  Info  [0m]                                    (↓list_compress(Cons(Z, tail$17)) && 谶Cons(Z, tail$17) && ↓list_compress(tail$17) && 谶Cons(S(nat$178), tail$22) && inactive(rec$7) && 谶Z && 谶S(nat$178) && inactive(head$18)) && true
+[[34m  Info  [0m]                                  }
+[[34m  Info  [0m]                                }
+[[34m  Info  [0m]                              φ no_dupes(out) && content(Cons(Z, tail$17)).subsetOf(content(out))
+[[34m  Info  [0m]                              x out
+[[34m  Info  [0m]                            ⟧ /10,0/
+[[34m  Info  [0m] [Symbolic Term Expl. (1->7)] ⟦ α tail$17
+[[34m  Info  [0m]                                Π val rec$7: NatList = list_compress(tail$17)
+[[34m  Info  [0m]                                  rec$7.isInstanceOf[Cons] && {
+[[34m  Info  [0m]                                    val head$18: Nat = rec$7.head
+[[34m  Info  [0m]                                    val tail$22: NatList = rec$7.tail
+[[34m  Info  [0m]                                    (head$18 == Z) && ((↓list_compress(Cons(Z, tail$17)) && 谶Cons(Z, tail$17) && ↓list_compress(tail$17) && 谶Cons(Z, tail$22) && inactive(rec$7) && 谶Z && 谶Z && inactive(head$18)) && true)
+[[34m  Info  [0m]                                  }
+[[34m  Info  [0m]                                φ no_dupes(out) && content(Cons(Z, tail$17)).subsetOf(content(out))
+[[34m  Info  [0m]                                x out
+[[34m  Info  [0m]                              ⟧ /10,0/
+[[34m  Info  [0m] [Symbolic Term Expl. (1->7)] Solved  with:  ⟨ true |  Cons(Z, tail$22) ⟩
+[[34m  Info  [0m] 
+[[34m  Info  [0m] [ADT Split on 'head$12'] ⟦ α head$12, tail$17
+[[34m  Info  [0m]                            Π val rec$7: NatList = list_compress(tail$17)
+[[34m  Info  [0m]                              rec$7.isInstanceOf[Cons] && {
+[[34m  Info  [0m]                                val head$18: Nat = rec$7.head
+[[34m  Info  [0m]                                val tail$22: NatList = rec$7.tail
+[[34m  Info  [0m]                                (head$18 == Z) && ((↓list_compress(Cons(head$12, tail$17)) && 谶Cons(head$12, tail$17) && ↓list_compress(tail$17) && 谶Cons(Z, tail$22) && inactive(rec$7) && 谶Z && inactive(head$18)) && true)
+[[34m  Info  [0m]                              }
+[[34m  Info  [0m]                            φ no_dupes(out) && content(Cons(head$12, tail$17)).subsetOf(content(out))
+[[34m  Info  [0m]                            x out
+[[34m  Info  [0m]                          ⟧ /23,0/
+[[34m  Info  [0m] [ADT Split on 'head$12'] Decomposed into:
+[[34m  Info  [0m] [ADT Split on 'head$12'] - ⟦ α tail$17
+[[34m  Info  [0m]                              Π val rec$7: NatList = list_compress(tail$17)
+[[34m  Info  [0m]                                rec$7.isInstanceOf[Cons] && {
+[[34m  Info  [0m]                                  val head$18: Nat = rec$7.head
+[[34m  Info  [0m]                                  val tail$22: NatList = rec$7.tail
+[[34m  Info  [0m]                                  (head$18 == Z) && ((↓list_compress(Cons(Z, tail$17)) && 谶Cons(Z, tail$17) && ↓list_compress(tail$17) && 谶Cons(Z, tail$22) && inactive(rec$7) && 谶Z && inactive(head$18) && 谶Z) && true)
+[[34m  Info  [0m]                                }
+[[34m  Info  [0m]                              φ no_dupes(out) && content(Cons(Z, tail$17)).subsetOf(content(out))
+[[34m  Info  [0m]                              x out
+[[34m  Info  [0m]                            ⟧ /10,0/
+[[34m  Info  [0m] [ADT Split on 'head$12'] - ⟦ α nat$287, tail$17
+[[34m  Info  [0m]                              Π val rec$7: NatList = list_compress(tail$17)
+[[34m  Info  [0m]                                rec$7.isInstanceOf[Cons] && {
+[[34m  Info  [0m]                                  val head$18: Nat = rec$7.head
+[[34m  Info  [0m]                                  val tail$22: NatList = rec$7.tail
+[[34m  Info  [0m]                                  (head$18 == Z) && ((↓list_compress(Cons(S(nat$287), tail$17)) && 谶Cons(S(nat$287), tail$17) && ↓list_compress(tail$17) && 谶Cons(Z, tail$22) && inactive(rec$7) && 谶Z && inactive(head$18) && 谶S(nat$287)) && true)
+[[34m  Info  [0m]                                }
+[[34m  Info  [0m]                              φ no_dupes(out) && content(Cons(S(nat$287), tail$17)).subsetOf(content(out))
+[[34m  Info  [0m]                              x out
+[[34m  Info  [0m]                            ⟧ /13,0/
+[[34m  Info  [0m] [Symbolic Term Expl. (1->7)] ⟦ α tail$17
+[[34m  Info  [0m]                                Π val rec$7: NatList = list_compress(tail$17)
+[[34m  Info  [0m]                                  rec$7.isInstanceOf[Cons] && {
+[[34m  Info  [0m]                                    val head$18: Nat = rec$7.head
+[[34m  Info  [0m]                                    val tail$22: NatList = rec$7.tail
+[[34m  Info  [0m]                                    (head$18 == Z) && ((↓list_compress(Cons(Z, tail$17)) && 谶Cons(Z, tail$17) && ↓list_compress(tail$17) && 谶Cons(Z, tail$22) && inactive(rec$7) && 谶Z && inactive(head$18) && 谶Z) && true)
+[[34m  Info  [0m]                                  }
+[[34m  Info  [0m]                                φ no_dupes(out) && content(Cons(Z, tail$17)).subsetOf(content(out))
+[[34m  Info  [0m]                                x out
+[[34m  Info  [0m]                              ⟧ /10,0/
+[[34m  Info  [0m] STE could not prove the validity of the resulting expression
+[[34m  Info  [0m] STE could not prove the validity of the resulting 1 expression(s)
+[[34m  Info  [0m] [Symbolic Term Expl. (1->7)] Solved (untrusted) with:  ⟨ true |  tail$17 ⟩
+[[34m  Info  [0m] 
+[[34m  Info  [0m] [Symbolic Term Expl. (1->7)] ⟦ α nat$287, tail$17
+[[34m  Info  [0m]                                Π val rec$7: NatList = list_compress(tail$17)
+[[34m  Info  [0m]                                  rec$7.isInstanceOf[Cons] && {
+[[34m  Info  [0m]                                    val head$18: Nat = rec$7.head
+[[34m  Info  [0m]                                    val tail$22: NatList = rec$7.tail
+[[34m  Info  [0m]                                    (head$18 == Z) && ((↓list_compress(Cons(S(nat$287), tail$17)) && 谶Cons(S(nat$287), tail$17) && ↓list_compress(tail$17) && 谶Cons(Z, tail$22) && inactive(rec$7) && 谶Z && inactive(head$18) && 谶S(nat$287)) && true)
+[[34m  Info  [0m]                                  }
+[[34m  Info  [0m]                                φ no_dupes(out) && content(Cons(S(nat$287), tail$17)).subsetOf(content(out))
+[[34m  Info  [0m]                                x out
+[[34m  Info  [0m]                              ⟧ /13,0/
+[[34m  Info  [0m] [Symbolic Term Expl. (1->7)] Solved  with:  ⟨ true |  Cons(S(nat$287), Cons(Z, tail$22)) ⟩
+[[34m  Info  [0m] 
+[[34m  Info  [0m] [ADT Split on 'tail$17'] ⟦ α tail$17
+[[34m  Info  [0m]                            Π val rec$7: NatList = list_compress(tail$17)
+[[34m  Info  [0m]                              rec$7.isInstanceOf[Cons] && {
+[[34m  Info  [0m]                                val head$18: Nat = rec$7.head
+[[34m  Info  [0m]                                val tail$22: NatList = rec$7.tail
+[[34m  Info  [0m]                                (↓list_compress(Cons(Z, tail$17)) && 谶Cons(Z, tail$17) && ↓list_compress(tail$17) && 谶Cons(head$18, tail$22) && inactive(rec$7) && 谶Z) && true
+[[34m  Info  [0m]                              }
+[[34m  Info  [0m]                            φ no_dupes(out) && content(Cons(Z, tail$17)).subsetOf(content(out))
+[[34m  Info  [0m]                            x out
+[[34m  Info  [0m]                          ⟧ /10,0/
+[[34m  Info  [0m] [ADT Split on 'tail$17'] Decomposed into:
+[[34m  Info  [0m] [ADT Split on 'tail$17'] - ⟦ α ()
+[[34m  Info  [0m]                              Π val rec$7: NatList = list_compress(Nil)
+[[34m  Info  [0m]                                rec$7.isInstanceOf[Cons] && {
+[[34m  Info  [0m]                                  val head$18: Nat = rec$7.head
+[[34m  Info  [0m]                                  val tail$22: NatList = rec$7.tail
+[[34m  Info  [0m]                                  (↓list_compress(Cons(Z, Nil)) && 谶Cons(Z, Nil) && ↓list_compress(Nil) && 谶Cons(head$18, tail$22) && inactive(rec$7) && 谶Z && 谶Nil) && true
+[[34m  Info  [0m]                                }
+[[34m  Info  [0m]                              φ no_dupes(out) && content(Cons(Z, Nil)).subsetOf(content(out))
+[[34m  Info  [0m]                              x out
+[[34m  Info  [0m]                            ⟧ /1,0/
+[[34m  Info  [0m] [ADT Split on 'tail$17'] - ⟦ α head$3338, tail$15189
+[[34m  Info  [0m]                              Π val rec$7: NatList = list_compress(Cons(head$3338, tail$15189))
+[[34m  Info  [0m]                                rec$7.isInstanceOf[Cons] && {
+[[34m  Info  [0m]                                  val head$18: Nat = rec$7.head
+[[34m  Info  [0m]                                  val tail$22: NatList = rec$7.tail
+[[34m  Info  [0m]                                  (↓list_compress(Cons(Z, Cons(head$3338, tail$15189))) && 谶Cons(Z, Cons(head$3338, tail$15189)) && ↓list_compress(Cons(head$3338, tail$15189)) && 谶Cons(head$18, tail$22) && inactive(rec$7) && 谶Z && 谶Cons(head$3338, tail$15189)) && true
+[[34m  Info  [0m]                                }
+[[34m  Info  [0m]                              φ no_dupes(out) && content(Cons(Z, Cons(head$3338, tail$15189))).subsetOf(content(out))
+[[34m  Info  [0m]                              x out
+[[34m  Info  [0m]                            ⟧ /9,0/
+[[34m  Info  [0m] [Ground              ] ⟦ α ()
+[[34m  Info  [0m]                          Π val rec$7: NatList = list_compress(Nil)
+[[34m  Info  [0m]                            rec$7.isInstanceOf[Cons] && {
+[[34m  Info  [0m]                              val head$18: Nat = rec$7.head
+[[34m  Info  [0m]                              val tail$22: NatList = rec$7.tail
+[[34m  Info  [0m]                              (↓list_compress(Cons(Z, Nil)) && 谶Cons(Z, Nil) && ↓list_compress(Nil) && 谶Cons(head$18, tail$22) && inactive(rec$7) && 谶Z && 谶Nil) && true
+[[34m  Info  [0m]                            }
+[[34m  Info  [0m]                          φ no_dupes(out) && content(Cons(Z, Nil)).subsetOf(content(out))
+[[34m  Info  [0m]                          x out
+[[34m  Info  [0m]                        ⟧ /1,0/
+[[34m  Info  [0m] [Ground              ] Solved  with:  ⟨ true |  Cons(Z, Nil) ⟩
+[[34m  Info  [0m] 
+[[34m  Info  [0m] [ADT Split on 'tail$22'] ⟦ α tail$17
+[[34m  Info  [0m]                            Π val rec$7: NatList = list_compress(tail$17)
+[[34m  Info  [0m]                              rec$7.isInstanceOf[Cons] && {
+[[34m  Info  [0m]                                val head$18: Nat = rec$7.head
+[[34m  Info  [0m]                                val tail$22: NatList = rec$7.tail
+[[34m  Info  [0m]                                (↓list_compress(Cons(Z, tail$17)) && 谶Cons(Z, tail$17) && ↓list_compress(tail$17) && 谶Cons(head$18, tail$22) && inactive(rec$7) && 谶Z) && true
+[[34m  Info  [0m]                              }
+[[34m  Info  [0m]                            φ no_dupes(out) && content(Cons(Z, tail$17)).subsetOf(content(out))
+[[34m  Info  [0m]                            x out
+[[34m  Info  [0m]                          ⟧ /10,0/
+[[34m  Info  [0m] [ADT Split on 'tail$22'] Decomposed into:
+[[34m  Info  [0m] [ADT Split on 'tail$22'] - ⟦ α tail$17
+[[34m  Info  [0m]                              Π val rec$7: NatList = list_compress(tail$17)
+[[34m  Info  [0m]                                rec$7.isInstanceOf[Cons] && {
+[[34m  Info  [0m]                                  val head$18: Nat = rec$7.head
+[[34m  Info  [0m]                                  val tail$22: NatList = rec$7.tail
+[[34m  Info  [0m]                                  (tail$22 == Nil) && ((↓list_compress(Cons(Z, tail$17)) && 谶Cons(Z, tail$17) && ↓list_compress(tail$17) && 谶Cons(head$18, Nil) && inactive(rec$7) && 谶Z && 谶Nil && inactive(tail$22)) && true)
+[[34m  Info  [0m]                                }
+[[34m  Info  [0m]                              φ no_dupes(out) && content(Cons(Z, tail$17)).subsetOf(content(out))
+[[34m  Info  [0m]                              x out
+[[34m  Info  [0m]                            ⟧ /10,0/
+[[34m  Info  [0m] [ADT Split on 'tail$22'] - ⟦ α tail$17
+[[34m  Info  [0m]                              Π val rec$7: NatList = list_compress(tail$17)
+[[34m  Info  [0m]                                rec$7.isInstanceOf[Cons] && {
+[[34m  Info  [0m]                                  val head$18: Nat = rec$7.head
+[[34m  Info  [0m]                                  val tail$22: NatList = rec$7.tail
+[[34m  Info  [0m]                                  tail$22.isInstanceOf[Cons] && {
+[[34m  Info  [0m]                                    val head$3339: Nat = tail$22.head
+[[34m  Info  [0m]                                    val tail$15190: NatList = tail$22.tail
+[[34m  Info  [0m]                                    (↓list_compress(Cons(Z, tail$17)) && 谶Cons(Z, tail$17) && ↓list_compress(tail$17) && 谶Cons(head$18, Cons(head$3339, tail$15190)) && inactive(rec$7) && 谶Z && 谶Cons(head$3339, tail$15190) && inactive(tail$22)) && true
+[[34m  Info  [0m]                                  }
+[[34m  Info  [0m]                                }
+[[34m  Info  [0m]                              φ no_dupes(out) && content(Cons(Z, tail$17)).subsetOf(content(out))
+[[34m  Info  [0m]                              x out
+[[34m  Info  [0m]                            ⟧ /10,0/
+[[34m  Info  [0m] [Symbolic Term Expl. (1->7)] ⟦ α tail$17
+[[34m  Info  [0m]                                Π val rec$7: NatList = list_compress(tail$17)
+[[34m  Info  [0m]                                  rec$7.isInstanceOf[Cons] && {
+[[34m  Info  [0m]                                    val head$18: Nat = rec$7.head
+[[34m  Info  [0m]                                    val tail$22: NatList = rec$7.tail
+[[34m  Info  [0m]                                    (tail$22 == Nil) && ((↓list_compress(Cons(Z, tail$17)) && 谶Cons(Z, tail$17) && ↓list_compress(tail$17) && 谶Cons(head$18, Nil) && inactive(rec$7) && 谶Z && 谶Nil && inactive(tail$22)) && true)
+[[34m  Info  [0m]                                  }
+[[34m  Info  [0m]                                φ no_dupes(out) && content(Cons(Z, tail$17)).subsetOf(content(out))
+[[34m  Info  [0m]                                x out
+[[34m  Info  [0m]                              ⟧ /10,0/
+[[34m  Info  [0m] STE could not prove the validity of the resulting expression
+[[34m  Info  [0m] STE could not prove the validity of the resulting 1 expression(s)
+[[34m  Info  [0m] [Symbolic Term Expl. (1->7)] Solved (untrusted) with:  ⟨ true |  Cons(Z, Cons(S(head$18), tail$17)) ⟩
+[[34m  Info  [0m] 
+[[34m  Info  [0m] [ADT Split on 'head$12'] ⟦ α head$12, tail$17
+[[34m  Info  [0m]                            Π val rec$7: NatList = list_compress(tail$17)
+[[34m  Info  [0m]                              rec$7.isInstanceOf[Cons] && {
+[[34m  Info  [0m]                                val head$18: Nat = rec$7.head
+[[34m  Info  [0m]                                val tail$22: NatList = rec$7.tail
+[[34m  Info  [0m]                                (tail$22 == Nil) && ((↓list_compress(Cons(head$12, tail$17)) && 谶Cons(head$12, tail$17) && ↓list_compress(tail$17) && 谶Cons(head$18, Nil) && inactive(rec$7) && 谶Nil && inactive(tail$22)) && true)
+[[34m  Info  [0m]                              }
+[[34m  Info  [0m]                            φ no_dupes(out) && content(Cons(head$12, tail$17)).subsetOf(content(out))
+[[34m  Info  [0m]                            x out
+[[34m  Info  [0m]                          ⟧ /23,0/
+[[34m  Info  [0m] [ADT Split on 'head$12'] Decomposed into:
+[[34m  Info  [0m] [ADT Split on 'head$12'] - ⟦ α tail$17
+[[34m  Info  [0m]                              Π val rec$7: NatList = list_compress(tail$17)
+[[34m  Info  [0m]                                rec$7.isInstanceOf[Cons] && {
+[[34m  Info  [0m]                                  val head$18: Nat = rec$7.head
+[[34m  Info  [0m]                                  val tail$22: NatList = rec$7.tail
+[[34m  Info  [0m]                                  (tail$22 == Nil) && ((↓list_compress(Cons(Z, tail$17)) && 谶Cons(Z, tail$17) && ↓list_compress(tail$17) && 谶Cons(head$18, Nil) && inactive(rec$7) && 谶Nil && inactive(tail$22) && 谶Z) && true)
+[[34m  Info  [0m]                                }
+[[34m  Info  [0m]                              φ no_dupes(out) && content(Cons(Z, tail$17)).subsetOf(content(out))
+[[34m  Info  [0m]                              x out
+[[34m  Info  [0m]                            ⟧ /10,0/
+[[34m  Info  [0m] [ADT Split on 'head$12'] - ⟦ α nat$355, tail$17
+[[34m  Info  [0m]                              Π val rec$7: NatList = list_compress(tail$17)
+[[34m  Info  [0m]                                rec$7.isInstanceOf[Cons] && {
+[[34m  Info  [0m]                                  val head$18: Nat = rec$7.head
+[[34m  Info  [0m]                                  val tail$22: NatList = rec$7.tail
+[[34m  Info  [0m]                                  (tail$22 == Nil) && ((↓list_compress(Cons(S(nat$355), tail$17)) && 谶Cons(S(nat$355), tail$17) && ↓list_compress(tail$17) && 谶Cons(head$18, Nil) && inactive(rec$7) && 谶Nil && inactive(tail$22) && 谶S(nat$355)) && true)
+[[34m  Info  [0m]                                }
+[[34m  Info  [0m]                              φ no_dupes(out) && content(Cons(S(nat$355), tail$17)).subsetOf(content(out))
+[[34m  Info  [0m]                              x out
+[[34m  Info  [0m]                            ⟧ /13,0/
+[[34m  Info  [0m] [Symbolic Term Expl. (1->7)] ⟦ α tail$17
+[[34m  Info  [0m]                                Π val rec$7: NatList = list_compress(tail$17)
+[[34m  Info  [0m]                                  rec$7.isInstanceOf[Cons] && {
+[[34m  Info  [0m]                                    val head$18: Nat = rec$7.head
+[[34m  Info  [0m]                                    val tail$22: NatList = rec$7.tail
+[[34m  Info  [0m]                                    (tail$22 == Nil) && ((↓list_compress(Cons(Z, tail$17)) && 谶Cons(Z, tail$17) && ↓list_compress(tail$17) && 谶Cons(head$18, Nil) && inactive(rec$7) && 谶Nil && inactive(tail$22) && 谶Z) && true)
+[[34m  Info  [0m]                                  }
+[[34m  Info  [0m]                                φ no_dupes(out) && content(Cons(Z, tail$17)).subsetOf(content(out))
+[[34m  Info  [0m]                                x out
+[[34m  Info  [0m]                              ⟧ /10,0/
+[[34m  Info  [0m] [Symbolic Term Expl. (1->7)] Failed
+[[34m  Info  [0m] [Optimistic Ground   ] ⟦ α tail$17
+[[34m  Info  [0m]                          Π val rec$7: NatList = list_compress(tail$17)
+[[34m  Info  [0m]                            rec$7.isInstanceOf[Cons] && {
+[[34m  Info  [0m]                              val head$18: Nat = rec$7.head
+[[34m  Info  [0m]                              val tail$22: NatList = rec$7.tail
+[[34m  Info  [0m]                              (tail$22 == Nil) && ((↓list_compress(Cons(Z, tail$17)) && 谶Cons(Z, tail$17) && ↓list_compress(tail$17) && 谶Cons(head$18, Nil) && inactive(rec$7) && 谶Nil && inactive(tail$22) && 谶Z) && true)
+[[34m  Info  [0m]                            }
+[[34m  Info  [0m]                          φ no_dupes(out) && content(Cons(Z, tail$17)).subsetOf(content(out))
+[[34m  Info  [0m]                          x out
+[[34m  Info  [0m]                        ⟧ /10,0/
+[[34m  Info  [0m] [Optimistic Ground   ] Failed
+[[34m  Info  [0m] [ADT Split on 'head$18'] ⟦ α head$12, tail$17
+[[34m  Info  [0m]                            Π val rec$7: NatList = list_compress(tail$17)
+[[34m  Info  [0m]                              rec$7.isInstanceOf[Cons] && {
+[[34m  Info  [0m]                                val head$18: Nat = rec$7.head
+[[34m  Info  [0m]                                val tail$22: NatList = rec$7.tail
+[[34m  Info  [0m]                                (tail$22 == Nil) && ((↓list_compress(Cons(head$12, tail$17)) && 谶Cons(head$12, tail$17) && ↓list_compress(tail$17) && 谶Cons(head$18, Nil) && inactive(rec$7) && 谶Nil && inactive(tail$22)) && true)
+[[34m  Info  [0m]                              }
+[[34m  Info  [0m]                            φ no_dupes(out) && content(Cons(head$12, tail$17)).subsetOf(content(out))
+[[34m  Info  [0m]                            x out
+[[34m  Info  [0m]                          ⟧ /23,0/
+[[34m  Info  [0m] [ADT Split on 'head$18'] Decomposed into:
+[[34m  Info  [0m] [ADT Split on 'head$18'] - ⟦ α head$12, tail$17
+[[34m  Info  [0m]                              Π val rec$7: NatList = list_compress(tail$17)
+[[34m  Info  [0m]                                rec$7.isInstanceOf[Cons] && {
+[[34m  Info  [0m]                                  val head$18: Nat = rec$7.head
+[[34m  Info  [0m]                                  val tail$22: NatList = rec$7.tail
+[[34m  Info  [0m]                                  (tail$22 == Nil) && ((head$18 == Z) && ((↓list_compress(Cons(head$12, tail$17)) && 谶Cons(head$12, tail$17) && ↓list_compress(tail$17) && 谶Cons(Z, Nil) && inactive(rec$7) && 谶Nil && inactive(tail$22) && 谶Z && inactive(head$18)) && true))
+[[34m  Info  [0m]                                }
+[[34m  Info  [0m]                              φ no_dupes(out) && content(Cons(head$12, tail$17)).subsetOf(content(out))
+[[34m  Info  [0m]                              x out
+[[34m  Info  [0m]                            ⟧ /23,0/
+[[34m  Info  [0m] [ADT Split on 'head$18'] - ⟦ α head$12, tail$17
+[[34m  Info  [0m]                              Π val rec$7: NatList = list_compress(tail$17)
+[[34m  Info  [0m]                                rec$7.isInstanceOf[Cons] && {
+[[34m  Info  [0m]                                  val head$18: Nat = rec$7.head
+[[34m  Info  [0m]                                  val tail$22: NatList = rec$7.tail
+[[34m  Info  [0m]                                  (tail$22 == Nil) && (head$18.isInstanceOf[S] && {
+[[34m  Info  [0m]                                    val nat$356: Nat = head$18.nat
+[[34m  Info  [0m]                                    (↓list_compress(Cons(head$12, tail$17)) && 谶Cons(head$12, tail$17) && ↓list_compress(tail$17) && 谶Cons(S(nat$356), Nil) && inactive(rec$7) && 谶Nil && inactive(tail$22) && 谶S(nat$356) && inactive(head$18)) && true
+[[34m  Info  [0m]                                  })
+[[34m  Info  [0m]                                }
+[[34m  Info  [0m]                              φ no_dupes(out) && content(Cons(head$12, tail$17)).subsetOf(content(out))
+[[34m  Info  [0m]                              x out
+[[34m  Info  [0m]                            ⟧ /23,0/
+[[34m  Info  [0m] [Symbolic Term Expl. (1->7)] ⟦ α head$12, tail$17
+[[34m  Info  [0m]                                Π val rec$7: NatList = list_compress(tail$17)
+[[34m  Info  [0m]                                  rec$7.isInstanceOf[Cons] && {
+[[34m  Info  [0m]                                    val head$18: Nat = rec$7.head
+[[34m  Info  [0m]                                    val tail$22: NatList = rec$7.tail
+[[34m  Info  [0m]                                    (tail$22 == Nil) && ((head$18 == Z) && ((↓list_compress(Cons(head$12, tail$17)) && 谶Cons(head$12, tail$17) && ↓list_compress(tail$17) && 谶Cons(Z, Nil) && inactive(rec$7) && 谶Nil && inactive(tail$22) && 谶Z && inactive(head$18)) && true))

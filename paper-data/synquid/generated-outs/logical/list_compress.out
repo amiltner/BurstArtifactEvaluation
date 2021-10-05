@@ -1,0 +1,7 @@
+list_compress :: xs:NatList -> {NatList|no_adjacent_pairs _v && elems xs <= elems _v}
+benchmarks/postconditional/list_compress.sq:33: Error:
+  Cannot match shape 'Nat'
+  with shape 'NatList'
+  when checking Z :: NatList in
+  \xs . 
+    match Cons Z Z with

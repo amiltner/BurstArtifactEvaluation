@@ -1,0 +1,567 @@
+[[33mWarning [0m] Refusing to inline recursive function 'listWebElementToWebTree'!
+[[33mWarning [0m] The Z3 native interface is not available, falling back to smt-cvc4.
+[[34m  Info  [0m] =========================== Synthesizing 'list_take' ===========================
+[[34m  Info  [0m] [Symbolic Term Expl. (1->7)] ⟦ α n, xs
+[[34m  Info  [0m]                                Π ↓list_take(n, xs) && true
+[[34m  Info  [0m]                                φ (len(xs) < nat_to_int(n) || len(out) == nat_to_int(n)) && (len(xs) >= nat_to_int(n) || len(out) == len(xs))
+[[34m  Info  [0m]                                x out
+[[34m  Info  [0m]                              ⟧ /25,0/
+[[34m  Info  [0m] [Symbolic Term Expl. (1->7)] Failed
+[[34m  Info  [0m] [Optimistic Ground   ] ⟦ α n, xs
+[[34m  Info  [0m]                          Π ↓list_take(n, xs) && true
+[[34m  Info  [0m]                          φ (len(xs) < nat_to_int(n) || len(out) == nat_to_int(n)) && (len(xs) >= nat_to_int(n) || len(out) == len(xs))
+[[34m  Info  [0m]                          x out
+[[34m  Info  [0m]                        ⟧ /25,0/
+[[34m  Info  [0m] [Optimistic Ground   ] Failed
+[[34m  Info  [0m] [Inner case-split    ] ⟦ α n, xs
+[[34m  Info  [0m]                          Π ↓list_take(n, xs) && true
+[[34m  Info  [0m]                          φ (len(xs) < nat_to_int(n) || len(out) == nat_to_int(n)) && (len(xs) >= nat_to_int(n) || len(out) == len(xs))
+[[34m  Info  [0m]                          x out
+[[34m  Info  [0m]                        ⟧ /25,0/
+[[34m  Info  [0m] [Inner case-split    ] Decomposed into:
+[[34m  Info  [0m] [Inner case-split    ] - ⟦ α n, xs
+[[34m  Info  [0m]                            Π ↓list_take(n, xs) && true
+[[34m  Info  [0m]                            φ len(xs) < nat_to_int(n) && (len(xs) >= nat_to_int(n) || len(out) == len(xs))
+[[34m  Info  [0m]                            x out
+[[34m  Info  [0m]                          ⟧ /25,0/
+[[34m  Info  [0m] [Inner case-split    ] - ⟦ α n, xs
+[[34m  Info  [0m]                            Π ↓list_take(n, xs) && true
+[[34m  Info  [0m]                            φ len(out) == nat_to_int(n) && (len(xs) >= nat_to_int(n) || len(out) == len(xs))
+[[34m  Info  [0m]                            x out
+[[34m  Info  [0m]                          ⟧ /25,0/
+[[34m  Info  [0m] [Assert len(xs) < nat_to_int(n)] ⟦ α n, xs
+[[34m  Info  [0m]                                    Π ↓list_take(n, xs) && true
+[[34m  Info  [0m]                                    φ len(xs) < nat_to_int(n) && (len(xs) >= nat_to_int(n) || len(out) == len(xs))
+[[34m  Info  [0m]                                    x out
+[[34m  Info  [0m]                                  ⟧ /25,0/
+[[34m  Info  [0m] [Assert len(xs) < nat_to_int(n)] Decomposed into:
+[[34m  Info  [0m] [Assert len(xs) < nat_to_int(n)] - ⟦ α n, xs
+[[34m  Info  [0m]                                      Π len(xs) < nat_to_int(n) && (↓list_take(n, xs) && true)
+[[34m  Info  [0m]                                      φ len(xs) >= nat_to_int(n) || len(out) == len(xs)
+[[34m  Info  [0m]                                      x out
+[[34m  Info  [0m]                                    ⟧ /25,0/
+[[34m  Info  [0m] [Symbolic Term Expl. (1->7)] ⟦ α n, xs
+[[34m  Info  [0m]                                Π len(xs) < nat_to_int(n) && (↓list_take(n, xs) && true)
+[[34m  Info  [0m]                                φ len(xs) >= nat_to_int(n) || len(out) == len(xs)
+[[34m  Info  [0m]                                x out
+[[34m  Info  [0m]                              ⟧ /25,0/
+[[34m  Info  [0m] [Symbolic Term Expl. (1->7)] Solved  with:  ⟨ true |  xs ⟩
+[[34m  Info  [0m] 
+[[34m  Info  [0m] [Symbolic Term Expl. (1->7)] ⟦ α n, xs
+[[34m  Info  [0m]                                Π ↓list_take(n, xs) && true
+[[34m  Info  [0m]                                φ len(out) == nat_to_int(n) && (len(xs) >= nat_to_int(n) || len(out) == len(xs))
+[[34m  Info  [0m]                                x out
+[[34m  Info  [0m]                              ⟧ /25,0/
+[[34m  Info  [0m] [Symbolic Term Expl. (1->7)] Failed
+[[34m  Info  [0m] [Optimistic Ground   ] ⟦ α n, xs
+[[34m  Info  [0m]                          Π ↓list_take(n, xs) && true
+[[34m  Info  [0m]                          φ len(out) == nat_to_int(n) && (len(xs) >= nat_to_int(n) || len(out) == len(xs))
+[[34m  Info  [0m]                          x out
+[[34m  Info  [0m]                        ⟧ /25,0/
+[[34m  Info  [0m] [Optimistic Ground   ] Failed
+[[34m  Info  [0m] [Inner case-split    ] ⟦ α n, xs
+[[34m  Info  [0m]                          Π ↓list_take(n, xs) && true
+[[34m  Info  [0m]                          φ (len(xs) < nat_to_int(n) || len(out) == nat_to_int(n)) && (len(xs) >= nat_to_int(n) || len(out) == len(xs))
+[[34m  Info  [0m]                          x out
+[[34m  Info  [0m]                        ⟧ /25,0/
+[[34m  Info  [0m] [Inner case-split    ] Decomposed into:
+[[34m  Info  [0m] [Inner case-split    ] - ⟦ α n, xs
+[[34m  Info  [0m]                            Π ↓list_take(n, xs) && true
+[[34m  Info  [0m]                            φ (len(xs) < nat_to_int(n) || len(out) == nat_to_int(n)) && len(xs) >= nat_to_int(n)
+[[34m  Info  [0m]                            x out
+[[34m  Info  [0m]                          ⟧ /25,0/
+[[34m  Info  [0m] [Inner case-split    ] - ⟦ α n, xs
+[[34m  Info  [0m]                            Π ↓list_take(n, xs) && true
+[[34m  Info  [0m]                            φ (len(xs) < nat_to_int(n) || len(out) == nat_to_int(n)) && len(out) == len(xs)
+[[34m  Info  [0m]                            x out
+[[34m  Info  [0m]                          ⟧ /25,0/
+[[34m  Info  [0m] [Assert len(xs) >= nat_to_int(n)] ⟦ α n, xs
+[[34m  Info  [0m]                                     Π ↓list_take(n, xs) && true
+[[34m  Info  [0m]                                     φ (len(xs) < nat_to_int(n) || len(out) == nat_to_int(n)) && len(xs) >= nat_to_int(n)
+[[34m  Info  [0m]                                     x out
+[[34m  Info  [0m]                                   ⟧ /25,0/
+[[34m  Info  [0m] [Assert len(xs) >= nat_to_int(n)] Decomposed into:
+[[34m  Info  [0m] [Assert len(xs) >= nat_to_int(n)] - ⟦ α n, xs
+[[34m  Info  [0m]                                       Π len(xs) >= nat_to_int(n) && (↓list_take(n, xs) && true)
+[[34m  Info  [0m]                                       φ len(xs) < nat_to_int(n) || len(out) == nat_to_int(n)
+[[34m  Info  [0m]                                       x out
+[[34m  Info  [0m]                                     ⟧ /25,0/
+[[34m  Info  [0m] [Symbolic Term Expl. (1->7)] ⟦ α n, xs
+[[34m  Info  [0m]                                Π len(xs) >= nat_to_int(n) && (↓list_take(n, xs) && true)
+[[34m  Info  [0m]                                φ len(xs) < nat_to_int(n) || len(out) == nat_to_int(n)
+[[34m  Info  [0m]                                x out
+[[34m  Info  [0m]                              ⟧ /25,0/
+[[34m  Info  [0m] [Symbolic Term Expl. (1->7)] Failed
+[[34m  Info  [0m] [Optimistic Ground   ] ⟦ α n, xs
+[[34m  Info  [0m]                          Π len(xs) >= nat_to_int(n) && (↓list_take(n, xs) && true)
+[[34m  Info  [0m]                          φ len(xs) < nat_to_int(n) || len(out) == nat_to_int(n)
+[[34m  Info  [0m]                          x out
+[[34m  Info  [0m]                        ⟧ /25,0/
+[[34m  Info  [0m] [Optimistic Ground   ] Failed
+[[34m  Info  [0m] [ADT Split on 'n'    ] ⟦ α n, xs
+[[34m  Info  [0m]                          Π ↓list_take(n, xs) && true
+[[34m  Info  [0m]                          φ (len(xs) < nat_to_int(n) || len(out) == nat_to_int(n)) && (len(xs) >= nat_to_int(n) || len(out) == len(xs))
+[[34m  Info  [0m]                          x out
+[[34m  Info  [0m]                        ⟧ /25,0/
+[[34m  Info  [0m] [ADT Split on 'n'    ] Decomposed into:
+[[34m  Info  [0m] [ADT Split on 'n'    ] - ⟦ α xs
+[[34m  Info  [0m]                            Π (↓list_take(Z, xs) && 谶Z) && true
+[[34m  Info  [0m]                            φ (len(xs) < nat_to_int(Z) || len(out) == nat_to_int(Z)) && (len(xs) >= nat_to_int(Z) || len(out) == len(xs))
+[[34m  Info  [0m]                            x out
+[[34m  Info  [0m]                          ⟧ /11,0/
+[[34m  Info  [0m] [ADT Split on 'n'    ] - ⟦ α nat$2, xs
+[[34m  Info  [0m]                            Π (↓list_take(S(nat$2), xs) && 谶S(nat$2)) && true
+[[34m  Info  [0m]                            φ (len(xs) < nat_to_int(S(nat$2)) || len(out) == nat_to_int(S(nat$2))) && (len(xs) >= nat_to_int(S(nat$2)) || len(out) == len(xs))
+[[34m  Info  [0m]                            x out
+[[34m  Info  [0m]                          ⟧ /14,0/
+[[34m  Info  [0m] [Symbolic Term Expl. (1->7)] ⟦ α xs
+[[34m  Info  [0m]                                Π (↓list_take(Z, xs) && 谶Z) && true
+[[34m  Info  [0m]                                φ (len(xs) < nat_to_int(Z) || len(out) == nat_to_int(Z)) && (len(xs) >= nat_to_int(Z) || len(out) == len(xs))
+[[34m  Info  [0m]                                x out
+[[34m  Info  [0m]                              ⟧ /11,0/
+[[34m  Info  [0m] STE could not prove the validity of the resulting expression
+[[34m  Info  [0m] STE could not prove the validity of the resulting 1 expression(s)
+[[34m  Info  [0m] [Symbolic Term Expl. (1->7)] Solved (untrusted) with:  ⟨ true |  Nil ⟩
+[[34m  Info  [0m] 
+[[34m  Info  [0m] [ADT Split on 'xs'   ] ⟦ α n, xs
+[[34m  Info  [0m]                          Π ↓list_take(n, xs) && true
+[[34m  Info  [0m]                          φ (len(xs) < nat_to_int(n) || len(out) == nat_to_int(n)) && (len(xs) >= nat_to_int(n) || len(out) == len(xs))
+[[34m  Info  [0m]                          x out
+[[34m  Info  [0m]                        ⟧ /25,0/
+[[34m  Info  [0m] [ADT Split on 'xs'   ] Decomposed into:
+[[34m  Info  [0m] [ADT Split on 'xs'   ] - ⟦ α n
+[[34m  Info  [0m]                            Π (↓list_take(n, Nil) && 谶Nil) && true
+[[34m  Info  [0m]                            φ (len(Nil) < nat_to_int(n) || len(out) == nat_to_int(n)) && (len(Nil) >= nat_to_int(n) || len(out) == len(Nil))
+[[34m  Info  [0m]                            x out
+[[34m  Info  [0m]                          ⟧ /5,0/
+[[34m  Info  [0m] [ADT Split on 'xs'   ] - ⟦ α head$12, tail$17, n
+[[34m  Info  [0m]                            Π (↓list_take(n, Cons(head$12, tail$17)) && 谶Cons(head$12, tail$17)) && true
+[[34m  Info  [0m]                            φ (len(Cons(head$12, tail$17)) < nat_to_int(n) || len(out) == nat_to_int(n)) && (len(Cons(head$12, tail$17)) >= nat_to_int(n) || len(out) == len(Cons(head$12, tail$17)))
+[[34m  Info  [0m]                            x out
+[[34m  Info  [0m]                          ⟧ /20,0/
+[[34m  Info  [0m] [Symbolic Term Expl. (1->7)] ⟦ α n
+[[34m  Info  [0m]                                Π (↓list_take(n, Nil) && 谶Nil) && true
+[[34m  Info  [0m]                                φ (len(Nil) < nat_to_int(n) || len(out) == nat_to_int(n)) && (len(Nil) >= nat_to_int(n) || len(out) == len(Nil))
+[[34m  Info  [0m]                                x out
+[[34m  Info  [0m]                              ⟧ /5,0/
+[[34m  Info  [0m] STE could not prove the validity of the resulting expression
+[[34m  Info  [0m] STE could not prove the validity of the resulting 1 expression(s)
+[[34m  Info  [0m] [Symbolic Term Expl. (1->7)] Solved (untrusted) with:  ⟨ true |  Nil ⟩
+[[34m  Info  [0m] 
+[[34m  Info  [0m] [Introduce calls list_take$0(nat$2, xs$0)] ⟦ α nat$2, xs
+[[34m  Info  [0m]                                              Π (↓list_take(S(nat$2), xs) && 谶S(nat$2)) && true
+[[34m  Info  [0m]                                              φ (len(xs) < nat_to_int(S(nat$2)) || len(out) == nat_to_int(S(nat$2))) && (len(xs) >= nat_to_int(S(nat$2)) || len(out) == len(xs))
+[[34m  Info  [0m]                                              x out
+[[34m  Info  [0m]                                            ⟧ /14,0/
+[[34m  Info  [0m] [Introduce calls list_take$0(nat$2, xs$0)] Decomposed into:
+[[34m  Info  [0m] [Introduce calls list_take$0(nat$2, xs$0)] - ⟦ α nat$2, xs
+[[34m  Info  [0m]                                                Π val rec$15: NatList = list_take(nat$2, xs)
+[[34m  Info  [0m]                                                  (↓list_take(S(nat$2), xs) && 谶S(nat$2) && ↓list_take(nat$2, xs)) && true
+[[34m  Info  [0m]                                                φ (len(xs) < nat_to_int(S(nat$2)) || len(out) == nat_to_int(S(nat$2))) && (len(xs) >= nat_to_int(S(nat$2)) || len(out) == len(xs))
+[[34m  Info  [0m]                                                x out
+[[34m  Info  [0m]                                              ⟧ /14,0/
+[[34m  Info  [0m] [Symbolic Term Expl. (1->7)] ⟦ α nat$2, xs
+[[34m  Info  [0m]                                Π val rec$15: NatList = list_take(nat$2, xs)
+[[34m  Info  [0m]                                  (↓list_take(S(nat$2), xs) && 谶S(nat$2) && ↓list_take(nat$2, xs)) && true
+[[34m  Info  [0m]                                φ (len(xs) < nat_to_int(S(nat$2)) || len(out) == nat_to_int(S(nat$2))) && (len(xs) >= nat_to_int(S(nat$2)) || len(out) == len(xs))
+[[34m  Info  [0m]                                x out
+[[34m  Info  [0m]                              ⟧ /14,0/
+[[34m  Info  [0m] [Symbolic Term Expl. (1->7)] Failed
+[[34m  Info  [0m] [Optimistic Ground   ] ⟦ α nat$2, xs
+[[34m  Info  [0m]                          Π val rec$15: NatList = list_take(nat$2, xs)
+[[34m  Info  [0m]                            (↓list_take(S(nat$2), xs) && 谶S(nat$2) && ↓list_take(nat$2, xs)) && true
+[[34m  Info  [0m]                          φ (len(xs) < nat_to_int(S(nat$2)) || len(out) == nat_to_int(S(nat$2))) && (len(xs) >= nat_to_int(S(nat$2)) || len(out) == len(xs))
+[[34m  Info  [0m]                          x out
+[[34m  Info  [0m]                        ⟧ /14,0/
+[[34m  Info  [0m] [Optimistic Ground   ] Failed
+[[34m  Info  [0m] [Inner case-split    ] ⟦ α n, xs
+[[34m  Info  [0m]                          Π ↓list_take(n, xs) && true
+[[34m  Info  [0m]                          φ len(out) == nat_to_int(n) && (len(xs) >= nat_to_int(n) || len(out) == len(xs))
+[[34m  Info  [0m]                          x out
+[[34m  Info  [0m]                        ⟧ /25,0/
+[[34m  Info  [0m] [Inner case-split    ] Decomposed into:
+[[34m  Info  [0m] [Inner case-split    ] - ⟦ α n, xs
+[[34m  Info  [0m]                            Π ↓list_take(n, xs) && true
+[[34m  Info  [0m]                            φ len(out) == nat_to_int(n) && len(xs) >= nat_to_int(n)
+[[34m  Info  [0m]                            x out
+[[34m  Info  [0m]                          ⟧ /25,0/
+[[34m  Info  [0m] [Inner case-split    ] - ⟦ α n, xs
+[[34m  Info  [0m]                            Π ↓list_take(n, xs) && true
+[[34m  Info  [0m]                            φ len(out) == nat_to_int(n) && len(out) == len(xs)
+[[34m  Info  [0m]                            x out
+[[34m  Info  [0m]                          ⟧ /25,0/
+[[34m  Info  [0m] [Assert len(xs) >= nat_to_int(n)] ⟦ α n, xs
+[[34m  Info  [0m]                                     Π ↓list_take(n, xs) && true
+[[34m  Info  [0m]                                     φ len(out) == nat_to_int(n) && len(xs) >= nat_to_int(n)
+[[34m  Info  [0m]                                     x out
+[[34m  Info  [0m]                                   ⟧ /25,0/
+[[34m  Info  [0m] [Assert len(xs) >= nat_to_int(n)] Decomposed into:
+[[34m  Info  [0m] [Assert len(xs) >= nat_to_int(n)] - ⟦ α n, xs
+[[34m  Info  [0m]                                       Π len(xs) >= nat_to_int(n) && (↓list_take(n, xs) && true)
+[[34m  Info  [0m]                                       φ len(out) == nat_to_int(n)
+[[34m  Info  [0m]                                       x out
+[[34m  Info  [0m]                                     ⟧ /25,0/
+[[34m  Info  [0m] [Symbolic Term Expl. (1->7)] ⟦ α n, xs
+[[34m  Info  [0m]                                Π len(xs) >= nat_to_int(n) && (↓list_take(n, xs) && true)
+[[34m  Info  [0m]                                φ len(out) == nat_to_int(n)
+[[34m  Info  [0m]                                x out
+[[34m  Info  [0m]                              ⟧ /25,0/
+[[34m  Info  [0m] [Symbolic Term Expl. (1->7)] Failed
+[[34m  Info  [0m] [Optimistic Ground   ] ⟦ α n, xs
+[[34m  Info  [0m]                          Π len(xs) >= nat_to_int(n) && (↓list_take(n, xs) && true)
+[[34m  Info  [0m]                          φ len(out) == nat_to_int(n)
+[[34m  Info  [0m]                          x out
+[[34m  Info  [0m]                        ⟧ /25,0/
+[[34m  Info  [0m] [Optimistic Ground   ] Failed
+[[34m  Info  [0m] [Split top-level Or  ] ⟦ α n, xs
+[[34m  Info  [0m]                          Π len(xs) >= nat_to_int(n) && (↓list_take(n, xs) && true)
+[[34m  Info  [0m]                          φ len(xs) < nat_to_int(n) || len(out) == nat_to_int(n)
+[[34m  Info  [0m]                          x out
+[[34m  Info  [0m]                        ⟧ /25,0/
+[[34m  Info  [0m] [Split top-level Or  ] Decomposed into:
+[[34m  Info  [0m] [Split top-level Or  ] - ⟦ α n, xs
+[[34m  Info  [0m]                            Π len(xs) >= nat_to_int(n) && (↓list_take(n, xs) && true)
+[[34m  Info  [0m]                            φ len(xs) < nat_to_int(n)
+[[34m  Info  [0m]                            x out
+[[34m  Info  [0m]                          ⟧ /25,0/
+[[34m  Info  [0m] [Split top-level Or  ] - ⟦ α n, xs
+[[34m  Info  [0m]                            Π len(xs) >= nat_to_int(n) && (↓list_take(n, xs) && true)
+[[34m  Info  [0m]                            φ len(out) == nat_to_int(n)
+[[34m  Info  [0m]                            x out
+[[34m  Info  [0m]                          ⟧ /25,0/
+[[34m  Info  [0m] [Unconst. out out    ] ⟦ α n, xs
+[[34m  Info  [0m]                          Π len(xs) >= nat_to_int(n) && (↓list_take(n, xs) && true)
+[[34m  Info  [0m]                          φ len(xs) < nat_to_int(n)
+[[34m  Info  [0m]                          x out
+[[34m  Info  [0m]                        ⟧ /25,0/
+[[34m  Info  [0m] [Unconst. out out    ] Decomposed into:
+[[34m  Info  [0m] [Unconst. out out    ] - ⟦ α n, xs
+[[34m  Info  [0m]                            Π len(xs) >= nat_to_int(n) && (↓list_take(n, xs) && true)
+[[34m  Info  [0m]                            φ len(xs) < nat_to_int(n)
+[[34m  Info  [0m]                            x ()
+[[34m  Info  [0m]                          ⟧ /25,0/
+[[34m  Info  [0m] [Solve: ⟨ len(xs) < nat_to_int(n) |  () ⟩] ⟦ α n, xs
+[[34m  Info  [0m]                                              Π len(xs) >= nat_to_int(n) && (↓list_take(n, xs) && true)
+[[34m  Info  [0m]                                              φ len(xs) < nat_to_int(n)
+[[34m  Info  [0m]                                              x ()
+[[34m  Info  [0m]                                            ⟧ /25,0/
+[[34m  Info  [0m] [Solve: ⟨ len(xs) < nat_to_int(n) |  () ⟩] Solved  with:  ⟨ len(xs) < nat_to_int(n) |  () ⟩
+[[34m  Info  [0m] 
+[[34m  Info  [0m] [Symbolic Term Expl. (1->7)] ⟦ α n, xs
+[[34m  Info  [0m]                                Π len(xs) >= nat_to_int(n) && (↓list_take(n, xs) && true)
+[[34m  Info  [0m]                                φ len(out) == nat_to_int(n)
+[[34m  Info  [0m]                                x out
+[[34m  Info  [0m]                              ⟧ /25,0/
+[[34m  Info  [0m] [Symbolic Term Expl. (1->7)] Failed
+[[34m  Info  [0m] [Optimistic Ground   ] ⟦ α n, xs
+[[34m  Info  [0m]                          Π len(xs) >= nat_to_int(n) && (↓list_take(n, xs) && true)
+[[34m  Info  [0m]                          φ len(out) == nat_to_int(n)
+[[34m  Info  [0m]                          x out
+[[34m  Info  [0m]                        ⟧ /25,0/
+[[34m  Info  [0m] [Optimistic Ground   ] Failed
+[[34m  Info  [0m] [Introduce calls list_take$0(n$0, tail$17)] ⟦ α head$12, tail$17, n
+[[34m  Info  [0m]                                               Π (↓list_take(n, Cons(head$12, tail$17)) && 谶Cons(head$12, tail$17)) && true
+[[34m  Info  [0m]                                               φ (len(Cons(head$12, tail$17)) < nat_to_int(n) || len(out) == nat_to_int(n)) && (len(Cons(head$12, tail$17)) >= nat_to_int(n) || len(out) == len(Cons(head$12, tail$17)))
+[[34m  Info  [0m]                                               x out
+[[34m  Info  [0m]                                             ⟧ /20,0/
+[[34m  Info  [0m] [Introduce calls list_take$0(n$0, tail$17)] Decomposed into:
+[[34m  Info  [0m] [Introduce calls list_take$0(n$0, tail$17)] - ⟦ α head$12, tail$17, n
+[[34m  Info  [0m]                                                 Π val rec$18: NatList = list_take(n, tail$17)
+[[34m  Info  [0m]                                                   (↓list_take(n, Cons(head$12, tail$17)) && 谶Cons(head$12, tail$17) && ↓list_take(n, tail$17)) && true
+[[34m  Info  [0m]                                                 φ (len(Cons(head$12, tail$17)) < nat_to_int(n) || len(out) == nat_to_int(n)) && (len(Cons(head$12, tail$17)) >= nat_to_int(n) || len(out) == len(Cons(head$12, tail$17)))
+[[34m  Info  [0m]                                                 x out
+[[34m  Info  [0m]                                               ⟧ /20,0/
+[[34m  Info  [0m] [Symbolic Term Expl. (1->7)] ⟦ α head$12, tail$17, n
+[[34m  Info  [0m]                                Π val rec$18: NatList = list_take(n, tail$17)
+[[34m  Info  [0m]                                  (↓list_take(n, Cons(head$12, tail$17)) && 谶Cons(head$12, tail$17) && ↓list_take(n, tail$17)) && true
+[[34m  Info  [0m]                                φ (len(Cons(head$12, tail$17)) < nat_to_int(n) || len(out) == nat_to_int(n)) && (len(Cons(head$12, tail$17)) >= nat_to_int(n) || len(out) == len(Cons(head$12, tail$17)))
+[[34m  Info  [0m]                                x out
+[[34m  Info  [0m]                              ⟧ /20,0/
+[[34m  Info  [0m] [Symbolic Term Expl. (1->7)] Failed
+[[34m  Info  [0m] [Optimistic Ground   ] ⟦ α head$12, tail$17, n
+[[34m  Info  [0m]                          Π val rec$18: NatList = list_take(n, tail$17)
+[[34m  Info  [0m]                            (↓list_take(n, Cons(head$12, tail$17)) && 谶Cons(head$12, tail$17) && ↓list_take(n, tail$17)) && true
+[[34m  Info  [0m]                          φ (len(Cons(head$12, tail$17)) < nat_to_int(n) || len(out) == nat_to_int(n)) && (len(Cons(head$12, tail$17)) >= nat_to_int(n) || len(out) == len(Cons(head$12, tail$17)))
+[[34m  Info  [0m]                          x out
+[[34m  Info  [0m]                        ⟧ /20,0/
+[[34m  Info  [0m] [Optimistic Ground   ] Failed
+[[34m  Info  [0m] [Inner case-split    ] ⟦ α nat$2, xs
+[[34m  Info  [0m]                          Π val rec$15: NatList = list_take(nat$2, xs)
+[[34m  Info  [0m]                            (↓list_take(S(nat$2), xs) && 谶S(nat$2) && ↓list_take(nat$2, xs)) && true
+[[34m  Info  [0m]                          φ (len(xs) < nat_to_int(S(nat$2)) || len(out) == nat_to_int(S(nat$2))) && (len(xs) >= nat_to_int(S(nat$2)) || len(out) == len(xs))
+[[34m  Info  [0m]                          x out
+[[34m  Info  [0m]                        ⟧ /14,0/
+[[34m  Info  [0m] [Inner case-split    ] Decomposed into:
+[[34m  Info  [0m] [Inner case-split    ] - ⟦ α nat$2, xs
+[[34m  Info  [0m]                            Π val rec$15: NatList = list_take(nat$2, xs)
+[[34m  Info  [0m]                              (↓list_take(S(nat$2), xs) && 谶S(nat$2) && ↓list_take(nat$2, xs)) && true
+[[34m  Info  [0m]                            φ len(xs) < nat_to_int(S(nat$2)) && (len(xs) >= nat_to_int(S(nat$2)) || len(out) == len(xs))
+[[34m  Info  [0m]                            x out
+[[34m  Info  [0m]                          ⟧ /14,0/
+[[34m  Info  [0m] [Inner case-split    ] - ⟦ α nat$2, xs
+[[34m  Info  [0m]                            Π val rec$15: NatList = list_take(nat$2, xs)
+[[34m  Info  [0m]                              (↓list_take(S(nat$2), xs) && 谶S(nat$2) && ↓list_take(nat$2, xs)) && true
+[[34m  Info  [0m]                            φ len(out) == nat_to_int(S(nat$2)) && (len(xs) >= nat_to_int(S(nat$2)) || len(out) == len(xs))
+[[34m  Info  [0m]                            x out
+[[34m  Info  [0m]                          ⟧ /14,0/
+[[34m  Info  [0m] [Assert len(xs) < nat_to_int(S(nat$2))] ⟦ α nat$2, xs
+[[34m  Info  [0m]                                           Π val rec$15: NatList = list_take(nat$2, xs)
+[[34m  Info  [0m]                                             (↓list_take(S(nat$2), xs) && 谶S(nat$2) && ↓list_take(nat$2, xs)) && true
+[[34m  Info  [0m]                                           φ len(xs) < nat_to_int(S(nat$2)) && (len(xs) >= nat_to_int(S(nat$2)) || len(out) == len(xs))
+[[34m  Info  [0m]                                           x out
+[[34m  Info  [0m]                                         ⟧ /14,0/
+[[34m  Info  [0m] [Assert len(xs) < nat_to_int(S(nat$2))] Decomposed into:
+[[34m  Info  [0m] [Assert len(xs) < nat_to_int(S(nat$2))] - ⟦ α nat$2, xs
+[[34m  Info  [0m]                                             Π val rec$15: NatList = list_take(nat$2, xs)
+[[34m  Info  [0m]                                               len(xs) < nat_to_int(S(nat$2)) && ((↓list_take(S(nat$2), xs) && 谶S(nat$2) && ↓list_take(nat$2, xs)) && true)
+[[34m  Info  [0m]                                             φ len(xs) >= nat_to_int(S(nat$2)) || len(out) == len(xs)
+[[34m  Info  [0m]                                             x out
+[[34m  Info  [0m]                                           ⟧ /14,0/
+[[34m  Info  [0m] [Symbolic Term Expl. (1->7)] ⟦ α nat$2, xs
+[[34m  Info  [0m]                                Π val rec$15: NatList = list_take(nat$2, xs)
+[[34m  Info  [0m]                                  len(xs) < nat_to_int(S(nat$2)) && ((↓list_take(S(nat$2), xs) && 谶S(nat$2) && ↓list_take(nat$2, xs)) && true)
+[[34m  Info  [0m]                                φ len(xs) >= nat_to_int(S(nat$2)) || len(out) == len(xs)
+[[34m  Info  [0m]                                x out
+[[34m  Info  [0m]                              ⟧ /14,0/
+[[34m  Info  [0m] [Symbolic Term Expl. (1->7)] Solved  with:  ⟨ true |  xs ⟩
+[[34m  Info  [0m] 
+[[34m  Info  [0m] [Symbolic Term Expl. (1->7)] ⟦ α nat$2, xs
+[[34m  Info  [0m]                                Π val rec$15: NatList = list_take(nat$2, xs)
+[[34m  Info  [0m]                                  (↓list_take(S(nat$2), xs) && 谶S(nat$2) && ↓list_take(nat$2, xs)) && true
+[[34m  Info  [0m]                                φ len(out) == nat_to_int(S(nat$2)) && (len(xs) >= nat_to_int(S(nat$2)) || len(out) == len(xs))
+[[34m  Info  [0m]                                x out
+[[34m  Info  [0m]                              ⟧ /14,0/
+[[34m  Info  [0m] [Symbolic Term Expl. (1->7)] Failed
+[[34m  Info  [0m] [Optimistic Ground   ] ⟦ α nat$2, xs
+[[34m  Info  [0m]                          Π val rec$15: NatList = list_take(nat$2, xs)
+[[34m  Info  [0m]                            (↓list_take(S(nat$2), xs) && 谶S(nat$2) && ↓list_take(nat$2, xs)) && true
+[[34m  Info  [0m]                          φ len(out) == nat_to_int(S(nat$2)) && (len(xs) >= nat_to_int(S(nat$2)) || len(out) == len(xs))
+[[34m  Info  [0m]                          x out
+[[34m  Info  [0m]                        ⟧ /14,0/
+[[34m  Info  [0m] [Optimistic Ground   ] Failed
+[[34m  Info  [0m] [Inner case-split    ] ⟦ α nat$2, xs
+[[34m  Info  [0m]                          Π val rec$15: NatList = list_take(nat$2, xs)
+[[34m  Info  [0m]                            (↓list_take(S(nat$2), xs) && 谶S(nat$2) && ↓list_take(nat$2, xs)) && true
+[[34m  Info  [0m]                          φ (len(xs) < nat_to_int(S(nat$2)) || len(out) == nat_to_int(S(nat$2))) && (len(xs) >= nat_to_int(S(nat$2)) || len(out) == len(xs))
+[[34m  Info  [0m]                          x out
+[[34m  Info  [0m]                        ⟧ /14,0/
+[[34m  Info  [0m] [Inner case-split    ] Decomposed into:
+[[34m  Info  [0m] [Inner case-split    ] - ⟦ α nat$2, xs
+[[34m  Info  [0m]                            Π val rec$15: NatList = list_take(nat$2, xs)
+[[34m  Info  [0m]                              (↓list_take(S(nat$2), xs) && 谶S(nat$2) && ↓list_take(nat$2, xs)) && true
+[[34m  Info  [0m]                            φ (len(xs) < nat_to_int(S(nat$2)) || len(out) == nat_to_int(S(nat$2))) && len(xs) >= nat_to_int(S(nat$2))
+[[34m  Info  [0m]                            x out
+[[34m  Info  [0m]                          ⟧ /14,0/
+[[34m  Info  [0m] [Inner case-split    ] - ⟦ α nat$2, xs
+[[34m  Info  [0m]                            Π val rec$15: NatList = list_take(nat$2, xs)
+[[34m  Info  [0m]                              (↓list_take(S(nat$2), xs) && 谶S(nat$2) && ↓list_take(nat$2, xs)) && true
+[[34m  Info  [0m]                            φ (len(xs) < nat_to_int(S(nat$2)) || len(out) == nat_to_int(S(nat$2))) && len(out) == len(xs)
+[[34m  Info  [0m]                            x out
+[[34m  Info  [0m]                          ⟧ /14,0/
+[[34m  Info  [0m] [Assert len(xs) >= nat_to_int(S(nat$2))] ⟦ α nat$2, xs
+[[34m  Info  [0m]                                            Π val rec$15: NatList = list_take(nat$2, xs)
+[[34m  Info  [0m]                                              (↓list_take(S(nat$2), xs) && 谶S(nat$2) && ↓list_take(nat$2, xs)) && true
+[[34m  Info  [0m]                                            φ (len(xs) < nat_to_int(S(nat$2)) || len(out) == nat_to_int(S(nat$2))) && len(xs) >= nat_to_int(S(nat$2))
+[[34m  Info  [0m]                                            x out
+[[34m  Info  [0m]                                          ⟧ /14,0/
+[[34m  Info  [0m] [Assert len(xs) >= nat_to_int(S(nat$2))] Decomposed into:
+[[34m  Info  [0m] [Assert len(xs) >= nat_to_int(S(nat$2))] - ⟦ α nat$2, xs
+[[34m  Info  [0m]                                              Π val rec$15: NatList = list_take(nat$2, xs)
+[[34m  Info  [0m]                                                len(xs) >= nat_to_int(S(nat$2)) && ((↓list_take(S(nat$2), xs) && 谶S(nat$2) && ↓list_take(nat$2, xs)) && true)
+[[34m  Info  [0m]                                              φ len(xs) < nat_to_int(S(nat$2)) || len(out) == nat_to_int(S(nat$2))
+[[34m  Info  [0m]                                              x out
+[[34m  Info  [0m]                                            ⟧ /14,0/
+[[34m  Info  [0m] [Symbolic Term Expl. (1->7)] ⟦ α nat$2, xs
+[[34m  Info  [0m]                                Π val rec$15: NatList = list_take(nat$2, xs)
+[[34m  Info  [0m]                                  len(xs) >= nat_to_int(S(nat$2)) && ((↓list_take(S(nat$2), xs) && 谶S(nat$2) && ↓list_take(nat$2, xs)) && true)
+[[34m  Info  [0m]                                φ len(xs) < nat_to_int(S(nat$2)) || len(out) == nat_to_int(S(nat$2))
+[[34m  Info  [0m]                                x out
+[[34m  Info  [0m]                              ⟧ /14,0/
+[[34m  Info  [0m] STE could not prove the validity of the resulting expression
+[[34m  Info  [0m] STE could not prove the validity of the resulting expression
+[[34m  Info  [0m] STE could not prove the validity of the resulting 2 expression(s)
+[[34m  Info  [0m] [Symbolic Term Expl. (1->7)] Solved (untrusted) with:  ⟨ true |  Cons(nat$2, rec$15) ⟩
+[[34m  Info  [0m] 
+[[34m  Info  [0m] [ADT Split on 'n'    ] ⟦ α n, xs
+[[34m  Info  [0m]                          Π ↓list_take(n, xs) && true
+[[34m  Info  [0m]                          φ len(out) == nat_to_int(n) && (len(xs) >= nat_to_int(n) || len(out) == len(xs))
+[[34m  Info  [0m]                          x out
+[[34m  Info  [0m]                        ⟧ /25,0/
+[[34m  Info  [0m] [ADT Split on 'n'    ] Decomposed into:
+[[34m  Info  [0m] [ADT Split on 'n'    ] - ⟦ α xs
+[[34m  Info  [0m]                            Π (↓list_take(Z, xs) && 谶Z) && true
+[[34m  Info  [0m]                            φ len(out) == nat_to_int(Z) && (len(xs) >= nat_to_int(Z) || len(out) == len(xs))
+[[34m  Info  [0m]                            x out
+[[34m  Info  [0m]                          ⟧ /11,0/
+[[34m  Info  [0m] [ADT Split on 'n'    ] - ⟦ α nat$9, xs
+[[34m  Info  [0m]                            Π (↓list_take(S(nat$9), xs) && 谶S(nat$9)) && true
+[[34m  Info  [0m]                            φ len(out) == nat_to_int(S(nat$9)) && (len(xs) >= nat_to_int(S(nat$9)) || len(out) == len(xs))
+[[34m  Info  [0m]                            x out
+[[34m  Info  [0m]                          ⟧ /14,0/
+[[34m  Info  [0m] [Symbolic Term Expl. (1->7)] ⟦ α xs
+[[34m  Info  [0m]                                Π (↓list_take(Z, xs) && 谶Z) && true
+[[34m  Info  [0m]                                φ len(out) == nat_to_int(Z) && (len(xs) >= nat_to_int(Z) || len(out) == len(xs))
+[[34m  Info  [0m]                                x out
+[[34m  Info  [0m]                              ⟧ /11,0/
+[[34m  Info  [0m] STE could not prove the validity of the resulting expression
+[[34m  Info  [0m] STE could not prove the validity of the resulting 1 expression(s)
+[[34m  Info  [0m] [Symbolic Term Expl. (1->7)] Solved (untrusted) with:  ⟨ true |  Nil ⟩
+[[34m  Info  [0m] 
+[[34m  Info  [0m] [ADT Split on 'n'    ] ⟦ α n, xs
+[[34m  Info  [0m]                          Π len(xs) >= nat_to_int(n) && (↓list_take(n, xs) && true)
+[[34m  Info  [0m]                          φ len(xs) < nat_to_int(n) || len(out) == nat_to_int(n)
+[[34m  Info  [0m]                          x out
+[[34m  Info  [0m]                        ⟧ /25,0/
+[[34m  Info  [0m] [ADT Split on 'n'    ] Decomposed into:
+[[34m  Info  [0m] [ADT Split on 'n'    ] - ⟦ α xs
+[[34m  Info  [0m]                            Π len(xs) >= nat_to_int(Z) && ((↓list_take(Z, xs) && 谶Z) && true)
+[[34m  Info  [0m]                            φ len(xs) < nat_to_int(Z) || len(out) == nat_to_int(Z)
+[[34m  Info  [0m]                            x out
+[[34m  Info  [0m]                          ⟧ /11,0/
+[[34m  Info  [0m] [ADT Split on 'n'    ] - ⟦ α nat$14, xs
+[[34m  Info  [0m]                            Π len(xs) >= nat_to_int(S(nat$14)) && ((↓list_take(S(nat$14), xs) && 谶S(nat$14)) && true)
+[[34m  Info  [0m]                            φ len(xs) < nat_to_int(S(nat$14)) || len(out) == nat_to_int(S(nat$14))
+[[34m  Info  [0m]                            x out
+[[34m  Info  [0m]                          ⟧ /14,0/
+[[34m  Info  [0m] [Symbolic Term Expl. (1->7)] ⟦ α xs
+[[34m  Info  [0m]                                Π len(xs) >= nat_to_int(Z) && ((↓list_take(Z, xs) && 谶Z) && true)
+[[34m  Info  [0m]                                φ len(xs) < nat_to_int(Z) || len(out) == nat_to_int(Z)
+[[34m  Info  [0m]                                x out
+[[34m  Info  [0m]                              ⟧ /11,0/
+[[34m  Info  [0m] [Symbolic Term Expl. (1->7)] Solved  with:  ⟨ true |  Nil ⟩
+[[34m  Info  [0m] 
+[[34m  Info  [0m] [Inner case-split    ] ⟦ α head$12, tail$17, n
+[[34m  Info  [0m]                          Π val rec$18: NatList = list_take(n, tail$17)
+[[34m  Info  [0m]                            (↓list_take(n, Cons(head$12, tail$17)) && 谶Cons(head$12, tail$17) && ↓list_take(n, tail$17)) && true
+[[34m  Info  [0m]                          φ (len(Cons(head$12, tail$17)) < nat_to_int(n) || len(out) == nat_to_int(n)) && (len(Cons(head$12, tail$17)) >= nat_to_int(n) || len(out) == len(Cons(head$12, tail$17)))
+[[34m  Info  [0m]                          x out
+[[34m  Info  [0m]                        ⟧ /20,0/
+[[34m  Info  [0m] [Inner case-split    ] Decomposed into:
+[[34m  Info  [0m] [Inner case-split    ] - ⟦ α head$12, tail$17, n
+[[34m  Info  [0m]                            Π val rec$18: NatList = list_take(n, tail$17)
+[[34m  Info  [0m]                              (↓list_take(n, Cons(head$12, tail$17)) && 谶Cons(head$12, tail$17) && ↓list_take(n, tail$17)) && true
+[[34m  Info  [0m]                            φ len(Cons(head$12, tail$17)) < nat_to_int(n) && (len(Cons(head$12, tail$17)) >= nat_to_int(n) || len(out) == len(Cons(head$12, tail$17)))
+[[34m  Info  [0m]                            x out
+[[34m  Info  [0m]                          ⟧ /20,0/
+[[34m  Info  [0m] [Inner case-split    ] - ⟦ α head$12, tail$17, n
+[[34m  Info  [0m]                            Π val rec$18: NatList = list_take(n, tail$17)
+[[34m  Info  [0m]                              (↓list_take(n, Cons(head$12, tail$17)) && 谶Cons(head$12, tail$17) && ↓list_take(n, tail$17)) && true
+[[34m  Info  [0m]                            φ len(out) == nat_to_int(n) && (len(Cons(head$12, tail$17)) >= nat_to_int(n) || len(out) == len(Cons(head$12, tail$17)))
+[[34m  Info  [0m]                            x out
+[[34m  Info  [0m]                          ⟧ /20,0/
+[[34m  Info  [0m] [Assert len(Cons(head$12, tail$17)) < nat_to_int(n)] ⟦ α head$12, tail$17, n
+[[34m  Info  [0m]                                                        Π val rec$18: NatList = list_take(n, tail$17)
+[[34m  Info  [0m]                                                          (↓list_take(n, Cons(head$12, tail$17)) && 谶Cons(head$12, tail$17) && ↓list_take(n, tail$17)) && true
+[[34m  Info  [0m]                                                        φ len(Cons(head$12, tail$17)) < nat_to_int(n) && (len(Cons(head$12, tail$17)) >= nat_to_int(n) || len(out) == len(Cons(head$12, tail$17)))
+[[34m  Info  [0m]                                                        x out
+[[34m  Info  [0m]                                                      ⟧ /20,0/
+[[34m  Info  [0m] [Assert len(Cons(head$12, tail$17)) < nat_to_int(n)] Decomposed into:
+[[34m  Info  [0m] [Assert len(Cons(head$12, tail$17)) < nat_to_int(n)] - ⟦ α head$12, tail$17, n
+[[34m  Info  [0m]                                                          Π val rec$18: NatList = list_take(n, tail$17)
+[[34m  Info  [0m]                                                            len(Cons(head$12, tail$17)) < nat_to_int(n) && ((↓list_take(n, Cons(head$12, tail$17)) && 谶Cons(head$12, tail$17) && ↓list_take(n, tail$17)) && true)
+[[34m  Info  [0m]                                                          φ len(Cons(head$12, tail$17)) >= nat_to_int(n) || len(out) == len(Cons(head$12, tail$17))
+[[34m  Info  [0m]                                                          x out
+[[34m  Info  [0m]                                                        ⟧ /20,0/
+[[34m  Info  [0m] [Symbolic Term Expl. (1->7)] ⟦ α head$12, tail$17, n
+[[34m  Info  [0m]                                Π val rec$18: NatList = list_take(n, tail$17)
+[[34m  Info  [0m]                                  len(Cons(head$12, tail$17)) < nat_to_int(n) && ((↓list_take(n, Cons(head$12, tail$17)) && 谶Cons(head$12, tail$17) && ↓list_take(n, tail$17)) && true)
+[[34m  Info  [0m]                                φ len(Cons(head$12, tail$17)) >= nat_to_int(n) || len(out) == len(Cons(head$12, tail$17))
+[[34m  Info  [0m]                                x out
+[[34m  Info  [0m]                              ⟧ /20,0/
+[[34m  Info  [0m] [Symbolic Term Expl. (1->7)] Solved  with:  ⟨ true |  Cons(n, tail$17) ⟩
+[[34m  Info  [0m] 
+[[34m  Info  [0m] [Inner case-split    ] ⟦ α head$12, tail$17, n
+[[34m  Info  [0m]                          Π val rec$18: NatList = list_take(n, tail$17)
+[[34m  Info  [0m]                            (↓list_take(n, Cons(head$12, tail$17)) && 谶Cons(head$12, tail$17) && ↓list_take(n, tail$17)) && true
+[[34m  Info  [0m]                          φ (len(Cons(head$12, tail$17)) < nat_to_int(n) || len(out) == nat_to_int(n)) && (len(Cons(head$12, tail$17)) >= nat_to_int(n) || len(out) == len(Cons(head$12, tail$17)))
+[[34m  Info  [0m]                          x out
+[[34m  Info  [0m]                        ⟧ /20,0/
+[[34m  Info  [0m] [Inner case-split    ] Decomposed into:
+[[34m  Info  [0m] [Inner case-split    ] - ⟦ α head$12, tail$17, n
+[[34m  Info  [0m]                            Π val rec$18: NatList = list_take(n, tail$17)
+[[34m  Info  [0m]                              (↓list_take(n, Cons(head$12, tail$17)) && 谶Cons(head$12, tail$17) && ↓list_take(n, tail$17)) && true
+[[34m  Info  [0m]                            φ (len(Cons(head$12, tail$17)) < nat_to_int(n) || len(out) == nat_to_int(n)) && len(Cons(head$12, tail$17)) >= nat_to_int(n)
+[[34m  Info  [0m]                            x out
+[[34m  Info  [0m]                          ⟧ /20,0/
+[[34m  Info  [0m] [Inner case-split    ] - ⟦ α head$12, tail$17, n
+[[34m  Info  [0m]                            Π val rec$18: NatList = list_take(n, tail$17)
+[[34m  Info  [0m]                              (↓list_take(n, Cons(head$12, tail$17)) && 谶Cons(head$12, tail$17) && ↓list_take(n, tail$17)) && true
+[[34m  Info  [0m]                            φ (len(Cons(head$12, tail$17)) < nat_to_int(n) || len(out) == nat_to_int(n)) && len(out) == len(Cons(head$12, tail$17))
+[[34m  Info  [0m]                            x out
+[[34m  Info  [0m]                          ⟧ /20,0/
+[[34m  Info  [0m] [Assert len(Cons(head$12, tail$17)) >= nat_to_int(n)] ⟦ α head$12, tail$17, n
+[[34m  Info  [0m]                                                         Π val rec$18: NatList = list_take(n, tail$17)
+[[34m  Info  [0m]                                                           (↓list_take(n, Cons(head$12, tail$17)) && 谶Cons(head$12, tail$17) && ↓list_take(n, tail$17)) && true
+[[34m  Info  [0m]                                                         φ (len(Cons(head$12, tail$17)) < nat_to_int(n) || len(out) == nat_to_int(n)) && len(Cons(head$12, tail$17)) >= nat_to_int(n)
+[[34m  Info  [0m]                                                         x out
+[[34m  Info  [0m]                                                       ⟧ /20,0/
+[[34m  Info  [0m] [Assert len(Cons(head$12, tail$17)) >= nat_to_int(n)] Decomposed into:
+[[34m  Info  [0m] [Assert len(Cons(head$12, tail$17)) >= nat_to_int(n)] - ⟦ α head$12, tail$17, n
+[[34m  Info  [0m]                                                           Π val rec$18: NatList = list_take(n, tail$17)
+[[34m  Info  [0m]                                                             len(Cons(head$12, tail$17)) >= nat_to_int(n) && ((↓list_take(n, Cons(head$12, tail$17)) && 谶Cons(head$12, tail$17) && ↓list_take(n, tail$17)) && true)
+[[34m  Info  [0m]                                                           φ len(Cons(head$12, tail$17)) < nat_to_int(n) || len(out) == nat_to_int(n)
+[[34m  Info  [0m]                                                           x out
+[[34m  Info  [0m]                                                         ⟧ /20,0/
+[[34m  Info  [0m] [Symbolic Term Expl. (1->7)] ⟦ α head$12, tail$17, n
+[[34m  Info  [0m]                                Π val rec$18: NatList = list_take(n, tail$17)
+[[34m  Info  [0m]                                  len(Cons(head$12, tail$17)) >= nat_to_int(n) && ((↓list_take(n, Cons(head$12, tail$17)) && 谶Cons(head$12, tail$17) && ↓list_take(n, tail$17)) && true)
+[[34m  Info  [0m]                                φ len(Cons(head$12, tail$17)) < nat_to_int(n) || len(out) == nat_to_int(n)
+[[34m  Info  [0m]                                x out
+[[34m  Info  [0m]                              ⟧ /20,0/
+[[34m  Info  [0m] [Symbolic Term Expl. (1->7)] Failed
+[[34m  Info  [0m] [Optimistic Ground   ] ⟦ α head$12, tail$17, n
+[[34m  Info  [0m]                          Π val rec$18: NatList = list_take(n, tail$17)
+[[34m  Info  [0m]                            len(Cons(head$12, tail$17)) >= nat_to_int(n) && ((↓list_take(n, Cons(head$12, tail$17)) && 谶Cons(head$12, tail$17) && ↓list_take(n, tail$17)) && true)
+[[34m  Info  [0m]                          φ len(Cons(head$12, tail$17)) < nat_to_int(n) || len(out) == nat_to_int(n)
+[[34m  Info  [0m]                          x out
+[[34m  Info  [0m]                        ⟧ /20,0/
+[[34m  Info  [0m] [Optimistic Ground   ] Failed
+[[34m  Info  [0m] [ADT Split on 'xs'   ] ⟦ α n, xs
+[[34m  Info  [0m]                          Π ↓list_take(n, xs) && true
+[[34m  Info  [0m]                          φ len(out) == nat_to_int(n) && (len(xs) >= nat_to_int(n) || len(out) == len(xs))
+[[34m  Info  [0m]                          x out
+[[34m  Info  [0m]                        ⟧ /25,0/
+[[34m  Info  [0m] [ADT Split on 'xs'   ] Decomposed into:
+[[34m  Info  [0m] [ADT Split on 'xs'   ] - ⟦ α n
+[[34m  Info  [0m]                            Π (↓list_take(n, Nil) && 谶Nil) && true
+[[34m  Info  [0m]                            φ len(out) == nat_to_int(n) && (len(Nil) >= nat_to_int(n) || len(out) == len(Nil))
+[[34m  Info  [0m]                            x out
+[[34m  Info  [0m]                          ⟧ /5,0/
+[[34m  Info  [0m] [ADT Split on 'xs'   ] - ⟦ α head$23, tail$26, n
+[[34m  Info  [0m]                            Π (↓list_take(n, Cons(head$23, tail$26)) && 谶Cons(head$23, tail$26)) && true
+[[34m  Info  [0m]                            φ len(out) == nat_to_int(n) && (len(Cons(head$23, tail$26)) >= nat_to_int(n) || len(out) == len(Cons(head$23, tail$26)))
+[[34m  Info  [0m]                            x out
+[[34m  Info  [0m]                          ⟧ /20,0/
+[[34m  Info  [0m] [Symbolic Term Expl. (1->7)] ⟦ α n
+[[34m  Info  [0m]                                Π (↓list_take(n, Nil) && 谶Nil) && true
+[[34m  Info  [0m]                                φ len(out) == nat_to_int(n) && (len(Nil) >= nat_to_int(n) || len(out) == len(Nil))
+[[34m  Info  [0m]                                x out
+[[34m  Info  [0m]                              ⟧ /5,0/
+[[34m  Info  [0m] [Symbolic Term Expl. (1->7)] Failed
+[[34m  Info  [0m] [Optimistic Ground   ] ⟦ α n
+[[34m  Info  [0m]                          Π (↓list_take(n, Nil) && 谶Nil) && true
+[[34m  Info  [0m]                          φ len(out) == nat_to_int(n) && (len(Nil) >= nat_to_int(n) || len(out) == len(Nil))
+[[34m  Info  [0m]                          x out
+[[34m  Info  [0m]                        ⟧ /5,0/
+[[34m  Info  [0m] [Optimistic Ground   ] Failed
+[[34m  Info  [0m] [ADT Split on 'xs'   ] ⟦ α n, xs
+[[34m  Info  [0m]                          Π len(xs) >= nat_to_int(n) && (↓list_take(n, xs) && true)
+[[34m  Info  [0m]                          φ len(xs) < nat_to_int(n) || len(out) == nat_to_int(n)
+[[34m  Info  [0m]                          x out
+[[34m  Info  [0m]                        ⟧ /25,0/
+[[34m  Info  [0m] [ADT Split on 'xs'   ] Decomposed into:
+[[34m  Info  [0m] [ADT Split on 'xs'   ] - ⟦ α n
+[[34m  Info  [0m]                            Π len(Nil) >= nat_to_int(n) && ((↓list_take(n, Nil) && 谶Nil) && true)
+[[34m  Info  [0m]                            φ len(Nil) < nat_to_int(n) || len(out) == nat_to_int(n)
+[[34m  Info  [0m]                            x out
+[[34m  Info  [0m]                          ⟧ /5,0/
+[[34m  Info  [0m] [ADT Split on 'xs'   ] - ⟦ α head$30, tail$32, n
+[[34m  Info  [0m]                            Π len(Cons(head$30, tail$32)) >= nat_to_int(n) && ((↓list_take(n, Cons(head$30, tail$32)) && 谶Cons(head$30, tail$32)) && true)
+[[34m  Info  [0m]                            φ len(Cons(head$30, tail$32)) < nat_to_int(n) || len(out) == nat_to_int(n)
+[[34m  Info  [0m]                            x out
+[[34m  Info  [0m]                          ⟧ /20,0/
+[[34m  Info  [0m] [Symbolic Term Expl. (1->7)] ⟦ α n
+[[34m  Info  [0m]                                Π len(Nil) >= nat_to_int(n) && ((↓list_take(n, Nil) && 谶Nil) && true)
+[[34m  Info  [0m]                                φ len(Nil) < nat_to_int(n) || len(out) == nat_to_int(n)
+[[34m  Info  [0m]                                x out
+[[34m  Info  [0m]                              ⟧ /5,0/

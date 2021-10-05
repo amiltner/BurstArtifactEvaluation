@@ -1,0 +1,6 @@
+list_stutter :: l:NatList -> {NatList|len _v == len l + len l}
+list_stutter = \l . 
+  match l with
+    Nil -> l
+    Cons x3 x4 -> Cons x3 (Cons x3
+                             (list_stutter x4))

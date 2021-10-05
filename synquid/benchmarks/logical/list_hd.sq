@@ -1,0 +1,20 @@
+data Nat where
+  Z :: Nat
+  S :: Nat -> Nat
+
+termination measure dec :: Nat -> {Int | _v >= 0} where
+  Z -> 0
+  S m -> 1 + dec m
+  
+data NatList where
+  Nil :: NatList
+  Cons :: Nat -> NatList -> NatList
+
+measure hd :: NatList -> Nat where
+    Nil -> Z
+    Cons h t -> h
+
+list_hd :: xs:NatList -> { Nat | 
+   if xs == Nil then _v == Z else _v == hd xs
+}
+list_hd = ??

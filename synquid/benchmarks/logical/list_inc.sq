@@ -1,0 +1,30 @@
+data Nat where
+  Z :: Nat
+  S :: Nat -> Nat
+
+termination measure dec :: Nat -> {Int | _v >= 0} where
+  Z -> 0
+  S m -> 1 + dec m
+  
+data NatList where
+  Nil :: NatList
+  Cons :: Nat -> NatList -> NatList
+
+termination measure len :: NatList -> {Int | _v >= 0} where
+  Nil -> 0
+  Cons x xs -> 1 + len xs
+  
+measure sum :: NatList -> {Int | _v >= 0} where
+    Nil -> 0
+    Cons h t -> dec h + sum t
+  
+list_map :: NatList -> (Nat -> Nat) -> NatList
+list_map = \xs . \f .
+  match xs with
+    Nil            -> Nil
+    Cons head tail -> Cons (f head) (list_map tail f)
+  
+list_inc :: xs:NatList -> { NatList | 
+  sum _v == sum xs + len xs
+}
+list_inc = ??

@@ -1,0 +1,8 @@
+list_take :: n:Nat -> xs:NatList -> {NatList|(len xs < dec n ==> len _v == len xs) && (len xs >= dec n ==> len _v == dec n)}
+list_take = \n . \xs . 
+    match xs with
+      Nil -> xs
+      Cons x3 x4 -> 
+        match n with
+          Z -> Nil
+          S x6 -> Cons n (list_take x6 x4)

@@ -1,0 +1,558 @@
+[[33mWarning [0m] Refusing to inline recursive function 'listWebElementToWebTree'!
+[[33mWarning [0m] The Z3 native interface is not available, falling back to smt-cvc4.
+[[34m  Info  [0m] =========================== Synthesizing 'list_last' ===========================
+[[34m  Info  [0m] [Symbolic Term Expl. (1->7)] ⟦ α xs
+[[34m  Info  [0m]                                Π ↓list_last(xs) && true
+[[34m  Info  [0m]                                φ xs match {
+[[34m  Info  [0m]                                    case Nil =>
+[[34m  Info  [0m]                                      out == None
+[[34m  Info  [0m]                                    case Cons(h1, t1) =>
+[[34m  Info  [0m]                                      t1 match {
+[[34m  Info  [0m]                                        case Nil =>
+[[34m  Info  [0m]                                          out == Some(h1)
+[[34m  Info  [0m]                                        case Cons(h2, t2) =>
+[[34m  Info  [0m]                                          t2 match {
+[[34m  Info  [0m]                                            case Nil =>
+[[34m  Info  [0m]                                              out == Some(h2)
+[[34m  Info  [0m]                                            case Cons(h3, t3) =>
+[[34m  Info  [0m]                                              true
+[[34m  Info  [0m]                                          }
+[[34m  Info  [0m]                                      }
+[[34m  Info  [0m]                                  }
+[[34m  Info  [0m]                                x out
+[[34m  Info  [0m]                              ⟧ /24,0/
+[[34m  Info  [0m] [Symbolic Term Expl. (1->7)] Failed
+[[34m  Info  [0m] [Optimistic Ground   ] ⟦ α xs
+[[34m  Info  [0m]                          Π ↓list_last(xs) && true
+[[34m  Info  [0m]                          φ xs match {
+[[34m  Info  [0m]                              case Nil =>
+[[34m  Info  [0m]                                out == None
+[[34m  Info  [0m]                              case Cons(h1, t1) =>
+[[34m  Info  [0m]                                t1 match {
+[[34m  Info  [0m]                                  case Nil =>
+[[34m  Info  [0m]                                    out == Some(h1)
+[[34m  Info  [0m]                                  case Cons(h2, t2) =>
+[[34m  Info  [0m]                                    t2 match {
+[[34m  Info  [0m]                                      case Nil =>
+[[34m  Info  [0m]                                        out == Some(h2)
+[[34m  Info  [0m]                                      case Cons(h3, t3) =>
+[[34m  Info  [0m]                                        true
+[[34m  Info  [0m]                                    }
+[[34m  Info  [0m]                                }
+[[34m  Info  [0m]                            }
+[[34m  Info  [0m]                          x out
+[[34m  Info  [0m]                        ⟧ /24,0/
+[[34m  Info  [0m] [Optimistic Ground   ] Failed
+[[34m  Info  [0m] [ADT Split on 'xs'   ] ⟦ α xs
+[[34m  Info  [0m]                          Π ↓list_last(xs) && true
+[[34m  Info  [0m]                          φ xs match {
+[[34m  Info  [0m]                              case Nil =>
+[[34m  Info  [0m]                                out == None
+[[34m  Info  [0m]                              case Cons(h1, t1) =>
+[[34m  Info  [0m]                                t1 match {
+[[34m  Info  [0m]                                  case Nil =>
+[[34m  Info  [0m]                                    out == Some(h1)
+[[34m  Info  [0m]                                  case Cons(h2, t2) =>
+[[34m  Info  [0m]                                    t2 match {
+[[34m  Info  [0m]                                      case Nil =>
+[[34m  Info  [0m]                                        out == Some(h2)
+[[34m  Info  [0m]                                      case Cons(h3, t3) =>
+[[34m  Info  [0m]                                        true
+[[34m  Info  [0m]                                    }
+[[34m  Info  [0m]                                }
+[[34m  Info  [0m]                            }
+[[34m  Info  [0m]                          x out
+[[34m  Info  [0m]                        ⟧ /24,0/
+[[34m  Info  [0m] [ADT Split on 'xs'   ] Decomposed into:
+[[34m  Info  [0m] [ADT Split on 'xs'   ] - ⟦ α ()
+[[34m  Info  [0m]                            Π (↓list_last(Nil) && 谶Nil) && true
+[[34m  Info  [0m]                            φ Nil match {
+[[34m  Info  [0m]                                case Nil =>
+[[34m  Info  [0m]                                  out == None
+[[34m  Info  [0m]                                case Cons(h1, t1) =>
+[[34m  Info  [0m]                                  t1 match {
+[[34m  Info  [0m]                                    case Nil =>
+[[34m  Info  [0m]                                      out == Some(h1)
+[[34m  Info  [0m]                                    case Cons(h2, t2) =>
+[[34m  Info  [0m]                                      t2 match {
+[[34m  Info  [0m]                                        case Nil =>
+[[34m  Info  [0m]                                          out == Some(h2)
+[[34m  Info  [0m]                                        case Cons(h3, t3) =>
+[[34m  Info  [0m]                                          true
+[[34m  Info  [0m]                                      }
+[[34m  Info  [0m]                                  }
+[[34m  Info  [0m]                              }
+[[34m  Info  [0m]                            x out
+[[34m  Info  [0m]                          ⟧ /1,0/
+[[34m  Info  [0m] [ADT Split on 'xs'   ] - ⟦ α head$12, tail$17
+[[34m  Info  [0m]                            Π (↓list_last(Cons(head$12, tail$17)) && 谶Cons(head$12, tail$17)) && true
+[[34m  Info  [0m]                            φ Cons(head$12, tail$17) match {
+[[34m  Info  [0m]                                case Nil =>
+[[34m  Info  [0m]                                  out == None
+[[34m  Info  [0m]                                case Cons(h1, t1) =>
+[[34m  Info  [0m]                                  t1 match {
+[[34m  Info  [0m]                                    case Nil =>
+[[34m  Info  [0m]                                      out == Some(h1)
+[[34m  Info  [0m]                                    case Cons(h2, t2) =>
+[[34m  Info  [0m]                                      t2 match {
+[[34m  Info  [0m]                                        case Nil =>
+[[34m  Info  [0m]                                          out == Some(h2)
+[[34m  Info  [0m]                                        case Cons(h3, t3) =>
+[[34m  Info  [0m]                                          true
+[[34m  Info  [0m]                                      }
+[[34m  Info  [0m]                                  }
+[[34m  Info  [0m]                              }
+[[34m  Info  [0m]                            x out
+[[34m  Info  [0m]                          ⟧ /23,0/
+[[34m  Info  [0m] [Ground              ] ⟦ α ()
+[[34m  Info  [0m]                          Π (↓list_last(Nil) && 谶Nil) && true
+[[34m  Info  [0m]                          φ Nil match {
+[[34m  Info  [0m]                              case Nil =>
+[[34m  Info  [0m]                                out == None
+[[34m  Info  [0m]                              case Cons(h1, t1) =>
+[[34m  Info  [0m]                                t1 match {
+[[34m  Info  [0m]                                  case Nil =>
+[[34m  Info  [0m]                                    out == Some(h1)
+[[34m  Info  [0m]                                  case Cons(h2, t2) =>
+[[34m  Info  [0m]                                    t2 match {
+[[34m  Info  [0m]                                      case Nil =>
+[[34m  Info  [0m]                                        out == Some(h2)
+[[34m  Info  [0m]                                      case Cons(h3, t3) =>
+[[34m  Info  [0m]                                        true
+[[34m  Info  [0m]                                    }
+[[34m  Info  [0m]                                }
+[[34m  Info  [0m]                            }
+[[34m  Info  [0m]                          x out
+[[34m  Info  [0m]                        ⟧ /1,0/
+[[34m  Info  [0m] [Ground              ] Solved  with:  ⟨ true |  None ⟩
+[[34m  Info  [0m] 
+[[34m  Info  [0m] [Introduce calls list_last$0(tail$17)] ⟦ α head$12, tail$17
+[[34m  Info  [0m]                                          Π (↓list_last(Cons(head$12, tail$17)) && 谶Cons(head$12, tail$17)) && true
+[[34m  Info  [0m]                                          φ Cons(head$12, tail$17) match {
+[[34m  Info  [0m]                                              case Nil =>
+[[34m  Info  [0m]                                                out == None
+[[34m  Info  [0m]                                              case Cons(h1, t1) =>
+[[34m  Info  [0m]                                                t1 match {
+[[34m  Info  [0m]                                                  case Nil =>
+[[34m  Info  [0m]                                                    out == Some(h1)
+[[34m  Info  [0m]                                                  case Cons(h2, t2) =>
+[[34m  Info  [0m]                                                    t2 match {
+[[34m  Info  [0m]                                                      case Nil =>
+[[34m  Info  [0m]                                                        out == Some(h2)
+[[34m  Info  [0m]                                                      case Cons(h3, t3) =>
+[[34m  Info  [0m]                                                        true
+[[34m  Info  [0m]                                                    }
+[[34m  Info  [0m]                                                }
+[[34m  Info  [0m]                                            }
+[[34m  Info  [0m]                                          x out
+[[34m  Info  [0m]                                        ⟧ /23,0/
+[[34m  Info  [0m] [Introduce calls list_last$0(tail$17)] Decomposed into:
+[[34m  Info  [0m] [Introduce calls list_last$0(tail$17)] - ⟦ α head$12, tail$17
+[[34m  Info  [0m]                                            Π val rec$7: NatOpt = list_last(tail$17)
+[[34m  Info  [0m]                                              (↓list_last(Cons(head$12, tail$17)) && 谶Cons(head$12, tail$17) && ↓list_last(tail$17)) && true
+[[34m  Info  [0m]                                            φ Cons(head$12, tail$17) match {
+[[34m  Info  [0m]                                                case Nil =>
+[[34m  Info  [0m]                                                  out == None
+[[34m  Info  [0m]                                                case Cons(h1, t1) =>
+[[34m  Info  [0m]                                                  t1 match {
+[[34m  Info  [0m]                                                    case Nil =>
+[[34m  Info  [0m]                                                      out == Some(h1)
+[[34m  Info  [0m]                                                    case Cons(h2, t2) =>
+[[34m  Info  [0m]                                                      t2 match {
+[[34m  Info  [0m]                                                        case Nil =>
+[[34m  Info  [0m]                                                          out == Some(h2)
+[[34m  Info  [0m]                                                        case Cons(h3, t3) =>
+[[34m  Info  [0m]                                                          true
+[[34m  Info  [0m]                                                      }
+[[34m  Info  [0m]                                                  }
+[[34m  Info  [0m]                                              }
+[[34m  Info  [0m]                                            x out
+[[34m  Info  [0m]                                          ⟧ /23,0/
+[[34m  Info  [0m] [Symbolic Term Expl. (1->7)] ⟦ α head$12, tail$17
+[[34m  Info  [0m]                                Π val rec$7: NatOpt = list_last(tail$17)
+[[34m  Info  [0m]                                  (↓list_last(Cons(head$12, tail$17)) && 谶Cons(head$12, tail$17) && ↓list_last(tail$17)) && true
+[[34m  Info  [0m]                                φ Cons(head$12, tail$17) match {
+[[34m  Info  [0m]                                    case Nil =>
+[[34m  Info  [0m]                                      out == None
+[[34m  Info  [0m]                                    case Cons(h1, t1) =>
+[[34m  Info  [0m]                                      t1 match {
+[[34m  Info  [0m]                                        case Nil =>
+[[34m  Info  [0m]                                          out == Some(h1)
+[[34m  Info  [0m]                                        case Cons(h2, t2) =>
+[[34m  Info  [0m]                                          t2 match {
+[[34m  Info  [0m]                                            case Nil =>
+[[34m  Info  [0m]                                              out == Some(h2)
+[[34m  Info  [0m]                                            case Cons(h3, t3) =>
+[[34m  Info  [0m]                                              true
+[[34m  Info  [0m]                                          }
+[[34m  Info  [0m]                                      }
+[[34m  Info  [0m]                                  }
+[[34m  Info  [0m]                                x out
+[[34m  Info  [0m]                              ⟧ /23,0/
+[[34m  Info  [0m] [Symbolic Term Expl. (1->7)] Failed
+[[34m  Info  [0m] [Optimistic Ground   ] ⟦ α head$12, tail$17
+[[34m  Info  [0m]                          Π val rec$7: NatOpt = list_last(tail$17)
+[[34m  Info  [0m]                            (↓list_last(Cons(head$12, tail$17)) && 谶Cons(head$12, tail$17) && ↓list_last(tail$17)) && true
+[[34m  Info  [0m]                          φ Cons(head$12, tail$17) match {
+[[34m  Info  [0m]                              case Nil =>
+[[34m  Info  [0m]                                out == None
+[[34m  Info  [0m]                              case Cons(h1, t1) =>
+[[34m  Info  [0m]                                t1 match {
+[[34m  Info  [0m]                                  case Nil =>
+[[34m  Info  [0m]                                    out == Some(h1)
+[[34m  Info  [0m]                                  case Cons(h2, t2) =>
+[[34m  Info  [0m]                                    t2 match {
+[[34m  Info  [0m]                                      case Nil =>
+[[34m  Info  [0m]                                        out == Some(h2)
+[[34m  Info  [0m]                                      case Cons(h3, t3) =>
+[[34m  Info  [0m]                                        true
+[[34m  Info  [0m]                                    }
+[[34m  Info  [0m]                                }
+[[34m  Info  [0m]                            }
+[[34m  Info  [0m]                          x out
+[[34m  Info  [0m]                        ⟧ /23,0/
+[[34m  Info  [0m] [Optimistic Ground   ] Failed
+[[34m  Info  [0m] [ADT Split on 'head$12'] ⟦ α head$12, tail$17
+[[34m  Info  [0m]                            Π val rec$7: NatOpt = list_last(tail$17)
+[[34m  Info  [0m]                              (↓list_last(Cons(head$12, tail$17)) && 谶Cons(head$12, tail$17) && ↓list_last(tail$17)) && true
+[[34m  Info  [0m]                            φ Cons(head$12, tail$17) match {
+[[34m  Info  [0m]                                case Nil =>
+[[34m  Info  [0m]                                  out == None
+[[34m  Info  [0m]                                case Cons(h1, t1) =>
+[[34m  Info  [0m]                                  t1 match {
+[[34m  Info  [0m]                                    case Nil =>
+[[34m  Info  [0m]                                      out == Some(h1)
+[[34m  Info  [0m]                                    case Cons(h2, t2) =>
+[[34m  Info  [0m]                                      t2 match {
+[[34m  Info  [0m]                                        case Nil =>
+[[34m  Info  [0m]                                          out == Some(h2)
+[[34m  Info  [0m]                                        case Cons(h3, t3) =>
+[[34m  Info  [0m]                                          true
+[[34m  Info  [0m]                                      }
+[[34m  Info  [0m]                                  }
+[[34m  Info  [0m]                              }
+[[34m  Info  [0m]                            x out
+[[34m  Info  [0m]                          ⟧ /23,0/
+[[34m  Info  [0m] [ADT Split on 'head$12'] Decomposed into:
+[[34m  Info  [0m] [ADT Split on 'head$12'] - ⟦ α tail$17
+[[34m  Info  [0m]                              Π val rec$7: NatOpt = list_last(tail$17)
+[[34m  Info  [0m]                                (↓list_last(Cons(Z, tail$17)) && 谶Cons(Z, tail$17) && ↓list_last(tail$17) && 谶Z) && true
+[[34m  Info  [0m]                              φ Cons(Z, tail$17) match {
+[[34m  Info  [0m]                                  case Nil =>
+[[34m  Info  [0m]                                    out == None
+[[34m  Info  [0m]                                  case Cons(h1, t1) =>
+[[34m  Info  [0m]                                    t1 match {
+[[34m  Info  [0m]                                      case Nil =>
+[[34m  Info  [0m]                                        out == Some(h1)
+[[34m  Info  [0m]                                      case Cons(h2, t2) =>
+[[34m  Info  [0m]                                        t2 match {
+[[34m  Info  [0m]                                          case Nil =>
+[[34m  Info  [0m]                                            out == Some(h2)
+[[34m  Info  [0m]                                          case Cons(h3, t3) =>
+[[34m  Info  [0m]                                            true
+[[34m  Info  [0m]                                        }
+[[34m  Info  [0m]                                    }
+[[34m  Info  [0m]                                }
+[[34m  Info  [0m]                              x out
+[[34m  Info  [0m]                            ⟧ /10,0/
+[[34m  Info  [0m] [ADT Split on 'head$12'] - ⟦ α nat$15, tail$17
+[[34m  Info  [0m]                              Π val rec$7: NatOpt = list_last(tail$17)
+[[34m  Info  [0m]                                (↓list_last(Cons(S(nat$15), tail$17)) && 谶Cons(S(nat$15), tail$17) && ↓list_last(tail$17) && 谶S(nat$15)) && true
+[[34m  Info  [0m]                              φ Cons(S(nat$15), tail$17) match {
+[[34m  Info  [0m]                                  case Nil =>
+[[34m  Info  [0m]                                    out == None
+[[34m  Info  [0m]                                  case Cons(h1, t1) =>
+[[34m  Info  [0m]                                    t1 match {
+[[34m  Info  [0m]                                      case Nil =>
+[[34m  Info  [0m]                                        out == Some(h1)
+[[34m  Info  [0m]                                      case Cons(h2, t2) =>
+[[34m  Info  [0m]                                        t2 match {
+[[34m  Info  [0m]                                          case Nil =>
+[[34m  Info  [0m]                                            out == Some(h2)
+[[34m  Info  [0m]                                          case Cons(h3, t3) =>
+[[34m  Info  [0m]                                            true
+[[34m  Info  [0m]                                        }
+[[34m  Info  [0m]                                    }
+[[34m  Info  [0m]                                }
+[[34m  Info  [0m]                              x out
+[[34m  Info  [0m]                            ⟧ /13,0/
+[[34m  Info  [0m] [Symbolic Term Expl. (1->7)] ⟦ α tail$17
+[[34m  Info  [0m]                                Π val rec$7: NatOpt = list_last(tail$17)
+[[34m  Info  [0m]                                  (↓list_last(Cons(Z, tail$17)) && 谶Cons(Z, tail$17) && ↓list_last(tail$17) && 谶Z) && true
+[[34m  Info  [0m]                                φ Cons(Z, tail$17) match {
+[[34m  Info  [0m]                                    case Nil =>
+[[34m  Info  [0m]                                      out == None
+[[34m  Info  [0m]                                    case Cons(h1, t1) =>
+[[34m  Info  [0m]                                      t1 match {
+[[34m  Info  [0m]                                        case Nil =>
+[[34m  Info  [0m]                                          out == Some(h1)
+[[34m  Info  [0m]                                        case Cons(h2, t2) =>
+[[34m  Info  [0m]                                          t2 match {
+[[34m  Info  [0m]                                            case Nil =>
+[[34m  Info  [0m]                                              out == Some(h2)
+[[34m  Info  [0m]                                            case Cons(h3, t3) =>
+[[34m  Info  [0m]                                              true
+[[34m  Info  [0m]                                          }
+[[34m  Info  [0m]                                      }
+[[34m  Info  [0m]                                  }
+[[34m  Info  [0m]                                x out
+[[34m  Info  [0m]                              ⟧ /10,0/
+[[34m  Info  [0m] [Symbolic Term Expl. (1->7)] Failed
+[[34m  Info  [0m] [Optimistic Ground   ] ⟦ α tail$17
+[[34m  Info  [0m]                          Π val rec$7: NatOpt = list_last(tail$17)
+[[34m  Info  [0m]                            (↓list_last(Cons(Z, tail$17)) && 谶Cons(Z, tail$17) && ↓list_last(tail$17) && 谶Z) && true
+[[34m  Info  [0m]                          φ Cons(Z, tail$17) match {
+[[34m  Info  [0m]                              case Nil =>
+[[34m  Info  [0m]                                out == None
+[[34m  Info  [0m]                              case Cons(h1, t1) =>
+[[34m  Info  [0m]                                t1 match {
+[[34m  Info  [0m]                                  case Nil =>
+[[34m  Info  [0m]                                    out == Some(h1)
+[[34m  Info  [0m]                                  case Cons(h2, t2) =>
+[[34m  Info  [0m]                                    t2 match {
+[[34m  Info  [0m]                                      case Nil =>
+[[34m  Info  [0m]                                        out == Some(h2)
+[[34m  Info  [0m]                                      case Cons(h3, t3) =>
+[[34m  Info  [0m]                                        true
+[[34m  Info  [0m]                                    }
+[[34m  Info  [0m]                                }
+[[34m  Info  [0m]                            }
+[[34m  Info  [0m]                          x out
+[[34m  Info  [0m]                        ⟧ /10,0/
+[[34m  Info  [0m] [Optimistic Ground   ] Failed
+[[34m  Info  [0m] [ADT Split on 'rec$7'] ⟦ α head$12, tail$17
+[[34m  Info  [0m]                          Π val rec$7: NatOpt = list_last(tail$17)
+[[34m  Info  [0m]                            (↓list_last(Cons(head$12, tail$17)) && 谶Cons(head$12, tail$17) && ↓list_last(tail$17)) && true
+[[34m  Info  [0m]                          φ Cons(head$12, tail$17) match {
+[[34m  Info  [0m]                              case Nil =>
+[[34m  Info  [0m]                                out == None
+[[34m  Info  [0m]                              case Cons(h1, t1) =>
+[[34m  Info  [0m]                                t1 match {
+[[34m  Info  [0m]                                  case Nil =>
+[[34m  Info  [0m]                                    out == Some(h1)
+[[34m  Info  [0m]                                  case Cons(h2, t2) =>
+[[34m  Info  [0m]                                    t2 match {
+[[34m  Info  [0m]                                      case Nil =>
+[[34m  Info  [0m]                                        out == Some(h2)
+[[34m  Info  [0m]                                      case Cons(h3, t3) =>
+[[34m  Info  [0m]                                        true
+[[34m  Info  [0m]                                    }
+[[34m  Info  [0m]                                }
+[[34m  Info  [0m]                            }
+[[34m  Info  [0m]                          x out
+[[34m  Info  [0m]                        ⟧ /23,0/
+[[34m  Info  [0m] [ADT Split on 'rec$7'] Decomposed into:
+[[34m  Info  [0m] [ADT Split on 'rec$7'] - ⟦ α head$12, tail$17
+[[34m  Info  [0m]                            Π val rec$7: NatOpt = list_last(tail$17)
+[[34m  Info  [0m]                              (rec$7 == None) && ((↓list_last(Cons(head$12, tail$17)) && 谶Cons(head$12, tail$17) && ↓list_last(tail$17) && 谶None && inactive(rec$7)) && true)
+[[34m  Info  [0m]                            φ Cons(head$12, tail$17) match {
+[[34m  Info  [0m]                                case Nil =>
+[[34m  Info  [0m]                                  out == None
+[[34m  Info  [0m]                                case Cons(h1, t1) =>
+[[34m  Info  [0m]                                  t1 match {
+[[34m  Info  [0m]                                    case Nil =>
+[[34m  Info  [0m]                                      out == Some(h1)
+[[34m  Info  [0m]                                    case Cons(h2, t2) =>
+[[34m  Info  [0m]                                      t2 match {
+[[34m  Info  [0m]                                        case Nil =>
+[[34m  Info  [0m]                                          out == Some(h2)
+[[34m  Info  [0m]                                        case Cons(h3, t3) =>
+[[34m  Info  [0m]                                          true
+[[34m  Info  [0m]                                      }
+[[34m  Info  [0m]                                  }
+[[34m  Info  [0m]                              }
+[[34m  Info  [0m]                            x out
+[[34m  Info  [0m]                          ⟧ /23,0/
+[[34m  Info  [0m] [ADT Split on 'rec$7'] - ⟦ α head$12, tail$17
+[[34m  Info  [0m]                            Π val rec$7: NatOpt = list_last(tail$17)
+[[34m  Info  [0m]                              rec$7.isInstanceOf[Some] && {
+[[34m  Info  [0m]                                val nat$16: Nat = rec$7.nat
+[[34m  Info  [0m]                                (↓list_last(Cons(head$12, tail$17)) && 谶Cons(head$12, tail$17) && ↓list_last(tail$17) && 谶Some(nat$16) && inactive(rec$7)) && true
+[[34m  Info  [0m]                              }
+[[34m  Info  [0m]                            φ Cons(head$12, tail$17) match {
+[[34m  Info  [0m]                                case Nil =>
+[[34m  Info  [0m]                                  out == None
+[[34m  Info  [0m]                                case Cons(h1, t1) =>
+[[34m  Info  [0m]                                  t1 match {
+[[34m  Info  [0m]                                    case Nil =>
+[[34m  Info  [0m]                                      out == Some(h1)
+[[34m  Info  [0m]                                    case Cons(h2, t2) =>
+[[34m  Info  [0m]                                      t2 match {
+[[34m  Info  [0m]                                        case Nil =>
+[[34m  Info  [0m]                                          out == Some(h2)
+[[34m  Info  [0m]                                        case Cons(h3, t3) =>
+[[34m  Info  [0m]                                          true
+[[34m  Info  [0m]                                      }
+[[34m  Info  [0m]                                  }
+[[34m  Info  [0m]                              }
+[[34m  Info  [0m]                            x out
+[[34m  Info  [0m]                          ⟧ /23,0/
+[[34m  Info  [0m] [Symbolic Term Expl. (1->7)] ⟦ α head$12, tail$17
+[[34m  Info  [0m]                                Π val rec$7: NatOpt = list_last(tail$17)
+[[34m  Info  [0m]                                  (rec$7 == None) && ((↓list_last(Cons(head$12, tail$17)) && 谶Cons(head$12, tail$17) && ↓list_last(tail$17) && 谶None && inactive(rec$7)) && true)
+[[34m  Info  [0m]                                φ Cons(head$12, tail$17) match {
+[[34m  Info  [0m]                                    case Nil =>
+[[34m  Info  [0m]                                      out == None
+[[34m  Info  [0m]                                    case Cons(h1, t1) =>
+[[34m  Info  [0m]                                      t1 match {
+[[34m  Info  [0m]                                        case Nil =>
+[[34m  Info  [0m]                                          out == Some(h1)
+[[34m  Info  [0m]                                        case Cons(h2, t2) =>
+[[34m  Info  [0m]                                          t2 match {
+[[34m  Info  [0m]                                            case Nil =>
+[[34m  Info  [0m]                                              out == Some(h2)
+[[34m  Info  [0m]                                            case Cons(h3, t3) =>
+[[34m  Info  [0m]                                              true
+[[34m  Info  [0m]                                          }
+[[34m  Info  [0m]                                      }
+[[34m  Info  [0m]                                  }
+[[34m  Info  [0m]                                x out
+[[34m  Info  [0m]                              ⟧ /23,0/
+[[34m  Info  [0m] [Symbolic Term Expl. (1->7)] Solved  with:  ⟨ true |  Some(head$12) ⟩
+[[34m  Info  [0m] 
+[[34m  Info  [0m] [ADT Split on 'tail$17'] ⟦ α head$12, tail$17
+[[34m  Info  [0m]                            Π val rec$7: NatOpt = list_last(tail$17)
+[[34m  Info  [0m]                              (↓list_last(Cons(head$12, tail$17)) && 谶Cons(head$12, tail$17) && ↓list_last(tail$17)) && true
+[[34m  Info  [0m]                            φ Cons(head$12, tail$17) match {
+[[34m  Info  [0m]                                case Nil =>
+[[34m  Info  [0m]                                  out == None
+[[34m  Info  [0m]                                case Cons(h1, t1) =>
+[[34m  Info  [0m]                                  t1 match {
+[[34m  Info  [0m]                                    case Nil =>
+[[34m  Info  [0m]                                      out == Some(h1)
+[[34m  Info  [0m]                                    case Cons(h2, t2) =>
+[[34m  Info  [0m]                                      t2 match {
+[[34m  Info  [0m]                                        case Nil =>
+[[34m  Info  [0m]                                          out == Some(h2)
+[[34m  Info  [0m]                                        case Cons(h3, t3) =>
+[[34m  Info  [0m]                                          true
+[[34m  Info  [0m]                                      }
+[[34m  Info  [0m]                                  }
+[[34m  Info  [0m]                              }
+[[34m  Info  [0m]                            x out
+[[34m  Info  [0m]                          ⟧ /23,0/
+[[34m  Info  [0m] [ADT Split on 'tail$17'] Decomposed into:
+[[34m  Info  [0m] [ADT Split on 'tail$17'] - ⟦ α head$12
+[[34m  Info  [0m]                              Π val rec$7: NatOpt = list_last(Nil)
+[[34m  Info  [0m]                                (↓list_last(Cons(head$12, Nil)) && 谶Cons(head$12, Nil) && ↓list_last(Nil) && 谶Nil) && true
+[[34m  Info  [0m]                              φ Cons(head$12, Nil) match {
+[[34m  Info  [0m]                                  case Nil =>
+[[34m  Info  [0m]                                    out == None
+[[34m  Info  [0m]                                  case Cons(h1, t1) =>
+[[34m  Info  [0m]                                    t1 match {
+[[34m  Info  [0m]                                      case Nil =>
+[[34m  Info  [0m]                                        out == Some(h1)
+[[34m  Info  [0m]                                      case Cons(h2, t2) =>
+[[34m  Info  [0m]                                        t2 match {
+[[34m  Info  [0m]                                          case Nil =>
+[[34m  Info  [0m]                                            out == Some(h2)
+[[34m  Info  [0m]                                          case Cons(h3, t3) =>
+[[34m  Info  [0m]                                            true
+[[34m  Info  [0m]                                        }
+[[34m  Info  [0m]                                    }
+[[34m  Info  [0m]                                }
+[[34m  Info  [0m]                              x out
+[[34m  Info  [0m]                            ⟧ /4,0/
+[[34m  Info  [0m] [ADT Split on 'tail$17'] - ⟦ α head$21, tail$25, head$12
+[[34m  Info  [0m]                              Π val rec$7: NatOpt = list_last(Cons(head$21, tail$25))
+[[34m  Info  [0m]                                (↓list_last(Cons(head$12, Cons(head$21, tail$25))) && 谶Cons(head$12, Cons(head$21, tail$25)) && ↓list_last(Cons(head$21, tail$25)) && 谶Cons(head$21, tail$25)) && true
+[[34m  Info  [0m]                              φ Cons(head$12, Cons(head$21, tail$25)) match {
+[[34m  Info  [0m]                                  case Nil =>
+[[34m  Info  [0m]                                    out == None
+[[34m  Info  [0m]                                  case Cons(h1, t1) =>
+[[34m  Info  [0m]                                    t1 match {
+[[34m  Info  [0m]                                      case Nil =>
+[[34m  Info  [0m]                                        out == Some(h1)
+[[34m  Info  [0m]                                      case Cons(h2, t2) =>
+[[34m  Info  [0m]                                        t2 match {
+[[34m  Info  [0m]                                          case Nil =>
+[[34m  Info  [0m]                                            out == Some(h2)
+[[34m  Info  [0m]                                          case Cons(h3, t3) =>
+[[34m  Info  [0m]                                            true
+[[34m  Info  [0m]                                        }
+[[34m  Info  [0m]                                    }
+[[34m  Info  [0m]                                }
+[[34m  Info  [0m]                              x out
+[[34m  Info  [0m]                            ⟧ /19,0/
+[[34m  Info  [0m] [Symbolic Term Expl. (1->7)] ⟦ α head$12
+[[34m  Info  [0m]                                Π val rec$7: NatOpt = list_last(Nil)
+[[34m  Info  [0m]                                  (↓list_last(Cons(head$12, Nil)) && 谶Cons(head$12, Nil) && ↓list_last(Nil) && 谶Nil) && true
+[[34m  Info  [0m]                                φ Cons(head$12, Nil) match {
+[[34m  Info  [0m]                                    case Nil =>
+[[34m  Info  [0m]                                      out == None
+[[34m  Info  [0m]                                    case Cons(h1, t1) =>
+[[34m  Info  [0m]                                      t1 match {
+[[34m  Info  [0m]                                        case Nil =>
+[[34m  Info  [0m]                                          out == Some(h1)
+[[34m  Info  [0m]                                        case Cons(h2, t2) =>
+[[34m  Info  [0m]                                          t2 match {
+[[34m  Info  [0m]                                            case Nil =>
+[[34m  Info  [0m]                                              out == Some(h2)
+[[34m  Info  [0m]                                            case Cons(h3, t3) =>
+[[34m  Info  [0m]                                              true
+[[34m  Info  [0m]                                          }
+[[34m  Info  [0m]                                      }
+[[34m  Info  [0m]                                  }
+[[34m  Info  [0m]                                x out
+[[34m  Info  [0m]                              ⟧ /4,0/
+[[34m  Info  [0m] [Symbolic Term Expl. (1->7)] Solved  with:  ⟨ true |  Some(head$12) ⟩
+[[34m  Info  [0m] 
+[[34m  Info  [0m] [Symbolic Term Expl. (1->7)] ⟦ α head$12, tail$17
+[[34m  Info  [0m]                                Π val rec$7: NatOpt = list_last(tail$17)
+[[34m  Info  [0m]                                  rec$7.isInstanceOf[Some] && {
+[[34m  Info  [0m]                                    val nat$16: Nat = rec$7.nat
+[[34m  Info  [0m]                                    (↓list_last(Cons(head$12, tail$17)) && 谶Cons(head$12, tail$17) && ↓list_last(tail$17) && 谶Some(nat$16) && inactive(rec$7)) && true
+[[34m  Info  [0m]                                  }
+[[34m  Info  [0m]                                φ Cons(head$12, tail$17) match {
+[[34m  Info  [0m]                                    case Nil =>
+[[34m  Info  [0m]                                      out == None
+[[34m  Info  [0m]                                    case Cons(h1, t1) =>
+[[34m  Info  [0m]                                      t1 match {
+[[34m  Info  [0m]                                        case Nil =>
+[[34m  Info  [0m]                                          out == Some(h1)
+[[34m  Info  [0m]                                        case Cons(h2, t2) =>
+[[34m  Info  [0m]                                          t2 match {
+[[34m  Info  [0m]                                            case Nil =>
+[[34m  Info  [0m]                                              out == Some(h2)
+[[34m  Info  [0m]                                            case Cons(h3, t3) =>
+[[34m  Info  [0m]                                              true
+[[34m  Info  [0m]                                          }
+[[34m  Info  [0m]                                      }
+[[34m  Info  [0m]                                  }
+[[34m  Info  [0m]                                x out
+[[34m  Info  [0m]                              ⟧ /23,0/
+[[34m  Info  [0m] [Symbolic Term Expl. (1->7)] Solved  with:  ⟨ true |  Some(nat$16) ⟩
+[[34m  Info  [0m] 
+[[34m  Info  [0m] Finished in 16502ms
+[[34m  Info  [0m] ================================== list_last ==================================
+[[34m  Info  [0m] def list_last(xs : NatList): NatOpt =  {
+[[34m  Info  [0m]   xs match {
+[[34m  Info  [0m]     case Nil =>
+[[34m  Info  [0m]       None
+[[34m  Info  [0m]     case Cons(head, tail) =>
+[[34m  Info  [0m]       list_last(tail) match {
+[[34m  Info  [0m]         case None =>
+[[34m  Info  [0m]           Some(head)
+[[34m  Info  [0m]         case Some(nat) =>
+[[34m  Info  [0m]           Some(nat)
+[[34m  Info  [0m]       }
+[[34m  Info  [0m]   }
+[[34m  Info  [0m] } ensuring {
+[[34m  Info  [0m]   (out : NatOpt) => xs match {
+[[34m  Info  [0m]     case Nil =>
+[[34m  Info  [0m]       out == None
+[[34m  Info  [0m]     case Cons(h1, t1) =>
+[[34m  Info  [0m]       t1 match {
+[[34m  Info  [0m]         case Nil =>
+[[34m  Info  [0m]           out == Some(h1)
+[[34m  Info  [0m]         case Cons(h2, t2) =>
+[[34m  Info  [0m]           t2 match {
+[[34m  Info  [0m]             case Nil =>
+[[34m  Info  [0m]               out == Some(h2)
+[[34m  Info  [0m]             case Cons(h3, t3) =>
+[[34m  Info  [0m]               true
+[[34m  Info  [0m]           }
+[[34m  Info  [0m]       }
+[[34m  Info  [0m]   }
+[[34m  Info  [0m] }
+[[34m  Info  [0m] 
